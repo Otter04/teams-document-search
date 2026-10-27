@@ -1,0 +1,46 @@
+{
+  "id": "gen-1792375478-Sp0AStdwMPl6v9YtbRPf",
+  "object": "chat.completion",
+  "created": 1792375478,
+  "model": "qwen/qwen3.6-35b-a3b",
+  "provider": "DeepInfra",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"figures\": [\n    {\n      \"bbox\": [0.05, 0.05, 0.95, 0.95],\n      \"claims\": [\n        {\n          \"bbox\": [0.05, 0.05, 0.95, 0.95],\n          \"status\": \"observed\",\n          \"text\": \"제안 아키텍처는 판교 IDC에 설치되며, 외부망 사용자와 보안·네트워크(FortiGate 400F × 2)를 거쳐 웹(DMZ) 및 WAS 서버로 연결되는 구조를 보여준다.\"\n        }\n      ],\n      \"kind\": \"diagram\",\n      \"nodes\": [\n        {\n          \"bbox\": [0.45, 0.27, 0.55, 0.30],\n          \"id\": \"node-1\",\n          \"label\": \"사용자 / 외부망\"\n        },\n        {\n          \"bbox\": [0.45, 0.42, 0.55, 0.47],\n          \"id\": \"node-2\",\n          \"label\": \"보안 · 네트워크\\nFortiGate 400F × 2\"\n        },\n        {\n          \"bbox\": [0.14, 0.66, 0.28, 0.71],\n          \"id\": \"node-3\",\n          \"label\": \"웹 (DMZ)\\nmall-web01\"\n        },\n        {\n          \"bbox\": [0.30, 0.66, 0.44, 0.71],\n          \"id\": \"node-4\",\n          \"label\": \"웹 (DMZ)\\nmall-web02\"\n        },\n        {\n          \"bbox\": [0.52, 0.66, 0.66, 0.71],\n          \"id\": \"node-5\",\n          \"label\": \"WAS\\nmall-was01\"\n        },\n        {\n          \"bbox\": [0.68, 0.66, 0.82, 0.71],\n          \"id\": \"node-6\",\n          \"label\": \"WAS\\nmall-was02\"\n        }\n      ],\n      \"relations\": [\n        {\n          \"bbox\": [0.50, 0.30, 0.50, 0.42],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node-1\",\n          \"label\": \"\",\n          \"to_node\": \"node-2\"\n        },\n        {\n          \"bbox\": [0.45, 0.47, 0.14, 0.66],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node-2\",\n          \"label\": \"\",\n          \"to_node\": \"node-3\"\n        },\n        {\n          \"bbox\": [0.45, 0.47, 0.30, 0.66],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node-2\",\n          \"label\": \"\",\n          \"to_node\": \"node-4\"\n        },\n        {\n          \"bbox\": [0.45, 0.47, 0.52, 0.66],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node-2\",\n          \"label\": \"\",\n          \"to_node\": \"node-5\"\n        },\n        {\n          \"bbox\": [0.45, 0.47, 0.68, 0.66],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node-2\",\n          \"label\": \"\",\n          \"to_node\": \"node-6\"\n        }\n      ]\n    }\n  ],\n  \"status\": \"complete\",\n  \"tables\": [],\n  \"texts\": [\n    {\n      \"bbox\": [0.05, 0.07, 0.22, 0.12],\n      \"kind\": \"heading\",\n      \"text\": \"제안 아키텍처\"\n    },\n    {\n      \"bbox\": [0.05, 0.15, 0.17, 0.18],\n      \"kind\": \"paragraph\",\n      \"text\": \"설치 위치 : 판교 IDC\"\n    }\n  ]\n, \"warnings\": []}",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2740,
+    "completion_tokens": 1059,
+    "total_tokens": 3799,
+    "cost": 0.00128005,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00128005,
+      "upstream_inference_prompt_cost": 0.000274,
+      "upstream_inference_completions_cost": 0.00100605
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

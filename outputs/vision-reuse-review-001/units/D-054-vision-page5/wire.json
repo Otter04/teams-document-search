@@ -1,0 +1,152 @@
+{
+  "figures": [
+    {
+      "bbox": [
+        0.05,
+        0.15,
+        0.95,
+        0.85
+      ],
+      "claims": [
+        {
+          "bbox": [
+            0.05,
+            0.15,
+            0.95,
+            0.85
+          ],
+          "status": "observed",
+          "text": "제안 아키텍처는 미르내대 정보전산원에 설치되며, 외부망 사용자의 요청이 보안·네트워크(PaloAlto PA-3410 × 2)를 거쳐 학사 웹, API, DB로 전달되는 구조를 보여준다."
+        }
+      ],
+      "kind": "diagram",
+      "nodes": [
+        {
+          "bbox": [
+            0.45,
+            0.27,
+            0.55,
+            0.3
+          ],
+          "id": "node-1",
+          "label": "사용자 / 외부망"
+        },
+        {
+          "bbox": [
+            0.45,
+            0.42,
+            0.56,
+            0.47
+          ],
+          "id": "node-2",
+          "label": "보안 · 네트워크\nPaloAlto PA-3410 × 2"
+        },
+        {
+          "bbox": [
+            0.1,
+            0.66,
+            0.33,
+            0.71
+          ],
+          "id": "node-3",
+          "label": "학사 웹 ( 오토스케일 그룹 )\nhaksa-web01"
+        },
+        {
+          "bbox": [
+            0.35,
+            0.66,
+            0.58,
+            0.71
+          ],
+          "id": "node-4",
+          "label": "학사 API\nhaksa-api01"
+        },
+        {
+          "bbox": [
+            0.6,
+            0.66,
+            0.83,
+            0.71
+          ],
+          "id": "node-5",
+          "label": "학사 DB (MySQL 8.0)\nhaksa-db01"
+        }
+      ],
+      "relations": [
+        {
+          "bbox": [
+            0.49947916666666664,
+            0.3,
+            0.5005208333333333,
+            0.42
+          ],
+          "direction": "undirected",
+          "from_node": "node-1",
+          "label": "",
+          "to_node": "node-2"
+        },
+        {
+          "bbox": [
+            0.15,
+            0.47,
+            0.45,
+            0.66
+          ],
+          "direction": "undirected",
+          "from_node": "node-2",
+          "label": "",
+          "to_node": "node-3"
+        },
+        {
+          "bbox": [
+            0.46,
+            0.47,
+            0.5,
+            0.66
+          ],
+          "direction": "undirected",
+          "from_node": "node-2",
+          "label": "",
+          "to_node": "node-4"
+        },
+        {
+          "bbox": [
+            0.55,
+            0.47,
+            0.75,
+            0.66
+          ],
+          "direction": "undirected",
+          "from_node": "node-2",
+          "label": "",
+          "to_node": "node-5"
+        }
+      ]
+    }
+  ],
+  "status": "complete",
+  "tables": [],
+  "texts": [
+    {
+      "bbox": [
+        0.05,
+        0.07,
+        0.22,
+        0.12
+      ],
+      "kind": "heading",
+      "text": "제안 아키텍처"
+    },
+    {
+      "bbox": [
+        0.05,
+        0.15,
+        0.23,
+        0.18
+      ],
+      "kind": "paragraph",
+      "text": "설치 위치 : 미르내대 정보전산원"
+    }
+  ],
+  "warnings": []
+}

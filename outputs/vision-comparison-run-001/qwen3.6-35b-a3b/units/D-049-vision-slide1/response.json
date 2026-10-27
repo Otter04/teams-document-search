@@ -1,0 +1,46 @@
+{
+  "id": "gen-1792375375-NGmWwSKOFS8lWtEbog7a",
+  "object": "chat.completion",
+  "created": 1792375375,
+  "model": "qwen/qwen3.6-35b-a3b",
+  "provider": "DeepInfra",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"figures\": [\n    {\n      \"bbox\": [0.045, 0.226, 0.949, 0.72],\n      \"claims\": [\n        {\n          \"bbox\": [0.045, 0.226, 0.949, 0.72],\n          \"status\": \"observed\",\n          \"text\": \"L4 로드밸런서가 하단의 WAS 2대, DB 2대로 트래픽을 분산하는 구조를 보여준다.\"\n        }\n      ],\n      \"kind\": \"diagram\",\n      \"nodes\": [\n        {\n          \"bbox\": [0.367, 0.226, 0.630, 0.333],\n          \"id\": \"node1\",\n          \"label\": \"L4 / 로드밸런서\"\n        },\n        {\n          \"bbox\": [0.048, 0.400, 0.257, 0.593],\n          \"id\": \"node2\",\n          \"label\": \"emr-was01\\nEMR WAS\\nRHEL 8.10 | 16 vCPU / 64GB\\n10.43.10.11\"\n        },\n        {\n          \"bbox\": [0.279, 0.400, 0.488, 0.593],\n          \"id\": \"node3\",\n          \"label\": \"emr-was02\\nEMR WAS\\nRHEL 8.10 | 16 vCPU / 64GB\\n10.43.10.12\"\n        },\n        {\n          \"bbox\": [0.510, 0.400, 0.718, 0.593],\n          \"id\": \"node4\",\n          \"label\": \"emr-db01\\nEMR DB (Oracle 19c RAC)\\nRHEL 8.10 | 48 vCPU / 384GB\\n10.43.10.21\"\n        },\n        {\n          \"bbox\": [0.740, 0.400, 0.949, 0.593],\n          \"id\": \"node5\",\n          \"label\": \"emr-db02\\nEMR DB (Oracle 19c RAC)\\nRHEL 8.10 | 48 vCPU / 384GB\\n10.43.10.22\"\n        }\n      ],\n      \"relations\": [\n        {\n          \"bbox\": [0.367, 0.333, 0.257, 0.400],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node1\",\n          \"label\": \"\",\n          \"to_node\": \"node2\"\n        },\n        {\n          \"bbox\": [0.367, 0.333, 0.488, 0.400],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node1\",\n          \"label\": \"\",\n          \"to_node\": \"node3\"\n        },\n        {\n          \"bbox\": [0.367, 0.333, 0.718, 0.400],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node1\",\n          \"label\": \"\",\n          \"to_node\": \"node4\"\n        },\n        {\n          \"bbox\": [0.367, 0.333, 0.949, 0.400],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node1\",\n          \"label\": \"\",\n          \"to_node\": \"node5\"\n        }\n      ]\n    }\n  ],\n  \"status\": \"complete\",\n  \"tables\": [],\n  \"texts\": [\n    {\n      \"bbox\": [0.045, 0.046, 0.945, 0.153],\n      \"kind\": \"heading\",\n      \"text\": \"EMR 서버 구성도\"\n    },\n    {\n      \"bbox\": [0.045, 0.140, 0.945, 0.206],\n      \"kind\": \"paragraph\",\n      \"text\": \"사업: EMR 시스템 유지보수  |  설치 위치: 새봄병원 본관 전산실  |  2025-06-28\"\n    }\n  ]\n,\n  \"warnings\": []\n}",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2919,
+    "completion_tokens": 1111,
+    "total_tokens": 4030,
+    "cost": 0.00134735,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00134735,
+      "upstream_inference_prompt_cost": 0.0002919,
+      "upstream_inference_completions_cost": 0.00105545
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

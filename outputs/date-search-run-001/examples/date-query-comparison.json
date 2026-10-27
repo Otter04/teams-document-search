@@ -1,0 +1,624 @@
+[
+  {
+    "query_id": "T01",
+    "query": "청람정밀 가장 최근에 수정된 제안서",
+    "expected_doc_ids": [
+      "D-002",
+      "D-001"
+    ],
+    "check": "ordered",
+    "limit": 2,
+    "label_basis": "direct source audit / file stat / explicit unsupported-input policy",
+    "scope": "development_extension_not_independent",
+    "before_pass": true,
+    "after_pass": true,
+    "before_ids": [
+      "D-002",
+      "D-001"
+    ],
+    "after_ids": [
+      "D-002",
+      "D-001"
+    ],
+    "query_plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "제안서"
+        },
+        {
+          "field": "거래처",
+          "op": "eq",
+          "value": "청람정밀"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "제안서"
+          ],
+          "text": "제안서",
+          "span": [
+            16,
+            19
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "제안서",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "제안서"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "제안서"
+            ],
+            "text": "제안서",
+            "span": [
+              16,
+              19
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": true,
+      "sort": {
+        "field": "파일최종수정일",
+        "direction": "desc",
+        "tie_breakers": [
+          "score_desc",
+          "doc_id_asc"
+        ]
+      },
+      "requires_clarification": false,
+      "content_query": ""
+    },
+    "unresolved_documents": []
+  },
+  {
+    "query_id": "T02",
+    "query": "청람정밀 표지 날짜 2025년 1월 13일 제안서",
+    "expected_doc_ids": [
+      "D-001",
+      "D-002"
+    ],
+    "check": "set",
+    "limit": 10,
+    "label_basis": "direct source audit / file stat / explicit unsupported-input policy",
+    "scope": "development_extension_not_independent",
+    "before_pass": false,
+    "after_pass": true,
+    "before_ids": [
+      "D-002",
+      "D-001",
+      "D-076",
+      "D-075",
+      "D-031",
+      "D-040",
+      "D-074",
+      "D-039",
+      "D-020",
+      "D-054"
+    ],
+    "after_ids": [
+      "D-001",
+      "D-002"
+    ],
+    "query_plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "제안서"
+        },
+        {
+          "field": "표지일",
+          "op": "gte",
+          "value": "2025-01-13"
+        },
+        {
+          "field": "표지일",
+          "op": "lte",
+          "value": "2025-01-13"
+        },
+        {
+          "field": "거래처",
+          "op": "eq",
+          "value": "청람정밀"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "제안서"
+          ],
+          "text": "제안서",
+          "span": [
+            24,
+            27
+          ]
+        },
+        {
+          "rule": "explicit_date_role",
+          "field": "표지일",
+          "text": "2025년 1월 13일"
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "제안서",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "제안서"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "제안서"
+            ],
+            "text": "제안서",
+            "span": [
+              24,
+              27
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": true,
+      "sort": null,
+      "requires_clarification": false,
+      "content_query": ""
+    },
+    "unresolved_documents": []
+  },
+  {
+    "query_id": "T03",
+    "query": "청람정밀 작성일 2025년 1월 13일 제안서",
+    "expected_doc_ids": [],
+    "check": "set",
+    "limit": 10,
+    "label_basis": "direct source audit / file stat / explicit unsupported-input policy",
+    "scope": "development_extension_not_independent",
+    "before_pass": false,
+    "after_pass": true,
+    "before_ids": [
+      "D-002",
+      "D-001"
+    ],
+    "after_ids": [],
+    "query_plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "제안서"
+        },
+        {
+          "field": "작성일",
+          "op": "gte",
+          "value": "2025-01-13"
+        },
+        {
+          "field": "작성일",
+          "op": "lte",
+          "value": "2025-01-13"
+        },
+        {
+          "field": "거래처",
+          "op": "eq",
+          "value": "청람정밀"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "제안서"
+          ],
+          "text": "제안서",
+          "span": [
+            22,
+            25
+          ]
+        },
+        {
+          "rule": "explicit_date_role",
+          "field": "작성일",
+          "text": "2025년 1월 13일"
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "제안서",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "제안서"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "제안서"
+            ],
+            "text": "제안서",
+            "span": [
+              22,
+              25
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": true,
+      "sort": null,
+      "requires_clarification": false,
+      "content_query": ""
+    },
+    "unresolved_documents": [
+      "D-001",
+      "D-002"
+    ]
+  },
+  {
+    "query_id": "T06",
+    "query": "MES 작성일 2025년 2월 24일 네트워크 구성도",
+    "expected_doc_ids": [
+      "D-007"
+    ],
+    "check": "set",
+    "limit": 10,
+    "label_basis": "direct source audit / file stat / explicit unsupported-input policy",
+    "scope": "development_extension_not_independent",
+    "before_pass": true,
+    "after_pass": true,
+    "before_ids": [
+      "D-007"
+    ],
+    "after_ids": [
+      "D-007"
+    ],
+    "query_plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "네트워크 구성도"
+        },
+        {
+          "field": "대상시스템",
+          "op": "eq",
+          "value": "MES"
+        },
+        {
+          "field": "작성일",
+          "op": "gte",
+          "value": "2025-02-24"
+        },
+        {
+          "field": "작성일",
+          "op": "lte",
+          "value": "2025-02-24"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "네트워크 구성도"
+          ],
+          "text": "네트워크 구성도",
+          "span": [
+            21,
+            29
+          ]
+        },
+        {
+          "field": "대상시스템",
+          "value": "MES",
+          "text": "mes",
+          "span": [
+            0,
+            3
+          ]
+        },
+        {
+          "rule": "explicit_date_role",
+          "field": "작성일",
+          "text": "2025년 2월 24일"
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "MES     네트워크 구성도",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "네트워크 구성도"
+          },
+          {
+            "field": "대상시스템",
+            "op": "eq",
+            "value": "MES"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "네트워크 구성도"
+            ],
+            "text": "네트워크 구성도",
+            "span": [
+              21,
+              29
+            ]
+          },
+          {
+            "field": "대상시스템",
+            "value": "MES",
+            "text": "mes",
+            "span": [
+              0,
+              3
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": true,
+      "sort": null,
+      "requires_clarification": false,
+      "content_query": "MES"
+    },
+    "unresolved_documents": [
+      "D-069"
+    ]
+  },
+  {
+    "query_id": "T11",
+    "query": "청람정밀 2025년 2월 7일 수정된 계약서",
+    "expected_doc_ids": [
+      "D-005"
+    ],
+    "check": "set",
+    "limit": 10,
+    "label_basis": "direct source audit / file stat / explicit unsupported-input policy",
+    "scope": "development_extension_not_independent",
+    "before_pass": false,
+    "after_pass": true,
+    "before_ids": [
+      "D-015",
+      "D-005",
+      "D-016",
+      "D-006",
+      "D-107",
+      "D-108",
+      "D-047",
+      "D-048",
+      "D-079",
+      "D-033"
+    ],
+    "after_ids": [
+      "D-005"
+    ],
+    "query_plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "계약서"
+        },
+        {
+          "field": "파일최종수정일",
+          "op": "gte",
+          "value": "2025-02-06T15:00:00Z"
+        },
+        {
+          "field": "파일최종수정일",
+          "op": "lt",
+          "value": "2025-02-07T15:00:00Z"
+        },
+        {
+          "field": "거래처",
+          "op": "eq",
+          "value": "청람정밀"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "계약서"
+          ],
+          "text": "계약서",
+          "span": [
+            21,
+            24
+          ]
+        },
+        {
+          "rule": "explicit_date_role",
+          "field": "파일최종수정일",
+          "text": "2025년 2월 7일"
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "계약서",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "계약서"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "계약서"
+            ],
+            "text": "계약서",
+            "span": [
+              21,
+              24
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": true,
+      "sort": null,
+      "requires_clarification": false,
+      "content_query": ""
+    },
+    "unresolved_documents": []
+  },
+  {
+    "query_id": "T12",
+    "query": "온라인몰 최신 수정순 제안서",
+    "expected_doc_ids": [
+      "D-075",
+      "D-076"
+    ],
+    "check": "ordered",
+    "limit": 2,
+    "label_basis": "direct source audit / file stat / explicit unsupported-input policy",
+    "scope": "development_extension_not_independent",
+    "before_pass": false,
+    "after_pass": true,
+    "before_ids": [
+      "D-074",
+      "D-075"
+    ],
+    "after_ids": [
+      "D-075",
+      "D-076"
+    ],
+    "query_plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "제안서"
+        },
+        {
+          "field": "대상시스템",
+          "op": "eq",
+          "value": "온라인몰"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "제안서"
+          ],
+          "text": "제안서",
+          "span": [
+            12,
+            15
+          ]
+        },
+        {
+          "field": "대상시스템",
+          "value": "온라인몰",
+          "text": "온라인몰",
+          "span": [
+            0,
+            4
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "온라인몰   제안서",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "제안서"
+          },
+          {
+            "field": "대상시스템",
+            "op": "eq",
+            "value": "온라인몰"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "제안서"
+            ],
+            "text": "제안서",
+            "span": [
+              12,
+              15
+            ]
+          },
+          {
+            "field": "대상시스템",
+            "value": "온라인몰",
+            "text": "온라인몰",
+            "span": [
+              0,
+              4
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": true,
+      "sort": {
+        "field": "파일최종수정일",
+        "direction": "desc",
+        "tie_breakers": [
+          "score_desc",
+          "doc_id_asc"
+        ]
+      },
+      "requires_clarification": false,
+      "content_query": ""
+    },
+    "unresolved_documents": []
+  }
+]

@@ -1,0 +1,2771 @@
+{
+  "meaning": "Post-hoc diagnostic content comparison including rejected responses. Does not repair responses, alter frozen gold, or confer delivery success. Literal control characters may be read for content only and are marked. AI source review, not independent human evaluation.",
+  "models": [
+    {
+      "model": "qwen/qwen3.6-35b-a3b",
+      "strict_json_documents": 20,
+      "shape_schema_documents_including_diagnostic_decode": 20,
+      "frozen_valid_documents": 2,
+      "frozen_metadata_gate_pass": false,
+      "value_only": {
+        "matches": 180,
+        "needed": 190,
+        "filled_scorable": 196,
+        "recall": 0.9473684210526315,
+        "precision": 0.9183673469387755
+      },
+      "summary_content_diagnostic": {
+        "reviewed_documents": 20,
+        "claims": 123,
+        "supported": 114,
+        "unsupported": 5,
+        "uncertain": 4,
+        "supported_fraction": 0.926829268292683,
+        "covered": 33,
+        "expected": 61,
+        "core_fact_recall": 0.5409836065573771
+      },
+      "usage": {
+        "reported_cost_sum": 0.0618591,
+        "cost_missing_responses": 0,
+        "prompt_tokens": 160463,
+        "completion_tokens": 48224,
+        "median_elapsed_ms": 15989.5,
+        "max_elapsed_ms": 19544
+      },
+      "error_counts": {
+        "missing_reference_or_fabricated_quote": 47,
+        "inconsistent_extracted": 5,
+        "inconsistent_null_status": 51,
+        "invalid_value_format": 4,
+        "no_pending_visual_input": 1
+      },
+      "documents": [
+        {
+          "doc_id": "D-005",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 11,
+          "needed": 11,
+          "filled_scorable": 11,
+          "wrong_values": [
+            {
+              "field": "문서일자",
+              "predicted": "2025-02-19",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            },
+            {
+              "field": "작성일",
+              "predicted": "2025-02-19",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            }
+          ],
+          "missing_needed": [],
+          "delivery_errors": [
+            "거래처:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p4",
+            "문서종류:missing_reference_or_fabricated_quote:file_name",
+            "사업명:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p4"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 6,
+          "summary_supported": 5,
+          "summary_unsupported": 0,
+          "summary_uncertain": 1,
+          "core_facts_covered": [
+            "D-005-F3"
+          ],
+          "core_facts_expected": [
+            "D-005-F1",
+            "D-005-F2",
+            "D-005-F3",
+            "D-005-F4"
+          ],
+          "summary_issues": [
+            {
+              "text": "하단 날짜 2025-02-19가 문서일자다",
+              "verdict": "uncertain",
+              "reason": "숫자는 있으나 초안 체결부 날짜의 역할이 미확정이다. 문서일자라고 단정할 근거가 없다.",
+              "evidence": [
+                {
+                  "kind": "block",
+                  "ref": "D-005-fb5c94ebaf39-p28",
+                  "quote": "2025년 2월 19일"
+                }
+              ],
+              "covered_gold_fact_ids": []
+            }
+          ]
+        },
+        {
+          "doc_id": "H-001",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 13,
+          "needed": 13,
+          "filled_scorable": 13,
+          "wrong_values": [],
+          "missing_needed": [],
+          "delivery_errors": [],
+          "summary_reviewed": true,
+          "summary_claims": 6,
+          "summary_supported": 6,
+          "summary_unsupported": 0,
+          "summary_uncertain": 0,
+          "core_facts_covered": [
+            "H-001-F1"
+          ],
+          "core_facts_expected": [
+            "H-001-F1",
+            "H-001-F2",
+            "H-001-F3"
+          ],
+          "summary_issues": []
+        },
+        {
+          "doc_id": "H-002",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 13,
+          "needed": 13,
+          "filled_scorable": 13,
+          "wrong_values": [],
+          "missing_needed": [],
+          "delivery_errors": [
+            "문서종류:missing_reference_or_fabricated_quote:file_name"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 8,
+          "summary_supported": 6,
+          "summary_unsupported": 2,
+          "summary_uncertain": 0,
+          "core_facts_covered": [
+            "H-002-F2"
+          ],
+          "core_facts_expected": [
+            "H-002-F1",
+            "H-002-F2",
+            "H-002-F3"
+          ],
+          "summary_issues": [
+            {
+              "text": "야간 장애 발생 시 45분 이내 대응한다",
+              "verdict": "unsupported",
+              "reason": "원문은 장애 접수 후 45분이다. 발생 시점으로 기준을 바꿨다.",
+              "evidence": [
+                {
+                  "kind": "block",
+                  "ref": "H-002-31b105b7dc17-p12",
+                  "quote": "야간 장애 접수 후 45분 이내에 원격 대응을 시작한다. 현장 출동은 별도 합의한다."
+                }
+              ],
+              "covered_gold_fact_ids": []
+            },
+            {
+              "text": "현장 출동은 제외된다",
+              "verdict": "unsupported",
+              "reason": "원문은 현장 출동을 별도 합의한다고 했으며 무조건 제외로 확정하지 않았다.",
+              "evidence": [
+                {
+                  "kind": "block",
+                  "ref": "H-002-31b105b7dc17-p12",
+                  "quote": "야간 장애 접수 후 45분 이내에 원격 대응을 시작한다. 현장 출동은 별도 합의한다."
+                }
+              ],
+              "covered_gold_fact_ids": []
+            }
+          ]
+        },
+        {
+          "doc_id": "D-044",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 11,
+          "needed": 12,
+          "filled_scorable": 11,
+          "wrong_values": [],
+          "missing_needed": [
+            "상태"
+          ],
+          "delivery_errors": [
+            "거래처:missing_reference_or_fabricated_quote:D-044-review-p1-text3",
+            "문서종류:missing_reference_or_fabricated_quote:file_name",
+            "사업명:missing_reference_or_fabricated_quote:D-044-review-p1-text3",
+            "상태:missing_reference_or_fabricated_quote:file_name",
+            "summary:missing_reference_or_fabricated_quote:D-044-review-p1-text3",
+            "summary:missing_reference_or_fabricated_quote:file_name"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 7,
+          "summary_supported": 5,
+          "summary_unsupported": 1,
+          "summary_uncertain": 1,
+          "core_facts_covered": [
+            "D-044-F2",
+            "D-044-F3"
+          ],
+          "core_facts_expected": [
+            "D-044-F1",
+            "D-044-F2",
+            "D-044-F3"
+          ],
+          "summary_issues": [
+            {
+              "text": "계약 체결이 완료되었다",
+              "verdict": "uncertain",
+              "reason": "계약 문구와 파일명 서명본은 있지만 실제 체결 완료를 검증한 입력은 아니다.",
+              "evidence": [
+                {
+                  "kind": "block",
+                  "ref": "D-044-review-p1-text3",
+                  "quote": "의료법인 새봄의료재단(이하 \"갑\"이라 한다)과 라움정보기술 주식회사(이하 \"을\"이라 한다)은 「PACS 스토리지 증설」(이하 \"본 사업\"이라 한다)에 관하여 다음과 같이 계약을 체결한다."
+                }
+              ],
+              "covered_gold_fact_ids": []
+            },
+            {
+              "text": "따라서 문서상태가 검토 대기다",
+              "verdict": "unsupported",
+              "reason": "실제 서명 검증과 문서의 명시적 상태를 구분해야 한다. 서명본 표기를 검토 대기로 바꿨다.",
+              "evidence": [
+                {
+                  "kind": "source",
+                  "ref": "file_name",
+                  "quote": "PACS 스토리지 증설_계약서(서명본).pdf"
+                }
+              ],
+              "covered_gold_fact_ids": []
+            }
+          ]
+        },
+        {
+          "doc_id": "D-102",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 11,
+          "needed": 12,
+          "filled_scorable": 13,
+          "wrong_values": [
+            {
+              "field": "거래처",
+              "predicted": "라움정보기술 주식회사",
+              "expected": "온새미도시공사",
+              "category": "meaning_or_field_policy"
+            },
+            {
+              "field": "작성일",
+              "predicted": "2025-10-24",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            }
+          ],
+          "missing_needed": [],
+          "delivery_errors": [
+            "거래처:missing_reference_or_fabricated_quote:D-102-review-p1-text3",
+            "사업명:missing_reference_or_fabricated_quote:D-102-review-p1-text3",
+            "상태:missing_reference_or_fabricated_quote:file_name",
+            "작성일:inconsistent_extracted",
+            "summary:missing_reference_or_fabricated_quote:file_name"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 7,
+          "summary_supported": 6,
+          "summary_unsupported": 1,
+          "summary_uncertain": 0,
+          "core_facts_covered": [
+            "D-102-F3"
+          ],
+          "core_facts_expected": [
+            "D-102-F1",
+            "D-102-F2",
+            "D-102-F3"
+          ],
+          "summary_issues": [
+            {
+              "text": "작성일은 2025-10-24이다",
+              "verdict": "unsupported",
+              "reason": "체결부 인쇄 날짜를 명시적 작성일로 승격했다.",
+              "evidence": [
+                {
+                  "kind": "block",
+                  "ref": "D-102-review-p2-text4",
+                  "quote": "2025년 10월 24일"
+                }
+              ],
+              "covered_gold_fact_ids": []
+            }
+          ]
+        },
+        {
+          "doc_id": "D-002",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 8,
+          "needed": 8,
+          "filled_scorable": 11,
+          "wrong_values": [
+            {
+              "field": "사이트",
+              "predicted": "화성 1 공장 전산실",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            },
+            {
+              "field": "사업명",
+              "predicted": "2025 MES 고도화 구축",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            },
+            {
+              "field": "작성일",
+              "predicted": "2025-01-13",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            }
+          ],
+          "missing_needed": [],
+          "delivery_errors": [
+            "거래처:missing_reference_or_fabricated_quote:document.source.file_name",
+            "대상시스템:missing_reference_or_fabricated_quote:document.source.file_name",
+            "문서종류:missing_reference_or_fabricated_quote:document.source.file_name",
+            "사업명:missing_reference_or_fabricated_quote:document.source.file_name",
+            "summary:missing_reference_or_fabricated_quote:D-002-788391c986bb-p1-line1",
+            "summary:missing_reference_or_fabricated_quote:D-002-788391c986bb-p1-line3"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 6,
+          "summary_supported": 6,
+          "summary_unsupported": 0,
+          "summary_uncertain": 0,
+          "core_facts_covered": [
+            "D-002-F3"
+          ],
+          "core_facts_expected": [
+            "D-002-F1",
+            "D-002-F2",
+            "D-002-F3"
+          ],
+          "summary_issues": []
+        },
+        {
+          "doc_id": "H-006",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 9,
+          "needed": 9,
+          "filled_scorable": 10,
+          "wrong_values": [
+            {
+              "field": "작성일",
+              "predicted": "2026-09-02",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            }
+          ],
+          "missing_needed": [],
+          "delivery_errors": [
+            "문서종류:missing_reference_or_fabricated_quote:file_name"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 6,
+          "summary_supported": 6,
+          "summary_unsupported": 0,
+          "summary_uncertain": 0,
+          "core_facts_covered": [
+            "H-006-F2",
+            "H-006-F3"
+          ],
+          "core_facts_expected": [
+            "H-006-F1",
+            "H-006-F2",
+            "H-006-F3"
+          ],
+          "summary_issues": []
+        },
+        {
+          "doc_id": "H-007",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 9,
+          "needed": 9,
+          "filled_scorable": 10,
+          "wrong_values": [
+            {
+              "field": "작성일",
+              "predicted": "2026-09-05",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            }
+          ],
+          "missing_needed": [],
+          "delivery_errors": [],
+          "summary_reviewed": true,
+          "summary_claims": 6,
+          "summary_supported": 6,
+          "summary_unsupported": 0,
+          "summary_uncertain": 0,
+          "core_facts_covered": [
+            "H-007-F1",
+            "H-007-F2",
+            "H-007-F3"
+          ],
+          "core_facts_expected": [
+            "H-007-F1",
+            "H-007-F2",
+            "H-007-F3"
+          ],
+          "summary_issues": []
+        },
+        {
+          "doc_id": "H-016",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 9,
+          "needed": 9,
+          "filled_scorable": 10,
+          "wrong_values": [
+            {
+              "field": "작성일",
+              "predicted": "2026-08-28",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            }
+          ],
+          "missing_needed": [],
+          "delivery_errors": [
+            "summary:missing_reference_or_fabricated_quote:H-016-55fb6cef7fbb-p1-line7"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 7,
+          "summary_supported": 7,
+          "summary_unsupported": 0,
+          "summary_uncertain": 0,
+          "core_facts_covered": [
+            "H-016-F1"
+          ],
+          "core_facts_expected": [
+            "H-016-F1",
+            "H-016-F2",
+            "H-016-F3"
+          ],
+          "summary_issues": []
+        },
+        {
+          "doc_id": "H-011",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 11,
+          "needed": 11,
+          "filled_scorable": 11,
+          "wrong_values": [],
+          "missing_needed": [],
+          "delivery_errors": [
+            "문서종류:missing_reference_or_fabricated_quote:file_name",
+            "summary:missing_reference_or_fabricated_quote:H-011-2cb5fdbf3723-sheet1-r16"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 5,
+          "summary_supported": 5,
+          "summary_unsupported": 0,
+          "summary_uncertain": 0,
+          "core_facts_covered": [
+            "H-011-F2"
+          ],
+          "core_facts_expected": [
+            "H-011-F1",
+            "H-011-F2",
+            "H-011-F3"
+          ],
+          "summary_issues": []
+        },
+        {
+          "doc_id": "H-015",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 11,
+          "needed": 11,
+          "filled_scorable": 11,
+          "wrong_values": [],
+          "missing_needed": [],
+          "delivery_errors": [
+            "문서종류:missing_reference_or_fabricated_quote:file_name",
+            "summary:missing_reference_or_fabricated_quote:file_name"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 5,
+          "summary_supported": 5,
+          "summary_unsupported": 0,
+          "summary_uncertain": 0,
+          "core_facts_covered": [
+            "H-015-F2"
+          ],
+          "core_facts_expected": [
+            "H-015-F1",
+            "H-015-F2",
+            "H-015-F3"
+          ],
+          "summary_issues": []
+        },
+        {
+          "doc_id": "H-020",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 11,
+          "needed": 11,
+          "filled_scorable": 11,
+          "wrong_values": [],
+          "missing_needed": [],
+          "delivery_errors": [
+            "summary:missing_reference_or_fabricated_quote:H-020-review-p1-table1-r2,H-020-review-p1-table1-r3"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 6,
+          "summary_supported": 6,
+          "summary_unsupported": 0,
+          "summary_uncertain": 0,
+          "core_facts_covered": [
+            "H-020-F3"
+          ],
+          "core_facts_expected": [
+            "H-020-F1",
+            "H-020-F2",
+            "H-020-F3"
+          ],
+          "summary_issues": []
+        },
+        {
+          "doc_id": "H-021",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 6,
+          "needed": 7,
+          "filled_scorable": 6,
+          "wrong_values": [],
+          "missing_needed": [
+            "오류코드"
+          ],
+          "delivery_errors": [
+            "VAT:inconsistent_null_status",
+            "견적번호:inconsistent_null_status",
+            "견적유효기간:inconsistent_null_status",
+            "계약번호:inconsistent_null_status",
+            "계약시작일:inconsistent_null_status",
+            "계약유형:inconsistent_null_status",
+            "계약종료일:inconsistent_null_status",
+            "금액:inconsistent_null_status",
+            "로그시작:inconsistent_null_status",
+            "로그종료:inconsistent_null_status",
+            "사업명:inconsistent_null_status",
+            "사이트:inconsistent_null_status",
+            "실행결과:inconsistent_null_status",
+            "오류코드:inconsistent_null_status",
+            "작업명:inconsistent_null_status",
+            "통화:inconsistent_null_status",
+            "표지일:inconsistent_null_status",
+            "summary:missing_reference_or_fabricated_quote:H-021-795c4eb98d79-line1",
+            "summary:missing_reference_or_fabricated_quote:H-021-795c4eb98d79-line1",
+            "summary:missing_reference_or_fabricated_quote:H-021-795c4eb98d79-line1"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 6,
+          "summary_supported": 5,
+          "summary_unsupported": 0,
+          "summary_uncertain": 1,
+          "core_facts_covered": [
+            "H-021-F1",
+            "H-021-F2",
+            "H-021-F3"
+          ],
+          "core_facts_expected": [
+            "H-021-F1",
+            "H-021-F2",
+            "H-021-F3"
+          ],
+          "summary_issues": [
+            {
+              "text": "경고 문제가 해결된 것으로 판단된다",
+              "verdict": "uncertain",
+              "reason": "30분의 관찰 결과만 있어 해결 여부까지 확정할 근거는 부족하다. 완곡한 판단 표현이어도 원문 관찰 범위를 넘어선다.",
+              "evidence": [
+                {
+                  "kind": "block",
+                  "ref": "H-021-795c4eb98d79-line1",
+                  "quote": "MES 센서점검 메모\n거래처: 가온세라믹\n대상 시스템: MES\n문서상태: 최종\n작성일: 2026-09-20\n성형기 4호의 센서 값 고정 현상을 점검했다. 단선 경고 E-SENSOR-17은 케이블 접촉 불량으로 확인했다.\n센서를 재연결한 뒤 30분 관찰에서 같은 경고가 다시 발생하지 않았다."
+                }
+              ],
+              "covered_gold_fact_ids": []
+            }
+          ]
+        },
+        {
+          "doc_id": "H-022",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 6,
+          "needed": 6,
+          "filled_scorable": 6,
+          "wrong_values": [],
+          "missing_needed": [],
+          "delivery_errors": [
+            "VAT:inconsistent_null_status"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 6,
+          "summary_supported": 5,
+          "summary_unsupported": 1,
+          "summary_uncertain": 0,
+          "core_facts_covered": [
+            "H-022-F1",
+            "H-022-F2"
+          ],
+          "core_facts_expected": [
+            "H-022-F1",
+            "H-022-F2",
+            "H-022-F3"
+          ],
+          "summary_issues": [
+            {
+              "text": "메모에는 오류코드 필드가 적용되지 않는다",
+              "verdict": "unsupported",
+              "reason": "공통 지시는 기타 메모에도 오류코드 추출을 적용한다. 이 문서에 값이 없는 것과 적용 제외는 다르다.",
+              "evidence": [
+                {
+                  "kind": "block",
+                  "ref": "H-022-b0c9c673d3b7-line1",
+                  "quote": "WMS 온도알림 회의 메모\n거래처: 누리콜드\n대상 시스템: WMS\n문서상태: 최종\n작성일: 2026-09-21\n냉장구역 알림 수신자를 주간 운영팀과 야간 당직자로 구분하기로 했다.\n경보가 4분 연속 지속될 때만 전화 알림을 보내고 순간 상승은 화면 기록만 남긴다."
+                }
+              ],
+              "covered_gold_fact_ids": []
+            }
+          ]
+        },
+        {
+          "doc_id": "H-023",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 6,
+          "needed": 6,
+          "filled_scorable": 6,
+          "wrong_values": [],
+          "missing_needed": [],
+          "delivery_errors": [
+            "VAT:inconsistent_null_status",
+            "문서종류:inconsistent_extracted",
+            "문서종류:missing_reference_or_fabricated_quote:document.schema_version",
+            "summary:missing_reference_or_fabricated_quote:source_metadata.modified_at_utc"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 6,
+          "summary_supported": 6,
+          "summary_unsupported": 0,
+          "summary_uncertain": 0,
+          "core_facts_covered": [
+            "H-023-F1",
+            "H-023-F2"
+          ],
+          "core_facts_expected": [
+            "H-023-F1",
+            "H-023-F2",
+            "H-023-F3"
+          ],
+          "summary_issues": []
+        },
+        {
+          "doc_id": "H-026",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 7,
+          "needed": 10,
+          "filled_scorable": 10,
+          "wrong_values": [
+            {
+              "field": "로그시작",
+              "predicted": "2026-09-25 09:00:00",
+              "expected": "2026-09-25 09:00",
+              "category": "representation_only"
+            },
+            {
+              "field": "로그종료",
+              "predicted": "2026-09-25 09:04:00",
+              "expected": "2026-09-25 09:04",
+              "category": "representation_only"
+            },
+            {
+              "field": "실행결과",
+              "predicted": "SUCCESS",
+              "expected": "성공",
+              "category": "representation_only"
+            }
+          ],
+          "missing_needed": [],
+          "delivery_errors": [
+            "VAT:inconsistent_null_status",
+            "로그시작:invalid_value_format",
+            "로그종료:invalid_value_format",
+            "문서일자:inconsistent_extracted",
+            "문서종류:missing_reference_or_fabricated_quote:file_name",
+            "오류코드:inconsistent_extracted"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 5,
+          "summary_supported": 5,
+          "summary_unsupported": 0,
+          "summary_uncertain": 0,
+          "core_facts_covered": [
+            "H-026-F1",
+            "H-026-F2"
+          ],
+          "core_facts_expected": [
+            "H-026-F1",
+            "H-026-F2",
+            "H-026-F3"
+          ],
+          "summary_issues": []
+        },
+        {
+          "doc_id": "H-027",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 9,
+          "needed": 10,
+          "filled_scorable": 10,
+          "wrong_values": [
+            {
+              "field": "실행결과",
+              "predicted": "FAILED",
+              "expected": "실패",
+              "category": "representation_only"
+            }
+          ],
+          "missing_needed": [],
+          "delivery_errors": [
+            "VAT:inconsistent_null_status",
+            "문서종류:missing_reference_or_fabricated_quote:document.schema_version"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 6,
+          "summary_supported": 6,
+          "summary_unsupported": 0,
+          "summary_uncertain": 0,
+          "core_facts_covered": [
+            "H-027-F1",
+            "H-027-F2",
+            "H-027-F3"
+          ],
+          "core_facts_expected": [
+            "H-027-F1",
+            "H-027-F2",
+            "H-027-F3"
+          ],
+          "summary_issues": []
+        },
+        {
+          "doc_id": "H-030",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 6,
+          "needed": 9,
+          "filled_scorable": 9,
+          "wrong_values": [
+            {
+              "field": "로그시작",
+              "predicted": "2026-09-29 03:00:00",
+              "expected": "2026-09-29 03:00",
+              "category": "representation_only"
+            },
+            {
+              "field": "로그종료",
+              "predicted": "2026-09-29 03:04:00",
+              "expected": "2026-09-29 03:04",
+              "category": "representation_only"
+            },
+            {
+              "field": "실행결과",
+              "predicted": "SUCCESS",
+              "expected": "성공",
+              "category": "representation_only"
+            }
+          ],
+          "missing_needed": [],
+          "delivery_errors": [
+            "VAT:inconsistent_null_status",
+            "로그시작:invalid_value_format",
+            "로그종료:invalid_value_format",
+            "문서일자:inconsistent_extracted",
+            "문서종류:missing_reference_or_fabricated_quote:input.document.schema_version"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 6,
+          "summary_supported": 6,
+          "summary_unsupported": 0,
+          "summary_uncertain": 0,
+          "core_facts_covered": [
+            "H-030-F1",
+            "H-030-F2",
+            "H-030-F3"
+          ],
+          "core_facts_expected": [
+            "H-030-F1",
+            "H-030-F2",
+            "H-030-F3"
+          ],
+          "summary_issues": []
+        },
+        {
+          "doc_id": "D-007",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 6,
+          "needed": 6,
+          "filled_scorable": 7,
+          "wrong_values": [
+            {
+              "field": "사업명",
+              "predicted": "2025 MES 고도화 구축",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            }
+          ],
+          "missing_needed": [],
+          "delivery_errors": [
+            "VAT:inconsistent_null_status",
+            "거래처:missing_reference_or_fabricated_quote:D-007-869e9805b894-s1-shape17",
+            "견적번호:inconsistent_null_status",
+            "견적유효기간:inconsistent_null_status",
+            "계약번호:inconsistent_null_status",
+            "계약시작일:inconsistent_null_status",
+            "계약유형:inconsistent_null_status",
+            "계약종료일:inconsistent_null_status",
+            "금액:inconsistent_null_status",
+            "대상시스템:missing_reference_or_fabricated_quote:D-007-869e9805b894-s1-shape2",
+            "로그시작:inconsistent_null_status",
+            "로그종료:inconsistent_null_status",
+            "문서일자:missing_reference_or_fabricated_quote:D-007-869e9805b894-s1-shape3",
+            "사업명:missing_reference_or_fabricated_quote:D-007-869e9805b894-s1-shape2",
+            "사이트:missing_reference_or_fabricated_quote:D-007-869e9805b894-s1-shape3",
+            "상태:inconsistent_null_status",
+            "실행결과:inconsistent_null_status",
+            "오류코드:inconsistent_null_status",
+            "작성일:missing_reference_or_fabricated_quote:D-007-869e9805b894-s1-shape3",
+            "작업명:inconsistent_null_status",
+            "통화:inconsistent_null_status",
+            "표지일:missing_reference_or_fabricated_quote:D-007-869e9805b894-s1-shape2",
+            "summary:missing_reference_or_fabricated_quote:D-007-869e9805b894-s1-shape3",
+            "summary:missing_reference_or_fabricated_quote:D-007-869e9805b894-s1-shape17",
+            "summary:missing_reference_or_fabricated_quote:D-007-869e9805b894-s1-shape2"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 9,
+          "summary_supported": 8,
+          "summary_unsupported": 0,
+          "summary_uncertain": 1,
+          "core_facts_covered": [
+            "D-007-F1",
+            "D-007-F2"
+          ],
+          "core_facts_expected": [
+            "D-007-F1",
+            "D-007-F2",
+            "D-007-F3"
+          ],
+          "summary_issues": [
+            {
+              "text": "Internet 연결부 방화벽 관계를 확정한다",
+              "verdict": "uncertain",
+              "reason": "네이티브 입력에는 라벨만 있고 연결 관계는 비전 대기다. 가까운 라벨만으로 연결을 확정할 수 없다.",
+              "evidence": [
+                {
+                  "kind": "block",
+                  "ref": "D-007-869e9805b894-s1-shape4",
+                  "quote": "Internet / 전용회선"
+                },
+                {
+                  "kind": "block",
+                  "ref": "D-007-869e9805b894-s1-shape5",
+                  "quote": "방화벽\nFortiGate 200F × 2 (HA)"
+                }
+              ],
+              "covered_gold_fact_ids": []
+            }
+          ]
+        },
+        {
+          "doc_id": "H-018",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 7,
+          "needed": 7,
+          "filled_scorable": 7,
+          "wrong_values": [],
+          "missing_needed": [],
+          "delivery_errors": [
+            "VAT:inconsistent_null_status",
+            "견적번호:inconsistent_null_status",
+            "견적유효기간:inconsistent_null_status",
+            "계약번호:inconsistent_null_status",
+            "계약시작일:inconsistent_null_status",
+            "계약유형:inconsistent_null_status",
+            "계약종료일:inconsistent_null_status",
+            "금액:inconsistent_null_status",
+            "로그시작:inconsistent_null_status",
+            "로그종료:inconsistent_null_status",
+            "문서종류:missing_reference_or_fabricated_quote:file_name",
+            "실행결과:inconsistent_null_status",
+            "오류코드:inconsistent_null_status",
+            "작업명:inconsistent_null_status",
+            "통화:inconsistent_null_status",
+            "표지일:no_pending_visual_input",
+            "summary:missing_reference_or_fabricated_quote:file_name"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 4,
+          "summary_supported": 4,
+          "summary_unsupported": 0,
+          "summary_uncertain": 0,
+          "core_facts_covered": [],
+          "core_facts_expected": [
+            "H-018-F1",
+            "H-018-F2",
+            "H-018-F3"
+          ],
+          "summary_issues": []
+        }
+      ]
+    },
+    {
+      "model": "qwen/qwen3-vl-30b-a3b-instruct",
+      "strict_json_documents": 19,
+      "shape_schema_documents_including_diagnostic_decode": 20,
+      "frozen_valid_documents": 0,
+      "frozen_metadata_gate_pass": false,
+      "value_only": {
+        "matches": 177,
+        "needed": 190,
+        "filled_scorable": 210,
+        "recall": 0.9315789473684211,
+        "precision": 0.8428571428571429
+      },
+      "summary_content_diagnostic": {
+        "reviewed_documents": 20,
+        "claims": 121,
+        "supported": 111,
+        "unsupported": 6,
+        "uncertain": 4,
+        "supported_fraction": 0.9173553719008265,
+        "covered": 28,
+        "expected": 61,
+        "core_fact_recall": 0.45901639344262296
+      },
+      "usage": {
+        "reported_cost_sum": 0.06844890000000001,
+        "cost_missing_responses": 0,
+        "prompt_tokens": 169358,
+        "completion_tokens": 71742,
+        "median_elapsed_ms": 106884.5,
+        "max_elapsed_ms": 150984
+      },
+      "error_counts": {
+        "inconsistent_extracted": 212,
+        "missing_reference_or_fabricated_quote": 612,
+        "invalid_value_format": 8,
+        "Invalid control character at": 1,
+        "inconsistent_null_status": 15
+      },
+      "documents": [
+        {
+          "doc_id": "D-005",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 11,
+          "needed": 11,
+          "filled_scorable": 12,
+          "wrong_values": [
+            {
+              "field": "문서일자",
+              "predicted": "2025-02-19",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            },
+            {
+              "field": "표지일",
+              "predicted": "2025-02-19",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            },
+            {
+              "field": "작성일",
+              "predicted": "2025-02-19",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            }
+          ],
+          "missing_needed": [],
+          "delivery_errors": [
+            "VAT:inconsistent_extracted",
+            "VAT:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p10",
+            "VAT:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p10",
+            "거래처:inconsistent_extracted",
+            "거래처:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p4",
+            "거래처:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p4",
+            "계약번호:inconsistent_extracted",
+            "계약번호:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p3",
+            "계약번호:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p3",
+            "계약시작일:inconsistent_extracted",
+            "계약시작일:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p8",
+            "계약시작일:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p8",
+            "계약종료일:inconsistent_extracted",
+            "계약종료일:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p8",
+            "계약종료일:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p8",
+            "금액:inconsistent_extracted",
+            "금액:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p10",
+            "금액:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p10",
+            "대상시스템:inconsistent_extracted",
+            "대상시스템:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p4",
+            "대상시스템:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p4",
+            "문서일자:inconsistent_extracted",
+            "문서일자:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p28",
+            "문서일자:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p28",
+            "문서종류:inconsistent_extracted",
+            "문서종류:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p2",
+            "문서종류:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p2",
+            "사업명:inconsistent_extracted",
+            "사업명:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p4",
+            "사업명:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p4",
+            "상태:inconsistent_extracted",
+            "상태:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p1",
+            "상태:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p1",
+            "작성일:inconsistent_extracted",
+            "작성일:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p28",
+            "작성일:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p28",
+            "통화:inconsistent_extracted",
+            "통화:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p10",
+            "통화:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p10",
+            "표지일:inconsistent_extracted",
+            "표지일:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p28",
+            "표지일:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p28",
+            "summary:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p2",
+            "summary:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p1",
+            "summary:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p3",
+            "summary:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p8",
+            "summary:missing_reference_or_fabricated_quote:D-005-fb5c94ebaf39-p10"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 6,
+          "summary_supported": 5,
+          "summary_unsupported": 1,
+          "summary_uncertain": 0,
+          "core_facts_covered": [
+            "D-005-F3"
+          ],
+          "core_facts_expected": [
+            "D-005-F1",
+            "D-005-F2",
+            "D-005-F3",
+            "D-005-F4"
+          ],
+          "summary_issues": [
+            {
+              "text": "작성일은 2025-02-19이다",
+              "verdict": "unsupported",
+              "reason": "원문 하단의 날짜에는 작성일이라는 표기가 없고 초안 날짜의 의미가 미확정이다.",
+              "evidence": [
+                {
+                  "kind": "block",
+                  "ref": "D-005-fb5c94ebaf39-p28",
+                  "quote": "2025년 2월 19일"
+                }
+              ],
+              "covered_gold_fact_ids": []
+            }
+          ]
+        },
+        {
+          "doc_id": "H-001",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 13,
+          "needed": 13,
+          "filled_scorable": 14,
+          "wrong_values": [
+            {
+              "field": "표지일",
+              "predicted": "2026-09-04",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            }
+          ],
+          "missing_needed": [],
+          "delivery_errors": [
+            "VAT:inconsistent_extracted",
+            "VAT:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p10",
+            "VAT:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p10",
+            "거래처:inconsistent_extracted",
+            "거래처:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p3",
+            "거래처:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p3",
+            "계약번호:inconsistent_extracted",
+            "계약번호:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p7",
+            "계약번호:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p7",
+            "계약시작일:inconsistent_extracted",
+            "계약시작일:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p9",
+            "계약시작일:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p9",
+            "계약유형:inconsistent_extracted",
+            "계약유형:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p8",
+            "계약유형:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p8",
+            "계약종료일:inconsistent_extracted",
+            "계약종료일:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p9",
+            "계약종료일:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p9",
+            "금액:inconsistent_extracted",
+            "금액:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p10",
+            "금액:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p10",
+            "대상시스템:inconsistent_extracted",
+            "대상시스템:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p4",
+            "대상시스템:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p4",
+            "문서일자:inconsistent_extracted",
+            "문서일자:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p6",
+            "문서일자:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p6",
+            "문서종류:inconsistent_extracted",
+            "문서종류:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p1",
+            "문서종류:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p1",
+            "상태:inconsistent_extracted",
+            "상태:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p5",
+            "상태:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p5",
+            "작성일:inconsistent_extracted",
+            "작성일:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p6",
+            "작성일:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p6",
+            "통화:inconsistent_extracted",
+            "통화:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p10",
+            "통화:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p10",
+            "표지일:inconsistent_extracted",
+            "표지일:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p6",
+            "표지일:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p6",
+            "summary:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p5",
+            "summary:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p8",
+            "summary:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p4",
+            "summary:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p10",
+            "summary:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p9",
+            "summary:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p7",
+            "summary:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p11",
+            "summary:missing_reference_or_fabricated_quote:H-001-8c8b34a47a6a-p14"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 7,
+          "summary_supported": 7,
+          "summary_unsupported": 0,
+          "summary_uncertain": 0,
+          "core_facts_covered": [
+            "H-001-F3"
+          ],
+          "core_facts_expected": [
+            "H-001-F1",
+            "H-001-F2",
+            "H-001-F3"
+          ],
+          "summary_issues": []
+        },
+        {
+          "doc_id": "H-002",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 13,
+          "needed": 13,
+          "filled_scorable": 13,
+          "wrong_values": [],
+          "missing_needed": [],
+          "delivery_errors": [
+            "VAT:inconsistent_extracted",
+            "VAT:missing_reference_or_fabricated_quote:H-002-31b105b7dc17-p10",
+            "VAT:missing_reference_or_fabricated_quote:H-002-31b105b7dc17-p10",
+            "거래처:inconsistent_extracted",
+            "거래처:missing_reference_or_fabricated_quote:H-002-31b105b7dc17-p3",
+            "거래처:missing_reference_or_fabricated_quote:H-002-31b105b7dc17-p3",
+            "계약번호:inconsistent_extracted",
+            "계약번호:missing_reference_or_fabricated_quote:H-002-31b105b7dc17-p7",
+            "계약번호:missing_reference_or_fabricated_quote:H-002-31b105b7dc17-p7",
+            "계약시작일:inconsistent_extracted",
+            "계약시작일:missing_reference_or_fabricated_quote:H-002-31b105b7dc17-p9",
+            "계약시작일:missing_reference_or_fabricated_quote:H-002-31b105b7dc17-p9",
+            "계약유형:inconsistent_extracted",
+            "계약유형:missing_reference_or_fabricated_quote:H-002-31b105b7dc17-p8",
+            "계약유형:missing_reference_or_fabricated_quote:H-002-31b105b7dc17-p8",
+            "계약종료일:inconsistent_extracted",
+            "계약종료일:missing_reference_or_fabricated_quote:H-002-31b105b7dc17-p9",
+            "계약종료일:missing_reference_or_fabricated_quote:H-002-31b105b7dc17-p9",
+            "금액:inconsistent_extracted",
+            "금액:missing_reference_or_fabricated_quote:H-002-31b105b7dc17-p10",
+            "금액:missing_reference_or_fabricated_quote:H-002-31b105b7dc17-p10",
+            "대상시스템:inconsistent_extracted",
+            "대상시스템:missing_reference_or_fabricated_quote:H-002-31b105b7dc17-p4",
+            "대상시스템:missing_reference_or_fabricated_quote:H-002-31b105b7dc17-p4",
+            "문서일자:inconsistent_extracted",
+            "문서일자:missing_reference_or_fabricated_quote:H-002-31b105b7dc17-p6",
+            "문서일자:missing_reference_or_fabricated_quote:H-002-31b105b7dc17-p6",
+            "문서종류:inconsistent_extracted",
+            "상태:inconsistent_extracted",
+            "상태:missing_reference_or_fabricated_quote:H-002-31b105b7dc17-p5",
+            "상태:missing_reference_or_fabricated_quote:H-002-31b105b7dc17-p5",
+            "작성일:inconsistent_extracted",
+            "작성일:missing_reference_or_fabricated_quote:H-002-31b105b7dc17-p6",
+            "작성일:missing_reference_or_fabricated_quote:H-002-31b105b7dc17-p6",
+            "통화:inconsistent_extracted",
+            "통화:missing_reference_or_fabricated_quote:H-002-31b105b7dc17-p10",
+            "통화:missing_reference_or_fabricated_quote:H-002-31b105b7dc17-p10",
+            "표지일:missing_reference_or_fabricated_quote:H-002-31b105b7dc17-p6",
+            "표지일:missing_reference_or_fabricated_quote:H-002-31b105b7dc17-p1",
+            "summary:missing_reference_or_fabricated_quote:document.type",
+            "summary:missing_reference_or_fabricated_quote:contract_number",
+            "summary:missing_reference_or_fabricated_quote:contract_type",
+            "summary:missing_reference_or_fabricated_quote:contract_start_date",
+            "summary:missing_reference_or_fabricated_quote:amount",
+            "summary:missing_reference_or_fabricated_quote:heading_path"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 9,
+          "summary_supported": 9,
+          "summary_unsupported": 0,
+          "summary_uncertain": 0,
+          "core_facts_covered": [],
+          "core_facts_expected": [
+            "H-002-F1",
+            "H-002-F2",
+            "H-002-F3"
+          ],
+          "summary_issues": []
+        },
+        {
+          "doc_id": "D-044",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 12,
+          "needed": 12,
+          "filled_scorable": 14,
+          "wrong_values": [
+            {
+              "field": "표지일",
+              "predicted": "2025-03-22",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            },
+            {
+              "field": "작성일",
+              "predicted": "2025-03-22",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            }
+          ],
+          "missing_needed": [],
+          "delivery_errors": [
+            "VAT:inconsistent_extracted",
+            "VAT:missing_reference_or_fabricated_quote:D-044-review-p1-text9",
+            "VAT:missing_reference_or_fabricated_quote:D-044-review-p1-text9",
+            "거래처:inconsistent_extracted",
+            "거래처:missing_reference_or_fabricated_quote:D-044-review-p1-text3",
+            "거래처:missing_reference_or_fabricated_quote:D-044-review-p2-table1-r2",
+            "거래처:missing_reference_or_fabricated_quote:D-044-review-p1-text3",
+            "거래처:missing_reference_or_fabricated_quote:D-044-review-p2-table1-r2",
+            "계약번호:inconsistent_extracted",
+            "계약번호:missing_reference_or_fabricated_quote:D-044-review-p1-text2",
+            "계약번호:missing_reference_or_fabricated_quote:D-044-review-p1-text2",
+            "계약시작일:inconsistent_extracted",
+            "계약시작일:missing_reference_or_fabricated_quote:D-044-review-p1-text7",
+            "계약시작일:missing_reference_or_fabricated_quote:D-044-review-p1-text7",
+            "계약종료일:inconsistent_extracted",
+            "계약종료일:missing_reference_or_fabricated_quote:D-044-review-p1-text7",
+            "계약종료일:missing_reference_or_fabricated_quote:D-044-review-p1-text7",
+            "금액:inconsistent_extracted",
+            "금액:missing_reference_or_fabricated_quote:D-044-review-p1-text9",
+            "금액:missing_reference_or_fabricated_quote:D-044-review-p1-text9",
+            "대상시스템:inconsistent_extracted",
+            "대상시스템:missing_reference_or_fabricated_quote:D-044-review-p1-text1",
+            "대상시스템:missing_reference_or_fabricated_quote:D-044-review-p1-text3",
+            "대상시스템:missing_reference_or_fabricated_quote:D-044-review-p1-text1",
+            "대상시스템:missing_reference_or_fabricated_quote:D-044-review-p1-text3",
+            "문서일자:inconsistent_extracted",
+            "문서일자:missing_reference_or_fabricated_quote:D-044-review-p2-text3",
+            "문서일자:missing_reference_or_fabricated_quote:D-044-review-p2-text3",
+            "문서종류:inconsistent_extracted",
+            "문서종류:missing_reference_or_fabricated_quote:D-044-review-p1-text1",
+            "문서종류:missing_reference_or_fabricated_quote:D-044-review-p2-text2",
+            "문서종류:missing_reference_or_fabricated_quote:D-044-review-p1-text1",
+            "문서종류:missing_reference_or_fabricated_quote:D-044-review-p2-text2",
+            "사업명:inconsistent_extracted",
+            "사업명:missing_reference_or_fabricated_quote:D-044-review-p1-text3",
+            "사업명:missing_reference_or_fabricated_quote:D-044-review-p1-text3",
+            "상태:inconsistent_extracted",
+            "작성일:inconsistent_extracted",
+            "작성일:missing_reference_or_fabricated_quote:D-044-review-p2-text3",
+            "작성일:missing_reference_or_fabricated_quote:D-044-review-p2-text3",
+            "통화:inconsistent_extracted",
+            "통화:missing_reference_or_fabricated_quote:D-044-review-p1-text9",
+            "통화:missing_reference_or_fabricated_quote:D-044-review-p1-text9",
+            "표지일:inconsistent_extracted",
+            "표지일:missing_reference_or_fabricated_quote:D-044-review-p2-text3",
+            "표지일:missing_reference_or_fabricated_quote:D-044-review-p2-text3",
+            "summary:missing_reference_or_fabricated_quote:D-044-review-p1-text1",
+            "summary:missing_reference_or_fabricated_quote:D-044-review-p1-text3",
+            "summary:missing_reference_or_fabricated_quote:D-044-review-p1-text2",
+            "summary:missing_reference_or_fabricated_quote:D-044-review-p1-text7",
+            "summary:missing_reference_or_fabricated_quote:D-044-review-p1-text9",
+            "summary:missing_reference_or_fabricated_quote:D-044-review-p2-text3",
+            "summary:missing_reference_or_fabricated_quote:D-044-review-p2-text2"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 8,
+          "summary_supported": 5,
+          "summary_unsupported": 2,
+          "summary_uncertain": 1,
+          "core_facts_covered": [
+            "D-044-F2",
+            "D-044-F3"
+          ],
+          "core_facts_expected": [
+            "D-044-F1",
+            "D-044-F2",
+            "D-044-F3"
+          ],
+          "summary_issues": [
+            {
+              "text": "계약 체결이 완료되었다",
+              "verdict": "uncertain",
+              "reason": "계약 문구와 파일명 서명본은 있지만 실제 체결 완료를 검증한 입력은 아니다.",
+              "evidence": [
+                {
+                  "kind": "block",
+                  "ref": "D-044-review-p1-text3",
+                  "quote": "의료법인 새봄의료재단(이하 \"갑\"이라 한다)과 라움정보기술 주식회사(이하 \"을\"이라 한다)은 「PACS 스토리지 증설」(이하 \"본 사업\"이라 한다)에 관하여 다음과 같이 계약을 체결한다."
+                }
+              ],
+              "covered_gold_fact_ids": []
+            },
+            {
+              "text": "양 당사자가 실제 서명 날인을 완료했다",
+              "verdict": "unsupported",
+              "reason": "기명날인 후 보관한다는 조항이지 실제 서명 완료를 확인한 기록은 아니다.",
+              "evidence": [
+                {
+                  "kind": "block",
+                  "ref": "D-044-review-p2-text2",
+                  "quote": "본 계약의 성립을 증명하기 위하여 계약서 2부를 작성하여 갑과 을이 기명날인한 후 각 1부씩 보관한다."
+                }
+              ],
+              "covered_gold_fact_ids": []
+            },
+            {
+              "text": "서명된 계약서 두 부를 당사자가 각각 보관 중이다",
+              "verdict": "unsupported",
+              "reason": "보관 의무를 현재 이행된 사실로 바꿨다.",
+              "evidence": [
+                {
+                  "kind": "block",
+                  "ref": "D-044-review-p2-text2",
+                  "quote": "본 계약의 성립을 증명하기 위하여 계약서 2부를 작성하여 갑과 을이 기명날인한 후 각 1부씩 보관한다."
+                }
+              ],
+              "covered_gold_fact_ids": []
+            }
+          ]
+        },
+        {
+          "doc_id": "D-102",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 12,
+          "needed": 12,
+          "filled_scorable": 14,
+          "wrong_values": [
+            {
+              "field": "표지일",
+              "predicted": "2025-10-24",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            },
+            {
+              "field": "작성일",
+              "predicted": "2025-10-24",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            }
+          ],
+          "missing_needed": [],
+          "delivery_errors": [
+            "VAT:inconsistent_extracted",
+            "VAT:missing_reference_or_fabricated_quote:D-102-review-p1-text9",
+            "VAT:missing_reference_or_fabricated_quote:D-102-review-p1-text9",
+            "거래처:inconsistent_extracted",
+            "거래처:missing_reference_or_fabricated_quote:D-102-review-p1-text3",
+            "거래처:missing_reference_or_fabricated_quote:D-102-review-p2-table1-r2",
+            "거래처:missing_reference_or_fabricated_quote:D-102-review-p1-text3",
+            "거래처:missing_reference_or_fabricated_quote:D-102-review-p2-table1-r2",
+            "계약번호:inconsistent_extracted",
+            "계약번호:missing_reference_or_fabricated_quote:D-102-review-p1-text2",
+            "계약번호:missing_reference_or_fabricated_quote:D-102-review-p1-text2",
+            "계약시작일:inconsistent_extracted",
+            "계약시작일:missing_reference_or_fabricated_quote:D-102-review-p1-text7",
+            "계약시작일:missing_reference_or_fabricated_quote:D-102-review-p1-text7",
+            "계약종료일:inconsistent_extracted",
+            "계약종료일:missing_reference_or_fabricated_quote:D-102-review-p1-text7",
+            "계약종료일:missing_reference_or_fabricated_quote:D-102-review-p1-text7",
+            "금액:inconsistent_extracted",
+            "금액:missing_reference_or_fabricated_quote:D-102-review-p1-text9",
+            "금액:missing_reference_or_fabricated_quote:D-102-review-p1-text9",
+            "대상시스템:inconsistent_extracted",
+            "대상시스템:missing_reference_or_fabricated_quote:D-102-review-p1-text3",
+            "대상시스템:missing_reference_or_fabricated_quote:D-102-review-p1-text3",
+            "문서일자:inconsistent_extracted",
+            "문서일자:missing_reference_or_fabricated_quote:D-102-review-p2-text4",
+            "문서일자:missing_reference_or_fabricated_quote:D-102-review-p2-text4",
+            "문서종류:inconsistent_extracted",
+            "문서종류:missing_reference_or_fabricated_quote:D-102-review-p1-text1",
+            "문서종류:missing_reference_or_fabricated_quote:D-102-review-p1-text1",
+            "사업명:inconsistent_extracted",
+            "사업명:missing_reference_or_fabricated_quote:D-102-review-p1-text3",
+            "사업명:missing_reference_or_fabricated_quote:D-102-review-p1-text3",
+            "상태:inconsistent_extracted",
+            "작성일:inconsistent_extracted",
+            "작성일:missing_reference_or_fabricated_quote:D-102-review-p2-text4",
+            "작성일:missing_reference_or_fabricated_quote:D-102-review-p2-text4",
+            "통화:inconsistent_extracted",
+            "통화:missing_reference_or_fabricated_quote:D-102-review-p1-text9",
+            "통화:missing_reference_or_fabricated_quote:D-102-review-p1-text9",
+            "표지일:inconsistent_extracted",
+            "표지일:missing_reference_or_fabricated_quote:D-102-review-p2-text4",
+            "표지일:missing_reference_or_fabricated_quote:D-102-review-p2-text4",
+            "summary:missing_reference_or_fabricated_quote:D-102-review-p1-text1",
+            "summary:missing_reference_or_fabricated_quote:D-102-review-p1-text2",
+            "summary:missing_reference_or_fabricated_quote:D-102-review-p1-text3",
+            "summary:missing_reference_or_fabricated_quote:D-102-review-p1-text9",
+            "summary:missing_reference_or_fabricated_quote:D-102-review-p1-text7",
+            "summary:missing_reference_or_fabricated_quote:D-102-review-p2-text4"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 6,
+          "summary_supported": 6,
+          "summary_unsupported": 0,
+          "summary_uncertain": 0,
+          "core_facts_covered": [
+            "D-102-F3"
+          ],
+          "core_facts_expected": [
+            "D-102-F1",
+            "D-102-F2",
+            "D-102-F3"
+          ],
+          "summary_issues": []
+        },
+        {
+          "doc_id": "D-002",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 8,
+          "needed": 8,
+          "filled_scorable": 14,
+          "wrong_values": [
+            {
+              "field": "상태",
+              "predicted": "초안",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            },
+            {
+              "field": "사이트",
+              "predicted": "화성 1 공장 전산실",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            },
+            {
+              "field": "로그시작",
+              "predicted": "2025-03-01",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            },
+            {
+              "field": "로그종료",
+              "predicted": "2025-08-31",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            },
+            {
+              "field": "사업명",
+              "predicted": "2025 MES 고도화 구축",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            },
+            {
+              "field": "작성일",
+              "predicted": "2025-01-13",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            }
+          ],
+          "missing_needed": [],
+          "delivery_errors": [
+            "VAT:inconsistent_extracted",
+            "VAT:missing_reference_or_fabricated_quote:D-002-788391c986bb-p8-line2",
+            "VAT:missing_reference_or_fabricated_quote:D-002-788391c986bb-p8-line2",
+            "거래처:inconsistent_extracted",
+            "거래처:missing_reference_or_fabricated_quote:D-002-788391c986bb-p1-line3",
+            "거래처:missing_reference_or_fabricated_quote:D-002-788391c986bb-p1-line3",
+            "금액:inconsistent_extracted",
+            "금액:missing_reference_or_fabricated_quote:D-002-788391c986bb-p8-line2",
+            "금액:missing_reference_or_fabricated_quote:D-002-788391c986bb-p8-line2",
+            "대상시스템:inconsistent_extracted",
+            "대상시스템:missing_reference_or_fabricated_quote:D-002-788391c986bb-p1-line1",
+            "대상시스템:missing_reference_or_fabricated_quote:D-002-788391c986bb-p1-line1",
+            "로그시작:inconsistent_extracted",
+            "로그시작:invalid_value_format",
+            "로그시작:missing_reference_or_fabricated_quote:D-002-788391c986bb-p6-line2",
+            "로그시작:missing_reference_or_fabricated_quote:D-002-788391c986bb-p6-line2",
+            "로그종료:inconsistent_extracted",
+            "로그종료:invalid_value_format",
+            "로그종료:missing_reference_or_fabricated_quote:D-002-788391c986bb-p6-line2",
+            "로그종료:missing_reference_or_fabricated_quote:D-002-788391c986bb-p6-line2",
+            "문서일자:inconsistent_extracted",
+            "문서일자:missing_reference_or_fabricated_quote:D-002-788391c986bb-p1-line4",
+            "문서일자:missing_reference_or_fabricated_quote:D-002-788391c986bb-p1-line4",
+            "문서종류:inconsistent_extracted",
+            "문서종류:missing_reference_or_fabricated_quote:D-002-788391c986bb-p1-line2",
+            "문서종류:missing_reference_or_fabricated_quote:D-002-788391c986bb-p1-line2",
+            "사업명:inconsistent_extracted",
+            "사업명:missing_reference_or_fabricated_quote:D-002-788391c986bb-p1-line1",
+            "사업명:missing_reference_or_fabricated_quote:D-002-788391c986bb-p1-line1",
+            "사이트:inconsistent_extracted",
+            "사이트:missing_reference_or_fabricated_quote:D-002-788391c986bb-p5-line2",
+            "사이트:missing_reference_or_fabricated_quote:D-002-788391c986bb-p5-line2",
+            "상태:inconsistent_extracted",
+            "상태:missing_reference_or_fabricated_quote:D-002-788391c986bb-p1-line2",
+            "상태:missing_reference_or_fabricated_quote:D-002-788391c986bb-p1-line2",
+            "작성일:inconsistent_extracted",
+            "작성일:missing_reference_or_fabricated_quote:D-002-788391c986bb-p1-line4",
+            "작성일:missing_reference_or_fabricated_quote:D-002-788391c986bb-p1-line4",
+            "통화:inconsistent_extracted",
+            "통화:missing_reference_or_fabricated_quote:D-002-788391c986bb-p8-line2",
+            "통화:missing_reference_or_fabricated_quote:D-002-788391c986bb-p8-line2",
+            "표지일:inconsistent_extracted",
+            "표지일:missing_reference_or_fabricated_quote:D-002-788391c986bb-p1-line4",
+            "표지일:missing_reference_or_fabricated_quote:D-002-788391c986bb-p1-line4",
+            "summary:missing_reference_or_fabricated_quote:D-002-788391c986bb-p1-line2",
+            "summary:missing_reference_or_fabricated_quote:D-002-788391c986bb-p1-line1",
+            "summary:missing_reference_or_fabricated_quote:D-002-788391c986bb-p8-line2",
+            "summary:missing_reference_or_fabricated_quote:D-002-788391c986bb-p5-line2",
+            "summary:missing_reference_or_fabricated_quote:D-002-788391c986bb-p6-line2"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 5,
+          "summary_supported": 4,
+          "summary_unsupported": 1,
+          "summary_uncertain": 0,
+          "core_facts_covered": [
+            "D-002-F3"
+          ],
+          "core_facts_expected": [
+            "D-002-F1",
+            "D-002-F2",
+            "D-002-F3"
+          ],
+          "summary_issues": [
+            {
+              "text": "2025-01-13에 작성되었다",
+              "verdict": "unsupported",
+              "reason": "표지 날짜일 뿐 작성일이라고 명시되지 않았다.",
+              "evidence": [
+                {
+                  "kind": "block",
+                  "ref": "D-002-788391c986bb-p1-line4",
+                  "quote": "2025. 01. 13. | 라움정보기술 주식회사"
+                }
+              ],
+              "covered_gold_fact_ids": []
+            }
+          ]
+        },
+        {
+          "doc_id": "H-006",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 9,
+          "needed": 9,
+          "filled_scorable": 10,
+          "wrong_values": [
+            {
+              "field": "작성일",
+              "predicted": "2026-09-02",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            }
+          ],
+          "missing_needed": [],
+          "delivery_errors": [
+            "VAT:inconsistent_extracted",
+            "VAT:missing_reference_or_fabricated_quote:block_id:H-006-7222ba7f94b2-s1-shape2",
+            "VAT:missing_reference_or_fabricated_quote:block_id:H-006-7222ba7f94b2-s1-shape2",
+            "거래처:inconsistent_extracted",
+            "거래처:missing_reference_or_fabricated_quote:block_id:H-006-7222ba7f94b2-s1-shape2",
+            "거래처:missing_reference_or_fabricated_quote:block_id:H-006-7222ba7f94b2-s1-shape2",
+            "금액:inconsistent_extracted",
+            "금액:missing_reference_or_fabricated_quote:block_id:H-006-7222ba7f94b2-s1-shape2",
+            "금액:missing_reference_or_fabricated_quote:block_id:H-006-7222ba7f94b2-s1-shape2",
+            "대상시스템:inconsistent_extracted",
+            "대상시스템:missing_reference_or_fabricated_quote:block_id:H-006-7222ba7f94b2-s1-shape2",
+            "대상시스템:missing_reference_or_fabricated_quote:block_id:H-006-7222ba7f94b2-s1-shape2",
+            "문서일자:inconsistent_extracted",
+            "문서일자:missing_reference_or_fabricated_quote:block_id:H-006-7222ba7f94b2-s1-shape2",
+            "문서일자:missing_reference_or_fabricated_quote:block_id:H-006-7222ba7f94b2-s1-shape2",
+            "문서종류:inconsistent_extracted",
+            "문서종류:missing_reference_or_fabricated_quote:block_id:H-006-7222ba7f94b2-s1-shape4",
+            "문서종류:missing_reference_or_fabricated_quote:block_id:H-006-7222ba7f94b2-s1-shape4",
+            "상태:inconsistent_extracted",
+            "상태:missing_reference_or_fabricated_quote:block_id:H-006-7222ba7f94b2-s1-shape2",
+            "상태:missing_reference_or_fabricated_quote:block_id:H-006-7222ba7f94b2-s1-shape2",
+            "작성일:inconsistent_extracted",
+            "작성일:missing_reference_or_fabricated_quote:block_id:H-006-7222ba7f94b2-s1-shape2",
+            "작성일:missing_reference_or_fabricated_quote:block_id:H-006-7222ba7f94b2-s1-shape2",
+            "통화:inconsistent_extracted",
+            "통화:missing_reference_or_fabricated_quote:block_id:H-006-7222ba7f94b2-s1-shape2",
+            "통화:missing_reference_or_fabricated_quote:block_id:H-006-7222ba7f94b2-s1-shape2",
+            "표지일:inconsistent_extracted",
+            "표지일:missing_reference_or_fabricated_quote:block_id:H-006-7222ba7f94b2-s1-shape2",
+            "표지일:missing_reference_or_fabricated_quote:block_id:H-006-7222ba7f94b2-s1-shape2",
+            "summary:missing_reference_or_fabricated_quote:block_id:H-006-7222ba7f94b2-s1-shape2",
+            "summary:missing_reference_or_fabricated_quote:block_id:H-006-7222ba7f94b2-s1-shape2",
+            "summary:missing_reference_or_fabricated_quote:block_id:H-006-7222ba7f94b2-s1-shape3"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 3,
+          "summary_supported": 3,
+          "summary_unsupported": 0,
+          "summary_uncertain": 0,
+          "core_facts_covered": [],
+          "core_facts_expected": [
+            "H-006-F1",
+            "H-006-F2",
+            "H-006-F3"
+          ],
+          "summary_issues": []
+        },
+        {
+          "doc_id": "H-007",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 8,
+          "needed": 9,
+          "filled_scorable": 9,
+          "wrong_values": [
+            {
+              "field": "작성일",
+              "predicted": "2026-09-05",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            }
+          ],
+          "missing_needed": [
+            "문서일자"
+          ],
+          "delivery_errors": [
+            "VAT:inconsistent_extracted",
+            "VAT:missing_reference_or_fabricated_quote:block_id:H-007-4e24175434bc-s1-shape2",
+            "VAT:missing_reference_or_fabricated_quote:block_id:H-007-4e24175434bc-s1-shape2",
+            "거래처:inconsistent_extracted",
+            "거래처:missing_reference_or_fabricated_quote:block_id:H-007-4e24175434bc-s1-shape2",
+            "거래처:missing_reference_or_fabricated_quote:block_id:H-007-4e24175434bc-s1-shape2",
+            "금액:inconsistent_extracted",
+            "금액:missing_reference_or_fabricated_quote:block_id:H-007-4e24175434bc-s1-shape2",
+            "금액:missing_reference_or_fabricated_quote:block_id:H-007-4e24175434bc-s1-shape2",
+            "대상시스템:inconsistent_extracted",
+            "대상시스템:missing_reference_or_fabricated_quote:block_id:H-007-4e24175434bc-s1-shape2",
+            "대상시스템:missing_reference_or_fabricated_quote:block_id:H-007-4e24175434bc-s1-shape2",
+            "문서종류:inconsistent_extracted",
+            "문서종류:missing_reference_or_fabricated_quote:block_id:H-007-4e24175434bc-s1-shape4",
+            "문서종류:missing_reference_or_fabricated_quote:block_id:H-007-4e24175434bc-s1-shape4",
+            "상태:inconsistent_extracted",
+            "상태:missing_reference_or_fabricated_quote:block_id:H-007-4e24175434bc-s1-shape2",
+            "상태:missing_reference_or_fabricated_quote:block_id:H-007-4e24175434bc-s1-shape2",
+            "작성일:inconsistent_extracted",
+            "작성일:missing_reference_or_fabricated_quote:block_id:H-007-4e24175434bc-s1-shape2",
+            "작성일:missing_reference_or_fabricated_quote:block_id:H-007-4e24175434bc-s1-shape2",
+            "통화:inconsistent_extracted",
+            "통화:missing_reference_or_fabricated_quote:block_id:H-007-4e24175434bc-s1-shape2",
+            "통화:missing_reference_or_fabricated_quote:block_id:H-007-4e24175434bc-s1-shape2",
+            "표지일:inconsistent_extracted",
+            "표지일:missing_reference_or_fabricated_quote:block_id:H-007-4e24175434bc-s1-shape2",
+            "표지일:missing_reference_or_fabricated_quote:block_id:H-007-4e24175434bc-s1-shape2",
+            "summary:missing_reference_or_fabricated_quote:block_id:H-007-4e24175434bc-s1-shape4",
+            "summary:missing_reference_or_fabricated_quote:block_id:H-007-4e24175434bc-s1-shape2",
+            "summary:missing_reference_or_fabricated_quote:block_id:H-007-4e24175434bc-s1-shape2"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 4,
+          "summary_supported": 4,
+          "summary_unsupported": 0,
+          "summary_uncertain": 0,
+          "core_facts_covered": [],
+          "core_facts_expected": [
+            "H-007-F1",
+            "H-007-F2",
+            "H-007-F3"
+          ],
+          "summary_issues": []
+        },
+        {
+          "doc_id": "H-016",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 9,
+          "needed": 9,
+          "filled_scorable": 10,
+          "wrong_values": [
+            {
+              "field": "작성일",
+              "predicted": "2026-08-28",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            }
+          ],
+          "missing_needed": [],
+          "delivery_errors": [
+            "VAT:inconsistent_extracted",
+            "VAT:missing_reference_or_fabricated_quote:H-016-55fb6cef7fbb-p1-line6",
+            "VAT:missing_reference_or_fabricated_quote:H-016-55fb6cef7fbb-p1-line6",
+            "거래처:inconsistent_extracted",
+            "거래처:missing_reference_or_fabricated_quote:H-016-55fb6cef7fbb-p1-line2",
+            "거래처:missing_reference_or_fabricated_quote:H-016-55fb6cef7fbb-p1-line2",
+            "금액:inconsistent_extracted",
+            "금액:missing_reference_or_fabricated_quote:H-016-55fb6cef7fbb-p1-line6",
+            "금액:missing_reference_or_fabricated_quote:H-016-55fb6cef7fbb-p1-line6",
+            "대상시스템:inconsistent_extracted",
+            "대상시스템:missing_reference_or_fabricated_quote:H-016-55fb6cef7fbb-p1-line3",
+            "대상시스템:missing_reference_or_fabricated_quote:H-016-55fb6cef7fbb-p1-line3",
+            "문서일자:inconsistent_extracted",
+            "문서일자:missing_reference_or_fabricated_quote:H-016-55fb6cef7fbb-p1-line5",
+            "문서일자:missing_reference_or_fabricated_quote:H-016-55fb6cef7fbb-p1-line5",
+            "문서종류:inconsistent_extracted",
+            "문서종류:missing_reference_or_fabricated_quote:H-016-55fb6cef7fbb-p1-line1",
+            "문서종류:missing_reference_or_fabricated_quote:H-016-55fb6cef7fbb-p1-line1",
+            "상태:inconsistent_extracted",
+            "상태:missing_reference_or_fabricated_quote:H-016-55fb6cef7fbb-p1-line4",
+            "상태:missing_reference_or_fabricated_quote:H-016-55fb6cef7fbb-p1-line4",
+            "작성일:inconsistent_extracted",
+            "작성일:missing_reference_or_fabricated_quote:H-016-55fb6cef7fbb-p1-line5",
+            "작성일:missing_reference_or_fabricated_quote:H-016-55fb6cef7fbb-p1-line5",
+            "통화:inconsistent_extracted",
+            "통화:missing_reference_or_fabricated_quote:H-016-55fb6cef7fbb-p1-line6",
+            "통화:missing_reference_or_fabricated_quote:H-016-55fb6cef7fbb-p1-line6",
+            "표지일:inconsistent_extracted",
+            "표지일:missing_reference_or_fabricated_quote:H-016-55fb6cef7fbb-p1-line5",
+            "표지일:missing_reference_or_fabricated_quote:H-016-55fb6cef7fbb-p1-line5",
+            "summary:missing_reference_or_fabricated_quote:H-016-55fb6cef7fbb-p1-line1",
+            "summary:missing_reference_or_fabricated_quote:H-016-55fb6cef7fbb-p1-line6",
+            "summary:missing_reference_or_fabricated_quote:H-016-55fb6cef7fbb-p1-line7"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 5,
+          "summary_supported": 5,
+          "summary_unsupported": 0,
+          "summary_uncertain": 0,
+          "core_facts_covered": [
+            "H-016-F3"
+          ],
+          "core_facts_expected": [
+            "H-016-F1",
+            "H-016-F2",
+            "H-016-F3"
+          ],
+          "summary_issues": []
+        },
+        {
+          "doc_id": "H-011",
+          "strict_json": false,
+          "diagnostic_relaxed_control_characters": true,
+          "value_matches": 11,
+          "needed": 11,
+          "filled_scorable": 12,
+          "wrong_values": [
+            {
+              "field": "표지일",
+              "predicted": "2026-09-13",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            }
+          ],
+          "missing_needed": [],
+          "delivery_errors": [
+            "invalid_json:Invalid control character at: line 20 column 24 (char 371)",
+            "VAT:inconsistent_extracted",
+            "VAT:missing_reference_or_fabricated_quote:source",
+            "VAT:missing_reference_or_fabricated_quote:source",
+            "거래처:inconsistent_extracted",
+            "거래처:missing_reference_or_fabricated_quote:source",
+            "거래처:missing_reference_or_fabricated_quote:source",
+            "견적번호:inconsistent_extracted",
+            "견적번호:missing_reference_or_fabricated_quote:source",
+            "견적번호:missing_reference_or_fabricated_quote:source",
+            "견적유효기간:inconsistent_extracted",
+            "견적유효기간:missing_reference_or_fabricated_quote:source",
+            "견적유효기간:missing_reference_or_fabricated_quote:source",
+            "금액:inconsistent_extracted",
+            "금액:missing_reference_or_fabricated_quote:source",
+            "금액:missing_reference_or_fabricated_quote:source",
+            "대상시스템:inconsistent_extracted",
+            "대상시스템:missing_reference_or_fabricated_quote:source",
+            "대상시스템:missing_reference_or_fabricated_quote:source",
+            "문서일자:inconsistent_extracted",
+            "문서일자:missing_reference_or_fabricated_quote:source",
+            "문서일자:missing_reference_or_fabricated_quote:source",
+            "문서종류:inconsistent_extracted",
+            "문서종류:missing_reference_or_fabricated_quote:source",
+            "문서종류:missing_reference_or_fabricated_quote:source",
+            "상태:inconsistent_extracted",
+            "상태:missing_reference_or_fabricated_quote:source",
+            "상태:missing_reference_or_fabricated_quote:source",
+            "작성일:inconsistent_extracted",
+            "작성일:missing_reference_or_fabricated_quote:source",
+            "작성일:missing_reference_or_fabricated_quote:source",
+            "통화:inconsistent_extracted",
+            "통화:missing_reference_or_fabricated_quote:source",
+            "통화:missing_reference_or_fabricated_quote:source",
+            "표지일:inconsistent_extracted",
+            "표지일:missing_reference_or_fabricated_quote:source",
+            "표지일:missing_reference_or_fabricated_quote:source",
+            "summary:missing_reference_or_fabricated_quote:source",
+            "summary:missing_reference_or_fabricated_quote:source",
+            "summary:missing_reference_or_fabricated_quote:source",
+            "summary:missing_reference_or_fabricated_quote:source",
+            "summary:missing_reference_or_fabricated_quote:source",
+            "summary:missing_reference_or_fabricated_quote:source",
+            "summary:missing_reference_or_fabricated_quote:source",
+            "summary:missing_reference_or_fabricated_quote:source",
+            "summary:missing_reference_or_fabricated_quote:source"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 6,
+          "summary_supported": 6,
+          "summary_unsupported": 0,
+          "summary_uncertain": 0,
+          "core_facts_covered": [
+            "H-011-F2"
+          ],
+          "core_facts_expected": [
+            "H-011-F1",
+            "H-011-F2",
+            "H-011-F3"
+          ],
+          "summary_issues": []
+        },
+        {
+          "doc_id": "H-015",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 11,
+          "needed": 11,
+          "filled_scorable": 11,
+          "wrong_values": [],
+          "missing_needed": [],
+          "delivery_errors": [
+            "VAT:inconsistent_extracted",
+            "VAT:missing_reference_or_fabricated_quote:H-015-c82879721c48-sheet1-r12",
+            "VAT:missing_reference_or_fabricated_quote:H-015-c82879721c48-sheet1-r12",
+            "거래처:inconsistent_extracted",
+            "거래처:missing_reference_or_fabricated_quote:H-015-c82879721c48-sheet1-r4",
+            "거래처:missing_reference_or_fabricated_quote:H-015-c82879721c48-sheet1-r4",
+            "견적번호:inconsistent_extracted",
+            "견적번호:missing_reference_or_fabricated_quote:H-015-c82879721c48-sheet1-r8",
+            "견적번호:missing_reference_or_fabricated_quote:H-015-c82879721c48-sheet1-r8",
+            "견적유효기간:inconsistent_extracted",
+            "견적유효기간:missing_reference_or_fabricated_quote:H-015-c82879721c48-sheet1-r9",
+            "견적유효기간:missing_reference_or_fabricated_quote:H-015-c82879721c48-sheet1-r9",
+            "금액:inconsistent_extracted",
+            "금액:missing_reference_or_fabricated_quote:H-015-c82879721c48-sheet1-r10",
+            "금액:missing_reference_or_fabricated_quote:H-015-c82879721c48-sheet1-r10",
+            "대상시스템:inconsistent_extracted",
+            "대상시스템:missing_reference_or_fabricated_quote:H-015-c82879721c48-sheet1-r5",
+            "대상시스템:missing_reference_or_fabricated_quote:H-015-c82879721c48-sheet1-r5",
+            "문서일자:inconsistent_extracted",
+            "문서일자:missing_reference_or_fabricated_quote:H-015-c82879721c48-sheet1-r7",
+            "문서일자:missing_reference_or_fabricated_quote:H-015-c82879721c48-sheet1-r7",
+            "문서종류:inconsistent_extracted",
+            "문서종류:missing_reference_or_fabricated_quote:H-015-c82879721c48-sheet1-r2",
+            "문서종류:missing_reference_or_fabricated_quote:H-015-c82879721c48-sheet1-r2",
+            "상태:inconsistent_extracted",
+            "상태:missing_reference_or_fabricated_quote:H-015-c82879721c48-sheet1-r6",
+            "상태:missing_reference_or_fabricated_quote:H-015-c82879721c48-sheet1-r6",
+            "작성일:inconsistent_extracted",
+            "작성일:missing_reference_or_fabricated_quote:H-015-c82879721c48-sheet1-r7",
+            "작성일:missing_reference_or_fabricated_quote:H-015-c82879721c48-sheet1-r7",
+            "통화:inconsistent_extracted",
+            "통화:missing_reference_or_fabricated_quote:H-015-c82879721c48-sheet1-r11",
+            "통화:missing_reference_or_fabricated_quote:H-015-c82879721c48-sheet1-r11",
+            "summary:missing_reference_or_fabricated_quote:H-015-c82879721c48-sheet1-r2",
+            "summary:missing_reference_or_fabricated_quote:H-015-c82879721c48-sheet1-r10",
+            "summary:missing_reference_or_fabricated_quote:H-015-c82879721c48-sheet1-r11",
+            "summary:missing_reference_or_fabricated_quote:H-015-c82879721c48-sheet1-r12",
+            "summary:missing_reference_or_fabricated_quote:H-015-c82879721c48-sheet1-r8",
+            "summary:missing_reference_or_fabricated_quote:H-015-c82879721c48-sheet1-r9",
+            "summary:missing_reference_or_fabricated_quote:H-015-c82879721c48-sheet1-r5"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 5,
+          "summary_supported": 5,
+          "summary_unsupported": 0,
+          "summary_uncertain": 0,
+          "core_facts_covered": [
+            "H-015-F2"
+          ],
+          "core_facts_expected": [
+            "H-015-F1",
+            "H-015-F2",
+            "H-015-F3"
+          ],
+          "summary_issues": []
+        },
+        {
+          "doc_id": "H-020",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 11,
+          "needed": 11,
+          "filled_scorable": 12,
+          "wrong_values": [
+            {
+              "field": "표지일",
+              "predicted": "2026-09-18",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            }
+          ],
+          "missing_needed": [],
+          "delivery_errors": [
+            "VAT:inconsistent_extracted",
+            "VAT:missing_reference_or_fabricated_quote:H-020-review-p1-text8",
+            "VAT:missing_reference_or_fabricated_quote:H-020-review-p1-text8",
+            "거래처:inconsistent_extracted",
+            "거래처:missing_reference_or_fabricated_quote:H-020-review-p1-text2",
+            "거래처:missing_reference_or_fabricated_quote:H-020-review-p1-text2",
+            "견적번호:inconsistent_extracted",
+            "견적번호:missing_reference_or_fabricated_quote:H-020-review-p1-text6",
+            "견적번호:missing_reference_or_fabricated_quote:H-020-review-p1-text6",
+            "견적유효기간:inconsistent_extracted",
+            "견적유효기간:missing_reference_or_fabricated_quote:H-020-review-p1-text7",
+            "견적유효기간:missing_reference_or_fabricated_quote:H-020-review-p1-text7",
+            "금액:inconsistent_extracted",
+            "금액:missing_reference_or_fabricated_quote:H-020-review-p1-text8",
+            "금액:missing_reference_or_fabricated_quote:H-020-review-p1-text8",
+            "대상시스템:inconsistent_extracted",
+            "대상시스템:missing_reference_or_fabricated_quote:H-020-review-p1-text3",
+            "대상시스템:missing_reference_or_fabricated_quote:H-020-review-p1-text3",
+            "문서일자:inconsistent_extracted",
+            "문서일자:missing_reference_or_fabricated_quote:H-020-review-p1-text5",
+            "문서일자:missing_reference_or_fabricated_quote:H-020-review-p1-text5",
+            "문서종류:inconsistent_extracted",
+            "문서종류:missing_reference_or_fabricated_quote:H-020-review-p1-text1",
+            "문서종류:missing_reference_or_fabricated_quote:H-020-review-p1-text1",
+            "상태:inconsistent_extracted",
+            "상태:missing_reference_or_fabricated_quote:H-020-review-p1-text4",
+            "상태:missing_reference_or_fabricated_quote:H-020-review-p1-text4",
+            "작성일:inconsistent_extracted",
+            "작성일:missing_reference_or_fabricated_quote:H-020-review-p1-text5",
+            "작성일:missing_reference_or_fabricated_quote:H-020-review-p1-text5",
+            "통화:inconsistent_extracted",
+            "통화:missing_reference_or_fabricated_quote:H-020-review-p1-text8",
+            "통화:missing_reference_or_fabricated_quote:H-020-review-p1-text8",
+            "표지일:inconsistent_extracted",
+            "표지일:missing_reference_or_fabricated_quote:H-020-review-p1-text5",
+            "표지일:missing_reference_or_fabricated_quote:H-020-review-p1-text1",
+            "summary:missing_reference_or_fabricated_quote:H-020-review-p1-text4",
+            "summary:missing_reference_or_fabricated_quote:H-020-review-p1-text8",
+            "summary:missing_reference_or_fabricated_quote:H-020-review-p1-text6"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 4,
+          "summary_supported": 4,
+          "summary_unsupported": 0,
+          "summary_uncertain": 0,
+          "core_facts_covered": [
+            "H-020-F3"
+          ],
+          "core_facts_expected": [
+            "H-020-F1",
+            "H-020-F2",
+            "H-020-F3"
+          ],
+          "summary_issues": []
+        },
+        {
+          "doc_id": "H-021",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 7,
+          "needed": 7,
+          "filled_scorable": 8,
+          "wrong_values": [
+            {
+              "field": "표지일",
+              "predicted": "2026-09-20",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            }
+          ],
+          "missing_needed": [],
+          "delivery_errors": [
+            "VAT:missing_reference_or_fabricated_quote:source",
+            "거래처:inconsistent_extracted",
+            "거래처:missing_reference_or_fabricated_quote:source",
+            "거래처:missing_reference_or_fabricated_quote:source",
+            "견적번호:missing_reference_or_fabricated_quote:source",
+            "견적유효기간:missing_reference_or_fabricated_quote:source",
+            "계약번호:missing_reference_or_fabricated_quote:source",
+            "계약시작일:missing_reference_or_fabricated_quote:source",
+            "계약유형:missing_reference_or_fabricated_quote:source",
+            "계약종료일:missing_reference_or_fabricated_quote:source",
+            "금액:missing_reference_or_fabricated_quote:source",
+            "대상시스템:inconsistent_extracted",
+            "대상시스템:missing_reference_or_fabricated_quote:source",
+            "대상시스템:missing_reference_or_fabricated_quote:source",
+            "로그시작:missing_reference_or_fabricated_quote:source",
+            "로그종료:missing_reference_or_fabricated_quote:source",
+            "문서일자:inconsistent_extracted",
+            "문서일자:missing_reference_or_fabricated_quote:source",
+            "문서일자:missing_reference_or_fabricated_quote:source",
+            "문서종류:inconsistent_extracted",
+            "문서종류:missing_reference_or_fabricated_quote:source",
+            "문서종류:missing_reference_or_fabricated_quote:source",
+            "사업명:missing_reference_or_fabricated_quote:source",
+            "사이트:missing_reference_or_fabricated_quote:source",
+            "상태:inconsistent_extracted",
+            "상태:missing_reference_or_fabricated_quote:source",
+            "상태:missing_reference_or_fabricated_quote:source",
+            "실행결과:missing_reference_or_fabricated_quote:source",
+            "오류코드:inconsistent_extracted",
+            "오류코드:missing_reference_or_fabricated_quote:source",
+            "오류코드:missing_reference_or_fabricated_quote:source",
+            "작성일:inconsistent_extracted",
+            "작성일:missing_reference_or_fabricated_quote:source",
+            "작성일:missing_reference_or_fabricated_quote:source",
+            "작업명:missing_reference_or_fabricated_quote:source",
+            "통화:missing_reference_or_fabricated_quote:source",
+            "표지일:inconsistent_extracted",
+            "표지일:missing_reference_or_fabricated_quote:source",
+            "표지일:missing_reference_or_fabricated_quote:source",
+            "summary:missing_reference_or_fabricated_quote:source",
+            "summary:missing_reference_or_fabricated_quote:source",
+            "summary:missing_reference_or_fabricated_quote:source",
+            "summary:missing_reference_or_fabricated_quote:source",
+            "summary:missing_reference_or_fabricated_quote:source"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 6,
+          "summary_supported": 5,
+          "summary_unsupported": 0,
+          "summary_uncertain": 1,
+          "core_facts_covered": [
+            "H-021-F1",
+            "H-021-F2"
+          ],
+          "core_facts_expected": [
+            "H-021-F1",
+            "H-021-F2",
+            "H-021-F3"
+          ],
+          "summary_issues": [
+            {
+              "text": "재연결 후 정상화되었다",
+              "verdict": "uncertain",
+              "reason": "원문은 30분간 같은 경고가 재발하지 않았다는 관찰이며 정상화 일반 결론은 없다.",
+              "evidence": [
+                {
+                  "kind": "block",
+                  "ref": "H-021-795c4eb98d79-line1",
+                  "quote": "MES 센서점검 메모\n거래처: 가온세라믹\n대상 시스템: MES\n문서상태: 최종\n작성일: 2026-09-20\n성형기 4호의 센서 값 고정 현상을 점검했다. 단선 경고 E-SENSOR-17은 케이블 접촉 불량으로 확인했다.\n센서를 재연결한 뒤 30분 관찰에서 같은 경고가 다시 발생하지 않았다."
+                }
+              ],
+              "covered_gold_fact_ids": []
+            }
+          ]
+        },
+        {
+          "doc_id": "H-022",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 6,
+          "needed": 6,
+          "filled_scorable": 7,
+          "wrong_values": [
+            {
+              "field": "표지일",
+              "predicted": "2026-09-21",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            }
+          ],
+          "missing_needed": [],
+          "delivery_errors": [
+            "VAT:missing_reference_or_fabricated_quote:source",
+            "거래처:inconsistent_extracted",
+            "거래처:missing_reference_or_fabricated_quote:source",
+            "거래처:missing_reference_or_fabricated_quote:source",
+            "견적번호:missing_reference_or_fabricated_quote:source",
+            "견적유효기간:missing_reference_or_fabricated_quote:source",
+            "계약번호:missing_reference_or_fabricated_quote:source",
+            "계약시작일:missing_reference_or_fabricated_quote:source",
+            "계약유형:missing_reference_or_fabricated_quote:source",
+            "계약종료일:missing_reference_or_fabricated_quote:source",
+            "금액:missing_reference_or_fabricated_quote:source",
+            "대상시스템:inconsistent_extracted",
+            "대상시스템:missing_reference_or_fabricated_quote:source",
+            "대상시스템:missing_reference_or_fabricated_quote:source",
+            "로그시작:missing_reference_or_fabricated_quote:source",
+            "로그종료:missing_reference_or_fabricated_quote:source",
+            "문서일자:inconsistent_extracted",
+            "문서일자:missing_reference_or_fabricated_quote:source",
+            "문서일자:missing_reference_or_fabricated_quote:source",
+            "문서종류:inconsistent_extracted",
+            "문서종류:missing_reference_or_fabricated_quote:source",
+            "문서종류:missing_reference_or_fabricated_quote:source",
+            "사업명:missing_reference_or_fabricated_quote:source",
+            "사이트:missing_reference_or_fabricated_quote:source",
+            "상태:inconsistent_extracted",
+            "상태:missing_reference_or_fabricated_quote:source",
+            "상태:missing_reference_or_fabricated_quote:source",
+            "실행결과:missing_reference_or_fabricated_quote:source",
+            "오류코드:missing_reference_or_fabricated_quote:source",
+            "작성일:inconsistent_extracted",
+            "작성일:missing_reference_or_fabricated_quote:source",
+            "작성일:missing_reference_or_fabricated_quote:source",
+            "작업명:missing_reference_or_fabricated_quote:source",
+            "통화:missing_reference_or_fabricated_quote:source",
+            "표지일:inconsistent_extracted",
+            "표지일:missing_reference_or_fabricated_quote:source",
+            "표지일:missing_reference_or_fabricated_quote:source",
+            "summary:missing_reference_or_fabricated_quote:source",
+            "summary:missing_reference_or_fabricated_quote:source",
+            "summary:missing_reference_or_fabricated_quote:source"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 6,
+          "summary_supported": 5,
+          "summary_unsupported": 0,
+          "summary_uncertain": 1,
+          "core_facts_covered": [
+            "H-022-F1",
+            "H-022-F2",
+            "H-022-F3"
+          ],
+          "core_facts_expected": [
+            "H-022-F1",
+            "H-022-F2",
+            "H-022-F3"
+          ],
+          "summary_issues": [
+            {
+              "text": "작성일이 문서의 최종 날짜다",
+              "verdict": "uncertain",
+              "reason": "작성일과 최종 변경 또는 최종 확정 날짜는 동일하다고 명시되지 않았다.",
+              "evidence": [
+                {
+                  "kind": "block",
+                  "ref": "H-022-b0c9c673d3b7-line1",
+                  "quote": "WMS 온도알림 회의 메모\n거래처: 누리콜드\n대상 시스템: WMS\n문서상태: 최종\n작성일: 2026-09-21\n냉장구역 알림 수신자를 주간 운영팀과 야간 당직자로 구분하기로 했다.\n경보가 4분 연속 지속될 때만 전화 알림을 보내고 순간 상승은 화면 기록만 남긴다."
+                }
+              ],
+              "covered_gold_fact_ids": []
+            }
+          ]
+        },
+        {
+          "doc_id": "H-023",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 6,
+          "needed": 6,
+          "filled_scorable": 7,
+          "wrong_values": [
+            {
+              "field": "표지일",
+              "predicted": "2026-09-22",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            }
+          ],
+          "missing_needed": [],
+          "delivery_errors": [
+            "VAT:missing_reference_or_fabricated_quote:source",
+            "거래처:inconsistent_extracted",
+            "거래처:missing_reference_or_fabricated_quote:source",
+            "거래처:missing_reference_or_fabricated_quote:source",
+            "견적번호:missing_reference_or_fabricated_quote:source",
+            "견적유효기간:missing_reference_or_fabricated_quote:source",
+            "계약번호:missing_reference_or_fabricated_quote:source",
+            "계약시작일:missing_reference_or_fabricated_quote:source",
+            "계약유형:missing_reference_or_fabricated_quote:source",
+            "계약종료일:missing_reference_or_fabricated_quote:source",
+            "금액:missing_reference_or_fabricated_quote:source",
+            "대상시스템:inconsistent_extracted",
+            "대상시스템:missing_reference_or_fabricated_quote:source",
+            "대상시스템:missing_reference_or_fabricated_quote:source",
+            "로그시작:missing_reference_or_fabricated_quote:source",
+            "로그종료:missing_reference_or_fabricated_quote:source",
+            "문서일자:inconsistent_extracted",
+            "문서일자:missing_reference_or_fabricated_quote:source",
+            "문서일자:missing_reference_or_fabricated_quote:source",
+            "문서종류:inconsistent_extracted",
+            "문서종류:missing_reference_or_fabricated_quote:source",
+            "문서종류:missing_reference_or_fabricated_quote:source",
+            "사업명:missing_reference_or_fabricated_quote:source",
+            "사이트:missing_reference_or_fabricated_quote:source",
+            "상태:inconsistent_extracted",
+            "상태:missing_reference_or_fabricated_quote:source",
+            "상태:missing_reference_or_fabricated_quote:source",
+            "실행결과:missing_reference_or_fabricated_quote:source",
+            "오류코드:missing_reference_or_fabricated_quote:source",
+            "작성일:inconsistent_extracted",
+            "작성일:missing_reference_or_fabricated_quote:source",
+            "작성일:missing_reference_or_fabricated_quote:source",
+            "작업명:missing_reference_or_fabricated_quote:source",
+            "통화:missing_reference_or_fabricated_quote:source",
+            "표지일:inconsistent_extracted",
+            "표지일:missing_reference_or_fabricated_quote:source",
+            "표지일:missing_reference_or_fabricated_quote:source",
+            "summary:missing_reference_or_fabricated_quote:source",
+            "summary:missing_reference_or_fabricated_quote:source",
+            "summary:missing_reference_or_fabricated_quote:source"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 6,
+          "summary_supported": 6,
+          "summary_unsupported": 0,
+          "summary_uncertain": 0,
+          "core_facts_covered": [
+            "H-023-F1",
+            "H-023-F2"
+          ],
+          "core_facts_expected": [
+            "H-023-F1",
+            "H-023-F2",
+            "H-023-F3"
+          ],
+          "summary_issues": []
+        },
+        {
+          "doc_id": "H-026",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 6,
+          "needed": 10,
+          "filled_scorable": 9,
+          "wrong_values": [
+            {
+              "field": "로그시작",
+              "predicted": "2026-09-25 09:00:00",
+              "expected": "2026-09-25 09:00",
+              "category": "representation_only"
+            },
+            {
+              "field": "로그종료",
+              "predicted": "2026-09-25 09:04:00",
+              "expected": "2026-09-25 09:04",
+              "category": "representation_only"
+            },
+            {
+              "field": "실행결과",
+              "predicted": "SUCCESS",
+              "expected": "성공",
+              "category": "representation_only"
+            }
+          ],
+          "missing_needed": [
+            "문서일자"
+          ],
+          "delivery_errors": [
+            "VAT:missing_reference_or_fabricated_quote:input.reference_data",
+            "거래처:inconsistent_extracted",
+            "거래처:missing_reference_or_fabricated_quote:document.blocks[1]",
+            "거래처:missing_reference_or_fabricated_quote:document.blocks[1]",
+            "견적번호:missing_reference_or_fabricated_quote:input.input_review",
+            "견적유효기간:missing_reference_or_fabricated_quote:input.input_review",
+            "계약번호:missing_reference_or_fabricated_quote:input.input_review",
+            "계약시작일:missing_reference_or_fabricated_quote:input.input_review",
+            "계약유형:missing_reference_or_fabricated_quote:input.input_review",
+            "계약종료일:missing_reference_or_fabricated_quote:input.input_review",
+            "금액:missing_reference_or_fabricated_quote:input.input_review",
+            "대상시스템:inconsistent_extracted",
+            "대상시스템:missing_reference_or_fabricated_quote:document.blocks[2]",
+            "대상시스템:missing_reference_or_fabricated_quote:document.blocks[2]",
+            "로그시작:inconsistent_extracted",
+            "로그시작:invalid_value_format",
+            "로그시작:missing_reference_or_fabricated_quote:document.blocks[5]",
+            "로그시작:missing_reference_or_fabricated_quote:document.blocks[5]",
+            "로그종료:inconsistent_extracted",
+            "로그종료:invalid_value_format",
+            "로그종료:missing_reference_or_fabricated_quote:document.blocks[9]",
+            "로그종료:missing_reference_or_fabricated_quote:document.blocks[9]",
+            "문서일자:missing_reference_or_fabricated_quote:input.input_review",
+            "문서종류:inconsistent_extracted",
+            "문서종류:missing_reference_or_fabricated_quote:document.blocks[0]",
+            "문서종류:missing_reference_or_fabricated_quote:document.blocks[0]",
+            "사업명:missing_reference_or_fabricated_quote:input.input_review",
+            "사이트:missing_reference_or_fabricated_quote:input.input_review",
+            "상태:inconsistent_extracted",
+            "상태:missing_reference_or_fabricated_quote:document.blocks[3]",
+            "상태:missing_reference_or_fabricated_quote:document.blocks[3]",
+            "실행결과:inconsistent_extracted",
+            "실행결과:missing_reference_or_fabricated_quote:document.blocks[9]",
+            "실행결과:missing_reference_or_fabricated_quote:document.blocks[9]",
+            "오류코드:inconsistent_extracted",
+            "오류코드:missing_reference_or_fabricated_quote:document.blocks[6]",
+            "오류코드:missing_reference_or_fabricated_quote:document.blocks[6]",
+            "작성일:missing_reference_or_fabricated_quote:input.input_review",
+            "작업명:inconsistent_extracted",
+            "작업명:missing_reference_or_fabricated_quote:document.blocks[4]",
+            "작업명:missing_reference_or_fabricated_quote:document.blocks[4]",
+            "통화:missing_reference_or_fabricated_quote:input.input_review",
+            "표지일:missing_reference_or_fabricated_quote:input.input_review",
+            "summary:missing_reference_or_fabricated_quote:input.input_review",
+            "summary:missing_reference_or_fabricated_quote:document.blocks[0]",
+            "summary:missing_reference_or_fabricated_quote:document.blocks[1]",
+            "summary:missing_reference_or_fabricated_quote:document.blocks[2]",
+            "summary:missing_reference_or_fabricated_quote:document.blocks[3]",
+            "summary:missing_reference_or_fabricated_quote:document.blocks[4]",
+            "summary:missing_reference_or_fabricated_quote:document.blocks[5]",
+            "summary:missing_reference_or_fabricated_quote:document.blocks[6]",
+            "summary:missing_reference_or_fabricated_quote:document.blocks[7]",
+            "summary:missing_reference_or_fabricated_quote:document.blocks[8]",
+            "summary:missing_reference_or_fabricated_quote:document.blocks[9]"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 7,
+          "summary_supported": 6,
+          "summary_unsupported": 1,
+          "summary_uncertain": 0,
+          "core_facts_covered": [
+            "H-026-F1",
+            "H-026-F2"
+          ],
+          "core_facts_expected": [
+            "H-026-F1",
+            "H-026-F2",
+            "H-026-F3"
+          ],
+          "summary_issues": [
+            {
+              "text": "재연결이 먼저 실패했다",
+              "verdict": "unsupported",
+              "reason": "원문은 재연결 시도 경고와 다음 줄 성공이며 재연결 실패 사건은 없다.",
+              "evidence": [
+                {
+                  "kind": "block",
+                  "ref": "H-026-78f6dde35591-line7",
+                  "quote": "2026-09-25 09:01:12 [WARN] 재연결 시도 code=E-CONN-12"
+                }
+              ],
+              "covered_gold_fact_ids": []
+            }
+          ]
+        },
+        {
+          "doc_id": "H-027",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 6,
+          "needed": 10,
+          "filled_scorable": 9,
+          "wrong_values": [
+            {
+              "field": "로그시작",
+              "predicted": "2026-09-26 22:00:00",
+              "expected": "2026-09-26 22:00",
+              "category": "representation_only"
+            },
+            {
+              "field": "로그종료",
+              "predicted": "2026-09-26 22:03:00",
+              "expected": "2026-09-26 22:03",
+              "category": "representation_only"
+            },
+            {
+              "field": "실행결과",
+              "predicted": "FAILED",
+              "expected": "실패",
+              "category": "representation_only"
+            }
+          ],
+          "missing_needed": [
+            "문서일자"
+          ],
+          "delivery_errors": [
+            "VAT:missing_reference_or_fabricated_quote:input.reference_data",
+            "거래처:inconsistent_extracted",
+            "거래처:missing_reference_or_fabricated_quote:document.blocks.H-027-8a8f3387477f-line2",
+            "거래처:missing_reference_or_fabricated_quote:document.blocks.H-027-8a8f3387477f-line2",
+            "견적번호:missing_reference_or_fabricated_quote:input",
+            "견적유효기간:missing_reference_or_fabricated_quote:input",
+            "계약번호:missing_reference_or_fabricated_quote:input",
+            "계약시작일:missing_reference_or_fabricated_quote:input",
+            "계약유형:missing_reference_or_fabricated_quote:input",
+            "계약종료일:missing_reference_or_fabricated_quote:input",
+            "금액:missing_reference_or_fabricated_quote:input",
+            "대상시스템:inconsistent_extracted",
+            "대상시스템:missing_reference_or_fabricated_quote:document.blocks.H-027-8a8f3387477f-line3",
+            "대상시스템:missing_reference_or_fabricated_quote:document.blocks.H-027-8a8f3387477f-line3",
+            "로그시작:inconsistent_extracted",
+            "로그시작:invalid_value_format",
+            "로그시작:missing_reference_or_fabricated_quote:document.blocks.H-027-8a8f3387477f-line6",
+            "로그시작:missing_reference_or_fabricated_quote:document.blocks.H-027-8a8f3387477f-line6",
+            "로그종료:inconsistent_extracted",
+            "로그종료:invalid_value_format",
+            "로그종료:missing_reference_or_fabricated_quote:document.blocks.H-027-8a8f3387477f-line10",
+            "로그종료:missing_reference_or_fabricated_quote:document.blocks.H-027-8a8f3387477f-line10",
+            "문서일자:missing_reference_or_fabricated_quote:input",
+            "문서종류:inconsistent_extracted",
+            "문서종류:missing_reference_or_fabricated_quote:document.blocks.H-027-8a8f3387477f-line1",
+            "문서종류:missing_reference_or_fabricated_quote:document.blocks.H-027-8a8f3387477f-line1",
+            "사업명:missing_reference_or_fabricated_quote:input",
+            "사이트:missing_reference_or_fabricated_quote:input",
+            "상태:inconsistent_extracted",
+            "상태:missing_reference_or_fabricated_quote:document.blocks.H-027-8a8f3387477f-line4",
+            "상태:missing_reference_or_fabricated_quote:document.blocks.H-027-8a8f3387477f-line4",
+            "실행결과:inconsistent_extracted",
+            "실행결과:missing_reference_or_fabricated_quote:document.blocks.H-027-8a8f3387477f-line10",
+            "실행결과:missing_reference_or_fabricated_quote:document.blocks.H-027-8a8f3387477f-line10",
+            "오류코드:inconsistent_extracted",
+            "오류코드:missing_reference_or_fabricated_quote:document.blocks.H-027-8a8f3387477f-line7",
+            "오류코드:missing_reference_or_fabricated_quote:document.blocks.H-027-8a8f3387477f-line7",
+            "작성일:missing_reference_or_fabricated_quote:input",
+            "작업명:inconsistent_extracted",
+            "작업명:missing_reference_or_fabricated_quote:document.blocks.H-027-8a8f3387477f-line5",
+            "작업명:missing_reference_or_fabricated_quote:document.blocks.H-027-8a8f3387477f-line5",
+            "통화:missing_reference_or_fabricated_quote:input",
+            "표지일:missing_reference_or_fabricated_quote:input",
+            "summary:missing_reference_or_fabricated_quote:document.blocks.H-027-8a8f3387477f-line1",
+            "summary:missing_reference_or_fabricated_quote:document.blocks.H-027-8a8f3387477f-line7",
+            "summary:missing_reference_or_fabricated_quote:document.blocks.H-027-8a8f3387477f-line6",
+            "summary:missing_reference_or_fabricated_quote:document.blocks.H-027-8a8f3387477f-line10"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 6,
+          "summary_supported": 6,
+          "summary_unsupported": 0,
+          "summary_uncertain": 0,
+          "core_facts_covered": [
+            "H-027-F1",
+            "H-027-F2",
+            "H-027-F3"
+          ],
+          "core_facts_expected": [
+            "H-027-F1",
+            "H-027-F2",
+            "H-027-F3"
+          ],
+          "summary_issues": []
+        },
+        {
+          "doc_id": "H-030",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 5,
+          "needed": 9,
+          "filled_scorable": 8,
+          "wrong_values": [
+            {
+              "field": "로그시작",
+              "predicted": "2026-09-29 03:00:00",
+              "expected": "2026-09-29 03:00",
+              "category": "representation_only"
+            },
+            {
+              "field": "로그종료",
+              "predicted": "2026-09-29 03:04:00",
+              "expected": "2026-09-29 03:04",
+              "category": "representation_only"
+            },
+            {
+              "field": "실행결과",
+              "predicted": "SUCCESS",
+              "expected": "성공",
+              "category": "representation_only"
+            }
+          ],
+          "missing_needed": [
+            "문서일자"
+          ],
+          "delivery_errors": [
+            "VAT:inconsistent_null_status",
+            "거래처:inconsistent_extracted",
+            "거래처:missing_reference_or_fabricated_quote:file_name",
+            "거래처:missing_reference_or_fabricated_quote:file_name",
+            "견적번호:inconsistent_null_status",
+            "견적유효기간:inconsistent_null_status",
+            "계약번호:inconsistent_null_status",
+            "계약시작일:inconsistent_null_status",
+            "계약유형:inconsistent_null_status",
+            "계약종료일:inconsistent_null_status",
+            "금액:inconsistent_null_status",
+            "대상시스템:inconsistent_extracted",
+            "대상시스템:missing_reference_or_fabricated_quote:file_name",
+            "대상시스템:missing_reference_or_fabricated_quote:file_name",
+            "로그시작:inconsistent_extracted",
+            "로그시작:invalid_value_format",
+            "로그시작:missing_reference_or_fabricated_quote:file_name",
+            "로그시작:missing_reference_or_fabricated_quote:file_name",
+            "로그종료:inconsistent_extracted",
+            "로그종료:invalid_value_format",
+            "로그종료:missing_reference_or_fabricated_quote:file_name",
+            "로그종료:missing_reference_or_fabricated_quote:file_name",
+            "문서일자:inconsistent_null_status",
+            "문서종류:inconsistent_extracted",
+            "사업명:inconsistent_null_status",
+            "사이트:inconsistent_null_status",
+            "상태:inconsistent_extracted",
+            "상태:missing_reference_or_fabricated_quote:file_name",
+            "상태:missing_reference_or_fabricated_quote:file_name",
+            "실행결과:inconsistent_extracted",
+            "실행결과:missing_reference_or_fabricated_quote:file_name",
+            "실행결과:missing_reference_or_fabricated_quote:file_name",
+            "오류코드:inconsistent_null_status",
+            "작성일:inconsistent_null_status",
+            "작업명:inconsistent_extracted",
+            "작업명:missing_reference_or_fabricated_quote:file_name",
+            "작업명:missing_reference_or_fabricated_quote:file_name",
+            "통화:inconsistent_null_status",
+            "표지일:inconsistent_null_status",
+            "summary:missing_reference_or_fabricated_quote:file_name",
+            "summary:missing_reference_or_fabricated_quote:file_name",
+            "summary:missing_reference_or_fabricated_quote:file_name",
+            "summary:missing_reference_or_fabricated_quote:file_name",
+            "summary:missing_reference_or_fabricated_quote:file_name",
+            "summary:missing_reference_or_fabricated_quote:file_name"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 7,
+          "summary_supported": 7,
+          "summary_unsupported": 0,
+          "summary_uncertain": 0,
+          "core_facts_covered": [
+            "H-030-F1",
+            "H-030-F2",
+            "H-030-F3"
+          ],
+          "core_facts_expected": [
+            "H-030-F1",
+            "H-030-F2",
+            "H-030-F3"
+          ],
+          "summary_issues": []
+        },
+        {
+          "doc_id": "D-007",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 6,
+          "needed": 6,
+          "filled_scorable": 9,
+          "wrong_values": [
+            {
+              "field": "상태",
+              "predicted": "최종",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            },
+            {
+              "field": "사업명",
+              "predicted": "2025 MES 고도화 구축",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            },
+            {
+              "field": "표지일",
+              "predicted": "2025-02-24",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            }
+          ],
+          "missing_needed": [],
+          "delivery_errors": [
+            "거래처:inconsistent_extracted",
+            "거래처:missing_reference_or_fabricated_quote:D-007-869e9805b894-s1-shape17",
+            "거래처:missing_reference_or_fabricated_quote:D-007-869e9805b894-s1-shape17",
+            "대상시스템:inconsistent_extracted",
+            "대상시스템:missing_reference_or_fabricated_quote:D-007-869e9805b894-s1-shape2",
+            "대상시스템:missing_reference_or_fabricated_quote:D-007-869e9805b894-s1-shape2",
+            "문서일자:inconsistent_extracted",
+            "문서일자:missing_reference_or_fabricated_quote:D-007-869e9805b894-s1-shape3",
+            "문서일자:missing_reference_or_fabricated_quote:D-007-869e9805b894-s1-shape3",
+            "문서종류:inconsistent_extracted",
+            "문서종류:missing_reference_or_fabricated_quote:D-007-869e9805b894-s1-shape2",
+            "문서종류:missing_reference_or_fabricated_quote:D-007-869e9805b894-s1-shape2",
+            "사업명:inconsistent_extracted",
+            "사업명:missing_reference_or_fabricated_quote:D-007-869e9805b894-s1-shape2",
+            "사업명:missing_reference_or_fabricated_quote:D-007-869e9805b894-s1-shape2",
+            "사이트:inconsistent_extracted",
+            "사이트:missing_reference_or_fabricated_quote:D-007-869e9805b894-s1-shape3",
+            "사이트:missing_reference_or_fabricated_quote:D-007-869e9805b894-s1-shape3",
+            "상태:inconsistent_extracted",
+            "상태:missing_reference_or_fabricated_quote:D-007-869e9805b894-s1-shape2",
+            "상태:missing_reference_or_fabricated_quote:D-007-869e9805b894-s1-shape2",
+            "작성일:inconsistent_extracted",
+            "작성일:missing_reference_or_fabricated_quote:D-007-869e9805b894-s1-shape3",
+            "작성일:missing_reference_or_fabricated_quote:D-007-869e9805b894-s1-shape3",
+            "표지일:inconsistent_extracted",
+            "표지일:missing_reference_or_fabricated_quote:D-007-869e9805b894-s1-shape2",
+            "표지일:missing_reference_or_fabricated_quote:D-007-869e9805b894-s1-shape2",
+            "summary:missing_reference_or_fabricated_quote:D-007-869e9805b894-s1-shape2",
+            "summary:missing_reference_or_fabricated_quote:D-007-869e9805b894-s1-shape3",
+            "summary:missing_reference_or_fabricated_quote:D-007-869e9805b894-s1-shape17"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 8,
+          "summary_supported": 6,
+          "summary_unsupported": 1,
+          "summary_uncertain": 1,
+          "core_facts_covered": [
+            "D-007-F2"
+          ],
+          "core_facts_expected": [
+            "D-007-F1",
+            "D-007-F2",
+            "D-007-F3"
+          ],
+          "summary_issues": [
+            {
+              "text": "최종판으로 확인된다",
+              "verdict": "unsupported",
+              "reason": "원문은 Rev.1과 검토 필요이며 최종 표기가 없다.",
+              "evidence": [
+                {
+                  "kind": "block",
+                  "ref": "D-007-869e9805b894-s1-shape2",
+                  "quote": "2025 MES 고도화 구축 네트워크 구성도 (Rev.1)"
+                },
+                {
+                  "kind": "block",
+                  "ref": "D-007-869e9805b894-s1-shape3",
+                  "quote": "설치 위치: 화성 1공장 전산실  |  작성일: 2025-02-24  |  작성: 라움정보기술 기술지원팀"
+                },
+                {
+                  "kind": "block",
+                  "ref": "D-007-869e9805b894-s1-shape4",
+                  "quote": "Internet / 전용회선"
+                },
+                {
+                  "kind": "block",
+                  "ref": "D-007-869e9805b894-s1-shape5",
+                  "quote": "방화벽\nFortiGate 200F × 2 (HA)"
+                },
+                {
+                  "kind": "block",
+                  "ref": "D-007-869e9805b894-s1-shape6",
+                  "quote": "코어 스위치\nCisco C9500-24Y4C × 2"
+                },
+                {
+                  "kind": "block",
+                  "ref": "D-007-869e9805b894-s1-shape9",
+                  "quote": "OT망 방화벽 FortiGate 100F"
+                },
+                {
+                  "kind": "block",
+                  "ref": "D-007-869e9805b894-s1-shape11",
+                  "quote": "서버팜\n10.21.10.0/24"
+                },
+                {
+                  "kind": "block",
+                  "ref": "D-007-869e9805b894-s1-shape13",
+                  "quote": "OT 설비망\n10.21.50.0/24"
+                },
+                {
+                  "kind": "block",
+                  "ref": "D-007-869e9805b894-s1-shape15",
+                  "quote": "관리망\n10.21.99.0/24"
+                },
+                {
+                  "kind": "block",
+                  "ref": "D-007-869e9805b894-s1-shape17",
+                  "quote": "범례: 실선 = 1G/10G 이더넷 | ㈜청람정밀 전산 담당자 검토 필요"
+                }
+              ],
+              "covered_gold_fact_ids": []
+            },
+            {
+              "text": "모든 네트워크 연결이 실선으로 표시된다",
+              "verdict": "uncertain",
+              "reason": "범례의 실선 의미만 있으며 모든 연결선의 모양은 이 텍스트 입력에서 확인할 수 없다.",
+              "evidence": [
+                {
+                  "kind": "block",
+                  "ref": "D-007-869e9805b894-s1-shape17",
+                  "quote": "범례: 실선 = 1G/10G 이더넷 | ㈜청람정밀 전산 담당자 검토 필요"
+                }
+              ],
+              "covered_gold_fact_ids": []
+            }
+          ]
+        },
+        {
+          "doc_id": "H-018",
+          "strict_json": true,
+          "diagnostic_relaxed_control_characters": false,
+          "value_matches": 7,
+          "needed": 7,
+          "filled_scorable": 8,
+          "wrong_values": [
+            {
+              "field": "표지일",
+              "predicted": "2026-09-12",
+              "expected": null,
+              "category": "meaning_or_field_policy"
+            }
+          ],
+          "missing_needed": [],
+          "delivery_errors": [
+            "VAT:missing_reference_or_fabricated_quote:H-018-31c212244c78-p1-line9",
+            "거래처:inconsistent_extracted",
+            "거래처:missing_reference_or_fabricated_quote:H-018-31c212244c78-p1-line2",
+            "거래처:missing_reference_or_fabricated_quote:H-018-31c212244c78-p1-line2",
+            "금액:missing_reference_or_fabricated_quote:H-018-31c212244c78-p1-line9",
+            "대상시스템:inconsistent_extracted",
+            "대상시스템:missing_reference_or_fabricated_quote:H-018-31c212244c78-p1-line3",
+            "대상시스템:missing_reference_or_fabricated_quote:H-018-31c212244c78-p1-line3",
+            "문서일자:inconsistent_extracted",
+            "문서일자:missing_reference_or_fabricated_quote:H-018-31c212244c78-p1-line5",
+            "문서일자:missing_reference_or_fabricated_quote:H-018-31c212244c78-p1-line5",
+            "문서종류:inconsistent_extracted",
+            "문서종류:missing_reference_or_fabricated_quote:H-018-31c212244c78-p1-line1",
+            "문서종류:missing_reference_or_fabricated_quote:H-018-31c212244c78-p1-line1",
+            "사이트:inconsistent_extracted",
+            "사이트:missing_reference_or_fabricated_quote:H-018-31c212244c78-p1-line6",
+            "사이트:missing_reference_or_fabricated_quote:H-018-31c212244c78-p1-line6",
+            "상태:inconsistent_extracted",
+            "상태:missing_reference_or_fabricated_quote:H-018-31c212244c78-p1-line4",
+            "상태:missing_reference_or_fabricated_quote:H-018-31c212244c78-p1-line4",
+            "작성일:inconsistent_extracted",
+            "작성일:missing_reference_or_fabricated_quote:H-018-31c212244c78-p1-line5",
+            "작성일:missing_reference_or_fabricated_quote:H-018-31c212244c78-p1-line5",
+            "통화:missing_reference_or_fabricated_quote:H-018-31c212244c78-p1-line9",
+            "표지일:inconsistent_extracted",
+            "표지일:missing_reference_or_fabricated_quote:H-018-31c212244c78-p1-line5",
+            "표지일:missing_reference_or_fabricated_quote:H-018-31c212244c78-p1-line5",
+            "summary:missing_reference_or_fabricated_quote:H-018-31c212244c78-p1-line1",
+            "summary:missing_reference_or_fabricated_quote:H-018-31c212244c78-p1-line3",
+            "summary:missing_reference_or_fabricated_quote:H-018-31c212244c78-p1-line6",
+            "summary:missing_reference_or_fabricated_quote:H-018-31c212244c78-p1-line7",
+            "summary:missing_reference_or_fabricated_quote:H-018-31c212244c78-p1-line8",
+            "summary:missing_reference_or_fabricated_quote:H-018-31c212244c78-p1-table1-r2",
+            "summary:missing_reference_or_fabricated_quote:H-018-31c212244c78-p1-table1-r3",
+            "summary:missing_reference_or_fabricated_quote:H-018-31c212244c78-p1-line9"
+          ],
+          "summary_reviewed": true,
+          "summary_claims": 7,
+          "summary_supported": 7,
+          "summary_unsupported": 0,
+          "summary_uncertain": 0,
+          "core_facts_covered": [
+            "H-018-F1",
+            "H-018-F2"
+          ],
+          "core_facts_expected": [
+            "H-018-F1",
+            "H-018-F2",
+            "H-018-F3"
+          ],
+          "summary_issues": []
+        }
+      ]
+    }
+  ]
+}

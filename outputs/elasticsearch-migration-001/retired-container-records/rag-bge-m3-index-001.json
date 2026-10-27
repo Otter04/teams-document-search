@@ -1,0 +1,41 @@
+{
+  "name": "rag-bge-m3-index-001",
+  "id": "f36e520eabb907e2421a8a534c672717a1448a5b6210c75d0936e59d931ae8f4",
+  "state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-10-20T07:00:42.174555602Z",
+    "FinishedAt": "2026-10-20T07:02:38.261567767Z"
+  },
+  "image": "ghcr.io/nvidia-ai-iot/vllm:latest-jetson-orin",
+  "mounts": [
+    {
+      "Type": "bind",
+      "Source": "/media/sdcard/rag-runtime/indexing-110-semantic-vector-001",
+      "Destination": "/run/indexing",
+      "Mode": "",
+      "RW": true,
+      "Propagation": "rprivate"
+    },
+    {
+      "Type": "bind",
+      "Source": "/media/sdcard/models/bge-m3",
+      "Destination": "/models/bge-m3",
+      "Mode": "ro",
+      "RW": false,
+      "Propagation": "rprivate"
+    }
+  ],
+  "command": [
+    "/run/indexing/embed_bge.py",
+    "/run/indexing",
+    "/models/bge-m3"
+  ]
+}

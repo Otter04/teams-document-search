@@ -1,0 +1,98 @@
+{
+  "as_of_kst": "2026-10-20T14:39:02.914207+09:00",
+  "documents": 110,
+  "groups": {
+    "C": 27,
+    "A": 56,
+    "B": 24,
+    "D": 3
+  },
+  "native_metadata_documents": 107,
+  "native_complete_coverage_documents": 80,
+  "visual_documents": 30,
+  "visual_units": 121,
+  "scanned_documents": [
+    "D-044",
+    "D-069",
+    "D-102"
+  ],
+  "metadata_llm_calls_confirmed_required_now": 0,
+  "summary_calls_planned": 0,
+  "unsupported_contract_type_documents": 24,
+  "ambiguous_date_documents": 13,
+  "old_gold_gaps": 42,
+  "old_gold_gaps_native_contract_type": 24,
+  "old_gold_gaps_visual": 18,
+  "original_source_hashes_verified": 110,
+  "render_image_hashes_verified": 121,
+  "orin_vision_received": 14,
+  "orin_reuse_candidates": 7,
+  "cloud_reuse_candidates": 67,
+  "either_reuse_candidates": 67,
+  "enrichment_original_saved": 5,
+  "enrichment_original_orin_reusable_whole": 0,
+  "enrichment_original_cloud_reusable_whole": 0,
+  "observed_orin_vision_timing": {
+    "images": 14,
+    "seconds": 2820.229,
+    "output_tokens": 17772,
+    "output_rate_including_input": 6.301615932606891
+  },
+  "enrichment_unit_seconds_median": 403.64300000000003,
+  "scenarios": [
+    {
+      "scenario": "no_saved_vision_reuse",
+      "units_to_resolve": 121,
+      "output_token_proxy": 156837,
+      "central_model_hours": 6.9134383623583915,
+      "planning_low_hours": 4.839406853650874,
+      "planning_high_hours": 10.370157543537587,
+      "assumptions": "One pass on every unresolved unit; historical Qwen3.6 FP8 output token counts as a proxy, current Orin observed tokens/second. 0.7x..1.5x is an explicit planning allowance, not measured confidence limits. Some failed historical outputs hit the output cap. No success guarantee.",
+      "excludes": "manual review, additional retries, engineering, vector embeddings, other 30-document evaluation jobs"
+    },
+    {
+      "scenario": "reuse_same_Orin_candidates",
+      "units_to_resolve": 114,
+      "output_token_proxy": 148234,
+      "central_model_hours": 6.534214644540725,
+      "planning_low_hours": 4.573950251178507,
+      "planning_high_hours": 9.801321966811088,
+      "assumptions": "One pass on every unresolved unit; historical Qwen3.6 FP8 output token counts as a proxy, current Orin observed tokens/second. 0.7x..1.5x is an explicit planning allowance, not measured confidence limits. Some failed historical outputs hit the output cap. No success guarantee.",
+      "excludes": "manual review, additional retries, engineering, vector embeddings, other 30-document evaluation jobs"
+    },
+    {
+      "scenario": "reuse_Orin_or_reviewed_OpenRouter_candidates_with_provenance",
+      "units_to_resolve": 54,
+      "output_token_proxy": 78090,
+      "central_model_hours": 3.4422387683809736,
+      "planning_low_hours": 2.409567137866681,
+      "planning_high_hours": 5.16335815257146,
+      "assumptions": "One pass on every unresolved unit; historical Qwen3.6 FP8 output token counts as a proxy, current Orin observed tokens/second. 0.7x..1.5x is an explicit planning allowance, not measured confidence limits. Some failed historical outputs hit the output cap. No success guarantee.",
+      "excludes": "manual review, additional retries, engineering, vector embeddings, other 30-document evaluation jobs"
+    }
+  ],
+  "new_model_calls": 0,
+  "production_index_modified": false,
+  "full_index_completion_time_known": false,
+  "vector_index_time": "unmeasured; implementation not integrated",
+  "native_benchmark": {
+    "host": "Mac task environment, not Orin",
+    "documents": 110,
+    "rules_validation_chunking_seconds": 4.159828583011404,
+    "index_build_seconds": 1.273013792000711,
+    "total_seconds": 5.432842375012115,
+    "native_chunks": 1042,
+    "rules_results_equal_saved": true,
+    "model_calls": 0,
+    "blocked_network_attempts": [],
+    "index_written": false,
+    "excludes": [
+      "source collection",
+      "new image rendering",
+      "new vision blocks",
+      "vector embedding/index",
+      "manual review",
+      "production integration engineering"
+    ]
+  }
+}

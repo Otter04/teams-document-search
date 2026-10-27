@@ -1,0 +1,72 @@
+{
+  "started_at": "2026-10-24T11:03:36.991666+00:00",
+  "health": {
+    "ready": true,
+    "documents": 155,
+    "embedding_model": "bge-m3",
+    "embedding_fingerprint": "b8b299238334245d36f1447b3c185acd5f7271d28973c544ed45b59d67161762",
+    "query_analysis_model": "qwen3.6-35b-a3b",
+    "startup_seconds": 13.170953988097608,
+    "config": {
+      "version": "search-1.6.0",
+      "llm_budget_seconds": 2.5,
+      "lexical_k": 50,
+      "vector_k": 50,
+      "num_candidates": 200,
+      "rrf_k": 60,
+      "rerank_k": 100,
+      "result_documents": 5,
+      "bm25_fields": [
+        "file_name^2",
+        "context^1.5",
+        "table_header^1.5",
+        "body"
+      ],
+      "minimum_should_match": "50%",
+      "additional_chunk_weight": 0.0,
+      "max_additional_chunks": 0,
+      "support_pool_k": 30,
+      "document_score": "best_matching_chunk",
+      "source_expression_preference": true,
+      "r1_weights": {
+        "rrf": 0.45,
+        "lexical_overlap": 0.2,
+        "cosine": 0.2,
+        "literal_phrase": 0.05,
+        "identifier": 0.05,
+        "metadata": 0.05
+      },
+      "query_cache": false,
+      "operating_query_logs": false,
+      "exact_2a": false,
+      "verified_metadata_preference": true,
+      "explicit_dates": "required_no_relaxation"
+    },
+    "defaults": {
+      "filter_mode": "B",
+      "reranker": "R1",
+      "release_status": "development_only",
+      "quality_gate": "not_all_passed",
+      "reason": "S-07: A-R0 54 vs B-R0 55, B has zero gold exclusions. B-R1 +4 hits, no type decline, latency passed. Final acceptance remains blocked by G1, representative-label review and old ES number-query regression."
+    },
+    "indices": {
+      "documents": "rag-search-documents-v002",
+      "chunks": "rag-search-chunks-v002"
+    }
+  },
+  "inputs_sha256": "32bda3349d68d6081187c54b59cb37bb70028fd38ad2295c394a1af378d72d6f",
+  "endpoint": "http://127.0.0.1:8021/search",
+  "labels_sent": false,
+  "filter_mode": "B",
+  "reranker": "R1",
+  "use_llm": true,
+  "code_hashes": {
+    "engine.py": "7367a92a77d44c869de3aea6833642a56f113f9f499d8c4effb2508088a2a9ca",
+    "evaluate_dataset.py": "8ebc056b40e4ec269b221efcca246ef960beb7718e2f0f463a3909de3d488c4e",
+    "streaming.py": "dec3640b0ef549f7a0c5d213ff0a8a34fd8117c5132454a3ad76b4da9f1970ac",
+    "load_index.py": "49d02cf0f6cd84913e23f2e2e5b238d74a0a96351aacbefdcfa5faf92914df18",
+    "query.py": "182b3ff1bcde8d6e8112986eaa2bc9c9e672ee250476ed1f1a903bd0013bb5e5",
+    "content.py": "95abcc6e80753b89427d50e6a05e191f7f8239ce6f403ca8a8b57dc6ec405dac",
+    "service.py": "9719f3a37c0418295e4a42c655f4968da89eba8fd570868e9e0eea126cb628d4"
+  }
+}

@@ -1,0 +1,280 @@
+{
+  "schema_version": "1.1.0",
+  "record_kind": "enrichment_result",
+  "doc_id": "D-030",
+  "source": {
+    "file_name": "RE_평택센터 WMS 구축_견적 관련 문의.txt",
+    "format": "txt",
+    "relative_path": "sites/영업1팀/Shared Documents/다온/2025_평택센터 WMS 구축/기타/RE_평택센터 WMS 구축_견적 관련 문의.txt",
+    "sha256": "5a6dba1c7f553ac4a8e113dd95c60f53c657598b67782f37c24a0c69ff5d4927",
+    "web_url": null,
+    "encoding": "utf-8"
+  },
+  "input_record_sha256": "b1d00c4237744a838102e2ba0862ea59525daaa99f2178ac29cb48ea6a727b76",
+  "rules_version": "rules-0.2.1",
+  "scope": "native_text_and_source_metadata",
+  "model_called": false,
+  "status": "partial",
+  "native_text_present": true,
+  "fields": {
+    "문서종류": {
+      "value": "기타",
+      "status": "extracted",
+      "rule_id": "type.correspondence",
+      "evidence": [
+        {
+          "kind": "block",
+          "ref": "D-030-5a6dba1c7f55-line1",
+          "quote": "From: 이준호 <junho.lee@raum.example>\nTo: 구매팀 <purchase@dln.example>\nDate: 2025-04-09 15:42\nSubject: RE: [평택센터 WMS 구축] 견적 관련 문의",
+          "loc": {
+            "kind": "txt",
+            "line_start": 1,
+            "line_end": 4
+          }
+        }
+      ],
+      "candidates": [],
+      "reason": null
+    },
+    "거래처": {
+      "value": "다온로지스",
+      "status": "extracted",
+      "rule_id": "client.folder_alias",
+      "evidence": [
+        {
+          "kind": "source",
+          "ref": "relative_path",
+          "quote": "sites/영업1팀/Shared Documents/다온/2025_평택센터 WMS 구축/기타/RE_평택센터 WMS 구축_견적 관련 문의.txt",
+          "loc": null
+        }
+      ],
+      "candidates": [],
+      "reason": null
+    },
+    "문서일자": {
+      "value": "2025-04-09",
+      "status": "extracted",
+      "rule_id": "date.role.email_sent_date",
+      "evidence": [
+        {
+          "kind": "block",
+          "ref": "D-030-5a6dba1c7f55-line1",
+          "quote": "From: 이준호 <junho.lee@raum.example>\nTo: 구매팀 <purchase@dln.example>\nDate: 2025-04-09 15:42\nSubject: RE: [평택센터 WMS 구축] 견적 관련 문의",
+          "loc": {
+            "kind": "txt",
+            "line_start": 1,
+            "line_end": 4
+          }
+        }
+      ],
+      "candidates": [],
+      "reason": null
+    },
+    "대상시스템": {
+      "value": "WMS",
+      "status": "extracted",
+      "rule_id": "system.filename_term+system.mail_subject",
+      "evidence": [
+        {
+          "kind": "source",
+          "ref": "file_name",
+          "quote": "RE_평택센터 WMS 구축_견적 관련 문의.txt",
+          "loc": null
+        },
+        {
+          "kind": "block",
+          "ref": "D-030-5a6dba1c7f55-line1",
+          "quote": "From: 이준호 <junho.lee@raum.example>\nTo: 구매팀 <purchase@dln.example>\nDate: 2025-04-09 15:42\nSubject: RE: [평택센터 WMS 구축] 견적 관련 문의",
+          "loc": {
+            "kind": "txt",
+            "line_start": 1,
+            "line_end": 4
+          }
+        }
+      ],
+      "candidates": [],
+      "reason": null
+    },
+    "상태": {
+      "value": null,
+      "status": "not_found_native",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "no supported unambiguous value in native scope"
+    },
+    "계약번호": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "계약유형": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "계약시작일": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "계약종료일": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "금액": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "통화": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "VAT": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "견적번호": {
+      "value": "Q-2504-02",
+      "status": "extracted",
+      "rule_id": "identifier.explicit_context",
+      "evidence": [
+        {
+          "kind": "block",
+          "ref": "D-030-5a6dba1c7f55-line8",
+          "quote": "문의하신 평택센터 WMS 구축 최종 견적(Q-2504-02) 관련하여 답변드립니다.\n1) 1차 견적 대비 금액 조정은 인건비 단가 조정분이 반영된 것입니다.\n2) 유효기간 내 발주 시 견적 금액 그대로 계약 진행 가능합니다.\n3) 자동 분류기(소터) 연동 항목은 별도 협의 없이 포함되어 있습니다.",
+          "loc": {
+            "kind": "txt",
+            "line_start": 8,
+            "line_end": 11
+          }
+        }
+      ],
+      "candidates": [],
+      "reason": null
+    },
+    "견적유효기간": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "사이트": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "작업명": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "로그시작": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "로그종료": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "실행결과": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "오류코드": {
+      "value": null,
+      "status": "not_found_native",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "no supported unambiguous value in native scope"
+    },
+    "사업명": {
+      "value": null,
+      "status": "not_found_native",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "no supported unambiguous value in native scope"
+    }
+  },
+  "pending_visual_units": [],
+  "deferred": {
+    "summary": "not_run",
+    "family": "not_run",
+    "latest_version": "not_run",
+    "vision": "not_required_by_parser"
+  },
+  "date_context": {
+    "observations": [
+      {
+        "role": "email_sent_date",
+        "value": "2025-04-09",
+        "rule_id": "date.role.email_sent_date",
+        "evidence": [
+          {
+            "kind": "block",
+            "ref": "D-030-5a6dba1c7f55-line1",
+            "quote": "From: 이준호 <junho.lee@raum.example>\nTo: 구매팀 <purchase@dln.example>\nDate: 2025-04-09 15:42\nSubject: RE: [평택센터 WMS 구축] 견적 관련 문의",
+            "loc": {
+              "kind": "txt",
+              "line_start": 1,
+              "line_end": 4
+            }
+          }
+        ],
+        "assertion": "source_statement_only"
+      }
+    ],
+    "selected_roles": [
+      "email_sent_date"
+    ],
+    "selection_reason": "explicit_document_date_precedes_other_date_roles",
+    "actual_signature_verified": false
+  }
+}

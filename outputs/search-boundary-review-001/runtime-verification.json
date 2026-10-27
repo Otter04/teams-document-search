@@ -1,0 +1,134 @@
+{
+  "v2": {
+    "ready": true,
+    "documents": 155,
+    "embedding_model": "bge-m3",
+    "embedding_fingerprint": "b8b299238334245d36f1447b3c185acd5f7271d28973c544ed45b59d67161762",
+    "query_analysis_model": "qwen3.6-35b-a3b",
+    "startup_seconds": 12.886235281825066,
+    "config": {
+      "version": "search-1.6.1",
+      "llm_budget_seconds": 2.5,
+      "lexical_k": 50,
+      "vector_k": 50,
+      "num_candidates": 200,
+      "rrf_k": 60,
+      "rerank_k": 100,
+      "result_documents": 5,
+      "bm25_fields": [
+        "file_name^2",
+        "context^1.5",
+        "table_header^1.5",
+        "body"
+      ],
+      "minimum_should_match": "50%",
+      "additional_chunk_weight": 0.0,
+      "max_additional_chunks": 0,
+      "support_pool_k": 30,
+      "document_score": "best_matching_chunk",
+      "source_expression_preference": true,
+      "r1_weights": {
+        "rrf": 0.45,
+        "lexical_overlap": 0.2,
+        "cosine": 0.2,
+        "literal_phrase": 0.05,
+        "identifier": 0.05,
+        "metadata": 0.05
+      },
+      "query_cache": false,
+      "operating_query_logs": false,
+      "exact_2a": false,
+      "verified_metadata_preference": true,
+      "explicit_dates": "required_no_relaxation"
+    },
+    "defaults": {
+      "filter_mode": "B",
+      "reranker": "R1",
+      "release_status": "development_only",
+      "quality_gate": "development_retrieval_targets_met_policy_conflicts_preserved",
+      "reason": "search-1.6.1: v002 required representatives in top5: old97/99, new26/26. Q-068/Q-069 retain explicit-date policy instead of old relaxed-date gold. Independent relevance and production validation remain pending. Timeout 2.5s: 12s produced identical top5 orders for all125 at higher latency."
+    },
+    "indices": {
+      "documents": "rag-search-documents-v002",
+      "chunks": "rag-search-chunks-v002"
+    }
+  },
+  "original": {
+    "ready": true,
+    "documents": 110,
+    "embedding_model": "bge-m3",
+    "embedding_fingerprint": "b8b299238334245d36f1447b3c185acd5f7271d28973c544ed45b59d67161762",
+    "query_analysis_model": "qwen3.6-35b-a3b",
+    "startup_seconds": 12.827032619155943,
+    "config": {
+      "version": "search-1.5.0",
+      "llm_budget_seconds": 2.5,
+      "lexical_k": 50,
+      "vector_k": 50,
+      "num_candidates": 200,
+      "rrf_k": 60,
+      "rerank_k": 100,
+      "result_documents": 5,
+      "bm25_fields": [
+        "file_name^2",
+        "context^1.5",
+        "table_header^1.5",
+        "body"
+      ],
+      "minimum_should_match": "50%",
+      "additional_chunk_weight": 0.1,
+      "max_additional_chunks": 3,
+      "support_pool_k": 30,
+      "r1_weights": {
+        "rrf": 0.45,
+        "lexical_overlap": 0.2,
+        "cosine": 0.2,
+        "literal_phrase": 0.05,
+        "identifier": 0.05,
+        "metadata": 0.05
+      },
+      "query_cache": false,
+      "operating_query_logs": false,
+      "exact_2a": false,
+      "verified_metadata_preference": true,
+      "explicit_dates": "required_no_relaxation"
+    },
+    "defaults": {
+      "filter_mode": "B",
+      "reranker": "R1",
+      "release_status": "development_only",
+      "quality_gate": "not_all_passed",
+      "reason": "S-07: A-R0 54 vs B-R0 55, B has zero gold exclusions. B-R1 +4 hits, no type decline, latency passed. Final acceptance remains blocked by G1, representative-label review and old ES number-query regression."
+    }
+  },
+  "es_cluster": {
+    "cluster_name": "rag-orin",
+    "status": "green",
+    "timed_out": false,
+    "number_of_nodes": 1,
+    "number_of_data_nodes": 1,
+    "active_primary_shards": 6,
+    "active_shards": 6,
+    "relocating_shards": 0,
+    "initializing_shards": 0,
+    "unassigned_shards": 0,
+    "unassigned_primary_shards": 0,
+    "delayed_unassigned_shards": 0,
+    "number_of_pending_tasks": 0,
+    "number_of_in_flight_fetch": 0,
+    "task_max_waiting_in_queue_millis": 0,
+    "active_shards_percent_as_number": 100.0
+  },
+  "indices": {
+    "rag-search-documents-v001": 110,
+    "rag-search-chunks-v001": 1089,
+    "rag-search-documents-v002": 155,
+    "rag-search-chunks-v002": 1244
+  },
+  "deployed_code_sha256": {
+    "engine.py": "98018aa0d9ec44d3c40af1d0bac63f89475226a30b4e7e6f135b4ce3bcdd4452",
+    "query.py": "55d70f39acba87da16f2ec8b6c73b6091fd7ca1ff9919cd80ad6aa2edff60832",
+    "selected.json": "f236ba32e264e646ed6eb3f90261a8bead1ca645b2090f7b3bab078b9cd7aa7e"
+  },
+  "evaluation_complete": true
+}

@@ -1,0 +1,1242 @@
+{
+  "schema_version": "1.0.0",
+  "record_kind": "run_result",
+  "doc_id": "D-049",
+  "source": {
+    "file_name": "server_architecture_sbm_202506.pptx",
+    "format": "pptx",
+    "relative_path": "sites/기술지원팀/Shared Documents/새봄병원/구성도/server_architecture_sbm_202506.pptx",
+    "sha256": "6c11eaab656bd147f54311caf939470a3d276e8f7a4560657b441add9b30c134",
+    "web_url": null,
+    "encoding": null
+  },
+  "coverage": {
+    "scope": "full_document",
+    "unit_inventory_complete": true,
+    "units": [
+      {
+        "unit_id": "native:slide1",
+        "loc": {
+          "kind": "pptx",
+          "slide": 1
+        },
+        "required": true,
+        "status": "completed",
+        "reason": null,
+        "block_ids": [
+          "D-049-6c11eaab656b-s1",
+          "D-049-6c11eaab656b-s1-shape2",
+          "D-049-6c11eaab656b-s1-shape3",
+          "D-049-6c11eaab656b-s1-shape4",
+          "D-049-6c11eaab656b-s1-shape5",
+          "D-049-6c11eaab656b-s1-shape7",
+          "D-049-6c11eaab656b-s1-shape9",
+          "D-049-6c11eaab656b-s1-shape11"
+        ]
+      },
+      {
+        "unit_id": "vision:slide1",
+        "loc": {
+          "kind": "pptx",
+          "slide": 1
+        },
+        "required": true,
+        "status": "completed",
+        "reason": "model extraction; source accuracy not yet reviewed",
+        "block_ids": [
+          "D-049-vision-slide1-b1",
+          "D-049-vision-slide1-b2",
+          "D-049-vision-slide1-b3",
+          "D-049-vision-slide1-b4",
+          "D-049-vision-slide1-b5",
+          "D-049-vision-slide1-b6",
+          "D-049-vision-slide1-b7",
+          "D-049-vision-slide1-b8"
+        ]
+      }
+    ]
+  },
+  "runs": [
+    {
+      "run_id": "native",
+      "method": "native_parser",
+      "implementation": "parser-2.0.0",
+      "model_id": null,
+      "provider": null,
+      "quantization": null,
+      "prompt_version": null,
+      "input_asset_ids": []
+    },
+    {
+      "run_id": "vision-slide1",
+      "method": "vision_llm",
+      "implementation": "rag-vision-1.0.0",
+      "model_id": "qwen/qwen3-vl-30b-a3b-instruct",
+      "provider": "DeepInfra",
+      "quantization": "fp8",
+      "prompt_version": "vision-1.0.0",
+      "input_asset_ids": [
+        "D-049-6c11eaab656b-slide-1"
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "asset_id": "D-049-6c11eaab656b-slide-1",
+      "path": "assets/D-049/slide-1.png",
+      "kind": "slide_image",
+      "loc": {
+        "kind": "pptx",
+        "slide": 1
+      },
+      "width": 1920,
+      "height": 1080,
+      "sha256": "06d46fe633443be1101166d7b263f6e1318f974c268138b52d55657a32754808"
+    }
+  ],
+  "blocks": [
+    {
+      "block_id": "D-049-6c11eaab656b-s1",
+      "parent_id": null,
+      "order": 1,
+      "type": "slide",
+      "text": "",
+      "loc": {
+        "kind": "pptx",
+        "slide": 1
+      },
+      "heading_path": [
+        "EMR 서버 구성도"
+      ],
+      "run_ref": "native",
+      "evidence": [],
+      "claims": [],
+      "context_ids": [],
+      "content_refs": [],
+      "warnings": []
+    },
+    {
+      "block_id": "D-049-6c11eaab656b-s1-shape2",
+      "parent_id": "D-049-6c11eaab656b-s1",
+      "order": 2,
+      "type": "heading",
+      "text": "EMR 서버 구성도",
+      "loc": {
+        "kind": "pptx",
+        "slide": 1,
+        "shape_ids": [
+          2
+        ],
+        "bbox": {
+          "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+          "x0": 0.0450011257663516,
+          "y0": 0.04666666666666667,
+          "x1": 0.9450236410933837,
+          "y1": 0.15333333333333332,
+          "precision": "exact"
+        }
+      },
+      "heading_path": [
+        "EMR 서버 구성도"
+      ],
+      "run_ref": "native",
+      "evidence": [
+        {
+          "evidence_id": "source",
+          "kind": "literal",
+          "loc": {
+            "kind": "pptx",
+            "slide": 1,
+            "shape_ids": [
+              2
+            ],
+            "bbox": {
+              "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+              "x0": 0.0450011257663516,
+              "y0": 0.04666666666666667,
+              "x1": 0.9450236410933837,
+              "y1": 0.15333333333333332,
+              "precision": "exact"
+            }
+          },
+          "quote": "EMR 서버 구성도"
+        }
+      ],
+      "claims": [],
+      "context_ids": [],
+      "content_refs": [],
+      "warnings": [
+        "title candidate from topmost text shape"
+      ]
+    },
+    {
+      "block_id": "D-049-6c11eaab656b-s1-shape3",
+      "parent_id": "D-049-6c11eaab656b-s1",
+      "order": 3,
+      "type": "paragraph",
+      "text": "사업: EMR 시스템 유지보수  |  설치 위치: 새봄병원 본관 전산실  |  2025-06-28",
+      "loc": {
+        "kind": "pptx",
+        "slide": 1,
+        "shape_ids": [
+          3
+        ],
+        "bbox": {
+          "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+          "x0": 0.0450011257663516,
+          "y0": 0.14,
+          "x1": 0.9450236410933837,
+          "y1": 0.20666666666666667,
+          "precision": "exact"
+        }
+      },
+      "heading_path": [
+        "EMR 서버 구성도"
+      ],
+      "run_ref": "native",
+      "evidence": [
+        {
+          "evidence_id": "source",
+          "kind": "literal",
+          "loc": {
+            "kind": "pptx",
+            "slide": 1,
+            "shape_ids": [
+              3
+            ],
+            "bbox": {
+              "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+              "x0": 0.0450011257663516,
+              "y0": 0.14,
+              "x1": 0.9450236410933837,
+              "y1": 0.20666666666666667,
+              "precision": "exact"
+            }
+          },
+          "quote": "사업: EMR 시스템 유지보수  |  설치 위치: 새봄병원 본관 전산실  |  2025-06-28"
+        }
+      ],
+      "claims": [],
+      "context_ids": [
+        "D-049-6c11eaab656b-s1-shape2"
+      ],
+      "content_refs": [],
+      "warnings": []
+    },
+    {
+      "block_id": "D-049-6c11eaab656b-s1-shape4",
+      "parent_id": "D-049-6c11eaab656b-s1",
+      "order": 4,
+      "type": "paragraph",
+      "text": "L4 / 로드밸런서",
+      "loc": {
+        "kind": "pptx",
+        "slide": 1,
+        "shape_ids": [
+          4
+        ],
+        "bbox": {
+          "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+          "x0": 0.3675091937585381,
+          "y0": 0.22666666666666666,
+          "x1": 0.6300157607289224,
+          "y1": 0.3333333333333333,
+          "precision": "exact"
+        }
+      },
+      "heading_path": [
+        "EMR 서버 구성도"
+      ],
+      "run_ref": "native",
+      "evidence": [
+        {
+          "evidence_id": "source",
+          "kind": "literal",
+          "loc": {
+            "kind": "pptx",
+            "slide": 1,
+            "shape_ids": [
+              4
+            ],
+            "bbox": {
+              "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+              "x0": 0.3675091937585381,
+              "y0": 0.22666666666666666,
+              "x1": 0.6300157607289224,
+              "y1": 0.3333333333333333,
+              "precision": "exact"
+            }
+          },
+          "quote": "L4 / 로드밸런서"
+        }
+      ],
+      "claims": [],
+      "context_ids": [
+        "D-049-6c11eaab656b-s1-shape2"
+      ],
+      "content_refs": [],
+      "warnings": []
+    },
+    {
+      "block_id": "D-049-6c11eaab656b-s1-shape5",
+      "parent_id": "D-049-6c11eaab656b-s1",
+      "order": 5,
+      "type": "paragraph",
+      "text": "emr-was01\nEMR WAS\nRHEL 8.10 | 16 vCPU / 64GB\n10.43.10.11",
+      "loc": {
+        "kind": "pptx",
+        "slide": 1,
+        "shape_ids": [
+          5
+        ],
+        "bbox": {
+          "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+          "x0": 0.048751219580214236,
+          "y0": 0.4,
+          "x1": 0.25688142624959037,
+          "y1": 0.5933333333333334,
+          "precision": "exact"
+        }
+      },
+      "heading_path": [
+        "EMR 서버 구성도"
+      ],
+      "run_ref": "native",
+      "evidence": [
+        {
+          "evidence_id": "source",
+          "kind": "literal",
+          "loc": {
+            "kind": "pptx",
+            "slide": 1,
+            "shape_ids": [
+              5
+            ],
+            "bbox": {
+              "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+              "x0": 0.048751219580214236,
+              "y0": 0.4,
+              "x1": 0.25688142624959037,
+              "y1": 0.5933333333333334,
+              "precision": "exact"
+            }
+          },
+          "quote": "emr-was01\nEMR WAS\nRHEL 8.10 | 16 vCPU / 64GB\n10.43.10.11"
+        }
+      ],
+      "claims": [],
+      "context_ids": [
+        "D-049-6c11eaab656b-s1-shape2"
+      ],
+      "content_refs": [],
+      "warnings": []
+    },
+    {
+      "block_id": "D-049-6c11eaab656b-s1-shape7",
+      "parent_id": "D-049-6c11eaab656b-s1",
+      "order": 6,
+      "type": "paragraph",
+      "text": "emr-was02\nEMR WAS\nRHEL 8.10 | 16 vCPU / 64GB\n10.43.10.12",
+      "loc": {
+        "kind": "pptx",
+        "slide": 1,
+        "shape_ids": [
+          7
+        ],
+        "bbox": {
+          "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+          "x0": 0.2793819071097169,
+          "y0": 0.4,
+          "x1": 0.48751211377909304,
+          "y1": 0.5933333333333334,
+          "precision": "exact"
+        }
+      },
+      "heading_path": [
+        "EMR 서버 구성도"
+      ],
+      "run_ref": "native",
+      "evidence": [
+        {
+          "evidence_id": "source",
+          "kind": "literal",
+          "loc": {
+            "kind": "pptx",
+            "slide": 1,
+            "shape_ids": [
+              7
+            ],
+            "bbox": {
+              "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+              "x0": 0.2793819071097169,
+              "y0": 0.4,
+              "x1": 0.48751211377909304,
+              "y1": 0.5933333333333334,
+              "precision": "exact"
+            }
+          },
+          "quote": "emr-was02\nEMR WAS\nRHEL 8.10 | 16 vCPU / 64GB\n10.43.10.12"
+        }
+      ],
+      "claims": [],
+      "context_ids": [
+        "D-049-6c11eaab656b-s1-shape2"
+      ],
+      "content_refs": [],
+      "warnings": []
+    },
+    {
+      "block_id": "D-049-6c11eaab656b-s1-shape9",
+      "parent_id": "D-049-6c11eaab656b-s1",
+      "order": 7,
+      "type": "paragraph",
+      "text": "emr-db01\nEMR DB (Oracle 19c RAC)\nRHEL 8.10 | 48 vCPU / 384GB\n10.43.10.21",
+      "loc": {
+        "kind": "pptx",
+        "slide": 1,
+        "shape_ids": [
+          9
+        ],
+        "bbox": {
+          "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+          "x0": 0.5100127586853181,
+          "y0": 0.4,
+          "x1": 0.7181429653546944,
+          "y1": 0.5933333333333334,
+          "precision": "exact"
+        }
+      },
+      "heading_path": [
+        "EMR 서버 구성도"
+      ],
+      "run_ref": "native",
+      "evidence": [
+        {
+          "evidence_id": "source",
+          "kind": "literal",
+          "loc": {
+            "kind": "pptx",
+            "slide": 1,
+            "shape_ids": [
+              9
+            ],
+            "bbox": {
+              "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+              "x0": 0.5100127586853181,
+              "y0": 0.4,
+              "x1": 0.7181429653546944,
+              "y1": 0.5933333333333334,
+              "precision": "exact"
+            }
+          },
+          "quote": "emr-db01\nEMR DB (Oracle 19c RAC)\nRHEL 8.10 | 48 vCPU / 384GB\n10.43.10.21"
+        }
+      ],
+      "claims": [],
+      "context_ids": [
+        "D-049-6c11eaab656b-s1-shape2"
+      ],
+      "content_refs": [],
+      "warnings": []
+    },
+    {
+      "block_id": "D-049-6c11eaab656b-s1-shape11",
+      "parent_id": "D-049-6c11eaab656b-s1",
+      "order": 8,
+      "type": "paragraph",
+      "text": "emr-db02\nEMR DB (Oracle 19c RAC)\nRHEL 8.10 | 48 vCPU / 384GB\n10.43.10.22",
+      "loc": {
+        "kind": "pptx",
+        "slide": 1,
+        "shape_ids": [
+          11
+        ],
+        "bbox": {
+          "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+          "x0": 0.7406435282378702,
+          "y0": 0.4,
+          "x1": 0.9487737349072463,
+          "y1": 0.5933333333333334,
+          "precision": "exact"
+        }
+      },
+      "heading_path": [
+        "EMR 서버 구성도"
+      ],
+      "run_ref": "native",
+      "evidence": [
+        {
+          "evidence_id": "source",
+          "kind": "literal",
+          "loc": {
+            "kind": "pptx",
+            "slide": 1,
+            "shape_ids": [
+              11
+            ],
+            "bbox": {
+              "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+              "x0": 0.7406435282378702,
+              "y0": 0.4,
+              "x1": 0.9487737349072463,
+              "y1": 0.5933333333333334,
+              "precision": "exact"
+            }
+          },
+          "quote": "emr-db02\nEMR DB (Oracle 19c RAC)\nRHEL 8.10 | 48 vCPU / 384GB\n10.43.10.22"
+        }
+      ],
+      "claims": [],
+      "context_ids": [
+        "D-049-6c11eaab656b-s1-shape2"
+      ],
+      "content_refs": [],
+      "warnings": []
+    },
+    {
+      "block_id": "D-049-vision-slide1-b1",
+      "parent_id": null,
+      "order": 9,
+      "type": "heading",
+      "text": "EMR 서버 구성도",
+      "loc": {
+        "kind": "pptx",
+        "slide": 1,
+        "bbox": {
+          "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+          "x0": 0.045001,
+          "y0": 0.046667,
+          "x1": 0.945024,
+          "y1": 0.153333,
+          "precision": "approximate"
+        }
+      },
+      "heading_path": [],
+      "run_ref": "vision-slide1",
+      "evidence": [
+        {
+          "evidence_id": "literal",
+          "kind": "literal",
+          "loc": {
+            "kind": "pptx",
+            "slide": 1,
+            "bbox": {
+              "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+              "x0": 0.045001,
+              "y0": 0.046667,
+              "x1": 0.945024,
+              "y1": 0.153333,
+              "precision": "approximate"
+            }
+          },
+          "quote": "EMR 서버 구성도"
+        }
+      ],
+      "claims": [],
+      "context_ids": [
+        "D-049-6c11eaab656b-s1",
+        "D-049-6c11eaab656b-s1-shape2",
+        "D-049-6c11eaab656b-s1-shape3",
+        "D-049-6c11eaab656b-s1-shape4",
+        "D-049-6c11eaab656b-s1-shape5",
+        "D-049-6c11eaab656b-s1-shape7",
+        "D-049-6c11eaab656b-s1-shape9",
+        "D-049-6c11eaab656b-s1-shape11"
+      ],
+      "content_refs": [],
+      "warnings": [
+        "model_output_needs_source_review"
+      ]
+    },
+    {
+      "block_id": "D-049-vision-slide1-b2",
+      "parent_id": null,
+      "order": 10,
+      "type": "paragraph",
+      "text": "사업: EMR 시스템 유지보수  |  설치 위치: 새봄병원 본관 전산실  |  2025-06-28",
+      "loc": {
+        "kind": "pptx",
+        "slide": 1,
+        "bbox": {
+          "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+          "x0": 0.045001,
+          "y0": 0.14,
+          "x1": 0.945024,
+          "y1": 0.206667,
+          "precision": "approximate"
+        }
+      },
+      "heading_path": [],
+      "run_ref": "vision-slide1",
+      "evidence": [
+        {
+          "evidence_id": "literal",
+          "kind": "literal",
+          "loc": {
+            "kind": "pptx",
+            "slide": 1,
+            "bbox": {
+              "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+              "x0": 0.045001,
+              "y0": 0.14,
+              "x1": 0.945024,
+              "y1": 0.206667,
+              "precision": "approximate"
+            }
+          },
+          "quote": "사업: EMR 시스템 유지보수  |  설치 위치: 새봄병원 본관 전산실  |  2025-06-28"
+        }
+      ],
+      "claims": [],
+      "context_ids": [
+        "D-049-6c11eaab656b-s1",
+        "D-049-6c11eaab656b-s1-shape2",
+        "D-049-6c11eaab656b-s1-shape3",
+        "D-049-6c11eaab656b-s1-shape4",
+        "D-049-6c11eaab656b-s1-shape5",
+        "D-049-6c11eaab656b-s1-shape7",
+        "D-049-6c11eaab656b-s1-shape9",
+        "D-049-6c11eaab656b-s1-shape11"
+      ],
+      "content_refs": [],
+      "warnings": [
+        "model_output_needs_source_review"
+      ]
+    },
+    {
+      "block_id": "D-049-vision-slide1-b3",
+      "parent_id": null,
+      "order": 11,
+      "type": "paragraph",
+      "text": "L4 / 로드밸런서",
+      "loc": {
+        "kind": "pptx",
+        "slide": 1,
+        "bbox": {
+          "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+          "x0": 0.367509,
+          "y0": 0.226667,
+          "x1": 0.630016,
+          "y1": 0.333333,
+          "precision": "approximate"
+        }
+      },
+      "heading_path": [],
+      "run_ref": "vision-slide1",
+      "evidence": [
+        {
+          "evidence_id": "literal",
+          "kind": "literal",
+          "loc": {
+            "kind": "pptx",
+            "slide": 1,
+            "bbox": {
+              "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+              "x0": 0.367509,
+              "y0": 0.226667,
+              "x1": 0.630016,
+              "y1": 0.333333,
+              "precision": "approximate"
+            }
+          },
+          "quote": "L4 / 로드밸런서"
+        }
+      ],
+      "claims": [],
+      "context_ids": [
+        "D-049-6c11eaab656b-s1",
+        "D-049-6c11eaab656b-s1-shape2",
+        "D-049-6c11eaab656b-s1-shape3",
+        "D-049-6c11eaab656b-s1-shape4",
+        "D-049-6c11eaab656b-s1-shape5",
+        "D-049-6c11eaab656b-s1-shape7",
+        "D-049-6c11eaab656b-s1-shape9",
+        "D-049-6c11eaab656b-s1-shape11"
+      ],
+      "content_refs": [],
+      "warnings": [
+        "model_output_needs_source_review"
+      ]
+    },
+    {
+      "block_id": "D-049-vision-slide1-b4",
+      "parent_id": null,
+      "order": 12,
+      "type": "paragraph",
+      "text": "emr-was01\nEMR WAS\nRHEL 8.10 | 16 vCPU / 64GB\n10.43.10.11",
+      "loc": {
+        "kind": "pptx",
+        "slide": 1,
+        "bbox": {
+          "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+          "x0": 0.048751,
+          "y0": 0.4,
+          "x1": 0.256881,
+          "y1": 0.593333,
+          "precision": "approximate"
+        }
+      },
+      "heading_path": [],
+      "run_ref": "vision-slide1",
+      "evidence": [
+        {
+          "evidence_id": "literal",
+          "kind": "literal",
+          "loc": {
+            "kind": "pptx",
+            "slide": 1,
+            "bbox": {
+              "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+              "x0": 0.048751,
+              "y0": 0.4,
+              "x1": 0.256881,
+              "y1": 0.593333,
+              "precision": "approximate"
+            }
+          },
+          "quote": "emr-was01\nEMR WAS\nRHEL 8.10 | 16 vCPU / 64GB\n10.43.10.11"
+        }
+      ],
+      "claims": [],
+      "context_ids": [
+        "D-049-6c11eaab656b-s1",
+        "D-049-6c11eaab656b-s1-shape2",
+        "D-049-6c11eaab656b-s1-shape3",
+        "D-049-6c11eaab656b-s1-shape4",
+        "D-049-6c11eaab656b-s1-shape5",
+        "D-049-6c11eaab656b-s1-shape7",
+        "D-049-6c11eaab656b-s1-shape9",
+        "D-049-6c11eaab656b-s1-shape11"
+      ],
+      "content_refs": [],
+      "warnings": [
+        "model_output_needs_source_review"
+      ]
+    },
+    {
+      "block_id": "D-049-vision-slide1-b5",
+      "parent_id": null,
+      "order": 13,
+      "type": "paragraph",
+      "text": "emr-was02\nEMR WAS\nRHEL 8.10 | 16 vCPU / 64GB\n10.43.10.12",
+      "loc": {
+        "kind": "pptx",
+        "slide": 1,
+        "bbox": {
+          "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+          "x0": 0.279382,
+          "y0": 0.4,
+          "x1": 0.487512,
+          "y1": 0.593333,
+          "precision": "approximate"
+        }
+      },
+      "heading_path": [],
+      "run_ref": "vision-slide1",
+      "evidence": [
+        {
+          "evidence_id": "literal",
+          "kind": "literal",
+          "loc": {
+            "kind": "pptx",
+            "slide": 1,
+            "bbox": {
+              "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+              "x0": 0.279382,
+              "y0": 0.4,
+              "x1": 0.487512,
+              "y1": 0.593333,
+              "precision": "approximate"
+            }
+          },
+          "quote": "emr-was02\nEMR WAS\nRHEL 8.10 | 16 vCPU / 64GB\n10.43.10.12"
+        }
+      ],
+      "claims": [],
+      "context_ids": [
+        "D-049-6c11eaab656b-s1",
+        "D-049-6c11eaab656b-s1-shape2",
+        "D-049-6c11eaab656b-s1-shape3",
+        "D-049-6c11eaab656b-s1-shape4",
+        "D-049-6c11eaab656b-s1-shape5",
+        "D-049-6c11eaab656b-s1-shape7",
+        "D-049-6c11eaab656b-s1-shape9",
+        "D-049-6c11eaab656b-s1-shape11"
+      ],
+      "content_refs": [],
+      "warnings": [
+        "model_output_needs_source_review"
+      ]
+    },
+    {
+      "block_id": "D-049-vision-slide1-b6",
+      "parent_id": null,
+      "order": 14,
+      "type": "paragraph",
+      "text": "emr-db01\nEMR DB (Oracle 19c RAC)\nRHEL 8.10 | 48 vCPU / 384GB\n10.43.10.21",
+      "loc": {
+        "kind": "pptx",
+        "slide": 1,
+        "bbox": {
+          "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+          "x0": 0.510013,
+          "y0": 0.4,
+          "x1": 0.718143,
+          "y1": 0.593333,
+          "precision": "approximate"
+        }
+      },
+      "heading_path": [],
+      "run_ref": "vision-slide1",
+      "evidence": [
+        {
+          "evidence_id": "literal",
+          "kind": "literal",
+          "loc": {
+            "kind": "pptx",
+            "slide": 1,
+            "bbox": {
+              "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+              "x0": 0.510013,
+              "y0": 0.4,
+              "x1": 0.718143,
+              "y1": 0.593333,
+              "precision": "approximate"
+            }
+          },
+          "quote": "emr-db01\nEMR DB (Oracle 19c RAC)\nRHEL 8.10 | 48 vCPU / 384GB\n10.43.10.21"
+        }
+      ],
+      "claims": [],
+      "context_ids": [
+        "D-049-6c11eaab656b-s1",
+        "D-049-6c11eaab656b-s1-shape2",
+        "D-049-6c11eaab656b-s1-shape3",
+        "D-049-6c11eaab656b-s1-shape4",
+        "D-049-6c11eaab656b-s1-shape5",
+        "D-049-6c11eaab656b-s1-shape7",
+        "D-049-6c11eaab656b-s1-shape9",
+        "D-049-6c11eaab656b-s1-shape11"
+      ],
+      "content_refs": [],
+      "warnings": [
+        "model_output_needs_source_review"
+      ]
+    },
+    {
+      "block_id": "D-049-vision-slide1-b7",
+      "parent_id": null,
+      "order": 15,
+      "type": "paragraph",
+      "text": "emr-db02\nEMR DB (Oracle 19c RAC)\nRHEL 8.10 | 48 vCPU / 384GB\n10.43.10.22",
+      "loc": {
+        "kind": "pptx",
+        "slide": 1,
+        "bbox": {
+          "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+          "x0": 0.740644,
+          "y0": 0.4,
+          "x1": 0.948774,
+          "y1": 0.593333,
+          "precision": "approximate"
+        }
+      },
+      "heading_path": [],
+      "run_ref": "vision-slide1",
+      "evidence": [
+        {
+          "evidence_id": "literal",
+          "kind": "literal",
+          "loc": {
+            "kind": "pptx",
+            "slide": 1,
+            "bbox": {
+              "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+              "x0": 0.740644,
+              "y0": 0.4,
+              "x1": 0.948774,
+              "y1": 0.593333,
+              "precision": "approximate"
+            }
+          },
+          "quote": "emr-db02\nEMR DB (Oracle 19c RAC)\nRHEL 8.10 | 48 vCPU / 384GB\n10.43.10.22"
+        }
+      ],
+      "claims": [],
+      "context_ids": [
+        "D-049-6c11eaab656b-s1",
+        "D-049-6c11eaab656b-s1-shape2",
+        "D-049-6c11eaab656b-s1-shape3",
+        "D-049-6c11eaab656b-s1-shape4",
+        "D-049-6c11eaab656b-s1-shape5",
+        "D-049-6c11eaab656b-s1-shape7",
+        "D-049-6c11eaab656b-s1-shape9",
+        "D-049-6c11eaab656b-s1-shape11"
+      ],
+      "content_refs": [],
+      "warnings": [
+        "model_output_needs_source_review"
+      ]
+    },
+    {
+      "block_id": "D-049-vision-slide1-b8",
+      "parent_id": null,
+      "order": 16,
+      "type": "figure",
+      "text": "",
+      "loc": {
+        "kind": "pptx",
+        "slide": 1,
+        "bbox": {
+          "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+          "x0": 0.045001,
+          "y0": 0.226667,
+          "x1": 0.945024,
+          "y1": 0.593333,
+          "precision": "approximate"
+        }
+      },
+      "heading_path": [],
+      "run_ref": "vision-slide1",
+      "evidence": [
+        {
+          "evidence_id": "n1",
+          "kind": "literal",
+          "loc": {
+            "kind": "pptx",
+            "slide": 1,
+            "bbox": {
+              "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+              "x0": 0.367509,
+              "y0": 0.226667,
+              "x1": 0.630016,
+              "y1": 0.333333,
+              "precision": "approximate"
+            }
+          },
+          "quote": "L4 / 로드밸런서"
+        },
+        {
+          "evidence_id": "n2",
+          "kind": "literal",
+          "loc": {
+            "kind": "pptx",
+            "slide": 1,
+            "bbox": {
+              "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+              "x0": 0.048751,
+              "y0": 0.4,
+              "x1": 0.256881,
+              "y1": 0.593333,
+              "precision": "approximate"
+            }
+          },
+          "quote": "emr-was01\nEMR WAS\nRHEL 8.10 | 16 vCPU / 64GB\n10.43.10.11"
+        },
+        {
+          "evidence_id": "n3",
+          "kind": "literal",
+          "loc": {
+            "kind": "pptx",
+            "slide": 1,
+            "bbox": {
+              "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+              "x0": 0.279382,
+              "y0": 0.4,
+              "x1": 0.487512,
+              "y1": 0.593333,
+              "precision": "approximate"
+            }
+          },
+          "quote": "emr-was02\nEMR WAS\nRHEL 8.10 | 16 vCPU / 64GB\n10.43.10.12"
+        },
+        {
+          "evidence_id": "n4",
+          "kind": "literal",
+          "loc": {
+            "kind": "pptx",
+            "slide": 1,
+            "bbox": {
+              "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+              "x0": 0.510013,
+              "y0": 0.4,
+              "x1": 0.718143,
+              "y1": 0.593333,
+              "precision": "approximate"
+            }
+          },
+          "quote": "emr-db01\nEMR DB (Oracle 19c RAC)\nRHEL 8.10 | 48 vCPU / 384GB\n10.43.10.21"
+        },
+        {
+          "evidence_id": "n5",
+          "kind": "literal",
+          "loc": {
+            "kind": "pptx",
+            "slide": 1,
+            "bbox": {
+              "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+              "x0": 0.740644,
+              "y0": 0.4,
+              "x1": 0.948774,
+              "y1": 0.593333,
+              "precision": "approximate"
+            }
+          },
+          "quote": "emr-db02\nEMR DB (Oracle 19c RAC)\nRHEL 8.10 | 48 vCPU / 384GB\n10.43.10.22"
+        },
+        {
+          "evidence_id": "e1",
+          "kind": "visual_region",
+          "loc": {
+            "kind": "pptx",
+            "slide": 1,
+            "bbox": {
+              "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+              "x0": 0.045001,
+              "y0": 0.333333,
+              "x1": 0.367509,
+              "y1": 0.4,
+              "precision": "approximate"
+            }
+          },
+          "quote": null
+        },
+        {
+          "evidence_id": "e2",
+          "kind": "visual_region",
+          "loc": {
+            "kind": "pptx",
+            "slide": 1,
+            "bbox": {
+              "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+              "x0": 0.279382,
+              "y0": 0.333333,
+              "x1": 0.630016,
+              "y1": 0.4,
+              "precision": "approximate"
+            }
+          },
+          "quote": null
+        },
+        {
+          "evidence_id": "e3",
+          "kind": "visual_region",
+          "loc": {
+            "kind": "pptx",
+            "slide": 1,
+            "bbox": {
+              "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+              "x0": 0.510013,
+              "y0": 0.333333,
+              "x1": 0.945024,
+              "y1": 0.4,
+              "precision": "approximate"
+            }
+          },
+          "quote": null
+        },
+        {
+          "evidence_id": "e4",
+          "kind": "visual_region",
+          "loc": {
+            "kind": "pptx",
+            "slide": 1,
+            "bbox": {
+              "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+              "x0": 0.740644,
+              "y0": 0.333333,
+              "x1": 0.945024,
+              "y1": 0.4,
+              "precision": "approximate"
+            }
+          },
+          "quote": null
+        },
+        {
+          "evidence_id": "c1",
+          "kind": "visual_region",
+          "loc": {
+            "kind": "pptx",
+            "slide": 1,
+            "bbox": {
+              "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+              "x0": 0.045001,
+              "y0": 0.226667,
+              "x1": 0.945024,
+              "y1": 0.593333,
+              "precision": "approximate"
+            }
+          },
+          "quote": null
+        }
+      ],
+      "claims": [
+        {
+          "claim_id": "c1",
+          "text": "EMR 서버 구성도. L4 / 로드밸런서는 emr-was01, emr-was02, emr-db01, emr-db02 네 개의 서버로 연결된다. 각 서버는 이름, 역할, 운영체제, CPU/메모리, IP 주소를 포함한다.",
+          "status": "observed",
+          "evidence_ids": [
+            "c1"
+          ]
+        }
+      ],
+      "context_ids": [
+        "D-049-6c11eaab656b-s1",
+        "D-049-6c11eaab656b-s1-shape2",
+        "D-049-6c11eaab656b-s1-shape3",
+        "D-049-6c11eaab656b-s1-shape4",
+        "D-049-6c11eaab656b-s1-shape5",
+        "D-049-6c11eaab656b-s1-shape7",
+        "D-049-6c11eaab656b-s1-shape9",
+        "D-049-6c11eaab656b-s1-shape11"
+      ],
+      "content_refs": [],
+      "warnings": [
+        "model_output_needs_source_review"
+      ],
+      "visual": {
+        "kind": "diagram",
+        "nodes": [
+          {
+            "node_id": "l4-load-balancer",
+            "label": "L4 / 로드밸런서",
+            "loc": {
+              "kind": "pptx",
+              "slide": 1,
+              "bbox": {
+                "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+                "x0": 0.367509,
+                "y0": 0.226667,
+                "x1": 0.630016,
+                "y1": 0.333333,
+                "precision": "approximate"
+              }
+            },
+            "evidence_ids": [
+              "n1"
+            ]
+          },
+          {
+            "node_id": "emr-was01",
+            "label": "emr-was01\nEMR WAS\nRHEL 8.10 | 16 vCPU / 64GB\n10.43.10.11",
+            "loc": {
+              "kind": "pptx",
+              "slide": 1,
+              "bbox": {
+                "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+                "x0": 0.048751,
+                "y0": 0.4,
+                "x1": 0.256881,
+                "y1": 0.593333,
+                "precision": "approximate"
+              }
+            },
+            "evidence_ids": [
+              "n2"
+            ]
+          },
+          {
+            "node_id": "emr-was02",
+            "label": "emr-was02\nEMR WAS\nRHEL 8.10 | 16 vCPU / 64GB\n10.43.10.12",
+            "loc": {
+              "kind": "pptx",
+              "slide": 1,
+              "bbox": {
+                "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+                "x0": 0.279382,
+                "y0": 0.4,
+                "x1": 0.487512,
+                "y1": 0.593333,
+                "precision": "approximate"
+              }
+            },
+            "evidence_ids": [
+              "n3"
+            ]
+          },
+          {
+            "node_id": "emr-db01",
+            "label": "emr-db01\nEMR DB (Oracle 19c RAC)\nRHEL 8.10 | 48 vCPU / 384GB\n10.43.10.21",
+            "loc": {
+              "kind": "pptx",
+              "slide": 1,
+              "bbox": {
+                "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+                "x0": 0.510013,
+                "y0": 0.4,
+                "x1": 0.718143,
+                "y1": 0.593333,
+                "precision": "approximate"
+              }
+            },
+            "evidence_ids": [
+              "n4"
+            ]
+          },
+          {
+            "node_id": "emr-db02",
+            "label": "emr-db02\nEMR DB (Oracle 19c RAC)\nRHEL 8.10 | 48 vCPU / 384GB\n10.43.10.22",
+            "loc": {
+              "kind": "pptx",
+              "slide": 1,
+              "bbox": {
+                "frame_asset_id": "D-049-6c11eaab656b-slide-1",
+                "x0": 0.740644,
+                "y0": 0.4,
+                "x1": 0.948774,
+                "y1": 0.593333,
+                "precision": "approximate"
+              }
+            },
+            "evidence_ids": [
+              "n5"
+            ]
+          }
+        ],
+        "relations": [
+          {
+            "from_node": "l4-load-balancer",
+            "to_node": "emr-was01",
+            "direction": "undirected",
+            "label": "",
+            "relation_id": "r1",
+            "evidence_ids": [
+              "e1"
+            ]
+          },
+          {
+            "from_node": "l4-load-balancer",
+            "to_node": "emr-was02",
+            "direction": "undirected",
+            "label": "",
+            "relation_id": "r2",
+            "evidence_ids": [
+              "e2"
+            ]
+          },
+          {
+            "from_node": "l4-load-balancer",
+            "to_node": "emr-db01",
+            "direction": "undirected",
+            "label": "",
+            "relation_id": "r3",
+            "evidence_ids": [
+              "e3"
+            ]
+          },
+          {
+            "from_node": "l4-load-balancer",
+            "to_node": "emr-db02",
+            "direction": "undirected",
+            "label": "",
+            "relation_id": "r4",
+            "evidence_ids": [
+              "e4"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "warnings": []
+}

@@ -1,0 +1,66 @@
+{
+  "health": {
+    "ready": true,
+    "documents": 110,
+    "embedding_model": "bge-m3",
+    "embedding_fingerprint": "b8b299238334245d36f1447b3c185acd5f7271d28973c544ed45b59d67161762",
+    "query_analysis_model": "qwen3.6-35b-a3b",
+    "startup_seconds": 13.226890009827912,
+    "config": {
+      "version": "search-1.0.2",
+      "llm_budget_seconds": 2.5,
+      "lexical_k": 50,
+      "vector_k": 50,
+      "num_candidates": 200,
+      "rrf_k": 60,
+      "rerank_k": 30,
+      "result_documents": 5,
+      "bm25_fields": [
+        "file_name^2",
+        "context^1.5",
+        "table_header^1.5",
+        "body"
+      ],
+      "minimum_should_match": "50%",
+      "additional_chunk_weight": 0.1,
+      "max_additional_chunks": 3,
+      "r1_weights": {
+        "rrf": 0.45,
+        "lexical_overlap": 0.2,
+        "cosine": 0.2,
+        "literal_phrase": 0.05,
+        "identifier": 0.05,
+        "metadata": 0.05
+      },
+      "query_cache": false,
+      "operating_query_logs": false,
+      "exact_2a": false
+    },
+    "defaults": {
+      "filter_mode": "B",
+      "reranker": "R1",
+      "release_status": "development_only",
+      "quality_gate": "not_all_passed",
+      "reason": "S-07: A-R0 54 vs B-R0 55, B has zero gold exclusions. B-R1 +4 hits, no type decline, latency passed. Final acceptance remains blocked by G1, representative-label review and old ES number-query regression."
+    }
+  },
+  "counts": {
+    "rag-documents": 110,
+    "rag-chunks": 1089,
+    "rag-search-documents-v001": 110,
+    "rag-search-chunks-v001": 1089
+  },
+  "old_aliases_unchanged": true,
+  "qwen_model_id": "qwen3.6-35b-a3b",
+  "container_status": "rag-search: Up 4 minutes\nrag-elasticsearch: Up About an hour\nrag-qwen36: Up 7 hours\n",
+  "api_loopback": [
+    "LISTEN 0      2048       127.0.0.1:8020       0.0.0.0:*          "
+  ],
+  "code_hashes": {
+    "query.py": "f0bf1eb891f5d8c682711e5076baed468fee007dc45793d49c411e68fc0bd4da",
+    "engine.py": "ca06936c20ee9ba2cfc66fb59b287a3163fcabad5a8d26fc38a1f0e17bf0aca4",
+    "service.py": "ae6c86438d9bd1b6a7bfd9a62c0829b2fd82b285a42a3933e876ed6714758354",
+    "index.html": "38c1e0d81b470914aed941577488fec8e089d80182037be064373ed720deacae",
+    "selected.json": "c80d9adef03b9b89215c3a34632a9301644521f721e57d4893e6cbc84debf6b3"
+  }
+}

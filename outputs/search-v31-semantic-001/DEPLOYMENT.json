@@ -1,0 +1,106 @@
+{
+  "verified_at": "2026-10-26T01:46:06.290943+00:00",
+  "public_url": "http://127.0.0.1:18022/",
+  "health": {
+    "ready": true,
+    "documents": 195,
+    "embedding_model": "bge-m3",
+    "embedding_fingerprint": "b8b299238334245d36f1447b3c185acd5f7271d28973c544ed45b59d67161762",
+    "query_analysis_model": "qwen3.6-35b-a3b",
+    "startup_seconds": 14.314691541716456,
+    "config": {
+      "version": "search-1.8.4",
+      "llm_budget_seconds": 2.5,
+      "source_review": "source-review-v1",
+      "source_review_budget_seconds": 90,
+      "source_review_documents": 60,
+      "review_vector_k": 150,
+      "lexical_k": 50,
+      "vector_k": 50,
+      "num_candidates": 200,
+      "candidate_diversity_branch": "vector",
+      "candidate_per_document": 3,
+      "diversity_min_share": 0.5,
+      "candidate_batch": 150,
+      "candidate_max_rounds": 6,
+      "rrf_k": 60,
+      "rerank_k": 100,
+      "result_documents": 5,
+      "bm25_fields": [
+        "file_name^2",
+        "context^1.5",
+        "table_header^1.5",
+        "body"
+      ],
+      "minimum_should_match": "50%",
+      "additional_chunk_weight": 0.0,
+      "max_additional_chunks": 0,
+      "support_pool_k": 30,
+      "document_score": "best_matching_chunk",
+      "source_expression_preference": true,
+      "r1_weights": {
+        "rrf": 0.45,
+        "lexical_overlap": 0.2,
+        "cosine": 0.2,
+        "literal_phrase": 0.05,
+        "identifier": 0.05,
+        "metadata": 0.05
+      },
+      "query_cache": false,
+      "operating_query_logs": false,
+      "exact_2a": false,
+      "verified_metadata_preference": true,
+      "explicit_dates": "required_no_relaxation"
+    },
+    "defaults": {
+      "filter_mode": "B",
+      "reranker": "R1",
+      "release_status": "development_only",
+      "quality_gate": "development_accuracy_maintained_latency_tradeoff",
+      "reason": "search-1.8.4: existing150 148/150 retained, paraphrases16/16 (previous10/16), six previous failures all rank1. Conditional Qwen source review, literal quote and version guards, no new vocabulary rules. Overall mean1.37 to3.74s; no claim of 3-second target or independent validation. Explicit-date conflicts preserved."
+    },
+    "indices": {
+      "documents": "rag-search-documents-v003",
+      "chunks": "rag-search-chunks-v003"
+    }
+  },
+  "container_states": [
+    "/rag-search-v31-validation running",
+    "/rag-search-semantic-validation exited",
+    "/rag-semantic-reranker exited",
+    "/rag-qwen36 running",
+    "/rag-elasticsearch running"
+  ],
+  "runtime_files": {
+    "engine.py": "d5c9addadff6990db2df699fcca18123514bd35d183b35d576c5bddf71be28ee",
+    "source_review.py": "d983e38a9b34084bedc9e6dde37139fc969bddee6cf395e797d295b411068be4",
+    "query.py": "3b7a2b742266173c2033be4481016fbd9872e55d9d08ffdb6e403571076c3b0c",
+    "service.py": "9719f3a37c0418295e4a42c655f4968da89eba8fd570868e9e0eea126cb628d4",
+    "index.html": "c839110db2cf723a4a6a2da92f62d4944ed87d9bdf6d8b7a447678e60468ab6e",
+    "selected.json": "e2dbfe3be8c2ef97653f811fe97ace3707b6262eec1c28f8bb958e8a0385d295"
+  },
+  "evaluation": "run-003",
+  "ui_smoke_checks": [
+    {
+      "case": "Q-131-P08",
+      "expected": "D-175",
+      "observed_rank": 1,
+      "seconds": 10.05,
+      "method": "live browser"
+    },
+    {
+      "case": "Q-130-P05",
+      "expected": "D-178",
+      "observed_rank": 1,
+      "seconds": 10.93,
+      "method": "live browser"
+    }
+  ],
+  "post_evaluation_changes": [
+    "Removed misleading next100 candidates UI label; ranking unchanged",
+    "Clarified evaluation --no-llm help text; runner logic unchanged"
+  ],
+  "screenshot": "reranking-screen.png",
+  "superseded_at": "2026-10-26T05:22:42.294315+00:00",
+  "superseded_by": "search-1.7.4 B+R1; outputs/search-v31-source-review-off-001/REPORT.md"
+}

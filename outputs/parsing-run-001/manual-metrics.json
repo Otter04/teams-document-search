@@ -1,0 +1,18 @@
+{
+  "parse_success_rate": {
+    "value": 1.0,
+    "evidence": "qa/validation.json: 110/110 documents returned nonempty blocks without parser exceptions; does not prove scanned table structure."
+  },
+  "encoding_error_documents": {
+    "value": 0,
+    "evidence": "qa/validation.json: strict decoding and replacement-character scan; CP949 D-052, D-087."
+  },
+  "table_cell_accuracy": {
+    "value": 1.0,
+    "evidence": "qa/validation.json: 24 digital tables/worksheet regions, 531 cells; source OOXML and PDF rendered-page references. Scan-table reconstruction excluded."
+  },
+  "ocr_cer": {
+    "value": 0.0297339593114241,
+    "evidence": "qa/validation.json + qa/ocr_reference.json: micro-average Levenshtein CER after NFC and collapsing whitespace runs to one space; all 5 scanned pages / 3 documents, regionwise for diagram. Assistant-prepared references visually checked, human sign-off pending. Per-document D-044=3.003%, D-102=3.243%, D-069=1.899%."
+  }
+}

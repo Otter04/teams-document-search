@@ -1,0 +1,75 @@
+{
+  "implementation": {
+    "time": "2026-10-20T08:55:16.926155+00:00",
+    "evaluation_reference_date": "2026-10-14",
+    "code_hashes": {
+      "service.py": "ae6c86438d9bd1b6a7bfd9a62c0829b2fd82b285a42a3933e876ed6714758354",
+      "query.py": "f0bf1eb891f5d8c682711e5076baed468fee007dc45793d49c411e68fc0bd4da",
+      "test_search.py": "d85f149b7e59e7f20e817528c10e04cc07baeedf0e8e2e57ae5ebb26957a2c68",
+      "engine.py": "3a6bbbc716d5efbc6d9b0b9375589c3e78cc6863b79086b22fd23a43a94233d0",
+      "evaluate_remote.py": "cf7d3b1ec7e5b868de2805f907eb97db0182ac5ae3f1b6eabfac7722638b9db1",
+      "load_index.py": "d911d8d2161a8ade601b01c10b78cea140208dbc15bdf2df958f4d0258925daa",
+      "fixtures_remote.py": "f807960fdaee49a19f7bdf63b430dc6262e68e2b994992cefeed8ff746e7371c",
+      "prepare.py": "de4c304b7bdf00bc8e335af7bb522838e7551b2c4abaf210d7daf0526947bf83",
+      "score.py": "1801422fd1c6b6bd7c84e45c3ef8f2f81be41659b4f48f7a776af0db9485ebf7"
+    },
+    "prepared_sha256": "19145a44c9a17858a5dda949091445a148a6ebe3e8b3e4a52ce2ad8ff7a63caa",
+    "query_inputs_sha256": "07c986a99580b1b2c6559037fbe048488b600e8f200ef4d8eec365b73bd2d30e",
+    "labels_loaded": true,
+    "filter_selection": "A if A exceeds B by >=2 hits; B if reverse; otherwise fewer wrong hard-filter exclusions, B tie",
+    "ranker_selection": "R1 if >=2 hits or MRR +0.05, no per-type drop >3pp and latency gate; otherwise R0",
+    "change_reason": "Contract corrections: apply metadata preference in BM25 candidate retrieval (constant score +1 per condition); compute actual cosine for all 30 candidates, including BM25-only chunks. No R1 weight changes or exact-2a branch.",
+    "previous_freeze_sha256": "8822ff381cc48b3c91256312745c65841c4b39742b89dfe0cbe71102b0dea2ee"
+  },
+  "health": {
+    "ready": true,
+    "documents": 110,
+    "embedding_model": "bge-m3",
+    "embedding_fingerprint": "b8b299238334245d36f1447b3c185acd5f7271d28973c544ed45b59d67161762",
+    "query_analysis_model": "qwen3.6-35b-a3b",
+    "startup_seconds": 13.173571033403277,
+    "config": {
+      "version": "search-1.0.2",
+      "llm_budget_seconds": 2.5,
+      "lexical_k": 50,
+      "vector_k": 50,
+      "num_candidates": 200,
+      "rrf_k": 60,
+      "rerank_k": 30,
+      "result_documents": 5,
+      "bm25_fields": [
+        "file_name^2",
+        "context^1.5",
+        "table_header^1.5",
+        "body"
+      ],
+      "minimum_should_match": "50%",
+      "additional_chunk_weight": 0.1,
+      "max_additional_chunks": 3,
+      "r1_weights": {
+        "rrf": 0.45,
+        "lexical_overlap": 0.2,
+        "cosine": 0.2,
+        "literal_phrase": 0.05,
+        "identifier": 0.05,
+        "metadata": 0.05
+      },
+      "query_cache": false,
+      "operating_query_logs": false,
+      "exact_2a": false
+    },
+    "defaults": {
+      "filter_mode": "B",
+      "reranker": "R1",
+      "release_status": "development_only",
+      "quality_gate": "not_all_passed",
+      "reason": "S-07 tie resolved by fewer gold exclusions; R1 +3 hits, no type decline, latency budget passed. Previous ES regression and full G1/G2/G6/G5 review still block final acceptance."
+    }
+  },
+  "variants": [
+    "B-R1"
+  ],
+  "started_at": "2026-10-20T08:58:02.615786+00:00",
+  "query_cache": false,
+  "labels_read": false
+}

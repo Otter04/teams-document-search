@@ -1,0 +1,49 @@
+{
+  "model": "qwen3.6-35b-a3b",
+  "provider": "local-vllm",
+  "quantization": "awq-4bit",
+  "kind": "enrichment",
+  "doc_id": "H-016",
+  "id": "H-016",
+  "request_sha256": "f0ed765a4ce13601b1636b6de39aa450089b2038bef6d26afa0d1409452e3acd",
+  "baseline_request_sha256": "82b8eac222df7e1478bc90cb3c566735c187215285d67165c4117a4c0a4a4031",
+  "messages_sha256": "29389b1d5e22fbf16871feb76e3192adca99f18fdb32207eebdc48fa2ab56412",
+  "response": {
+    "id": "chatcmpl-94663802c65b399d",
+    "object": "chat.completion",
+    "created": 1792469672,
+    "model": "qwen3.6-35b-a3b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"doc_id\": \"H-016\",\n  \"fields\": {\n    \"VAT\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"제안금액: KRW 22,000,000 (VAT 별도)\",\n          \"ref\": \"H-016-55fb6cef7fbb-p1-line6\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"별도\"\n    },\n    \"거래처\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"거래처: 가온세라믹\",\n          \"ref\": \"H-016-55fb6cef7fbb-p1-line2\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"가온세라믹\"\n    },\n    \"견적번호\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"문서 내 명시된 견적 번호가 존재하지 않음.\",\n      \"status\": \"not_found_in_input\",\n      \"value\": null\n    },\n    \"견적유효기간\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"문서 내 명시된 견적 유효 기간이 존재하지 않음.\",\n      \"status\": \"not_found_in_input\",\n      \"value\": null\n    },\n    \"계약번호\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"본 문서는 제안서이며 계약서가 아니므로 해당 필드는 적용 대상 아님.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"계약시작일\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"본 문서는 제안서이며 계약서가 아니므로 해당 필드는 적용 대상 아님.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"계약유형\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"본 문서는 제안서이며 계약서가 아니므로 해당 필드는 적용 대상 아님.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"계약종료일\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"본 문서는 제안서이며 계약서가 아니므로 해당 필드는 적용 대상 아님.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"금액\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"제안금액: KRW 22,000,000 (VAT 별도)\",\n          \"ref\": \"H-016-55fb6cef7fbb-p1-line6\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"22000000\"\n    },\n    \"대상시스템\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"대상 시스템: ERP\",\n          \"ref\": \"H-016-55fb6cef7fbb-p1-line3\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"ERP\"\n    },\n    \"로그시작\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"본 문서는 실행 로그가 아니므로 해당 필드는 적용 대상 아님.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"로그종료\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"본 문서는 실행 로그가 아니므로 해당 필드는 적용 대상 아님.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"문서일자\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"2026.08.28\",\n          \"ref\": \"H-016-55fb6cef7fbb-p1-line5\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"2026-08-28\"\n    },\n    \"문서종류\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"source\",\n          \"quote\": \"file_name: ERP 소성로 원가집계 제안서_최종.pdf\",\n          \"ref\": \"file_name\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"제안서\"\n    },\n    \"사업명\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"문서 내에 건명, 관련 사업 또는 사업명 표기가 존재하지 않음.\",\n      \"status\": \"not_found_in_input\",\n      \"value\": null\n    },\n    \"사이트\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"본 문서는 네트워크/서버 구성도가 아니므로 해당 필드는 적용 대상 아님.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"상태\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"문서상태: 최종\",\n          \"ref\": \"H-016-55fb6cef7fbb-p1-line4\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"최종\"\n    },\n    \"실행결과\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"본 문서는 실행 로그가 아니므로 해당 필드는 적용 대상 아님.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"오류코드\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"본 문서는 실행 로그나 오류 메모가 아니므로 해당 필드는 적용 대상 아님.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"작성일\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"2026.08.28\",\n          \"ref\": \"H-016-55fb6cef7fbb-p1-line5\"\n        }\n      ],\n      \"reason\": \"문서에 별도의 '작성일' 표기가 없으며, 문서 일자와 동일한 날짜를 작성일로 간주.\",\n      \"status\": \"extracted\",\n      \"value\": \"2026-08-28\"\n    },\n    \"작업명\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"본 문서는 실행 로그가 아니므로 해당 필드는 적용 대상 아님.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"통화\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"제안금액: KRW 22,000,000 (VAT 별도)\",\n          \"ref\": \"H-016-55fb6cef7fbb-p1-line6\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"KRW\"\n    },\n    \"표지일\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"2026.08.28\",\n          \"ref\": \"H-016-55fb6cef7fbb-p1-line5\"\n        }\n      ],\n      \"reason\": \"제안서 첫 페이지(표지)에 명시된 날짜와 문서 일자가 동일함.\",\n      \"status\": \"extracted\",\n      \"value\": \"2026-08-28\"\n    }\n  },\n  \"schema_version\": \"llm_enrichment_candidate_v1\",\n  \"summary\": [\n    {\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"ERP 소성로 원가집계 제안서\",\n          \"ref\": \"H-016-55fb6cef7fbb-p1-line1\"\n        }\n      ],\n      \"text\": \"가온세라믹의 ERP 시스템에서 소성로별 가스 사용량과 MES 생산 수량을 연계하여 주간 원가를 집계하는 방안을 제안하며, 합성 평가 자료임을 명시한다.\"\n    },\n    {\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"가스 계량 누락 구간은 추정값으로 채우지 않고 확인 목록에 남긴다.\",\n          \"ref\": \"H-016-55fb6cef7fbb-p1-line9\"\n        }\n      ],\n      \"text\": \"가스 계량 누락 구간은 추정치 대신 확인 목록으로 처리하고, 집계 주기와 항목을 명확히 정의하는 것이 핵심 범위이다.\"\n    },\n    {\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"제안금액: KRW 22,000,000 (VAT 별도)\",\n          \"ref\": \"H-016-55fb6cef7fbb-p1-line6\"\n        }\n      ],\n      \"text\": \"총 제안 금액은 22,000,000원이며 VAT는 별도이고, 현재 상태는 최종 문서로 분류된다.\"\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 8459,
+      "total_tokens": 10863,
+      "completion_tokens": 2404,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "http_status": 200,
+  "elapsed_ms": 383853
+}

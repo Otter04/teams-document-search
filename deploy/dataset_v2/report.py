@@ -1,0 +1,83 @@
+"""Describe the frozen ingestion and retrieval run without modifying source/gold."""
+from common import *
+import collections, statistics
+
+def main():
+ p=OUT/'evaluation/run-001';s=read(p/'summary.json');scores=read(p/'scores.json');old=read(p/'scores-original99.json')
+ rs=rows(p/'responses.jsonl');responses={r['query_id']:r for r in rs};docs=read(OUT/'search-data/documents.json')
+ for rel,h in read(OUT/'source-review-freeze.json')['files'].items():assert sha(OUT/rel)==h,rel
+ for rel,h in read(OUT/'baseline-freeze.json').items():assert sha(ROOT/rel)==h,rel
+ for name,h in read(OUT/'evaluation/gold-freeze.json')['files'].items():assert sha(OUT/'evaluation'/name)==h
+ paths=read(OUT/'source-paths.json')
+ for did,h in read(OUT/'source-freeze.json').items():assert sha(paths[did])==h,did
+ a=read(OUT/'prepared/assembly.json');em=read(OUT/'prepared/embedding-manifest.json');ix=read(OUT/'search-data/index-verification.json');audit=read(p/'date-policy-audit.json')
+ complete=read(p/'complete.json');reviews=[read(x) for x in (OUT/'vision-review').glob('*.json')]
+ llm=collections.Counter(r['response']['query_plan']['llm'].get('status','not_attempted') for r in rs)
+ optional=read(p/'added-optional-cards.json');found=sum(c['representative_rank'] is not None for r in optional for c in r['cards'])
+ failed=[]
+ for row in scores:
+  if row['all_required_representatives_found']:continue
+  rr=responses[row['query_id']]['response'];cards=[]
+  for c in row['expected_cards']:
+   if c['priority']!='필수' or c['representative_rank'] is not None:continue
+   did=c['representative'];rank={k:next((i for i,h in enumerate(v,1) if h.get('doc_id')==did),None) for k,v in rr['diagnostics'].items() if k in ['bm25','vector','rrf_top30','ranked_top30']}
+   cards.append({**c,'branch_first_chunk_ranks':rank})
+  failed.append({'query_id':row['query_id'],'query':row['query'],'top5':row['top5'],'missing_required':cards})
+ write(p/'failure-evidence.json',failed)
+ detail={
+ 'Q-002':'D-006 서명본 대신 같은 계약번호의 D-005 초안이 대표로 표시됐다. 번호 일치 분기는 최신/서명본 우선 규칙을 적용하지 않고 점수로 대표를 선택한다. 계약구분 추가 후 임베딩/후보 점수가 변하면서 순서가 역전됐다.',
+ 'Q-040':'D-075 대신 D-076 복사본이 대표다. v2 파일에서 D-074·075·076의 실제 수정시각이 모두 2026-10-20T14:25:08Z로 같아졌고 버전도 1.0으로 같아, 기존 최신 판정의 ID 동점 처리에서 D-076이 선택됐다. 원본 바이트 해시는 서로 달라 동일 해시 복사본 정규화도 적용되지 않는다.',
+ 'Q-079':'Q-040과 같은 제안서 묶음의 대표 선택 문제다. 정답 계열은 1위지만 D-075 대신 D-076을 표시했다.',
+ 'Q-075':'D-025는 BM25 청크 1위로 남았지만 벡터 상위50에서 빠졌다(종전 43위). 두 검색의 중복 순위 기여가 줄어 최종 문서 상위5에서 탈락했다.',
+ 'Q-116':'D-134 설정 파일이 벡터 청크 17위에 있었지만 최종 문서 상위5에서 탈락했다.',
+ 'Q-117':'D-136 설정 파일이 BM25 11위·벡터 37위 후보에 있었지만 최종 문서 상위5에서 탈락했다.',
+ 'Q-118':'D-139 SSH 명령 로그가 두 검색의 상위50 후보에 모두 들어오지 않았다. 색인 누락은 아니며 질의 표현과 영문 명령 기록 사이의 후보 검색 문제다.',
+ 'Q-121':'D-146 라벨 이미지는 벡터 24위에 있었지만 최종 문서 상위5에서 탈락했다.',
+ 'Q-124':'D-155 장비 목록은 벡터 청크 1위·결합 청크 1위·R1 청크 2위였다. 그 뒤 여러 청크 점수를 문서별로 합치는 단계에서 상위5 문서에 들지 못했다. 단순히 벡터 검색 실패로 볼 수 없다.',
+ 'Q-068':'2023년 견적서가 없어 빈 결과를 유지했다. 날짜를 풀어 다른 해 자료를 내라는 과거 정답과 현재 명시기간 유지 정책의 충돌이다.',
+ 'Q-069':'2024년 계약서가 없어 빈 결과를 유지했다. 과거 정답과 현재 명시기간 유지 정책의 충돌이며 새 회귀가 아니다.'}
+ def ratio(v):return f"{v['all_required_representatives_found']}/{v['questions']} ({100*v['all_required_representatives_found']/v['questions']:.2f}%)"
+ text=['# v2 증분 인덱싱 및 검색 평가 결과','', '확인일: 2026-10-24. 인덱싱과 125질문 평가 실행은 완료했다. 전체는 91.20%지만 신규26개는 80.77%이고 기존 성공4개가 회귀했으므로 **기존 성능 유지·신규90% 목표는 충족하지 못했다.** 검색 규칙을 평가 정답에 맞춰 추가 조정하지 않았다.','',
+ '## 완료 범위','',
+ '- 기존110 + 신규45 =155문서. 바이너리·압축3개는 제외했다.',
+ '- 기존84개는 내용 동일 결과를 재사용하고,26개 계약서의 계약구분 추가를 반영했다. 기존 원본·결과·정답 파일 해시는 보존 확인했다.',
+ '- 신규24문서의 비전44단위: Orin 고유40응답 + 동일 픽셀4개 재사용. HTTP200/정상stop 40건, 잘림0건. 원문 대조 수정본28건·무수정12건을 채택했다. 표 구조 오류3건은 원본을 보고 별도 수정했다.',
+ '- 모든155문서에 규칙 보강을 적용했다. 기존17개 LLM 의미 보강·발췌 요약은 원문 근거를 확인해 재사용했다. 새 문서 보강 LLM 호출은0건이며 모든 문서에 새 요약을 만들지 않았다. 기존의 메타데이터 판단 대기13필드는 그대로 남겼다.',
+ '- 원문 청크1,227 + 기존 의미 보강 청크17 =1,244개. bge-m3 1024차원, CLS/L2/fp16 방식 유지. 이전1,063벡터 + 이번 선처리112벡터 재사용, 마지막69개 생성. 입력 잘림0건·최대563토큰.',
+ '- Elasticsearch/Nori/BM25와 벡터 검색용 v002:155문서·1,244청크 적재. 전부 `_source` 대조했고 Nori 동작을 확인했다. 기존 v001은110문서·1,089청크 그대로다.',
+ '- 검증9개와 검색 동작38개 통과. 검색 설정은 기존 search-1.5.0 B/R1, BM2550·벡터50 후보, RRF 뒤 R1 점수와 문서 묶기다. 새 학습형 리랭커를 도입한 것은 아니다.','',
+ '## 검색 평가','', '기준: 상위5개 문서 카드에 필수 대표 정답 문서가 모두 포함되는지. 모든 반환 결과가 정답 목록과 정확히 같다는 뜻은 아니다. 정답은 인덱싱·모델 요청에 전달하지 않았고 질문과 기준일만 서버에 보냈다.','',
+ '| 구분 | 이전 | v2 결과 |','|---|---:|---:|',
+ '| 기존99개, 동일 정답 |97/99 (97.98%)|'+ratio(s['old99_unchanged_gold'])+'|',
+ '| 신규26개 |—|'+ratio(s['new26'])+'|',
+ '| 전체125개 |—|'+ratio(s['all125_original_gold'])+'|','',
+ '- 기존 성공→실패: Q-002·Q-040·Q-075·Q-079. Q-068·Q-069는 이전에도 날짜 정책 충돌로 실패였으며 이번에도 의도한 빈 결과다.',
+ '- 새 실패: Q-116·Q-117·Q-118·Q-121·Q-124. 신규90%에는 최소24/26 성공이 필요하다.',
+ f'- 기존 질문에 추가된 선택 정답8건은 {found}/8건 상위5 표시. Q-010·028·033·055는 표시됐고 Q-042·085·090·091은 미표시다.',
+ '- 전체 정답 중 하나라도 나온 질문117/125, 필수 대표가 모두 나온 질문114/125. 같은 계열의 다른 버전을 찾아도 지정 대표가 아니면 엄격 기준상 실패다.',
+ '- 정답 대표 목록과 반환 목록의 집합이 정확히 같은 질문은3/125, 순서까지 같은 질문은1/125다. 불필요한 결과 혼입과1위 정확도는 상위5 포함률과 별개다.','',
+ '### 실패 위치','', '| 질문 | 확인한 원인 |','|---|---|']
+ for f in failed:text.append('|'+f['query_id']+'|'+detail[f['query_id']]+'|')
+ text+=['','## 날짜·시간·한계','',
+ '- 명시 날짜11질문: 기간 고정11/11, 날짜 자동 완화0건. 최종29카드·다른 버전3개·BM25263청크·벡터356청크에서 기간 밖 문서0건. Q-061은 D-109·D-072·D-110 정확히3개만 반환했다. 신규26질문에는 별도로 명시된 달력 기간 조건이 없다.',
+ '- v2에서 관측한 실제 파일 수정시각과 표지/작성/로그 날짜를 구분했다. 복사·재생성으로 같아진 수정시각을 이전 날짜로 임의 복구하지 않았다. 이 때문에 대표 버전 동점 처리의 약점이 드러났다.',
+ f'- 비전40건 처리 {read(OUT/"remote-progress.json")["elapsed_seconds"]:.2f}초(약106분). 앞선112개 임베딩9.90초, 마지막69개 생성 및 전체 벡터 검증 {em["elapsed_seconds"]:.2f}초. 최종 적재·전수 검증 {ix["elapsed_seconds"]:.2f}초. 사람/assistant 검수·전송 시간을 합친 전체 소요 시간은 따로 측정하지 않았다.',
+ f'- 125질문 실행 {complete["elapsed_seconds"]:.2f}초, 요청 실패0건. 평균 전체1.24초, 기존99개0.82초(이전0.86초), 신규26개2.83초. 단일 순차 실행이며 부하 성능 검증은 아니다.',
+ f'- 조건부 Orin 질의 분석 시도45건 모두2.5초 예산 초과 뒤 규칙으로 처리됐다({dict(llm)}). API 검색 자체는 정상 반환했지만 LLM 질의 이해가 성공한 평가로 해석하면 안 된다.',
+ '- 비전 검수에는 assistant 원본 대조 수정이 포함된다. 모델 단독 무수정 정확도가 아니며 독립 인간 검수를 대체하지 않는다. 차트 설명 claims는 현재 검색 청크에 포함하지 않는다. [개별 검수 설명](VISION_REVIEW.md).',
+ '- 외부 유료 API·추가 비전 재호출은 없었다. 검색 평가의 조건부 질의 분석은 기존 Orin 로컬 모델을 사용했다.','',
+ '## 다음에 보완할 항목','',
+ '1. 동일 번호의 초안/서명본 대표 선택과 수정시각 동점일 때 복사본 대표 선택을 분리해 보완.',
+ '2. 설정 파일·접속 명령·라벨·장비 목록의 질의 표현 및 문서 종류 연결을 원문 근거로 보완.',
+ '3. Q-124처럼 좋은 청크가 문서 합산 후 밀리는 현상을 점검. 후보 확대만으로 해결된다고 단정하지 않음.',
+ '4. Orin 질의 분석의 시간 예산과 실제 완료 여부를 별도 검토. 이번 평가에서는 설정을 추가 튜닝하지 않았음.','',
+ '## 실행 위치와 보존 자료','',
+ '- 기존 화면 `http://127.0.0.1:18020/`: v001 110문서. 새 검증 화면 `http://127.0.0.1:18021/`: v002 155문서(SSH 터널 연결 중). 기존 화면은 자동 전환하지 않았다.',
+ '- Orin 검증 서버: `rag-search-v2-validation`,8021. 파일 `/media/sdcard/rag-runtime/indexing-v2-001/search-service`. 모델/Elasticsearch/기존 서비스는 유지한다.',
+ '- 최종 조립: `prepared/assembly.json`, `prepared/embedding-manifest.json`. 적재 확인: `search-data/index-verification.json`.',
+ '- 평가: `evaluation/run-001/summary.json`, `scores.json`, `scores-original99.json`, `responses.jsonl`, `failure-evidence.json`, `added-optional-cards.json`, `date-policy-audit.json`.',
+ '- 평가 응답·원본 정답·원본 파일을 보존했고 이번 점수에 맞춘 재학습·정답 수정은 하지 않았다.']
+ (OUT/'REPORT.md').write_text('\n'.join(text)+'\n')
+ write(OUT/'completion.json',{'state':'indexed_and_evaluated_quality_target_not_met','documents':155,'chunks':1244,'vision_responses':40,'source_reviewed_units':44,'search_queries':125,'errors':0,'old99_success':93,'new26_success':21,'all125_success':114,'old99_regressions':s['old99_regressed'],'v001_preserved':True,'source_and_gold_hashes_verified':True,'candidate_port':8021,'old_service_port':8020})
+ print('Report and source/gold preservation verified')
+if __name__=='__main__':main()

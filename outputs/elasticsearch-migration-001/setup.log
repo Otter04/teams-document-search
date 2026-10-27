@@ -1,0 +1,70 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 155B done
+#1 DONE 0.2s
+
+#2 [internal] load metadata for docker.elastic.co/elasticsearch/elasticsearch:8.19.23
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.1s
+
+#4 [1/2] FROM docker.elastic.co/elasticsearch/elasticsearch:8.19.23
+#4 DONE 0.8s
+
+#5 [2/2] RUN bin/elasticsearch-plugin install --batch analysis-nori
+#5 1.996 -> Installing analysis-nori
+#5 42.29 -> Failed installing analysis-nori
+#5 42.29 -> Rolling back analysis-nori
+#5 42.29 -> Rolled back analysis-nori
+#5 42.29 java.net.UnknownHostException: artifacts.elastic.co
+#5 42.29 	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:570)
+#5 42.29 	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+#5 42.29 	at java.base/java.net.Socket.connect(Socket.java:668)
+#5 42.29 	at java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304)
+#5 42.29 	at java.base/sun.security.ssl.BaseSSLSocketImpl.connect(BaseSSLSocketImpl.java:181)
+#5 42.29 	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:166)
+#5 42.29 	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:533)
+#5 42.29 	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:621)
+#5 42.29 	at java.base/sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:205)
+#5 42.29 	at java.base/sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:290)
+#5 42.29 	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:196)
+#5 42.29 	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:967)
+#5 42.29 	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:903)
+#5 42.29 	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:876)
+#5 42.29 	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:181)
+#5 42.29 	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:141)
+#5 42.29 	at org.elasticsearch.plugins.cli.InstallPluginAction.urlExists(InstallPluginAction.java:454)
+#5 42.29 	at org.elasticsearch.plugins.cli.InstallPluginAction.getElasticUrl(InstallPluginAction.java:408)
+#5 42.29 	at org.elasticsearch.plugins.cli.InstallPluginAction.download(InstallPluginAction.java:298)
+#5 42.29 	at org.elasticsearch.plugins.cli.InstallPluginAction.execute(InstallPluginAction.java:242)
+#5 42.29 	at org.elasticsearch.plugins.cli.InstallPluginCommand.execute(InstallPluginCommand.java:90)
+#5 42.29 	at org.elasticsearch.common.cli.EnvironmentAwareCommand.execute(EnvironmentAwareCommand.java:55)
+#5 42.29 	at org.elasticsearch.cli.Command.mainWithoutErrorHandling(Command.java:101)
+#5 42.29 	at org.elasticsearch.cli.MultiCommand.execute(MultiCommand.java:95)
+#5 42.29 	at org.elasticsearch.cli.Command.mainWithoutErrorHandling(Command.java:101)
+#5 42.29 	at org.elasticsearch.cli.Command.main(Command.java:54)
+#5 42.29 	at org.elasticsearch.launcher.CliToolLauncher.main(CliToolLauncher.java:65)
+#5 ERROR: process "/bin/sh -c bin/elasticsearch-plugin install --batch analysis-nori" did not complete successfully: exit code: 74
+------
+ > [2/2] RUN bin/elasticsearch-plugin install --batch analysis-nori:
+42.29 	at org.elasticsearch.plugins.cli.InstallPluginAction.getElasticUrl(InstallPluginAction.java:408)
+42.29 	at org.elasticsearch.plugins.cli.InstallPluginAction.download(InstallPluginAction.java:298)
+42.29 	at org.elasticsearch.plugins.cli.InstallPluginAction.execute(InstallPluginAction.java:242)
+42.29 	at org.elasticsearch.plugins.cli.InstallPluginCommand.execute(InstallPluginCommand.java:90)
+42.29 	at org.elasticsearch.common.cli.EnvironmentAwareCommand.execute(EnvironmentAwareCommand.java:55)
+42.29 	at org.elasticsearch.cli.Command.mainWithoutErrorHandling(Command.java:101)
+42.29 	at org.elasticsearch.cli.MultiCommand.execute(MultiCommand.java:95)
+42.29 	at org.elasticsearch.cli.Command.mainWithoutErrorHandling(Command.java:101)
+42.29 	at org.elasticsearch.cli.Command.main(Command.java:54)
+42.29 	at org.elasticsearch.launcher.CliToolLauncher.main(CliToolLauncher.java:65)
+------
+Dockerfile:2
+--------------------
+   1 |     FROM docker.elastic.co/elasticsearch/elasticsearch:8.19.23
+   2 | >>> RUN bin/elasticsearch-plugin install --batch analysis-nori
+   3 |     
+--------------------
+ERROR: failed to build: failed to solve: process "/bin/sh -c bin/elasticsearch-plugin install --batch analysis-nori" did not complete successfully: exit code: 74

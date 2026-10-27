@@ -1,0 +1,247 @@
+[
+  {
+    "candidate_id": "H-001-B",
+    "doc_id": "H-001",
+    "response_sha256": "fd5f7cd9bdc7d9d1445e37621e1756348214122e24b387ed947ce694bfc75cb9",
+    "reviewer_id": null,
+    "reviewer_kind": null,
+    "status": "pending",
+    "instructions": "Decompose every sentence into factual claims. Check evidence AND meaning. Assign each gold fact only when all its conditions/negations/numbers are retained. Do not infer correctness from citation presence.",
+    "metadata_evidence_reviews": [],
+    "sentences": [
+      {
+        "index": 0,
+        "source_text": "본 문서는 가온세라믹의 MES 대상 생산수집 용역 계약서 초안이며, 계약 번호는 CT-2026-GC-41입니다.",
+        "candidate_evidence": [
+          {
+            "kind": "block",
+            "quote": "MES 생산수집 용역 계약서",
+            "ref": "H-001-8c8b34a47a6a-p1"
+          },
+          {
+            "kind": "block",
+            "quote": "거래처: 가온세라믹",
+            "ref": "H-001-8c8b34a47a6a-p3"
+          }
+        ],
+        "atomic_claims": []
+      },
+      {
+        "index": 1,
+        "source_text": "계약 기간은 2026년 10월 1일부터 12월 31일까지이며, 총액은 부가세 별도 기준 48,000,000원입니다.",
+        "candidate_evidence": [
+          {
+            "kind": "block",
+            "quote": "계약기간: 2026-10-01 ~ 2026-12-31",
+            "ref": "H-001-8c8b34a47a6a-p9"
+          },
+          {
+            "kind": "block",
+            "quote": "계약금액: KRW 48,000,000 (VAT 별도)",
+            "ref": "H-001-8c8b34a47a6a-p10"
+          }
+        ],
+        "atomic_claims": []
+      },
+      {
+        "index": 2,
+        "source_text": "수행 범위는 성형기 12대의 데이터 수집(250ms 주기)이며, 기존 설비 PLC 프로그램 변경 작업은 제외됩니다.",
+        "candidate_evidence": [
+          {
+            "kind": "block",
+            "quote": "대상은 성형기 12대이며 수집 주기는 250ms로 한다. 기존 설비의 PLC 프로그램 변경은 범위에서 제외한다.",
+            "ref": "H-001-8c8b34a47a6a-p12"
+          }
+        ],
+        "atomic_claims": []
+      }
+    ],
+    "gold_summary_facts": [
+      {
+        "fact_id": "H-001-F1",
+        "statement": "성형기 12대를 250ms 주기로 수집하고 PLC 프로그램 변경은 제외한다.",
+        "evidence": [
+          {
+            "kind": "block",
+            "ref": "H-001-8c8b34a47a6a-p12",
+            "quote": "대상은 성형기 12대이며 수집 주기는 250ms로 한다. 기존 설비의 PLC 프로그램 변경은 범위에서 제외한다.",
+            "loc": {
+              "kind": "docx",
+              "paragraph_index": 12
+            }
+          }
+        ],
+        "review_status": "assistant_source_checked_pending_human",
+        "matching": "semantic; paraphrases accepted; negation/numbers/conditions must be preserved"
+      },
+      {
+        "fact_id": "H-001-F2",
+        "statement": "게이트웨이는 단절 시 원시 데이터를 72시간 보관한다.",
+        "evidence": [
+          {
+            "kind": "block",
+            "ref": "H-001-8c8b34a47a6a-p13",
+            "quote": "네트워크 단절 시 게이트웨이는 원시 데이터를 72시간 보관한다. 복구 후 수신 확인된 구간부터 다시 전송한다.",
+            "loc": {
+              "kind": "docx",
+              "paragraph_index": 13
+            }
+          }
+        ],
+        "review_status": "assistant_source_checked_pending_human",
+        "matching": "semantic; paraphrases accepted; negation/numbers/conditions must be preserved"
+      },
+      {
+        "fact_id": "H-001-F3",
+        "statement": "검수는 누락률 0.2% 이하와 시각 오차 50ms 이하를 확인한다.",
+        "evidence": [
+          {
+            "kind": "block",
+            "ref": "H-001-8c8b34a47a6a-p14",
+            "quote": "검수는 누락률 0.2% 이하와 장치 시각 오차 50ms 이하를 함께 확인한다.",
+            "loc": {
+              "kind": "docx",
+              "paragraph_index": 14
+            }
+          }
+        ],
+        "review_status": "assistant_source_checked_pending_human",
+        "matching": "semantic; paraphrases accepted; negation/numbers/conditions must be preserved"
+      }
+    ]
+  },
+  {
+    "candidate_id": "H-007-B",
+    "doc_id": "H-007",
+    "response_sha256": "9c9d597904822986a5a9c3cad792a6ef19a3d66206fe4338a02c7f33a17859f7",
+    "reviewer_id": null,
+    "reviewer_kind": null,
+    "status": "pending",
+    "instructions": "Decompose every sentence into factual claims. Check evidence AND meaning. Assign each gold fact only when all its conditions/negations/numbers are retained. Do not infer correctness from citation presence.",
+    "metadata_evidence_reviews": [],
+    "sentences": [
+      {
+        "index": 0,
+        "source_text": "본 문서는 누리콜드의 WMS 냉장 입고 추적 시스템 구축을 위한 제안서로, 총 28,000,000원(세금 별도)의 제안 금액을 포함한다.",
+        "candidate_evidence": [
+          {
+            "kind": "block",
+            "quote": "WMS 냉장입고 추적 제안서",
+            "ref": "H-007-4e24175434bc-s1-shape4"
+          }
+        ],
+        "atomic_claims": []
+      },
+      {
+        "index": 1,
+        "source_text": "제안 범위는 냉장 입고 시 팔레트 라벨과 온도 이력 연동 및 TMS와의 일별 집계 파일 교환으로 제한되며, 센서 지연과 단절을 구분하는 알림 기능을 제공한다.",
+        "candidate_evidence": [
+          {
+            "kind": "block",
+            "quote": "냉장 입고 시 팔레트 라벨과 온도 이력을 연결한다. 출고 배차 TMS와는 일별 집계 파일만 교환한다.",
+            "ref": "H-007-4e24175434bc-s2-shape2"
+          }
+        ],
+        "atomic_claims": []
+      },
+      {
+        "index": 2,
+        "source_text": "문서 하단에 '합성 평가 자료 - 실제 고객 제안이 아님'이라는 고지가 있어 본 제안은 실제 거래를 기반으로 한 것이 아닌 테스트용 데이터임을 알 수 있다.",
+        "candidate_evidence": [
+          {
+            "kind": "block",
+            "quote": "합성 평가 자료 - 실제 고객 제안이 아님",
+            "ref": "H-007-4e24175434bc-s1-shape3"
+          }
+        ],
+        "atomic_claims": []
+      }
+    ],
+    "gold_summary_facts": [
+      {
+        "fact_id": "H-007-F1",
+        "statement": "팔레트 라벨과 온도 이력을 연결한다.",
+        "evidence": [
+          {
+            "kind": "block",
+            "ref": "H-007-4e24175434bc-s1-shape4",
+            "quote": "WMS 냉장입고 추적 제안서",
+            "loc": {
+              "kind": "pptx",
+              "slide": 1,
+              "shape_ids": [
+                4
+              ],
+              "bbox": {
+                "frame_asset_id": "H-007-4e24175434bc-slide-1",
+                "x0": 0.05625,
+                "y0": 0.09027777777777778,
+                "x1": 0.94375,
+                "y1": 0.22916666666666666,
+                "precision": "exact"
+              }
+            }
+          }
+        ],
+        "review_status": "assistant_source_checked_pending_human",
+        "matching": "semantic; paraphrases accepted; negation/numbers/conditions must be preserved"
+      },
+      {
+        "fact_id": "H-007-F2",
+        "statement": "TMS와는 일별 집계 파일만 교환한다.",
+        "evidence": [
+          {
+            "kind": "block",
+            "ref": "H-007-4e24175434bc-s2-shape2",
+            "quote": "냉장 입고 시 팔레트 라벨과 온도 이력을 연결한다. 출고 배차 TMS와는 일별 집계 파일만 교환한다.\n\n구역별 센서 수신 지연과 무선 연결 단절을 구분해서 알린다.",
+            "loc": {
+              "kind": "pptx",
+              "slide": 2,
+              "shape_ids": [
+                2
+              ],
+              "bbox": {
+                "frame_asset_id": "H-007-4e24175434bc-slide-2",
+                "x0": 0.05625,
+                "y0": 0.18333333333333332,
+                "x1": 0.94375,
+                "y1": 0.44722222222222224,
+                "precision": "exact"
+              }
+            }
+          }
+        ],
+        "review_status": "assistant_source_checked_pending_human",
+        "matching": "semantic; paraphrases accepted; negation/numbers/conditions must be preserved"
+      },
+      {
+        "fact_id": "H-007-F3",
+        "statement": "센서 수신 지연과 무선 연결 단절을 구분해 알린다.",
+        "evidence": [
+          {
+            "kind": "block",
+            "ref": "H-007-4e24175434bc-s2-shape2",
+            "quote": "냉장 입고 시 팔레트 라벨과 온도 이력을 연결한다. 출고 배차 TMS와는 일별 집계 파일만 교환한다.\n\n구역별 센서 수신 지연과 무선 연결 단절을 구분해서 알린다.",
+            "loc": {
+              "kind": "pptx",
+              "slide": 2,
+              "shape_ids": [
+                2
+              ],
+              "bbox": {
+                "frame_asset_id": "H-007-4e24175434bc-slide-2",
+                "x0": 0.05625,
+                "y0": 0.18333333333333332,
+                "x1": 0.94375,
+                "y1": 0.44722222222222224,
+                "precision": "exact"
+              }
+            }
+          }
+        ],
+        "review_status": "assistant_source_checked_pending_human",
+        "matching": "semantic; paraphrases accepted; negation/numbers/conditions must be preserved"
+      }
+    ]
+  }
+]

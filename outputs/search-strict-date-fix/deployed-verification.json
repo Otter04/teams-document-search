@@ -1,0 +1,65 @@
+{
+  "health": {
+    "ready": true,
+    "documents": 110,
+    "embedding_model": "bge-m3",
+    "embedding_fingerprint": "b8b299238334245d36f1447b3c185acd5f7271d28973c544ed45b59d67161762",
+    "query_analysis_model": "qwen3.6-35b-a3b",
+    "startup_seconds": 12.827032619155943,
+    "config": {
+      "version": "search-1.5.0",
+      "llm_budget_seconds": 2.5,
+      "lexical_k": 50,
+      "vector_k": 50,
+      "num_candidates": 200,
+      "rrf_k": 60,
+      "rerank_k": 100,
+      "result_documents": 5,
+      "bm25_fields": [
+        "file_name^2",
+        "context^1.5",
+        "table_header^1.5",
+        "body"
+      ],
+      "minimum_should_match": "50%",
+      "additional_chunk_weight": 0.1,
+      "max_additional_chunks": 3,
+      "support_pool_k": 30,
+      "r1_weights": {
+        "rrf": 0.45,
+        "lexical_overlap": 0.2,
+        "cosine": 0.2,
+        "literal_phrase": 0.05,
+        "identifier": 0.05,
+        "metadata": 0.05
+      },
+      "query_cache": false,
+      "operating_query_logs": false,
+      "exact_2a": false,
+      "verified_metadata_preference": true,
+      "explicit_dates": "required_no_relaxation"
+    },
+    "defaults": {
+      "filter_mode": "B",
+      "reranker": "R1",
+      "release_status": "development_only",
+      "quality_gate": "not_all_passed",
+      "reason": "S-07: A-R0 54 vs B-R0 55, B has zero gold exclusions. B-R1 +4 hits, no type decline, latency passed. Final acceptance remains blocked by G1, representative-label review and old ES number-query regression."
+    }
+  },
+  "hashes": {
+    "engine.py": "8200b3572d4a3bf70839aef4f89867309edbcf20b8a5e73278665589f1c611a8",
+    "query.py": "4df07548e59080b3140a6cea8a02645e4d3ce56468c281f7820d4b246666eaaf",
+    "index.html": "8171c13c18884972683ed3bfedf6c92f669b49862cd65c3044c413b7aeed8a57",
+    "service.py": "5e9be63bb0843d6e588a39b55bb8f6f7db12c208b18708bcc33aa24051ba1dab",
+    "streaming.py": "dec3640b0ef549f7a0c5d213ff0a8a34fd8117c5132454a3ad76b4da9f1970ac",
+    "content.py": "95abcc6e80753b89427d50e6a05e191f7f8239ce6f403ca8a8b57dc6ec405dac",
+    "test_search.py": "39b28be9ed6d98495ed3026df8af53c6076c62e561aaabb6fb3e5227ffd67dc8"
+  },
+  "counts": {
+    "rag-documents": 110,
+    "rag-chunks": 1089,
+    "rag-search-documents-v001": 110,
+    "rag-search-chunks-v001": 1089
+  }
+}

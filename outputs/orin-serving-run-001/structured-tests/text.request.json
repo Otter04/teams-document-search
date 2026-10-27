@@ -1,0 +1,17 @@
+{
+  "model": "qwen3.6-35b-a3b",
+  "messages": [
+    {
+      "role": "user",
+      "content": "다음 문장에서 문서종류, 작성일, 대상시스템을 추출해 doc_type, written_date, target_system 키를 가진 JSON 객체만 출력하세요. 날짜는 YYYY-MM-DD 형식입니다. 원문: 2026년 10월 20일 작성한 회의록이다. 대상 시스템은 ERP이다."
+    }
+  ],
+  "temperature": 0,
+  "max_tokens": 512,
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  },
+  "response_format": {
+    "type": "json_object"
+  }
+}

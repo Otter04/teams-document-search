@@ -1,0 +1,49 @@
+{
+  "model": "qwen3.6-35b-a3b",
+  "provider": "local-vllm",
+  "quantization": "awq-4bit",
+  "kind": "enrichment",
+  "doc_id": "H-001",
+  "id": "H-001",
+  "request_sha256": "78a36434b2584cd742ac1b522f926bdd7259ff174b2619ab97552f4b4fd949c7",
+  "baseline_request_sha256": "3bb344d6df3541be84d01c8bd003f68cf34ed27b50ee276f5c53b22b5e76b0b2",
+  "messages_sha256": "5e18e44fd685aaea6105120041d4991954aa8aea6f16fb5b283f0a0e83450605",
+  "response": {
+    "id": "chatcmpl-a22f68995ad8be6a",
+    "object": "chat.completion",
+    "created": 1792467632,
+    "model": "qwen3.6-35b-a3b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"doc_id\": \"H-001\",\n  \"fields\": {\n    \"VAT\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"계약금액: KRW 48,000,000 (VAT 별도)\",\n          \"ref\": \"H-001-8c8b34a47a6a-p10\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"별도\"\n    },\n    \"거래처\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"거래처: 가온세라믹\",\n          \"ref\": \"H-001-8c8b34a47a6a-p3\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"가온세라믹\"\n    },\n    \"견적번호\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"문서 내 명시적 견적번호 언급이 없음.\",\n      \"status\": \"not_found_in_input\",\n      \"value\": null\n    },\n    \"견적유효기간\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"문서 종류가 계약서이며 견적 유효기간 관련 내용이 없음.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"계약번호\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"계약번호: CT-2026-GC-41\",\n          \"ref\": \"H-001-8c8b34a47a6a-p7\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"CT-2026-GC-41\"\n    },\n    \"계약시작일\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"계약기간: 2026-10-01 ~ 2026-12-31\",\n          \"ref\": \"H-001-8c8b34a47a6a-p9\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"2026-10-01\"\n    },\n    \"계약유형\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"계약유형: 용역\",\n          \"ref\": \"H-001-8c8b34a47a6a-p8\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"용역\"\n    },\n    \"계약종료일\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"계약기간: 2026-10-01 ~ 2026-12-31\",\n          \"ref\": \"H-001-8c8b34a47a6a-p9\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"2026-12-31\"\n    },\n    \"금액\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"계약금액: KRW 48,000,000 (VAT 별도)\",\n          \"ref\": \"H-001-8c8b34a47a6a-p10\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"48000000\"\n    },\n    \"대상시스템\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"대상 시스템: MES\",\n          \"ref\": \"H-001-8c8b34a47a6a-p4\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"MES\"\n    },\n    \"로그시작\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"문서 종류가 실행 로그가 아님.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"로그종료\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"문서 종류가 실행 로그가 아님.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"문서일자\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"작성일: 2026-09-04\",\n          \"ref\": \"H-001-8c8b34a47a6a-p6\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"2026-09-04\"\n    },\n    \"문서종류\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"source\",\n          \"quote\": \"file_name: MES 생산수집 용역 계약서_초안.docx\",\n          \"ref\": \"file_name\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"계약서\"\n    },\n    \"사업명\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"문서 내에 건명이나 관련 사업명을 지칭하는 명시적 구절이 없음.\",\n      \"status\": \"not_found_in_input\",\n      \"value\": null\n    },\n    \"사이트\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"문서 종류가 구성도가 아니며 설치 위치 정보가 없음.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"상태\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"문서상태: 초안\",\n          \"ref\": \"H-001-8c8b34a47a6a-p5\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"초안\"\n    },\n    \"실행결과\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"문서 종류가 실행 로그가 아님.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"오류코드\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"문서 내에 오류 코드가 명시되지 않음.\",\n      \"status\": \"not_found_in_input\",\n      \"value\": null\n    },\n    \"작성일\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"작성일: 2026-09-04\",\n          \"ref\": \"H-001-8c8b34a47a6a-p6\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"2026-09-04\"\n    },\n    \"작업명\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"문서 종류가 실행 로그가 아님.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"통화\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"계약금액: KRW 48,000,000 (VAT 별도)\",\n          \"ref\": \"H-001-8c8b34a47a6a-p10\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"KRW\"\n    },\n    \"표지일\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"제안서가 아니며 표지 날짜 정보가 없음.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    }\n  },\n  \"schema_version\": \"llm_enrichment_candidate_v1\",\n  \"summary\": [\n    {\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"MES 생산수집 용역 계약서\",\n          \"ref\": \"H-001-8c8b34a47a6a-p1\"\n        }\n      ],\n      \"text\": \"가온세라믹의 MES 대상 생산 데이터 수집 용역 계약을 정의하며, 계약 번호는 CT-2026-GC-41이고 유형은 용역이다.\"\n    },\n    {\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"계약금액: KRW 48,000,000 (VAT 별도)\",\n          \"ref\": \"H-001-8c8b34a47a6a-p10\"\n        },\n        {\n          \"kind\": \"block\",\n          \"quote\": \"계약기간: 2026-10-01 ~ 2026-12-31\",\n          \"ref\": \"H-001-8c8b34a47a6a-p9\"\n        }\n      ],\n      \"text\": \"계약 기간은 2026년 10월 1일부터 12월 31일까지이며, 계약 금액은 48,000,000원(세금 별도)으로 정한다.\"\n    },\n    {\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"문서상태: 초안\",\n          \"ref\": \"H-001-8c8b34a47a6a-p5\"\n        },\n        {\n          \"kind\": \"block\",\n          \"quote\": \"성형기 12대이며 수집 주기는 250ms로 한다. 기존 설비의 PLC 프로그램 변경은 범위에서 제외한다.\",\n          \"ref\": \"H-001-8c8b34a47a6a-p12\"\n        }\n      ],\n      \"text\": \"문서는 현재 초안 상태이며, 성형기 12대의 데이터 수집을 수행하되 기존 PLC 프로그램 변경 작업은 제외된다.\"\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 5880,
+      "total_tokens": 8562,
+      "completion_tokens": 2682,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "http_status": 200,
+  "elapsed_ms": 427983
+}

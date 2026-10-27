@@ -1,0 +1,174 @@
+{
+  "figures": [
+    {
+      "bbox": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "claims": [
+        {
+          "bbox": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "status": "observed",
+          "text": "화성 1 공장 전산실에 설치된 제안 아키텍처는 외부망 사용자를 보안·네트워크(FortiGate 200F × 2 HA)를 통해 MES 애플리케이션(mes-app01, mes-app02)과 데이터베이스(mes-db01, mes-db02)로 연결하는 구조이다."
+        }
+      ],
+      "kind": "diagram",
+      "nodes": [
+        {
+          "bbox": [
+            0.35,
+            0.35,
+            0.65,
+            0.45
+          ],
+          "id": "node1",
+          "label": "사용자 / 외부망"
+        },
+        {
+          "bbox": [
+            0.3,
+            0.5,
+            0.7,
+            0.6
+          ],
+          "id": "node2",
+          "label": "보안 · 네트워크\nFortiGate 200F × 2 (HA)"
+        },
+        {
+          "bbox": [
+            0.05,
+            0.65,
+            0.25,
+            0.8
+          ],
+          "id": "node3",
+          "label": "MES 애플리케이션\nmes-app01"
+        },
+        {
+          "bbox": [
+            0.3,
+            0.65,
+            0.5,
+            0.8
+          ],
+          "id": "node4",
+          "label": "MES 애플리케이션\nmes-app02"
+        },
+        {
+          "bbox": [
+            0.55,
+            0.65,
+            0.75,
+            0.8
+          ],
+          "id": "node5",
+          "label": "MES DB (Oracle 19c)\nmes-db01"
+        },
+        {
+          "bbox": [
+            0.8,
+            0.65,
+            1.0,
+            0.8
+          ],
+          "id": "node6",
+          "label": "MES DB 스탠바이\nmes-db02"
+        }
+      ],
+      "relations": [
+        {
+          "bbox": [
+            0.49947916666666664,
+            0.45,
+            0.5005208333333333,
+            0.5
+          ],
+          "direction": "undirected",
+          "from_node": "node1",
+          "label": "",
+          "to_node": "node2"
+        },
+        {
+          "bbox": [
+            0.15,
+            0.6,
+            0.3,
+            0.65
+          ],
+          "direction": "undirected",
+          "from_node": "node2",
+          "label": "",
+          "to_node": "node3"
+        },
+        {
+          "bbox": [
+            0.4,
+            0.6,
+            0.5,
+            0.65
+          ],
+          "direction": "undirected",
+          "from_node": "node2",
+          "label": "",
+          "to_node": "node4"
+        },
+        {
+          "bbox": [
+            0.5,
+            0.6,
+            0.65,
+            0.65
+          ],
+          "direction": "undirected",
+          "from_node": "node2",
+          "label": "",
+          "to_node": "node5"
+        },
+        {
+          "bbox": [
+            0.5,
+            0.6,
+            0.9,
+            0.65
+          ],
+          "direction": "undirected",
+          "from_node": "node2",
+          "label": "",
+          "to_node": "node6"
+        }
+      ]
+    }
+  ],
+  "status": "complete",
+  "tables": [],
+  "texts": [
+    {
+      "bbox": [
+        0.05,
+        0.05,
+        0.25,
+        0.1
+      ],
+      "kind": "heading",
+      "text": "제안 아키텍처"
+    },
+    {
+      "bbox": [
+        0.05,
+        0.12,
+        0.35,
+        0.15
+      ],
+      "kind": "paragraph",
+      "text": "설치 위치 : 화성 1 공장 전산실"
+    }
+  ],
+  "warnings": []
+}

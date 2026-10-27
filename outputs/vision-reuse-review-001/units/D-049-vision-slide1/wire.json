@@ -1,0 +1,152 @@
+{
+  "figures": [
+    {
+      "bbox": [
+        0.045,
+        0.226,
+        0.949,
+        0.72
+      ],
+      "claims": [
+        {
+          "bbox": [
+            0.045,
+            0.226,
+            0.949,
+            0.72
+          ],
+          "status": "observed",
+          "text": "L4 로드밸런서가 하단의 WAS 2대, DB 2대로 트래픽을 분산하는 구조를 보여준다."
+        }
+      ],
+      "kind": "diagram",
+      "nodes": [
+        {
+          "bbox": [
+            0.367,
+            0.226,
+            0.63,
+            0.333
+          ],
+          "id": "node1",
+          "label": "L4 / 로드밸런서"
+        },
+        {
+          "bbox": [
+            0.048,
+            0.4,
+            0.257,
+            0.593
+          ],
+          "id": "node2",
+          "label": "emr-was01\nEMR WAS\nRHEL 8.10 | 16 vCPU / 64GB\n10.43.10.11"
+        },
+        {
+          "bbox": [
+            0.279,
+            0.4,
+            0.488,
+            0.593
+          ],
+          "id": "node3",
+          "label": "emr-was02\nEMR WAS\nRHEL 8.10 | 16 vCPU / 64GB\n10.43.10.12"
+        },
+        {
+          "bbox": [
+            0.51,
+            0.4,
+            0.718,
+            0.593
+          ],
+          "id": "node4",
+          "label": "emr-db01\nEMR DB (Oracle 19c RAC)\nRHEL 8.10 | 48 vCPU / 384GB\n10.43.10.21"
+        },
+        {
+          "bbox": [
+            0.74,
+            0.4,
+            0.949,
+            0.593
+          ],
+          "id": "node5",
+          "label": "emr-db02\nEMR DB (Oracle 19c RAC)\nRHEL 8.10 | 48 vCPU / 384GB\n10.43.10.22"
+        }
+      ],
+      "relations": [
+        {
+          "bbox": [
+            0.257,
+            0.333,
+            0.367,
+            0.4
+          ],
+          "direction": "undirected",
+          "from_node": "node1",
+          "label": "",
+          "to_node": "node2"
+        },
+        {
+          "bbox": [
+            0.367,
+            0.333,
+            0.488,
+            0.4
+          ],
+          "direction": "undirected",
+          "from_node": "node1",
+          "label": "",
+          "to_node": "node3"
+        },
+        {
+          "bbox": [
+            0.367,
+            0.333,
+            0.718,
+            0.4
+          ],
+          "direction": "undirected",
+          "from_node": "node1",
+          "label": "",
+          "to_node": "node4"
+        },
+        {
+          "bbox": [
+            0.367,
+            0.333,
+            0.949,
+            0.4
+          ],
+          "direction": "undirected",
+          "from_node": "node1",
+          "label": "",
+          "to_node": "node5"
+        }
+      ]
+    }
+  ],
+  "status": "complete",
+  "tables": [],
+  "texts": [
+    {
+      "bbox": [
+        0.045,
+        0.046,
+        0.945,
+        0.153
+      ],
+      "kind": "heading",
+      "text": "EMR 서버 구성도"
+    },
+    {
+      "bbox": [
+        0.045,
+        0.14,
+        0.945,
+        0.206
+      ],
+      "kind": "paragraph",
+      "text": "사업: EMR 시스템 유지보수  |  설치 위치: 새봄병원 본관 전산실  |  2025-06-28"
+    }
+  ],
+  "warnings": []
+}

@@ -1,0 +1,228 @@
+{
+  "figures": [
+    {
+      "bbox": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "claims": [
+        {
+          "bbox": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "status": "observed",
+          "text": "가산 IDC에 설치된 게임서버 인프라의 네트워크 구성을 나타내는 도식."
+        }
+      ],
+      "kind": "diagram",
+      "nodes": [
+        {
+          "bbox": [
+            0.405,
+            0.213,
+            0.593,
+            0.313
+          ],
+          "id": "node_1",
+          "label": "Internet / 전용회선"
+        },
+        {
+          "bbox": [
+            0.33,
+            0.353,
+            0.668,
+            0.467
+          ],
+          "id": "node_2",
+          "label": "방화벽\nFortiGate 1800F × 2"
+        },
+        {
+          "bbox": [
+            0.038,
+            0.353,
+            0.293,
+            0.467
+          ],
+          "id": "node_3",
+          "label": "Anti-DDoS 장비 × 2"
+        },
+        {
+          "bbox": [
+            0.705,
+            0.353,
+            0.96,
+            0.467
+          ],
+          "id": "node_4",
+          "label": "게임서버 랙 4 개"
+        },
+        {
+          "bbox": [
+            0.33,
+            0.507,
+            0.668,
+            0.62
+          ],
+          "id": "node_5",
+          "label": "코어 스위치\nArista 7280R3 × 2"
+        },
+        {
+          "bbox": [
+            0.038,
+            0.7,
+            0.334,
+            0.833
+          ],
+          "id": "node_6",
+          "label": "게임서버망\n10.87.0.0/20"
+        },
+        {
+          "bbox": [
+            0.356,
+            0.7,
+            0.641,
+            0.833
+          ],
+          "id": "node_7",
+          "label": "DB 망\n10.87.32.0/24"
+        },
+        {
+          "bbox": [
+            0.664,
+            0.7,
+            0.949,
+            0.833
+          ],
+          "id": "node_8",
+          "label": "관리망\n10.87.99.0/24"
+        }
+      ],
+      "relations": [
+        {
+          "bbox": [
+            0.495,
+            0.313,
+            0.505,
+            0.353
+          ],
+          "direction": "undirected",
+          "from_node": "node_1",
+          "label": "",
+          "to_node": "node_2"
+        },
+        {
+          "bbox": [
+            0.293,
+            0.40907407407407403,
+            0.33,
+            0.4109259259259259
+          ],
+          "direction": "undirected",
+          "from_node": "node_3",
+          "label": "",
+          "to_node": "node_2"
+        },
+        {
+          "bbox": [
+            0.668,
+            0.40907407407407403,
+            0.705,
+            0.4109259259259259
+          ],
+          "direction": "undirected",
+          "from_node": "node_2",
+          "label": "",
+          "to_node": "node_4"
+        },
+        {
+          "bbox": [
+            0.49447916666666664,
+            0.467,
+            0.49552083333333335,
+            0.507
+          ],
+          "direction": "undirected",
+          "from_node": "node_2",
+          "label": "",
+          "to_node": "node_5"
+        },
+        {
+          "bbox": [
+            0.13,
+            0.62,
+            0.33,
+            0.7
+          ],
+          "direction": "undirected",
+          "from_node": "node_5",
+          "label": "",
+          "to_node": "node_6"
+        },
+        {
+          "bbox": [
+            0.49447916666666664,
+            0.62,
+            0.49552083333333335,
+            0.7
+          ],
+          "direction": "undirected",
+          "from_node": "node_5",
+          "label": "",
+          "to_node": "node_7"
+        },
+        {
+          "bbox": [
+            0.668,
+            0.62,
+            0.86,
+            0.7
+          ],
+          "direction": "undirected",
+          "from_node": "node_5",
+          "label": "",
+          "to_node": "node_8"
+        }
+      ]
+    }
+  ],
+  "status": "complete",
+  "tables": [],
+  "texts": [
+    {
+      "bbox": [
+        0.045,
+        0.047,
+        0.945,
+        0.153
+      ],
+      "kind": "heading",
+      "text": "게임서버 인프라 운영 대행 네트워크 구성도 (Rev.1)"
+    },
+    {
+      "bbox": [
+        0.045,
+        0.14,
+        0.945,
+        0.207
+      ],
+      "kind": "paragraph",
+      "text": "설치 위치: 가산 IDC | 작성일: 2025-03-27 | 작성: 라움정보기술 기술지원팀"
+    },
+    {
+      "bbox": [
+        0.045,
+        0.893,
+        0.945,
+        0.947
+      ],
+      "kind": "paragraph",
+      "text": "범례: 실선 = 1G/10G 이더넷 | (주)별하게임즈 전산 담당자 검토 필요"
+    }
+  ],
+  "warnings": []
+}

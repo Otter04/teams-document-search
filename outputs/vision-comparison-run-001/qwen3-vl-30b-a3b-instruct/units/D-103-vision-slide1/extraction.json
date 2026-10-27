@@ -1,0 +1,212 @@
+{
+  "figures": [
+    {
+      "bbox": [
+        0.045001,
+        0.226667,
+        0.945024,
+        0.593333
+      ],
+      "claims": [
+        {
+          "bbox": [
+            0.045001,
+            0.226667,
+            0.945024,
+            0.593333
+          ],
+          "status": "observed",
+          "text": "시설관리시스템 서버 구성도"
+        },
+        {
+          "bbox": [
+            0.045001,
+            0.226667,
+            0.945024,
+            0.593333
+          ],
+          "status": "inferred",
+          "text": "L4 로드밸런서가 네 개의 서버(fms-app01, fms-app02, fms-db01, fms-gis01)에 트래픽을 분산하는 구조"
+        }
+      ],
+      "kind": "diagram",
+      "nodes": [
+        {
+          "bbox": [
+            0.367509,
+            0.226667,
+            0.630016,
+            0.333333
+          ],
+          "id": "l4_load_balancer",
+          "label": "L4 / 로드밸런서"
+        },
+        {
+          "bbox": [
+            0.048751,
+            0.4,
+            0.256881,
+            0.593333
+          ],
+          "id": "fms_app01",
+          "label": "fms-app01\nFMS 애플리케이션\nWindows Server 2022 | 16 vCPU / 64GB\n10.98.10.11"
+        },
+        {
+          "bbox": [
+            0.279382,
+            0.4,
+            0.487512,
+            0.593333
+          ],
+          "id": "fms_app02",
+          "label": "fms-app02\nFMS 애플리케이션\nWindows Server 2022 | 16 vCPU / 64GB\n10.98.10.12"
+        },
+        {
+          "bbox": [
+            0.510013,
+            0.4,
+            0.718143,
+            0.593333
+          ],
+          "id": "fms_db01",
+          "label": "fms-db01\nFMS DB (Tibero 7)\nWindows Server 2022 | 24 vCPU / 128GB\n10.98.10.21"
+        },
+        {
+          "bbox": [
+            0.740644,
+            0.4,
+            0.948774,
+            0.593333
+          ],
+          "id": "fms_gis01",
+          "label": "fms-gis01\nGIS 서버\nWindows Server 2022 | 16 vCPU / 64GB\n10.98.10.31"
+        }
+      ],
+      "relations": [
+        {
+          "bbox": [
+            0.045001,
+            0.226667,
+            0.945024,
+            0.593333
+          ],
+          "direction": "undirected",
+          "from_node": "l4_load_balancer",
+          "label": "",
+          "to_node": "fms_app01"
+        },
+        {
+          "bbox": [
+            0.045001,
+            0.226667,
+            0.945024,
+            0.593333
+          ],
+          "direction": "undirected",
+          "from_node": "l4_load_balancer",
+          "label": "",
+          "to_node": "fms_app02"
+        },
+        {
+          "bbox": [
+            0.045001,
+            0.226667,
+            0.945024,
+            0.593333
+          ],
+          "direction": "undirected",
+          "from_node": "l4_load_balancer",
+          "label": "",
+          "to_node": "fms_db01"
+        },
+        {
+          "bbox": [
+            0.045001,
+            0.226667,
+            0.945024,
+            0.593333
+          ],
+          "direction": "undirected",
+          "from_node": "l4_load_balancer",
+          "label": "",
+          "to_node": "fms_gis01"
+        }
+      ]
+    }
+  ],
+  "status": "complete",
+  "tables": [],
+  "texts": [
+    {
+      "bbox": [
+        0.045001,
+        0.046667,
+        0.945024,
+        0.153333
+      ],
+      "kind": "heading",
+      "text": "시설관리시스템 서버 구성도"
+    },
+    {
+      "bbox": [
+        0.045001,
+        0.14,
+        0.945024,
+        0.206667
+      ],
+      "kind": "paragraph",
+      "text": "사업: 시설관리시스템 노후 서버 교체  |  설치 위치: 온새미도시공사 본사 전산실  |  2025-10-31"
+    },
+    {
+      "bbox": [
+        0.367509,
+        0.226667,
+        0.630016,
+        0.333333
+      ],
+      "kind": "paragraph",
+      "text": "L4 / 로드밸런서"
+    },
+    {
+      "bbox": [
+        0.048751,
+        0.4,
+        0.256881,
+        0.593333
+      ],
+      "kind": "paragraph",
+      "text": "fms-app01\nFMS 애플리케이션\nWindows Server 2022 | 16 vCPU / 64GB\n10.98.10.11"
+    },
+    {
+      "bbox": [
+        0.279382,
+        0.4,
+        0.487512,
+        0.593333
+      ],
+      "kind": "paragraph",
+      "text": "fms-app02\nFMS 애플리케이션\nWindows Server 2022 | 16 vCPU / 64GB\n10.98.10.12"
+    },
+    {
+      "bbox": [
+        0.510013,
+        0.4,
+        0.718143,
+        0.593333
+      ],
+      "kind": "paragraph",
+      "text": "fms-db01\nFMS DB (Tibero 7)\nWindows Server 2022 | 24 vCPU / 128GB\n10.98.10.21"
+    },
+    {
+      "bbox": [
+        0.740644,
+        0.4,
+        0.948774,
+        0.593333
+      ],
+      "kind": "paragraph",
+      "text": "fms-gis01\nGIS 서버\nWindows Server 2022 | 16 vCPU / 64GB\n10.98.10.31"
+    }
+  ],
+  "warnings": []
+}

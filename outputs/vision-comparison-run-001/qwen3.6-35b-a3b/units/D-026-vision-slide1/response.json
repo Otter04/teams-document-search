@@ -1,0 +1,46 @@
+{
+  "id": "gen-1792375287-7dZEyhafaxFBVSLsUeVy",
+  "object": "chat.completion",
+  "created": 1792375287,
+  "model": "qwen/qwen3.6-35b-a3b",
+  "provider": "DeepInfra",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"figures\": [\n    {\n      \"bbox\": [0.045, 0.046, 0.949, 0.75],\n      \"claims\": [\n        {\n          \"bbox\": [0.045, 0.046, 0.949, 0.75],\n          \"status\": \"observed\",\n          \"text\": \"WMS 서버 구성도는 평택센터 WMS 구축 사업의 설치 위치를 평택 물류센터로 명시하며, 2025-04-28 기준 L4 로드밸런서 아래에 WAS 2대, DB 1대, 소터 연동 미들웨어 1대로 구성된 4계층 구조를 보여준다.\"\n        }\n      ],\n      \"kind\": \"diagram\",\n      \"nodes\": [\n        {\n          \"bbox\": [0.367, 0.226, 0.630, 0.333],\n          \"id\": \"node_l4\",\n          \"label\": \"L4 / 로드밸런서\"\n        },\n        {\n          \"bbox\": [0.048, 0.400, 0.257, 0.593],\n          \"id\": \"node_was01\",\n          \"label\": \"wms-was01\\nWMS WAS\\nRocky Linux 9.3 | 16 vCPU / 64GB\\n10.32.10.11\"\n        },\n        {\n          \"bbox\": [0.279, 0.400, 0.488, 0.593],\n          \"id\": \"node_was02\",\n          \"label\": \"wms-was02\\nWMS WAS\\nRocky Linux 9.3 | 16 vCPU / 64GB\\n10.32.10.12\"\n        },\n        {\n          \"bbox\": [0.510, 0.400, 0.718, 0.593],\n          \"id\": \"node_db01\",\n          \"label\": \"wms-db01\\nWMS DB (PostgreSQL 16)\\nRocky Linux 9.3 | 32 vCPU / 192GB\\n10.32.10.21\"\n        },\n        {\n          \"bbox\": [0.740, 0.400, 0.949, 0.593],\n          \"id\": \"node_sorter01\",\n          \"label\": \"wms-sorter01\\n소터 연동 미들웨어\\nUbuntu 22.04 | 8 vCPU / 16GB\\n10.32.70.11\"\n        }\n      ],\n      \"relations\": [\n        {\n          \"bbox\": [0.367, 0.333, 0.257, 0.400],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node_l4\",\n          \"label\": \"\",\n          \"to_node\": \"node_was01\"\n        },\n        {\n          \"bbox\": [0.367, 0.333, 0.488, 0.400],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node_l4\",\n          \"label\": \"\",\n          \"to_node\": \"node_was02\"\n        },\n        {\n          \"bbox\": [0.367, 0.333, 0.718, 0.400],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node_l4\",\n          \"label\": \"\",\n          \"to_node\": \"node_db01\"\n        },\n        {\n          \"bbox\": [0.367, 0.333, 0.949, 0.400],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node_l4\",\n          \"label\": \"\",\n          \"to_node\": \"node_sorter01\"\n        }\n      ]\n    }\n  ],\n  \"status\": \"complete\",\n  \"tables\": [],\n  \"texts\": [\n    {\n      \"bbox\": [0.045, 0.046, 0.945, 0.153],\n      \"kind\": \"heading\",\n      \"text\": \"WMS 서버 구성도\"\n    },\n    {\n      \"bbox\": [0.045, 0.140, 0.945, 0.206],\n      \"kind\": \"paragraph\",\n      \"text\": \"사업: 평택센터 WMS 구축  |  설치 위치: 평택 물류센터  |  2025-04-28\"\n    }\n  ],\n  \"warnings\": []\n}",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2907,
+    "completion_tokens": 1162,
+    "total_tokens": 4069,
+    "cost": 0.0013946,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0013946,
+      "upstream_inference_prompt_cost": 0.0002907,
+      "upstream_inference_completions_cost": 0.0011039
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

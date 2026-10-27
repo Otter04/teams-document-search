@@ -1,0 +1,2977 @@
+{
+  "query_id": "Q-042",
+  "query": "페일오버 테스트에서 502 에러 난 로그",
+  "results": [
+    {
+      "rank": 1,
+      "doc_id": "D-084",
+      "score": 14.689140789910915,
+      "evidence": [
+        {
+          "entry_id": "D-084-C-b89ee6dcd15e90eb",
+          "score": 14.689140789910915,
+          "doc_id": "D-084",
+          "kind": "native_chunk",
+          "text": "[2025-05-17 22:09:39] ERROR HTTP-502: health check failed on mall-web02 after L4 failover (Bad Gateway)",
+          "context_header": "deploy_20250517_mall-web01.log | 거래처=해솔유통 | 문서종류=실행 로그 | 문서일자=2025-05-17 | line_start=71",
+          "table_header_text": "",
+          "source_refs": [
+            {
+              "block_id": "D-084-b755f0913be2-line71",
+              "start": 0,
+              "end": 103,
+              "loc": {
+                "kind": "log",
+                "line_start": 71,
+                "line_end": 71
+              }
+            }
+          ],
+          "context_refs": [],
+          "length": 51
+        },
+        {
+          "entry_id": "D-084-C-ec4b70b4aea08425",
+          "score": 10.879099673785188,
+          "doc_id": "D-084",
+          "kind": "native_chunk",
+          "text": "[2025-05-17 22:02:16] ===== deploy.sh start =====\n[2025-05-17 22:02:16] target: MALL_FAILOVER_TEST / system: 온라인몰\n[2025-05-17 22:02:16] host list: mall-web01, mall-web02, mall-was01\n[2025-05-17 22:02:42] mall-web01: stopping service ... ok\n[2025-05-17 22:02:58] mall-web01: backing up current release ... ok\n[2025-05-17 22:03:30] mall-web01: extracting package ... ok\n[2025-05-17 22:04:04] mall-web01: updating config ... ok\n[2025-05-17 22:04:16] mall-web01: starting service ... ok\n[2025-05-17 22:04:20] mall-web01: waiting for port open ... ok\n[2025-05-17 22:04:21] mall-web01: smoke test GET /api/health -> 200 (120ms)\n[2025-05-17 22:04:27] mall-web01: smoke test GET /api/health -> 200 (43ms)\n[2025-05-17 22:04:32] mall-web01: smoke test GET /api/health -> 200 (180ms)\n[2025-05-17 22:04:33] mall-web01: smoke test GET /api/health -> 200 (352ms)\n[2025-05-17 22:04:36] mall-web01: smoke test GET /api/health -> 200 (42ms)\n[2025-05-17 22:04:39] mall-web01: smoke test GET /api/health -> 200 (325ms)\n[2025-05-17 22:04:40] mall-web01: smoke test GET /api/health -> 200 (346ms)\n[2025-05-17 22:04:41] mall-web01: smoke test GET /api/health -> 200 (95ms)",
+          "context_header": "deploy_20250517_mall-web01.log | 거래처=해솔유통 | 문서종류=실행 로그 | 문서일자=2025-05-17 | line_start=1",
+          "table_header_text": "",
+          "source_refs": [
+            {
+              "block_id": "D-084-b755f0913be2-line1",
+              "start": 0,
+              "end": 49,
+              "loc": {
+                "kind": "log",
+                "line_start": 1,
+                "line_end": 1
+              }
+            },
+            {
+              "block_id": "D-084-b755f0913be2-line2",
+              "start": 0,
+              "end": 63,
+              "loc": {
+                "kind": "log",
+                "line_start": 2,
+                "line_end": 2
+              }
+            },
+            {
+              "block_id": "D-084-b755f0913be2-line3",
+              "start": 0,
+              "end": 67,
+              "loc": {
+                "kind": "log",
+                "line_start": 3,
+                "line_end": 3
+              }
+            },
+            {
+              "block_id": "D-084-b755f0913be2-line4",
+              "start": 0,
+              "end": 57,
+              "loc": {
+                "kind": "log",
+                "line_start": 4,
+                "line_end": 4
+              }
+            },
+            {
+              "block_id": "D-084-b755f0913be2-line5",
+              "start": 0,
+              "end": 67,
+              "loc": {
+                "kind": "log",
+                "line_start": 5,
+                "line_end": 5
+              }
+            },
+            {
+              "block_id": "D-084-b755f0913be2-line6",
+              "start": 0,
+              "end": 59,
+              "loc": {
+                "kind": "log",
+                "line_start": 6,
+                "line_end": 6
+              }
+            },
+            {
+              "block_id": "D-084-b755f0913be2-line7",
+              "start": 0,
+              "end": 56,
+              "loc": {
+                "kind": "log",
+                "line_start": 7,
+                "line_end": 7
+              }
+            },
+            {
+              "block_id": "D-084-b755f0913be2-line8",
+              "start": 0,
+              "end": 57,
+              "loc": {
+                "kind": "log",
+                "line_start": 8,
+                "line_end": 8
+              }
+            },
+            {
+              "block_id": "D-084-b755f0913be2-line9",
+              "start": 0,
+              "end": 62,
+              "loc": {
+                "kind": "log",
+                "line_start": 9,
+                "line_end": 9
+              }
+            },
+            {
+              "block_id": "D-084-b755f0913be2-line10",
+              "start": 0,
+              "end": 75,
+              "loc": {
+                "kind": "log",
+                "line_start": 10,
+                "line_end": 10
+              }
+            },
+            {
+              "block_id": "D-084-b755f0913be2-line11",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 11,
+                "line_end": 11
+              }
+            },
+            {
+              "block_id": "D-084-b755f0913be2-line12",
+              "start": 0,
+              "end": 75,
+              "loc": {
+                "kind": "log",
+                "line_start": 12,
+                "line_end": 12
+              }
+            },
+            {
+              "block_id": "D-084-b755f0913be2-line13",
+              "start": 0,
+              "end": 75,
+              "loc": {
+                "kind": "log",
+                "line_start": 13,
+                "line_end": 13
+              }
+            },
+            {
+              "block_id": "D-084-b755f0913be2-line14",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 14,
+                "line_end": 14
+              }
+            },
+            {
+              "block_id": "D-084-b755f0913be2-line15",
+              "start": 0,
+              "end": 75,
+              "loc": {
+                "kind": "log",
+                "line_start": 15,
+                "line_end": 15
+              }
+            },
+            {
+              "block_id": "D-084-b755f0913be2-line16",
+              "start": 0,
+              "end": 75,
+              "loc": {
+                "kind": "log",
+                "line_start": 16,
+                "line_end": 16
+              }
+            },
+            {
+              "block_id": "D-084-b755f0913be2-line17",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 17,
+                "line_end": 17
+              }
+            }
+          ],
+          "context_refs": [],
+          "length": 187
+        },
+        {
+          "entry_id": "D-084-document",
+          "score": 10.753232447113366,
+          "doc_id": "D-084",
+          "kind": "document_metadata",
+          "text": "deploy_20250517_mall-web01.log sites/운영팀/Shared Documents/해솔유통/운영로그/2025-05/deploy_20250517_mall-web01.log 문서종류 실행 로그 거래처 해솔유통 문서일자 2025-05-17 대상시스템 온라인몰 작업명 MALL_FAILOVER_TEST 로그시작 2025-05-17 22:02 로그종료 2025-05-17 22:11 실행결과 실패 오류코드 HTTP-502",
+          "source_refs": [],
+          "context_header": "",
+          "table_header_text": "",
+          "context_refs": [],
+          "length": 90
+        }
+      ],
+      "source": {
+        "file_name": "deploy_20250517_mall-web01.log",
+        "format": "log",
+        "relative_path": "sites/운영팀/Shared Documents/해솔유통/운영로그/2025-05/deploy_20250517_mall-web01.log",
+        "sha256": "b755f0913be28100f4042560c97639359787a784051126c1f2419a9686625916",
+        "web_url": null,
+        "encoding": "utf-8"
+      },
+      "metadata": {
+        "문서종류": "실행 로그",
+        "거래처": "해솔유통",
+        "문서일자": "2025-05-17",
+        "대상시스템": "온라인몰",
+        "작업명": "MALL_FAILOVER_TEST",
+        "로그시작": "2025-05-17 22:02",
+        "로그종료": "2025-05-17 22:11",
+        "실행결과": "실패",
+        "오류코드": "HTTP-502"
+      },
+      "native_chunk_count": 7,
+      "pending_visual_units": [],
+      "conditions_verified": false
+    },
+    {
+      "rank": 2,
+      "doc_id": "D-050",
+      "score": 8.84101567729277,
+      "evidence": [
+        {
+          "entry_id": "D-050-C-0943ba02d9866304",
+          "score": 8.84101567729277,
+          "doc_id": "D-050",
+          "kind": "native_chunk",
+          "text": "2025-08-24 01:50:12 [INFO ] Processed 51.5 GB / 126.5 GB (41%) throughput 374 MB/s\n2025-08-24 01:51:18 [INFO ] Processed 53.6 GB / 126.5 GB (42%) throughput 195 MB/s\n2025-08-24 01:52:07 [INFO ] Processed 55.6 GB / 126.5 GB (44%) throughput 393 MB/s\n2025-08-24 01:53:48 [ERROR] BKP-E2210: tape drive LTO9-02 not ready (media error, cartridge EMR0824)\n2025-08-24 01:53:51 [INFO ] Cleaning up partial image set\n2025-08-24 01:54:03 [INFO ] Job EMR_RMAN_LEVEL0 finished. Result: FAILED (exit code 2)",
+          "context_header": "EMR_RMAN_LEVEL0_20250824.log | 거래처=새봄의료재단 | 문서종류=실행 로그 | 문서일자=2025-08-24 | line_start=44",
+          "table_header_text": "",
+          "source_refs": [
+            {
+              "block_id": "D-050-3cd7badbcd15-line44",
+              "start": 0,
+              "end": 82,
+              "loc": {
+                "kind": "log",
+                "line_start": 44,
+                "line_end": 44
+              }
+            },
+            {
+              "block_id": "D-050-3cd7badbcd15-line45",
+              "start": 0,
+              "end": 82,
+              "loc": {
+                "kind": "log",
+                "line_start": 45,
+                "line_end": 45
+              }
+            },
+            {
+              "block_id": "D-050-3cd7badbcd15-line46",
+              "start": 0,
+              "end": 82,
+              "loc": {
+                "kind": "log",
+                "line_start": 46,
+                "line_end": 46
+              }
+            },
+            {
+              "block_id": "D-050-3cd7badbcd15-line47",
+              "start": 0,
+              "end": 100,
+              "loc": {
+                "kind": "log",
+                "line_start": 47,
+                "line_end": 47
+              }
+            },
+            {
+              "block_id": "D-050-3cd7badbcd15-line48",
+              "start": 0,
+              "end": 57,
+              "loc": {
+                "kind": "log",
+                "line_start": 48,
+                "line_end": 48
+              }
+            },
+            {
+              "block_id": "D-050-3cd7badbcd15-line49",
+              "start": 0,
+              "end": 86,
+              "loc": {
+                "kind": "log",
+                "line_start": 49,
+                "line_end": 49
+              }
+            }
+          ],
+          "context_refs": [],
+          "length": 111
+        },
+        {
+          "entry_id": "D-050-document",
+          "score": 2.251013469777745,
+          "doc_id": "D-050",
+          "kind": "document_metadata",
+          "text": "EMR_RMAN_LEVEL0_20250824.log sites/운영팀/Shared Documents/새봄병원/운영로그/2025-08/EMR_RMAN_LEVEL0_20250824.log 문서종류 실행 로그 거래처 새봄의료재단 문서일자 2025-08-24 대상시스템 EMR 작업명 EMR_RMAN_LEVEL0 로그시작 2025-08-24 01:05 로그종료 2025-08-24 01:54 실행결과 실패 오류코드 BKP-E2210",
+          "source_refs": [],
+          "context_header": "",
+          "table_header_text": "",
+          "context_refs": [],
+          "length": 89
+        },
+        {
+          "entry_id": "D-050-C-8cbf1ed6a69526b2",
+          "score": 1.929836959212615,
+          "doc_id": "D-050",
+          "kind": "native_chunk",
+          "text": "================================================================\n Backup Job Report\n Job name      : EMR_RMAN_LEVEL0\n Target system : EMR\n Client host   : emr-db01 (10.43.10.21)\n Policy        : DAILY_FULL / retention 14 days\n Media server  : sbm-bkp01\n================================================================",
+          "context_header": "EMR_RMAN_LEVEL0_20250824.log | 거래처=새봄의료재단 | 문서종류=실행 로그 | 문서일자=2025-08-24 | line_start=1",
+          "table_header_text": "",
+          "source_refs": [
+            {
+              "block_id": "D-050-3cd7badbcd15-line1",
+              "start": 0,
+              "end": 64,
+              "loc": {
+                "kind": "log",
+                "line_start": 1,
+                "line_end": 1
+              }
+            },
+            {
+              "block_id": "D-050-3cd7badbcd15-line2",
+              "start": 0,
+              "end": 18,
+              "loc": {
+                "kind": "log",
+                "line_start": 2,
+                "line_end": 2
+              }
+            },
+            {
+              "block_id": "D-050-3cd7badbcd15-line3",
+              "start": 0,
+              "end": 32,
+              "loc": {
+                "kind": "log",
+                "line_start": 3,
+                "line_end": 3
+              }
+            },
+            {
+              "block_id": "D-050-3cd7badbcd15-line4",
+              "start": 0,
+              "end": 20,
+              "loc": {
+                "kind": "log",
+                "line_start": 4,
+                "line_end": 4
+              }
+            },
+            {
+              "block_id": "D-050-3cd7badbcd15-line5",
+              "start": 0,
+              "end": 39,
+              "loc": {
+                "kind": "log",
+                "line_start": 5,
+                "line_end": 5
+              }
+            },
+            {
+              "block_id": "D-050-3cd7badbcd15-line6",
+              "start": 0,
+              "end": 47,
+              "loc": {
+                "kind": "log",
+                "line_start": 6,
+                "line_end": 6
+              }
+            },
+            {
+              "block_id": "D-050-3cd7badbcd15-line7",
+              "start": 0,
+              "end": 26,
+              "loc": {
+                "kind": "log",
+                "line_start": 7,
+                "line_end": 7
+              }
+            },
+            {
+              "block_id": "D-050-3cd7badbcd15-line8",
+              "start": 0,
+              "end": 64,
+              "loc": {
+                "kind": "log",
+                "line_start": 8,
+                "line_end": 8
+              }
+            }
+          ],
+          "context_refs": [],
+          "length": 64
+        }
+      ],
+      "source": {
+        "file_name": "EMR_RMAN_LEVEL0_20250824.log",
+        "format": "log",
+        "relative_path": "sites/운영팀/Shared Documents/새봄병원/운영로그/2025-08/EMR_RMAN_LEVEL0_20250824.log",
+        "sha256": "3cd7badbcd152edad3f8811202a161fe88968d72e4df139e66d50b98fda7952b",
+        "web_url": null,
+        "encoding": "utf-8"
+      },
+      "metadata": {
+        "문서종류": "실행 로그",
+        "거래처": "새봄의료재단",
+        "문서일자": "2025-08-24",
+        "대상시스템": "EMR",
+        "작업명": "EMR_RMAN_LEVEL0",
+        "로그시작": "2025-08-24 01:05",
+        "로그종료": "2025-08-24 01:54",
+        "실행결과": "실패",
+        "오류코드": "BKP-E2210"
+      },
+      "native_chunk_count": 11,
+      "pending_visual_units": [],
+      "conditions_verified": false
+    },
+    {
+      "rank": 3,
+      "doc_id": "D-028",
+      "score": 8.310040293509264,
+      "evidence": [
+        {
+          "entry_id": "D-028-C-92b5de33bd346166",
+          "score": 8.310040293509264,
+          "doc_id": "D-028",
+          "kind": "native_chunk",
+          "text": "2025-11-03 02:09:53,392 DEBUG [step-1] c.raum.batch.ChunkProcessor - chunk committed read=563 write=502 skip=0\n2025-11-03 02:09:56,625 DEBUG [step-1] c.raum.batch.ChunkProcessor - chunk committed read=787 write=561 skip=0",
+          "context_header": "wms-sorter01_wms_inventory_sync_20251103.log | 거래처=다온로지스 | 문서종류=실행 로그 | 문서일자=2025-11-03 | line_start=69",
+          "table_header_text": "",
+          "source_refs": [
+            {
+              "block_id": "D-028-2b529e27bade-line69",
+              "start": 0,
+              "end": 110,
+              "loc": {
+                "kind": "log",
+                "line_start": 69,
+                "line_end": 69
+              }
+            },
+            {
+              "block_id": "D-028-2b529e27bade-line70",
+              "start": 0,
+              "end": 110,
+              "loc": {
+                "kind": "log",
+                "line_start": 70,
+                "line_end": 70
+              }
+            }
+          ],
+          "context_refs": [],
+          "length": 64
+        },
+        {
+          "entry_id": "D-028-C-d5241f2fa772935c",
+          "score": 5.781148318152614,
+          "doc_id": "D-028",
+          "kind": "native_chunk",
+          "text": "2025-11-03 02:17:46,599 DEBUG [step-2] c.raum.batch.ChunkProcessor - chunk committed read=802 write=745 skip=0\n2025-11-03 02:17:51,457 DEBUG [step-2] c.raum.batch.ChunkProcessor - chunk committed read=559 write=961 skip=0\n2025-11-03 02:18:02,301 DEBUG [step-2] c.raum.batch.ChunkProcessor - chunk committed read=558 write=706 skip=0\n2025-11-03 02:18:17,836 DEBUG [step-2] c.raum.batch.ChunkProcessor - chunk committed read=813 write=588 skip=0\n2025-11-03 02:18:29,127 DEBUG [step-2] c.raum.batch.ChunkProcessor - chunk committed read=984 write=553 skip=0\n2025-11-03 02:18:42,261 DEBUG [step-2] c.raum.batch.ChunkProcessor - chunk committed read=989 write=727 skip=0\n2025-11-03 02:18:51,809 DEBUG [step-2] c.raum.batch.ChunkProcessor - chunk committed read=822 write=532 skip=0\n2025-11-03 02:18:55,459 ERROR [step-2] c.raum.batch.ItemWriter - NET-E0110: connection timed out to 10.32.10.21:5432 after 30000ms\n\tat c.raum.batch.ItemWriter.write(ItemWriter.java:118)\n\tat o.s.b.c.step.item.SimpleChunkProcessor.writeItems(SimpleChunkProcessor.java:193)\n\tat o.s.b.c.step.tasklet.TaskletStep.doExecute(TaskletStep.java:257)",
+          "context_header": "wms-sorter01_wms_inventory_sync_20251103.log | 거래처=다온로지스 | 문서종류=실행 로그 | 문서일자=2025-11-03 | line_start=127",
+          "table_header_text": "",
+          "source_refs": [
+            {
+              "block_id": "D-028-2b529e27bade-line127",
+              "start": 0,
+              "end": 110,
+              "loc": {
+                "kind": "log",
+                "line_start": 127,
+                "line_end": 127
+              }
+            },
+            {
+              "block_id": "D-028-2b529e27bade-line128",
+              "start": 0,
+              "end": 110,
+              "loc": {
+                "kind": "log",
+                "line_start": 128,
+                "line_end": 128
+              }
+            },
+            {
+              "block_id": "D-028-2b529e27bade-line129",
+              "start": 0,
+              "end": 110,
+              "loc": {
+                "kind": "log",
+                "line_start": 129,
+                "line_end": 129
+              }
+            },
+            {
+              "block_id": "D-028-2b529e27bade-line130",
+              "start": 0,
+              "end": 110,
+              "loc": {
+                "kind": "log",
+                "line_start": 130,
+                "line_end": 130
+              }
+            },
+            {
+              "block_id": "D-028-2b529e27bade-line131",
+              "start": 0,
+              "end": 110,
+              "loc": {
+                "kind": "log",
+                "line_start": 131,
+                "line_end": 131
+              }
+            },
+            {
+              "block_id": "D-028-2b529e27bade-line132",
+              "start": 0,
+              "end": 110,
+              "loc": {
+                "kind": "log",
+                "line_start": 132,
+                "line_end": 132
+              }
+            },
+            {
+              "block_id": "D-028-2b529e27bade-line133",
+              "start": 0,
+              "end": 110,
+              "loc": {
+                "kind": "log",
+                "line_start": 133,
+                "line_end": 133
+              }
+            },
+            {
+              "block_id": "D-028-2b529e27bade-line134",
+              "start": 0,
+              "end": 130,
+              "loc": {
+                "kind": "log",
+                "line_start": 134,
+                "line_end": 134
+              }
+            },
+            {
+              "block_id": "D-028-2b529e27bade-line135",
+              "start": 0,
+              "end": 54,
+              "loc": {
+                "kind": "log",
+                "line_start": 135,
+                "line_end": 135
+              }
+            },
+            {
+              "block_id": "D-028-2b529e27bade-line136",
+              "start": 0,
+              "end": 84,
+              "loc": {
+                "kind": "log",
+                "line_start": 136,
+                "line_end": 136
+              }
+            },
+            {
+              "block_id": "D-028-2b529e27bade-line137",
+              "start": 0,
+              "end": 68,
+              "loc": {
+                "kind": "log",
+                "line_start": 137,
+                "line_end": 137
+              }
+            }
+          ],
+          "context_refs": [],
+          "length": 159
+        },
+        {
+          "entry_id": "D-028-document",
+          "score": 2.2630579930910466,
+          "doc_id": "D-028",
+          "kind": "document_metadata",
+          "text": "wms-sorter01_wms_inventory_sync_20251103.log sites/운영팀/Shared Documents/다온/운영로그/2025-11/wms-sorter01_wms_inventory_sync_20251103.log 문서종류 실행 로그 거래처 다온로지스 문서일자 2025-11-03 대상시스템 WMS 작업명 WMS_INVENTORY_SYNC 로그시작 2025-11-03 02:01 로그종료 2025-11-03 02:18 실행결과 실패 오류코드 NET-E0110",
+          "source_refs": [],
+          "context_header": "",
+          "table_header_text": "",
+          "context_refs": [],
+          "length": 87
+        }
+      ],
+      "source": {
+        "file_name": "wms-sorter01_wms_inventory_sync_20251103.log",
+        "format": "log",
+        "relative_path": "sites/운영팀/Shared Documents/다온/운영로그/2025-11/wms-sorter01_wms_inventory_sync_20251103.log",
+        "sha256": "2b529e27baded54d4f400f3bc39dfd78da880bfd06cc9017d9b109e8fe92b480",
+        "web_url": null,
+        "encoding": "utf-8"
+      },
+      "metadata": {
+        "문서종류": "실행 로그",
+        "거래처": "다온로지스",
+        "문서일자": "2025-11-03",
+        "대상시스템": "WMS",
+        "작업명": "WMS_INVENTORY_SYNC",
+        "로그시작": "2025-11-03 02:01",
+        "로그종료": "2025-11-03 02:18",
+        "실행결과": "실패",
+        "오류코드": "NET-E0110"
+      },
+      "native_chunk_count": 16,
+      "pending_visual_units": [],
+      "conditions_verified": false
+    },
+    {
+      "rank": 4,
+      "doc_id": "D-035",
+      "score": 7.899071909418389,
+      "evidence": [
+        {
+          "entry_id": "D-035-C-a30544009cc69ede",
+          "score": 7.899071909418389,
+          "doc_id": "D-035",
+          "kind": "native_chunk",
+          "text": "호스트명\t역할\tOS\t사양\tIP\t비고\ntms-app01\tTMS 애플리케이션\tWindows Server 2022\t8 vCPU / 32GB\t10.32.11.11\t\ntms-db01\tTMS DB (MS-SQL 2022)\tWindows Server 2022\t16 vCPU / 64GB\t10.32.11.21\t",
+          "context_header": "서버구성_TMS.xlsx | 거래처=다온로지스 | 문서종류=서버 구성도 | 문서일자=2025-07-29 | 서버목록 | sheet=서버목록",
+          "table_header_text": "호스트명\t역할\tOS\t사양\tIP\t비고",
+          "source_refs": [
+            {
+              "block_id": "D-035-b4b8bd6ef145-sheet1-r4",
+              "start": 0,
+              "end": 19,
+              "loc": {
+                "kind": "xlsx",
+                "sheet": "서버목록",
+                "cell_range": "A4:F4"
+              }
+            },
+            {
+              "block_id": "D-035-b4b8bd6ef145-sheet1-r5",
+              "start": 0,
+              "end": 67,
+              "loc": {
+                "kind": "xlsx",
+                "sheet": "서버목록",
+                "cell_range": "A5:F5"
+              }
+            },
+            {
+              "block_id": "D-035-b4b8bd6ef145-sheet1-r6",
+              "start": 0,
+              "end": 77,
+              "loc": {
+                "kind": "xlsx",
+                "sheet": "서버목록",
+                "cell_range": "A6:F6"
+              }
+            }
+          ],
+          "context_refs": [],
+          "length": 93
+        }
+      ],
+      "source": {
+        "file_name": "서버구성_TMS.xlsx",
+        "format": "xlsx",
+        "relative_path": "sites/기술지원팀/Shared Documents/다온/구성도/서버구성_TMS.xlsx",
+        "sha256": "b4b8bd6ef145fc64853c616c496fa84625e38b387d98dffb5df04fd6149cb49f",
+        "web_url": null,
+        "encoding": null
+      },
+      "metadata": {
+        "문서종류": "서버 구성도",
+        "거래처": "다온로지스",
+        "문서일자": "2025-07-29",
+        "대상시스템": "TMS",
+        "사이트": "평택 물류센터"
+      },
+      "native_chunk_count": 3,
+      "pending_visual_units": [],
+      "conditions_verified": false
+    },
+    {
+      "rank": 5,
+      "doc_id": "D-062",
+      "score": 7.723657598300033,
+      "evidence": [
+        {
+          "entry_id": "D-062-C-018b2bbf3fcff37e",
+          "score": 7.723657598300033,
+          "doc_id": "D-062",
+          "kind": "native_chunk",
+          "text": "[2025-12-04 22:15:00] haksa-db01: smoke test GET /api/health -> 200 (295ms)\n[2025-12-04 22:15:03] haksa-db01: smoke test GET /api/health -> 200 (45ms)\n[2025-12-04 22:15:07] haksa-db01: smoke test GET /api/health -> 200 (106ms)\n[2025-12-04 22:15:09] haksa-db01: smoke test GET /api/health -> 200 (288ms)\n[2025-12-04 22:15:11] haksa-db01: smoke test GET /api/health -> 200 (83ms)\n[2025-12-04 22:15:14] haksa-db01: smoke test GET /api/health -> 200 (248ms)\n[2025-12-04 22:15:18] haksa-db01: smoke test GET /api/health -> 200 (65ms)\n[2025-12-04 22:15:21] haksa-db01: smoke test GET /api/health -> 200 (299ms)\n[2025-12-04 22:15:22] haksa-db01: smoke test GET /api/health -> 200 (183ms)\n[2025-12-04 22:15:27] haksa-db01: smoke test GET /api/health -> 200 (158ms)\n[2025-12-04 22:15:32] haksa-db01: smoke test GET /api/health -> 200 (255ms)\n[2025-12-04 22:15:35] haksa-db01: smoke test GET /api/health -> 200 (313ms)\n[2025-12-04 22:15:36] haksa-db01: smoke test GET /api/health -> 200 (282ms)\n[2025-12-04 22:15:42] haksa-db01: smoke test GET /api/health -> 200 (98ms)\n[2025-12-04 22:15:48] haksa-db01: smoke test GET /api/health -> 200 (268ms)",
+          "context_header": "deploy_20251204_haksa-api01.log | 거래처=미르내대학교 | 문서종류=실행 로그 | 문서일자=2025-12-04 | line_start=63",
+          "table_header_text": "",
+          "source_refs": [
+            {
+              "block_id": "D-062-5107514781f2-line63",
+              "start": 0,
+              "end": 75,
+              "loc": {
+                "kind": "log",
+                "line_start": 63,
+                "line_end": 63
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line64",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 64,
+                "line_end": 64
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line65",
+              "start": 0,
+              "end": 75,
+              "loc": {
+                "kind": "log",
+                "line_start": 65,
+                "line_end": 65
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line66",
+              "start": 0,
+              "end": 75,
+              "loc": {
+                "kind": "log",
+                "line_start": 66,
+                "line_end": 66
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line67",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 67,
+                "line_end": 67
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line68",
+              "start": 0,
+              "end": 75,
+              "loc": {
+                "kind": "log",
+                "line_start": 68,
+                "line_end": 68
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line69",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 69,
+                "line_end": 69
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line70",
+              "start": 0,
+              "end": 75,
+              "loc": {
+                "kind": "log",
+                "line_start": 70,
+                "line_end": 70
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line71",
+              "start": 0,
+              "end": 75,
+              "loc": {
+                "kind": "log",
+                "line_start": 71,
+                "line_end": 71
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line72",
+              "start": 0,
+              "end": 75,
+              "loc": {
+                "kind": "log",
+                "line_start": 72,
+                "line_end": 72
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line73",
+              "start": 0,
+              "end": 75,
+              "loc": {
+                "kind": "log",
+                "line_start": 73,
+                "line_end": 73
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line74",
+              "start": 0,
+              "end": 75,
+              "loc": {
+                "kind": "log",
+                "line_start": 74,
+                "line_end": 74
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line75",
+              "start": 0,
+              "end": 75,
+              "loc": {
+                "kind": "log",
+                "line_start": 75,
+                "line_end": 75
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line76",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 76,
+                "line_end": 76
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line77",
+              "start": 0,
+              "end": 75,
+              "loc": {
+                "kind": "log",
+                "line_start": 77,
+                "line_end": 77
+              }
+            }
+          ],
+          "context_refs": [],
+          "length": 202
+        },
+        {
+          "entry_id": "D-062-C-0ad5730f00e655c0",
+          "score": 7.723657598300033,
+          "doc_id": "D-062",
+          "kind": "native_chunk",
+          "text": "[2025-12-04 22:07:36] haksa-web01: smoke test GET /api/health -> 200 (232ms)\n[2025-12-04 22:07:40] haksa-web01: smoke test GET /api/health -> 200 (149ms)\n[2025-12-04 22:07:42] haksa-web01: smoke test GET /api/health -> 200 (378ms)\n[2025-12-04 22:07:48] haksa-web01: smoke test GET /api/health -> 200 (292ms)\n[2025-12-04 22:07:52] haksa-web01: smoke test GET /api/health -> 200 (235ms)\n[2025-12-04 22:07:54] haksa-web01: smoke test GET /api/health -> 200 (360ms)\n[2025-12-04 22:07:59] haksa-web01: smoke test GET /api/health -> 200 (140ms)\n[2025-12-04 22:08:02] haksa-web01: smoke test GET /api/health -> 200 (256ms)\n[2025-12-04 22:08:04] haksa-web01: smoke test GET /api/health -> 200 (61ms)\n[2025-12-04 22:08:06] haksa-web01: smoke test GET /api/health -> 200 (63ms)\n[2025-12-04 22:08:09] haksa-web01: smoke test GET /api/health -> 200 (164ms)\n[2025-12-04 22:08:14] haksa-web01: smoke test GET /api/health -> 200 (301ms)\n[2025-12-04 22:08:15] haksa-web01: smoke test GET /api/health -> 200 (312ms)\n[2025-12-04 22:08:19] haksa-web01: smoke test GET /api/health -> 200 (157ms)\n[2025-12-04 22:08:24] haksa-web01: smoke test GET /api/health -> 200 (312ms)",
+          "context_header": "deploy_20251204_haksa-api01.log | 거래처=미르내대학교 | 문서종류=실행 로그 | 문서일자=2025-12-04 | line_start=18",
+          "table_header_text": "",
+          "source_refs": [
+            {
+              "block_id": "D-062-5107514781f2-line18",
+              "start": 0,
+              "end": 76,
+              "loc": {
+                "kind": "log",
+                "line_start": 18,
+                "line_end": 18
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line19",
+              "start": 0,
+              "end": 76,
+              "loc": {
+                "kind": "log",
+                "line_start": 19,
+                "line_end": 19
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line20",
+              "start": 0,
+              "end": 76,
+              "loc": {
+                "kind": "log",
+                "line_start": 20,
+                "line_end": 20
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line21",
+              "start": 0,
+              "end": 76,
+              "loc": {
+                "kind": "log",
+                "line_start": 21,
+                "line_end": 21
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line22",
+              "start": 0,
+              "end": 76,
+              "loc": {
+                "kind": "log",
+                "line_start": 22,
+                "line_end": 22
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line23",
+              "start": 0,
+              "end": 76,
+              "loc": {
+                "kind": "log",
+                "line_start": 23,
+                "line_end": 23
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line24",
+              "start": 0,
+              "end": 76,
+              "loc": {
+                "kind": "log",
+                "line_start": 24,
+                "line_end": 24
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line25",
+              "start": 0,
+              "end": 76,
+              "loc": {
+                "kind": "log",
+                "line_start": 25,
+                "line_end": 25
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line26",
+              "start": 0,
+              "end": 75,
+              "loc": {
+                "kind": "log",
+                "line_start": 26,
+                "line_end": 26
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line27",
+              "start": 0,
+              "end": 75,
+              "loc": {
+                "kind": "log",
+                "line_start": 27,
+                "line_end": 27
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line28",
+              "start": 0,
+              "end": 76,
+              "loc": {
+                "kind": "log",
+                "line_start": 28,
+                "line_end": 28
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line29",
+              "start": 0,
+              "end": 76,
+              "loc": {
+                "kind": "log",
+                "line_start": 29,
+                "line_end": 29
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line30",
+              "start": 0,
+              "end": 76,
+              "loc": {
+                "kind": "log",
+                "line_start": 30,
+                "line_end": 30
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line31",
+              "start": 0,
+              "end": 76,
+              "loc": {
+                "kind": "log",
+                "line_start": 31,
+                "line_end": 31
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line32",
+              "start": 0,
+              "end": 76,
+              "loc": {
+                "kind": "log",
+                "line_start": 32,
+                "line_end": 32
+              }
+            }
+          ],
+          "context_refs": [],
+          "length": 202
+        },
+        {
+          "entry_id": "D-062-C-ac0a197f767fa522",
+          "score": 7.586325376553879,
+          "doc_id": "D-062",
+          "kind": "native_chunk",
+          "text": "[2025-12-04 22:10:10] haksa-api01: updating config ... ok\n[2025-12-04 22:10:42] haksa-api01: starting service ... ok\n[2025-12-04 22:11:21] haksa-api01: waiting for port open ... ok\n[2025-12-04 22:11:26] haksa-api01: smoke test GET /api/health -> 200 (119ms)\n[2025-12-04 22:11:27] haksa-api01: smoke test GET /api/health -> 200 (104ms)\n[2025-12-04 22:11:30] haksa-api01: smoke test GET /api/health -> 200 (307ms)\n[2025-12-04 22:11:34] haksa-api01: smoke test GET /api/health -> 200 (334ms)\n[2025-12-04 22:11:35] haksa-api01: smoke test GET /api/health -> 200 (335ms)\n[2025-12-04 22:11:39] haksa-api01: smoke test GET /api/health -> 200 (73ms)\n[2025-12-04 22:11:41] haksa-api01: smoke test GET /api/health -> 200 (150ms)\n[2025-12-04 22:11:47] haksa-api01: smoke test GET /api/health -> 200 (172ms)\n[2025-12-04 22:11:53] haksa-api01: smoke test GET /api/health -> 200 (272ms)\n[2025-12-04 22:11:59] haksa-api01: smoke test GET /api/health -> 200 (249ms)\n[2025-12-04 22:12:05] haksa-api01: smoke test GET /api/health -> 200 (67ms)\n[2025-12-04 22:12:10] haksa-api01: smoke test GET /api/health -> 200 (136ms)\n[2025-12-04 22:12:38] haksa-db01: stopping service ... ok",
+          "context_header": "deploy_20251204_haksa-api01.log | 거래처=미르내대학교 | 문서종류=실행 로그 | 문서일자=2025-12-04 | line_start=38",
+          "table_header_text": "",
+          "source_refs": [
+            {
+              "block_id": "D-062-5107514781f2-line38",
+              "start": 0,
+              "end": 57,
+              "loc": {
+                "kind": "log",
+                "line_start": 38,
+                "line_end": 38
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line39",
+              "start": 0,
+              "end": 58,
+              "loc": {
+                "kind": "log",
+                "line_start": 39,
+                "line_end": 39
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line40",
+              "start": 0,
+              "end": 63,
+              "loc": {
+                "kind": "log",
+                "line_start": 40,
+                "line_end": 40
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line41",
+              "start": 0,
+              "end": 76,
+              "loc": {
+                "kind": "log",
+                "line_start": 41,
+                "line_end": 41
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line42",
+              "start": 0,
+              "end": 76,
+              "loc": {
+                "kind": "log",
+                "line_start": 42,
+                "line_end": 42
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line43",
+              "start": 0,
+              "end": 76,
+              "loc": {
+                "kind": "log",
+                "line_start": 43,
+                "line_end": 43
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line44",
+              "start": 0,
+              "end": 76,
+              "loc": {
+                "kind": "log",
+                "line_start": 44,
+                "line_end": 44
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line45",
+              "start": 0,
+              "end": 76,
+              "loc": {
+                "kind": "log",
+                "line_start": 45,
+                "line_end": 45
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line46",
+              "start": 0,
+              "end": 75,
+              "loc": {
+                "kind": "log",
+                "line_start": 46,
+                "line_end": 46
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line47",
+              "start": 0,
+              "end": 76,
+              "loc": {
+                "kind": "log",
+                "line_start": 47,
+                "line_end": 47
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line48",
+              "start": 0,
+              "end": 76,
+              "loc": {
+                "kind": "log",
+                "line_start": 48,
+                "line_end": 48
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line49",
+              "start": 0,
+              "end": 76,
+              "loc": {
+                "kind": "log",
+                "line_start": 49,
+                "line_end": 49
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line50",
+              "start": 0,
+              "end": 76,
+              "loc": {
+                "kind": "log",
+                "line_start": 50,
+                "line_end": 50
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line51",
+              "start": 0,
+              "end": 75,
+              "loc": {
+                "kind": "log",
+                "line_start": 51,
+                "line_end": 51
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line52",
+              "start": 0,
+              "end": 76,
+              "loc": {
+                "kind": "log",
+                "line_start": 52,
+                "line_end": 52
+              }
+            },
+            {
+              "block_id": "D-062-5107514781f2-line53",
+              "start": 0,
+              "end": 57,
+              "loc": {
+                "kind": "log",
+                "line_start": 53,
+                "line_end": 53
+              }
+            }
+          ],
+          "context_refs": [],
+          "length": 195
+        }
+      ],
+      "source": {
+        "file_name": "deploy_20251204_haksa-api01.log",
+        "format": "log",
+        "relative_path": "sites/운영팀/Shared Documents/미르내대학교/운영로그/2025-12/deploy_20251204_haksa-api01.log",
+        "sha256": "5107514781f23a46597e94d9ec3777065483ae6c6a8ab597c8b7c26bdeea75b7",
+        "web_url": null,
+        "encoding": "utf-8"
+      },
+      "metadata": {
+        "문서종류": "실행 로그",
+        "거래처": "미르내대학교",
+        "문서일자": "2025-12-04",
+        "대상시스템": "학사정보시스템",
+        "작업명": "HAKSA_AUTOSCALE_TEST",
+        "로그시작": "2025-12-04 22:05",
+        "로그종료": "2025-12-04 22:16",
+        "실행결과": "성공"
+      },
+      "native_chunk_count": 7,
+      "pending_visual_units": [],
+      "conditions_verified": false
+    },
+    {
+      "rank": 6,
+      "doc_id": "D-036",
+      "score": 7.715441713874918,
+      "evidence": [
+        {
+          "entry_id": "D-036-C-fac65ff07ce60906",
+          "score": 7.715441713874918,
+          "doc_id": "D-036",
+          "kind": "native_chunk",
+          "text": "[2025-09-13 22:07:29] tms-db01: smoke test GET /api/health -> 200 (93ms)\n[2025-09-13 22:07:33] tms-db01: smoke test GET /api/health -> 200 (379ms)\n[2025-09-13 22:07:34] tms-db01: smoke test GET /api/health -> 200 (322ms)\n[2025-09-13 22:07:40] tms-db01: smoke test GET /api/health -> 200 (79ms)\n[2025-09-13 22:07:42] tms-db01: smoke test GET /api/health -> 200 (279ms)\n[2025-09-13 22:07:43] tms-db01: smoke test GET /api/health -> 200 (135ms)\n[2025-09-13 22:07:45] tms-db01: smoke test GET /api/health -> 200 (108ms)\n[2025-09-13 22:07:46] tms-db01: smoke test GET /api/health -> 200 (72ms)\n[2025-09-13 22:07:50] tms-db01: smoke test GET /api/health -> 200 (294ms)\n[2025-09-13 22:07:54] tms-db01: smoke test GET /api/health -> 200 (279ms)\n[2025-09-13 22:07:59] tms-db01: smoke test GET /api/health -> 200 (311ms)\n[2025-09-13 22:08:01] tms-db01: smoke test GET /api/health -> 200 (206ms)\n[2025-09-13 22:08:05] tms-db01: smoke test GET /api/health -> 200 (335ms)\n[2025-09-13 22:08:07] tms-db01: smoke test GET /api/health -> 200 (47ms)\n[2025-09-13 22:08:10] tms-db01: smoke test GET /api/health -> 200 (225ms)\n[2025-09-13 22:08:14] tms-db01: smoke test GET /api/health -> 200 (374ms)",
+          "context_header": "deploy_20250913_tms-app01.log | 거래처=다온로지스 | 문서종류=실행 로그 | 문서일자=2025-09-13 | line_start=30",
+          "table_header_text": "",
+          "source_refs": [
+            {
+              "block_id": "D-036-f19148db4b6e-line30",
+              "start": 0,
+              "end": 72,
+              "loc": {
+                "kind": "log",
+                "line_start": 30,
+                "line_end": 30
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line31",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 31,
+                "line_end": 31
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line32",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 32,
+                "line_end": 32
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line33",
+              "start": 0,
+              "end": 72,
+              "loc": {
+                "kind": "log",
+                "line_start": 33,
+                "line_end": 33
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line34",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 34,
+                "line_end": 34
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line35",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 35,
+                "line_end": 35
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line36",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 36,
+                "line_end": 36
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line37",
+              "start": 0,
+              "end": 72,
+              "loc": {
+                "kind": "log",
+                "line_start": 37,
+                "line_end": 37
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line38",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 38,
+                "line_end": 38
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line39",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 39,
+                "line_end": 39
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line40",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 40,
+                "line_end": 40
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line41",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 41,
+                "line_end": 41
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line42",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 42,
+                "line_end": 42
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line43",
+              "start": 0,
+              "end": 72,
+              "loc": {
+                "kind": "log",
+                "line_start": 43,
+                "line_end": 43
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line44",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 44,
+                "line_end": 44
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line45",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 45,
+                "line_end": 45
+              }
+            }
+          ],
+          "context_refs": [],
+          "length": 211
+        },
+        {
+          "entry_id": "D-036-C-c6500702c620eda1",
+          "score": 7.49848775157337,
+          "doc_id": "D-036",
+          "kind": "native_chunk",
+          "text": "[2025-09-13 22:05:01] tms-app01: smoke test GET /api/health -> 200 (187ms)\n[2025-09-13 22:05:03] tms-app01: smoke test GET /api/health -> 200 (200ms)\n[2025-09-13 22:05:09] tms-app01: smoke test GET /api/health -> 200 (215ms)\n[2025-09-13 22:05:15] tms-app01: smoke test GET /api/health -> 200 (115ms)\n[2025-09-13 22:05:21] tms-app01: smoke test GET /api/health -> 200 (81ms)\n[2025-09-13 22:05:26] tms-app01: smoke test GET /api/health -> 200 (90ms)\n[2025-09-13 22:05:29] tms-app01: smoke test GET /api/health -> 200 (185ms)\n[2025-09-13 22:05:32] tms-app01: smoke test GET /api/health -> 200 (68ms)\n[2025-09-13 22:05:35] tms-app01: smoke test GET /api/health -> 200 (241ms)\n[2025-09-13 22:05:36] tms-app01: smoke test GET /api/health -> 200 (245ms)\n[2025-09-13 22:05:42] tms-db01: stopping service ... ok\n[2025-09-13 22:05:53] tms-db01: backing up current release ... ok\n[2025-09-13 22:06:26] tms-db01: extracting package ... ok\n[2025-09-13 22:06:34] tms-db01: updating config ... ok\n[2025-09-13 22:06:58] tms-db01: starting service ... ok\n[2025-09-13 22:07:26] tms-db01: waiting for port open ... ok\n[2025-09-13 22:07:28] tms-db01: smoke test GET /api/health -> 200 (348ms)",
+          "context_header": "deploy_20250913_tms-app01.log | 거래처=다온로지스 | 문서종류=실행 로그 | 문서일자=2025-09-13 | line_start=13",
+          "table_header_text": "",
+          "source_refs": [
+            {
+              "block_id": "D-036-f19148db4b6e-line13",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 13,
+                "line_end": 13
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line14",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 14,
+                "line_end": 14
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line15",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 15,
+                "line_end": 15
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line16",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 16,
+                "line_end": 16
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line17",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 17,
+                "line_end": 17
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line18",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 18,
+                "line_end": 18
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line19",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 19,
+                "line_end": 19
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line20",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 20,
+                "line_end": 20
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line21",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 21,
+                "line_end": 21
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line22",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 22,
+                "line_end": 22
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line23",
+              "start": 0,
+              "end": 55,
+              "loc": {
+                "kind": "log",
+                "line_start": 23,
+                "line_end": 23
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line24",
+              "start": 0,
+              "end": 65,
+              "loc": {
+                "kind": "log",
+                "line_start": 24,
+                "line_end": 24
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line25",
+              "start": 0,
+              "end": 57,
+              "loc": {
+                "kind": "log",
+                "line_start": 25,
+                "line_end": 25
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line26",
+              "start": 0,
+              "end": 54,
+              "loc": {
+                "kind": "log",
+                "line_start": 26,
+                "line_end": 26
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line27",
+              "start": 0,
+              "end": 55,
+              "loc": {
+                "kind": "log",
+                "line_start": 27,
+                "line_end": 27
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line28",
+              "start": 0,
+              "end": 60,
+              "loc": {
+                "kind": "log",
+                "line_start": 28,
+                "line_end": 28
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line29",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 29,
+                "line_end": 29
+              }
+            }
+          ],
+          "context_refs": [],
+          "length": 196
+        },
+        {
+          "entry_id": "D-036-C-b3467db75e22ed05",
+          "score": 7.393646800433783,
+          "doc_id": "D-036",
+          "kind": "native_chunk",
+          "text": "[2025-09-13 22:08:20] tms-db01: smoke test GET /api/health -> 200 (263ms)\n[2025-09-13 22:08:24] tms-db01: smoke test GET /api/health -> 200 (227ms)\n[2025-09-13 22:08:27] tms-db01: smoke test GET /api/health -> 200 (321ms)\n[2025-09-13 22:08:32] all health checks passed\n[2025-09-13 22:08:32] ===== deploy finished: SUCCESS =====",
+          "context_header": "deploy_20250913_tms-app01.log | 거래처=다온로지스 | 문서종류=실행 로그 | 문서일자=2025-09-13 | line_start=46",
+          "table_header_text": "",
+          "source_refs": [
+            {
+              "block_id": "D-036-f19148db4b6e-line46",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 46,
+                "line_end": 46
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line47",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 47,
+                "line_end": 47
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line48",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 48,
+                "line_end": 48
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line49",
+              "start": 0,
+              "end": 46,
+              "loc": {
+                "kind": "log",
+                "line_start": 49,
+                "line_end": 49
+              }
+            },
+            {
+              "block_id": "D-036-f19148db4b6e-line50",
+              "start": 0,
+              "end": 58,
+              "loc": {
+                "kind": "log",
+                "line_start": 50,
+                "line_end": 50
+              }
+            }
+          ],
+          "context_refs": [],
+          "length": 80
+        }
+      ],
+      "source": {
+        "file_name": "deploy_20250913_tms-app01.log",
+        "format": "log",
+        "relative_path": "sites/운영팀/Shared Documents/다온/운영로그/2025-09/deploy_20250913_tms-app01.log",
+        "sha256": "f19148db4b6eeb4a618680c853dfb963e45cf8da18429fc24f5b8b5777a11f2d",
+        "web_url": null,
+        "encoding": "utf-8"
+      },
+      "metadata": {
+        "문서종류": "실행 로그",
+        "거래처": "다온로지스",
+        "문서일자": "2025-09-13",
+        "대상시스템": "TMS",
+        "작업명": "TMS_MIGRATION_CUTOVER",
+        "로그시작": "2025-09-13 22:01",
+        "로그종료": "2025-09-13 22:08",
+        "실행결과": "성공"
+      },
+      "native_chunk_count": 4,
+      "pending_visual_units": [],
+      "conditions_verified": false
+    },
+    {
+      "rank": 7,
+      "doc_id": "D-027",
+      "score": 7.656559625102798,
+      "evidence": [
+        {
+          "entry_id": "D-027-C-635043114d6356d8",
+          "score": 7.656559625102798,
+          "doc_id": "D-027",
+          "kind": "native_chunk",
+          "text": "[2025-10-21 22:03:07] wms-was01: smoke test GET /api/health -> 200 (144ms)\n[2025-10-21 22:03:12] wms-was01: smoke test GET /api/health -> 200 (193ms)\n[2025-10-21 22:03:17] wms-was01: smoke test GET /api/health -> 200 (48ms)\n[2025-10-21 22:03:22] wms-was01: smoke test GET /api/health -> 200 (340ms)\n[2025-10-21 22:03:26] wms-was01: smoke test GET /api/health -> 200 (295ms)\n[2025-10-21 22:03:28] wms-was01: smoke test GET /api/health -> 200 (218ms)\n[2025-10-21 22:03:29] wms-was01: smoke test GET /api/health -> 200 (367ms)\n[2025-10-21 22:03:32] wms-was01: smoke test GET /api/health -> 200 (278ms)\n[2025-10-21 22:03:55] wms-was02: stopping service ... ok\n[2025-10-21 22:04:26] wms-was02: backing up current release ... ok\n[2025-10-21 22:04:59] wms-was02: extracting package ... ok",
+          "context_header": "deploy_20251021_wms-was01.log | 거래처=다온로지스 | 문서종류=실행 로그 | 문서일자=2025-10-21 | line_start=18",
+          "table_header_text": "",
+          "source_refs": [
+            {
+              "block_id": "D-027-212929a38973-line18",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 18,
+                "line_end": 18
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line19",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 19,
+                "line_end": 19
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line20",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 20,
+                "line_end": 20
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line21",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 21,
+                "line_end": 21
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line22",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 22,
+                "line_end": 22
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line23",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 23,
+                "line_end": 23
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line24",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 24,
+                "line_end": 24
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line25",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 25,
+                "line_end": 25
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line26",
+              "start": 0,
+              "end": 56,
+              "loc": {
+                "kind": "log",
+                "line_start": 26,
+                "line_end": 26
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line27",
+              "start": 0,
+              "end": 66,
+              "loc": {
+                "kind": "log",
+                "line_start": 27,
+                "line_end": 27
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line28",
+              "start": 0,
+              "end": 58,
+              "loc": {
+                "kind": "log",
+                "line_start": 28,
+                "line_end": 28
+              }
+            }
+          ],
+          "context_refs": [],
+          "length": 143
+        },
+        {
+          "entry_id": "D-027-C-45363d1e9077e7eb",
+          "score": 7.6346059197251535,
+          "doc_id": "D-027",
+          "kind": "native_chunk",
+          "text": "[2025-10-21 22:05:38] wms-was02: updating config ... ok\n[2025-10-21 22:06:08] wms-was02: starting service ... ok\n[2025-10-21 22:06:31] wms-was02: waiting for port open ... ok\n[2025-10-21 22:06:36] wms-was02: smoke test GET /api/health -> 200 (118ms)\n[2025-10-21 22:06:40] wms-was02: smoke test GET /api/health -> 200 (292ms)\n[2025-10-21 22:06:44] wms-was02: smoke test GET /api/health -> 200 (157ms)\n[2025-10-21 22:06:46] wms-was02: smoke test GET /api/health -> 200 (135ms)\n[2025-10-21 22:06:51] wms-was02: smoke test GET /api/health -> 200 (328ms)\n[2025-10-21 22:06:57] wms-was02: smoke test GET /api/health -> 200 (42ms)\n[2025-10-21 22:06:58] wms-was02: smoke test GET /api/health -> 200 (329ms)\n[2025-10-21 22:07:00] wms-was02: smoke test GET /api/health -> 200 (63ms)\n[2025-10-21 22:07:06] wms-was02: smoke test GET /api/health -> 200 (250ms)\n[2025-10-21 22:07:09] wms-was02: smoke test GET /api/health -> 200 (153ms)\n[2025-10-21 22:07:10] wms-was02: smoke test GET /api/health -> 200 (101ms)\n[2025-10-21 22:07:12] wms-was02: smoke test GET /api/health -> 200 (350ms)\n[2025-10-21 22:07:17] wms-was02: smoke test GET /api/health -> 200 (91ms)",
+          "context_header": "deploy_20251021_wms-was01.log | 거래처=다온로지스 | 문서종류=실행 로그 | 문서일자=2025-10-21 | line_start=29",
+          "table_header_text": "",
+          "source_refs": [
+            {
+              "block_id": "D-027-212929a38973-line29",
+              "start": 0,
+              "end": 55,
+              "loc": {
+                "kind": "log",
+                "line_start": 29,
+                "line_end": 29
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line30",
+              "start": 0,
+              "end": 56,
+              "loc": {
+                "kind": "log",
+                "line_start": 30,
+                "line_end": 30
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line31",
+              "start": 0,
+              "end": 61,
+              "loc": {
+                "kind": "log",
+                "line_start": 31,
+                "line_end": 31
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line32",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 32,
+                "line_end": 32
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line33",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 33,
+                "line_end": 33
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line34",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 34,
+                "line_end": 34
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line35",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 35,
+                "line_end": 35
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line36",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 36,
+                "line_end": 36
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line37",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 37,
+                "line_end": 37
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line38",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 38,
+                "line_end": 38
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line39",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 39,
+                "line_end": 39
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line40",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 40,
+                "line_end": 40
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line41",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 41,
+                "line_end": 41
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line42",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 42,
+                "line_end": 42
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line43",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 43,
+                "line_end": 43
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line44",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 44,
+                "line_end": 44
+              }
+            }
+          ],
+          "context_refs": [],
+          "length": 198
+        },
+        {
+          "entry_id": "D-027-C-9250d0231ee1d7d9",
+          "score": 7.606884529347206,
+          "doc_id": "D-027",
+          "kind": "native_chunk",
+          "text": "[2025-10-21 22:07:22] wms-was02: smoke test GET /api/health -> 200 (128ms)\n[2025-10-21 22:07:27] wms-was02: smoke test GET /api/health -> 200 (254ms)\n[2025-10-21 22:07:28] wms-was02: smoke test GET /api/health -> 200 (278ms)\n[2025-10-21 22:07:32] wms-was02: smoke test GET /api/health -> 200 (83ms)\n[2025-10-21 22:07:36] wms-was02: smoke test GET /api/health -> 200 (56ms)\n[2025-10-21 22:07:40] wms-was02: smoke test GET /api/health -> 200 (220ms)\n[2025-10-21 22:07:42] wms-was02: smoke test GET /api/health -> 200 (88ms)\n[2025-10-21 22:07:48] wms-was02: smoke test GET /api/health -> 200 (321ms)\n[2025-10-21 22:07:50] wms-was02: smoke test GET /api/health -> 200 (223ms)\n[2025-10-21 22:07:52] wms-was02: smoke test GET /api/health -> 200 (77ms)\n[2025-10-21 22:07:53] wms-was02: smoke test GET /api/health -> 200 (223ms)\n[2025-10-21 22:08:25] wms-db01: stopping service ... ok\n[2025-10-21 22:08:51] wms-db01: backing up current release ... ok\n[2025-10-21 22:09:25] wms-db01: extracting package ... ok\n[2025-10-21 22:09:44] wms-db01: updating config ... ok",
+          "context_header": "deploy_20251021_wms-was01.log | 거래처=다온로지스 | 문서종류=실행 로그 | 문서일자=2025-10-21 | line_start=45",
+          "table_header_text": "",
+          "source_refs": [
+            {
+              "block_id": "D-027-212929a38973-line45",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 45,
+                "line_end": 45
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line46",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 46,
+                "line_end": 46
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line47",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 47,
+                "line_end": 47
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line48",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 48,
+                "line_end": 48
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line49",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 49,
+                "line_end": 49
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line50",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 50,
+                "line_end": 50
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line51",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 51,
+                "line_end": 51
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line52",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 52,
+                "line_end": 52
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line53",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 53,
+                "line_end": 53
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line54",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 54,
+                "line_end": 54
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line55",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 55,
+                "line_end": 55
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line56",
+              "start": 0,
+              "end": 55,
+              "loc": {
+                "kind": "log",
+                "line_start": 56,
+                "line_end": 56
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line57",
+              "start": 0,
+              "end": 65,
+              "loc": {
+                "kind": "log",
+                "line_start": 57,
+                "line_end": 57
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line58",
+              "start": 0,
+              "end": 57,
+              "loc": {
+                "kind": "log",
+                "line_start": 58,
+                "line_end": 58
+              }
+            },
+            {
+              "block_id": "D-027-212929a38973-line59",
+              "start": 0,
+              "end": 54,
+              "loc": {
+                "kind": "log",
+                "line_start": 59,
+                "line_end": 59
+              }
+            }
+          ],
+          "context_refs": [],
+          "length": 182
+        }
+      ],
+      "source": {
+        "file_name": "deploy_20251021_wms-was01.log",
+        "format": "log",
+        "relative_path": "sites/운영팀/Shared Documents/다온/운영로그/2025-10/deploy_20251021_wms-was01.log",
+        "sha256": "212929a38973bf2b513f1197e4076c3d2271d9831b190eb6cd6cbab44df9c949",
+        "web_url": null,
+        "encoding": "utf-8"
+      },
+      "metadata": {
+        "문서종류": "실행 로그",
+        "거래처": "다온로지스",
+        "문서일자": "2025-10-21",
+        "대상시스템": "WMS",
+        "작업명": "WMS_RELEASE_2.3.0",
+        "로그시작": "2025-10-21 22:00",
+        "로그종료": "2025-10-21 22:10",
+        "실행결과": "경고",
+        "오류코드": "HC-W0301"
+      },
+      "native_chunk_count": 5,
+      "pending_visual_units": [],
+      "conditions_verified": false
+    },
+    {
+      "rank": 8,
+      "doc_id": "D-104",
+      "score": 7.592736593340681,
+      "evidence": [
+        {
+          "entry_id": "D-104-C-914dcb3e7a944b61",
+          "score": 7.592736593340681,
+          "doc_id": "D-104",
+          "kind": "native_chunk",
+          "text": "[2025-12-13 22:08:48] fms-app02: waiting for port open ... ok\n[2025-12-13 22:08:54] fms-app02: smoke test GET /api/health -> 200 (138ms)\n[2025-12-13 22:08:55] fms-app02: smoke test GET /api/health -> 200 (263ms)\n[2025-12-13 22:08:56] fms-app02: smoke test GET /api/health -> 200 (369ms)\n[2025-12-13 22:09:00] fms-app02: smoke test GET /api/health -> 200 (72ms)\n[2025-12-13 22:09:01] fms-app02: smoke test GET /api/health -> 200 (302ms)\n[2025-12-13 22:09:07] fms-app02: smoke test GET /api/health -> 200 (231ms)\n[2025-12-13 22:09:08] fms-app02: smoke test GET /api/health -> 200 (332ms)\n[2025-12-13 22:09:09] fms-app02: smoke test GET /api/health -> 200 (66ms)\n[2025-12-13 22:09:15] fms-app02: smoke test GET /api/health -> 200 (214ms)\n[2025-12-13 22:09:18] fms-app02: smoke test GET /api/health -> 200 (92ms)\n[2025-12-13 22:09:19] fms-app02: smoke test GET /api/health -> 200 (71ms)\n[2025-12-13 22:09:22] fms-app02: smoke test GET /api/health -> 200 (210ms)\n[2025-12-13 22:09:25] fms-app02: smoke test GET /api/health -> 200 (312ms)\n[2025-12-13 22:09:28] fms-db01: stopping service ... ok\n[2025-12-13 22:09:50] fms-db01: backing up current release ... ok",
+          "context_header": "deploy_20251213_fms-app01.log | 거래처=온새미도시공사 | 문서종류=실행 로그 | 문서일자=2025-12-13 | line_start=26",
+          "table_header_text": "",
+          "source_refs": [
+            {
+              "block_id": "D-104-e8c5f87549a3-line26",
+              "start": 0,
+              "end": 61,
+              "loc": {
+                "kind": "log",
+                "line_start": 26,
+                "line_end": 26
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line27",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 27,
+                "line_end": 27
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line28",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 28,
+                "line_end": 28
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line29",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 29,
+                "line_end": 29
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line30",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 30,
+                "line_end": 30
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line31",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 31,
+                "line_end": 31
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line32",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 32,
+                "line_end": 32
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line33",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 33,
+                "line_end": 33
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line34",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 34,
+                "line_end": 34
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line35",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 35,
+                "line_end": 35
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line36",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 36,
+                "line_end": 36
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line37",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 37,
+                "line_end": 37
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line38",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 38,
+                "line_end": 38
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line39",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 39,
+                "line_end": 39
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line40",
+              "start": 0,
+              "end": 55,
+              "loc": {
+                "kind": "log",
+                "line_start": 40,
+                "line_end": 40
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line41",
+              "start": 0,
+              "end": 65,
+              "loc": {
+                "kind": "log",
+                "line_start": 41,
+                "line_end": 41
+              }
+            }
+          ],
+          "context_refs": [],
+          "length": 204
+        },
+        {
+          "entry_id": "D-104-C-e609b505d925c256",
+          "score": 7.476140617607709,
+          "doc_id": "D-104",
+          "kind": "native_chunk",
+          "text": "[2025-12-13 22:10:06] fms-db01: extracting package ... ok\n[2025-12-13 22:10:33] fms-db01: updating config ... ok\n[2025-12-13 22:10:41] fms-db01: starting service ... ok\n[2025-12-13 22:11:01] fms-db01: waiting for port open ... ok\n[2025-12-13 22:11:06] fms-db01: smoke test GET /api/health -> 200 (47ms)\n[2025-12-13 22:11:09] fms-db01: smoke test GET /api/health -> 200 (238ms)\n[2025-12-13 22:11:10] fms-db01: smoke test GET /api/health -> 200 (204ms)\n[2025-12-13 22:11:14] fms-db01: smoke test GET /api/health -> 200 (208ms)\n[2025-12-13 22:11:16] fms-db01: smoke test GET /api/health -> 200 (261ms)\n[2025-12-13 22:11:20] fms-db01: smoke test GET /api/health -> 200 (240ms)\n[2025-12-13 22:11:24] fms-db01: smoke test GET /api/health -> 200 (48ms)\n[2025-12-13 22:11:29] fms-db01: smoke test GET /api/health -> 200 (226ms)\n[2025-12-13 22:11:33] fms-db01: smoke test GET /api/health -> 200 (68ms)\n[2025-12-13 22:11:37] fms-db01: smoke test GET /api/health -> 200 (141ms)\n[2025-12-13 22:11:42] all health checks passed\n[2025-12-13 22:11:42] ===== deploy finished: SUCCESS =====",
+          "context_header": "deploy_20251213_fms-app01.log | 거래처=온새미도시공사 | 문서종류=실행 로그 | 문서일자=2025-12-13 | line_start=42",
+          "table_header_text": "",
+          "source_refs": [
+            {
+              "block_id": "D-104-e8c5f87549a3-line42",
+              "start": 0,
+              "end": 57,
+              "loc": {
+                "kind": "log",
+                "line_start": 42,
+                "line_end": 42
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line43",
+              "start": 0,
+              "end": 54,
+              "loc": {
+                "kind": "log",
+                "line_start": 43,
+                "line_end": 43
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line44",
+              "start": 0,
+              "end": 55,
+              "loc": {
+                "kind": "log",
+                "line_start": 44,
+                "line_end": 44
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line45",
+              "start": 0,
+              "end": 60,
+              "loc": {
+                "kind": "log",
+                "line_start": 45,
+                "line_end": 45
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line46",
+              "start": 0,
+              "end": 72,
+              "loc": {
+                "kind": "log",
+                "line_start": 46,
+                "line_end": 46
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line47",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 47,
+                "line_end": 47
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line48",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 48,
+                "line_end": 48
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line49",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 49,
+                "line_end": 49
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line50",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 50,
+                "line_end": 50
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line51",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 51,
+                "line_end": 51
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line52",
+              "start": 0,
+              "end": 72,
+              "loc": {
+                "kind": "log",
+                "line_start": 52,
+                "line_end": 52
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line53",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 53,
+                "line_end": 53
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line54",
+              "start": 0,
+              "end": 72,
+              "loc": {
+                "kind": "log",
+                "line_start": 54,
+                "line_end": 54
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line55",
+              "start": 0,
+              "end": 73,
+              "loc": {
+                "kind": "log",
+                "line_start": 55,
+                "line_end": 55
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line56",
+              "start": 0,
+              "end": 46,
+              "loc": {
+                "kind": "log",
+                "line_start": 56,
+                "line_end": 56
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line57",
+              "start": 0,
+              "end": 58,
+              "loc": {
+                "kind": "log",
+                "line_start": 57,
+                "line_end": 57
+              }
+            }
+          ],
+          "context_refs": [],
+          "length": 187
+        },
+        {
+          "entry_id": "D-104-C-4e1ab004c7bb11dc",
+          "score": 7.4684429599067395,
+          "doc_id": "D-104",
+          "kind": "native_chunk",
+          "text": "[2025-12-13 22:05:06] fms-app01: waiting for port open ... ok\n[2025-12-13 22:05:12] fms-app01: smoke test GET /api/health -> 200 (168ms)\n[2025-12-13 22:05:14] fms-app01: smoke test GET /api/health -> 200 (290ms)\n[2025-12-13 22:05:18] fms-app01: smoke test GET /api/health -> 200 (230ms)\n[2025-12-13 22:05:23] fms-app01: smoke test GET /api/health -> 200 (339ms)\n[2025-12-13 22:05:27] fms-app01: smoke test GET /api/health -> 200 (151ms)\n[2025-12-13 22:05:28] fms-app01: smoke test GET /api/health -> 200 (104ms)\n[2025-12-13 22:05:34] fms-app01: smoke test GET /api/health -> 200 (160ms)\n[2025-12-13 22:05:38] fms-app01: smoke test GET /api/health -> 200 (175ms)\n[2025-12-13 22:05:41] fms-app01: smoke test GET /api/health -> 200 (326ms)\n[2025-12-13 22:05:46] fms-app01: smoke test GET /api/health -> 200 (364ms)\n[2025-12-13 22:05:48] fms-app01: smoke test GET /api/health -> 200 (336ms)\n[2025-12-13 22:06:17] fms-app02: stopping service ... ok\n[2025-12-13 22:06:47] fms-app02: backing up current release ... ok\n[2025-12-13 22:07:21] fms-app02: extracting package ... ok\n[2025-12-13 22:07:38] fms-app02: updating config ... ok\n[2025-12-13 22:08:13] fms-app02: starting service ... ok",
+          "context_header": "deploy_20251213_fms-app01.log | 거래처=온새미도시공사 | 문서종류=실행 로그 | 문서일자=2025-12-13 | line_start=9",
+          "table_header_text": "",
+          "source_refs": [
+            {
+              "block_id": "D-104-e8c5f87549a3-line9",
+              "start": 0,
+              "end": 61,
+              "loc": {
+                "kind": "log",
+                "line_start": 9,
+                "line_end": 9
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line10",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 10,
+                "line_end": 10
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line11",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 11,
+                "line_end": 11
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line12",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 12,
+                "line_end": 12
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line13",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 13,
+                "line_end": 13
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line14",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 14,
+                "line_end": 14
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line15",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 15,
+                "line_end": 15
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line16",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 16,
+                "line_end": 16
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line17",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 17,
+                "line_end": 17
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line18",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 18,
+                "line_end": 18
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line19",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 19,
+                "line_end": 19
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line20",
+              "start": 0,
+              "end": 74,
+              "loc": {
+                "kind": "log",
+                "line_start": 20,
+                "line_end": 20
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line21",
+              "start": 0,
+              "end": 56,
+              "loc": {
+                "kind": "log",
+                "line_start": 21,
+                "line_end": 21
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line22",
+              "start": 0,
+              "end": 66,
+              "loc": {
+                "kind": "log",
+                "line_start": 22,
+                "line_end": 22
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line23",
+              "start": 0,
+              "end": 58,
+              "loc": {
+                "kind": "log",
+                "line_start": 23,
+                "line_end": 23
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line24",
+              "start": 0,
+              "end": 55,
+              "loc": {
+                "kind": "log",
+                "line_start": 24,
+                "line_end": 24
+              }
+            },
+            {
+              "block_id": "D-104-e8c5f87549a3-line25",
+              "start": 0,
+              "end": 56,
+              "loc": {
+                "kind": "log",
+                "line_start": 25,
+                "line_end": 25
+              }
+            }
+          ],
+          "context_refs": [],
+          "length": 200
+        }
+      ],
+      "source": {
+        "file_name": "deploy_20251213_fms-app01.log",
+        "format": "log",
+        "relative_path": "sites/운영팀/Shared Documents/OUDC/운영로그/2025-12/deploy_20251213_fms-app01.log",
+        "sha256": "e8c5f87549a342ff05f1f7e9d03ff7cd79bcdd1e6dec2b94f560eda3ccc2dbfe",
+        "web_url": null,
+        "encoding": "utf-8"
+      },
+      "metadata": {
+        "문서종류": "실행 로그",
+        "거래처": "온새미도시공사",
+        "문서일자": "2025-12-13",
+        "대상시스템": "시설관리시스템",
+        "작업명": "FMS_SERVER_REPLACE",
+        "로그시작": "2025-12-13 22:03",
+        "로그종료": "2025-12-13 22:11",
+        "실행결과": "성공"
+      },
+      "native_chunk_count": 4,
+      "pending_visual_units": [],
+      "conditions_verified": false
+    },
+    {
+      "rank": 9,
+      "doc_id": "D-061",
+      "score": 7.353611431734767,
+      "evidence": [
+        {
+          "entry_id": "D-061-C-8fd0e9ed03e3ffdf",
+          "score": 7.353611431734767,
+          "doc_id": "D-061",
+          "kind": "native_chunk",
+          "text": "호스트명\t역할\tOS\t사양\tIP\t비고\nhaksa-web01\t학사 웹 (오토스케일 그룹)\tUbuntu 22.04\t4 vCPU / 16GB\t10.54.130.11\t\nhaksa-api01\t학사 API\tUbuntu 22.04\t8 vCPU / 32GB\t10.54.131.11\t\nhaksa-db01\t학사 DB (MySQL 8.0)\t관리형 DB 서비스\t16 vCPU / 128GB\t10.54.140.11\t",
+          "context_header": "서버구성_학사정보시스템.xlsx | 거래처=미르내대학교 | 문서종류=서버 구성도 | 문서일자=2025-05-29 | 서버목록 | sheet=서버목록",
+          "table_header_text": "호스트명\t역할\tOS\t사양\tIP\t비고",
+          "source_refs": [
+            {
+              "block_id": "D-061-a68a09cd281b-sheet1-r4",
+              "start": 0,
+              "end": 19,
+              "loc": {
+                "kind": "xlsx",
+                "sheet": "서버목록",
+                "cell_range": "A4:F4"
+              }
+            },
+            {
+              "block_id": "D-061-a68a09cd281b-sheet1-r5",
+              "start": 0,
+              "end": 68,
+              "loc": {
+                "kind": "xlsx",
+                "sheet": "서버목록",
+                "cell_range": "A5:F5"
+              }
+            },
+            {
+              "block_id": "D-061-a68a09cd281b-sheet1-r6",
+              "start": 0,
+              "end": 59,
+              "loc": {
+                "kind": "xlsx",
+                "sheet": "서버목록",
+                "cell_range": "A6:F6"
+              }
+            },
+            {
+              "block_id": "D-061-a68a09cd281b-sheet1-r7",
+              "start": 0,
+              "end": 69,
+              "loc": {
+                "kind": "xlsx",
+                "sheet": "서버목록",
+                "cell_range": "A7:F7"
+              }
+            }
+          ],
+          "context_refs": [],
+          "length": 120
+        }
+      ],
+      "source": {
+        "file_name": "서버구성_학사정보시스템.xlsx",
+        "format": "xlsx",
+        "relative_path": "sites/기술지원팀/Shared Documents/미르내대학교/구성도/서버구성_학사정보시스템.xlsx",
+        "sha256": "a68a09cd281b13f5a25896bbd9b23f0612de75c60a57a784a2ba79fba926ae16",
+        "web_url": null,
+        "encoding": null
+      },
+      "metadata": {
+        "문서종류": "서버 구성도",
+        "거래처": "미르내대학교",
+        "문서일자": "2025-05-29",
+        "대상시스템": "학사정보시스템",
+        "사이트": "미르내대 정보전산원"
+      },
+      "native_chunk_count": 3,
+      "pending_visual_units": [],
+      "conditions_verified": false
+    },
+    {
+      "rank": 10,
+      "doc_id": "D-083",
+      "score": 7.152393111922965,
+      "evidence": [
+        {
+          "entry_id": "D-083-C-d2d009d3359c0c36",
+          "score": 7.152393111922965,
+          "doc_id": "D-083",
+          "kind": "native_chunk",
+          "text": "호스트명\t역할\tOS\t사양\tIP\t비고\nmall-web01\t웹 (DMZ)\tRocky Linux 9.3\t8 vCPU / 16GB\t10.76.20.11\t\nmall-web02\t웹 (DMZ)\tRocky Linux 9.3\t8 vCPU / 16GB\t10.76.20.12\t\nmall-was01\tWAS\tRocky Linux 9.3\t16 vCPU / 64GB\t10.76.10.11\t\nmall-was02\tWAS\tRocky Linux 9.3\t16 vCPU / 64GB\t10.76.10.12\t\nmall-db01\tDB Primary (MariaDB 10.11)\tRocky Linux 9.3\t32 vCPU / 128GB\t10.76.10.21\t\nmall-db02\tDB Replica (MariaDB 10.11)\tRocky Linux 9.3\t32 vCPU / 128GB\t10.76.10.22\t",
+          "context_header": "서버구성_온라인몰.xlsx | 거래처=해솔유통 | 문서종류=서버 구성도 | 문서일자=2025-01-29 | 서버목록 | sheet=서버목록",
+          "table_header_text": "호스트명\t역할\tOS\t사양\tIP\t비고",
+          "source_refs": [
+            {
+              "block_id": "D-083-7b4bfaded811-sheet1-r4",
+              "start": 0,
+              "end": 19,
+              "loc": {
+                "kind": "xlsx",
+                "sheet": "서버목록",
+                "cell_range": "A4:F4"
+              }
+            },
+            {
+              "block_id": "D-083-7b4bfaded811-sheet1-r5",
+              "start": 0,
+              "end": 61,
+              "loc": {
+                "kind": "xlsx",
+                "sheet": "서버목록",
+                "cell_range": "A5:F5"
+              }
+            },
+            {
+              "block_id": "D-083-7b4bfaded811-sheet1-r6",
+              "start": 0,
+              "end": 61,
+              "loc": {
+                "kind": "xlsx",
+                "sheet": "서버목록",
+                "cell_range": "A6:F6"
+              }
+            },
+            {
+              "block_id": "D-083-7b4bfaded811-sheet1-r7",
+              "start": 0,
+              "end": 58,
+              "loc": {
+                "kind": "xlsx",
+                "sheet": "서버목록",
+                "cell_range": "A7:F7"
+              }
+            },
+            {
+              "block_id": "D-083-7b4bfaded811-sheet1-r8",
+              "start": 0,
+              "end": 58,
+              "loc": {
+                "kind": "xlsx",
+                "sheet": "서버목록",
+                "cell_range": "A8:F8"
+              }
+            },
+            {
+              "block_id": "D-083-7b4bfaded811-sheet1-r9",
+              "start": 0,
+              "end": 81,
+              "loc": {
+                "kind": "xlsx",
+                "sheet": "서버목록",
+                "cell_range": "A9:F9"
+              }
+            },
+            {
+              "block_id": "D-083-7b4bfaded811-sheet1-r10",
+              "start": 0,
+              "end": 81,
+              "loc": {
+                "kind": "xlsx",
+                "sheet": "서버목록",
+                "cell_range": "A10:F10"
+              }
+            }
+          ],
+          "context_refs": [],
+          "length": 131
+        }
+      ],
+      "source": {
+        "file_name": "서버구성_온라인몰.xlsx",
+        "format": "xlsx",
+        "relative_path": "sites/기술지원팀/Shared Documents/해솔유통/구성도/서버구성_온라인몰.xlsx",
+        "sha256": "7b4bfaded8118d83fb56a9ee9e887d4aafa28b46800b3a623eac6f6c100635c5",
+        "web_url": null,
+        "encoding": null
+      },
+      "metadata": {
+        "문서종류": "서버 구성도",
+        "거래처": "해솔유통",
+        "문서일자": "2025-01-29",
+        "대상시스템": "온라인몰",
+        "사이트": "판교 IDC"
+      },
+      "native_chunk_count": 3,
+      "pending_visual_units": [],
+      "conditions_verified": false
+    }
+  ],
+  "unresolved_filter_documents": [],
+  "conditions_verified": false,
+  "query_plan": {
+    "reference_date": "2026-10-17",
+    "timezone": "Asia/Seoul",
+    "filters": [],
+    "recognized": [],
+    "warnings": [],
+    "lexical_query": "페일오버 테스트에서 502 에러 난 로그",
+    "conditions_verified": false
+  },
+  "concept_matches": [
+    {
+      "concept": "failover",
+      "matches": [
+        {
+          "alias": "페일오버",
+          "text": "페일오버",
+          "start": 0,
+          "end": 4
+        }
+      ]
+    },
+    {
+      "concept": "test",
+      "matches": [
+        {
+          "alias": "테스트",
+          "text": "테스트에서",
+          "start": 5,
+          "end": 10
+        }
+      ]
+    },
+    {
+      "concept": "error",
+      "matches": [
+        {
+          "alias": "에러",
+          "text": "에러",
+          "start": 15,
+          "end": 17
+        }
+      ]
+    }
+  ],
+  "model_called": false
+}

@@ -1,0 +1,42 @@
+{
+  "response": {
+    "id": "chatcmpl-a73c7318b032c016",
+    "object": "chat.completion",
+    "created": 1792855295,
+    "model": "qwen3.6-35b-a3b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"status\": \"complete\",\n  \"texts\": [\n    {\n      \"kind\": \"heading\",\n      \"text\": \"부하테스트 작업일지\",\n      \"bbox\": [0.13, 0.08, 0.54, 0.13]\n    },\n    {\n      \"kind\": \"heading\",\n      \"text\": \"11/18 1차 시험\",\n      \"bbox\": [0.13, 0.17, 0.30, 0.19]\n    },\n    {\n      \"kind\": \"paragraph\",\n      \"text\": \"결과: 목표 미달. 응답 지연 구간 발생(아래 캡처).\",\n      \"bbox\": [0.13, 0.20, 0.52, 0.22]\n    },\n    {\n      \"kind\": \"caption\",\n      \"text\": \"수강신청 응답시간(p95) — 1차 시험 2025-11-18\",\n      \"bbox\": [0.19, 0.24, 0.44, 0.26]\n    },\n    {\n      \"kind\": \"paragraph\",\n      \"text\": \"응답 최대 3.6초\",\n      \"bbox\": [0.65, 0.32, 0.76, 0.34]\n    },\n    {\n      \"kind\": \"paragraph\",\n      \"text\": \"동시 접속 24,500에서 응답 3초 초과\",\n      \"bbox\": [0.45, 0.50, 0.65, 0.52]\n    },\n    {\n      \"kind\": \"heading\",\n      \"text\": \"11/19 조치\",\n      \"bbox\": [0.13, 0.56, 0.23, 0.58]\n    },\n    {\n      \"kind\": \"paragraph\",\n      \"text\": \"오토스케일 최대 대수를 20대에서 40대로 상향, 확장 판단 주기를 60 초에서 30 초로 단축\",\n      \"bbox\": [0.13, 0.59, 0.87, 0.61]\n    },\n    {\n      \"kind\": \"heading\",\n      \"text\": \"11/20 2 차 시험\",\n      \"bbox\": [0.13, 0.63, 0.30, 0.65]\n    },\n    {\n      \"kind\": \"paragraph\",\n      \"text\": \"결과: 동시 30,000 명에서 p95 2.4 초, 오류율 0.2% — 목표 충족\",\n      \"bbox\": [0.13, 0.66, 0.65, 0.68]\n    }\n  ],\n  \"tables\": [],\n  \"figures\": [\n    {\n      \"kind\": \"chart\",\n      \"bbox\": [0.19, 0.27, 0.85, 0.54],\n      \"nodes\": [],\n      \"relations\": [],\n      \"claims\": [\n        {\n          \"text\": \"수평축은 00:00부터 24:00까지의 시간을 나타내고, 수직축은 0초부터 5초까지의 응답 시간을 나타낸다.\",\n          \"status\": \"observed\"\n        ,\n        \"bbox\": [0.19, 0.27, 0.85, 0.54]\n        },\n        {\n          \"text\": \"대부분의 구간에서 응답 시간은 1초에서 2초 사이에서 변동하지만, 12:00 이후 특정 지점에서 급격한 응답 지연(최대 3.6초)이 발생했다.\",\n          \"status\": \"observed\"\n        ,\n        \"bbox\": [0.19, 0.27, 0.85, 0.54]\n        },\n        {\n          \"text\": \"응답 지연 구간은 동시 접속자 수가 24,500명에 도달했을 때 발생했으며, 이후 응답 시간이 다시 안정화되었다.\",\n          \"status\": \"inferred\"\n        ,\n        \"bbox\": [0.19, 0.27, 0.85, 0.54]\n        }\n      ]\n    }\n  ]\n  ,\n  \"warnings\": []\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 3120,
+      "total_tokens": 4171,
+      "completion_tokens": 1051,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "http_status": 200,
+  "elapsed_seconds": 157.5741224847734,
+  "request_sha256": "10524040b3ef4cccf633886cafe8ec6d5722d039253375d39c01e9a8f047a0fb",
+  "job_id": "D-185-vision-page1"
+}

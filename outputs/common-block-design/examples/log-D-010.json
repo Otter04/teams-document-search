@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0.0",
+  "record_kind": "design_example",
+  "doc_id": "D-010",
+  "source": {
+    "file_name": "mes-app01_mes_daily_close_20250902.log",
+    "format": "log",
+    "sha256": "698f53e2fb0888b59d1712b19cc987ef67c5bd1c18a4703204e6c02682278f4e",
+    "relative_path": "sites/운영팀/Shared Documents/청람정밀/운영로그/2025-09/mes-app01_mes_daily_close_20250902.log",
+    "web_url": null,
+    "encoding": "utf-8"
+  },
+  "coverage": {
+    "scope": "excerpt",
+    "unit_inventory_complete": false,
+    "units": [
+      {
+        "unit_id": "example-excerpt",
+        "loc": {
+          "kind": "log",
+          "line_start": 157,
+          "line_end": 157
+        },
+        "required": true,
+        "status": "completed",
+        "reason": "설계 예시로 고른 일부 영역만 포함",
+        "block_ids": [
+          "D-010-line157"
+        ]
+      }
+    ]
+  },
+  "runs": [
+    {
+      "run_id": "design",
+      "method": "manual_design",
+      "implementation": "source-inspected-schema-example-1.0",
+      "model_id": null,
+      "provider": null,
+      "quantization": null,
+      "prompt_version": null,
+      "input_asset_ids": []
+    }
+  ],
+  "assets": [],
+  "blocks": [
+    {
+      "block_id": "D-010-line157",
+      "parent_id": null,
+      "order": 1,
+      "type": "log_line",
+      "text": "2025-09-02 02:25:41,738 ERROR [step-3] c.raum.batch.ItemWriter - ORA-01555: snapshot too old: rollback segment number 7 with name \"_SYSSMU7$\" too small",
+      "loc": {
+        "kind": "log",
+        "line_start": 157,
+        "line_end": 157
+      },
+      "heading_path": [],
+      "run_ref": "design",
+      "evidence": [
+        {
+          "evidence_id": "log-line",
+          "kind": "literal",
+          "loc": {
+            "kind": "log",
+            "line_start": 157,
+            "line_end": 157
+          },
+          "quote": "2025-09-02 02:25:41,738 ERROR [step-3] c.raum.batch.ItemWriter - ORA-01555: snapshot too old: rollback segment number 7 with name \"_SYSSMU7$\" too small"
+        }
+      ],
+      "claims": [],
+      "context_ids": [],
+      "content_refs": [],
+      "warnings": [],
+      "log": {
+        "timestamp_raw": "2025-09-02 02:25:41,738",
+        "timezone": null,
+        "level": "ERROR",
+        "error_codes": [
+          "ORA-01555"
+        ]
+      }
+    }
+  ],
+  "warnings": [
+    "원본에 근거해 작성한 설계 예시. 비전 LLM 실행 결과가 아니며 문서 전체를 나타내지 않음.",
+    "level=ERROR는 원문을 확인하여 채운 설계 예시. 기존 파서의 level=null 동작을 수정한 실행 결과가 아님. 시간대는 원문에 없어 null."
+  ]
+}

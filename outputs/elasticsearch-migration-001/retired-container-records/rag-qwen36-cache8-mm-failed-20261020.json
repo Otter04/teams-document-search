@@ -1,0 +1,65 @@
+{
+  "name": "rag-qwen36-cache8-mm-failed-20261020",
+  "id": "d115d6d62ef3e965a8eb148e57446336b7793d5e7682e388f2a2327d2ac79338",
+  "state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-10-20T02:03:58.662197777Z",
+    "FinishedAt": "2026-10-20T02:17:04.444337417Z"
+  },
+  "image": "ghcr.io/nvidia-ai-iot/vllm:latest-jetson-orin",
+  "mounts": [
+    {
+      "Type": "bind",
+      "Source": "/media/sdcard/models/Qwen3.6-35B-A3B-AWQ-4bit",
+      "Destination": "/models/qwen36",
+      "Mode": "",
+      "RW": false,
+      "Propagation": "rprivate"
+    },
+    {
+      "Type": "bind",
+      "Source": "/media/sdcard/rag-runtime/cache",
+      "Destination": "/root/.cache",
+      "Mode": "",
+      "RW": true,
+      "Propagation": "rprivate"
+    }
+  ],
+  "command": [
+    "serve",
+    "/models/qwen36",
+    "--served-model-name",
+    "qwen3.6-35b-a3b",
+    "--host",
+    "0.0.0.0",
+    "--port",
+    "8000",
+    "--dtype",
+    "half",
+    "--max-model-len",
+    "49152",
+    "--gpu-memory-utilization",
+    "0.80",
+    "--kv-cache-memory-bytes",
+    "8589934592",
+    "--max-num-seqs",
+    "1",
+    "--max-num-batched-tokens",
+    "2048",
+    "--limit-mm-per-prompt",
+    "{\"image\":1,\"video\":0}",
+    "--reasoning-parser",
+    "qwen3",
+    "--default-chat-template-kwargs",
+    "{\"enable_thinking\":false}",
+    "--enforce-eager"
+  ]
+}

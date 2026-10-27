@@ -1,0 +1,66 @@
+{
+  "implementation": {
+    "time": "2026-10-20T08:39:03.972648+00:00",
+    "evaluation_reference_date": "2026-10-14",
+    "code_hashes": {
+      "service.py": "ae6c86438d9bd1b6a7bfd9a62c0829b2fd82b285a42a3933e876ed6714758354",
+      "query.py": "03ba6ee6563210b64c9523b470436f2b14803944923bfaabb5b84c57cb9d89c8",
+      "test_search.py": "401770f955f732f18f6d1e61efebdf370277a376153660ed6ff191bf8f24cff9",
+      "engine.py": "7d2b8c707cacb7f9269a56b043247c908f58fc502a429e8cf3d7f350f38c4664",
+      "load_index.py": "d911d8d2161a8ade601b01c10b78cea140208dbc15bdf2df958f4d0258925daa",
+      "prepare.py": "de4c304b7bdf00bc8e335af7bb522838e7551b2c4abaf210d7daf0526947bf83"
+    },
+    "prepared_sha256": "19145a44c9a17858a5dda949091445a148a6ebe3e8b3e4a52ce2ad8ff7a63caa",
+    "query_inputs_sha256": "07c986a99580b1b2c6559037fbe048488b600e8f200ef4d8eec365b73bd2d30e",
+    "labels_loaded": false,
+    "filter_selection": "A if A exceeds B by >=2 hits; B if reverse; otherwise fewer wrong hard-filter exclusions, B tie",
+    "ranker_selection": "R1 if >=2 hits or MRR +0.05, no per-type drop >3pp and latency gate; otherwise R0"
+  },
+  "health": {
+    "ready": true,
+    "documents": 110,
+    "embedding_model": "bge-m3",
+    "embedding_fingerprint": "b8b299238334245d36f1447b3c185acd5f7271d28973c544ed45b59d67161762",
+    "query_analysis_model": "qwen3.6-35b-a3b",
+    "startup_seconds": 14.889899461530149,
+    "config": {
+      "version": "search-1.0.0",
+      "lexical_k": 50,
+      "vector_k": 50,
+      "num_candidates": 200,
+      "rrf_k": 60,
+      "rerank_k": 30,
+      "result_documents": 5,
+      "bm25_fields": [
+        "file_name^2",
+        "context^1.5",
+        "table_header^1.5",
+        "body"
+      ],
+      "minimum_should_match": "50%",
+      "additional_chunk_weight": 0.1,
+      "max_additional_chunks": 3,
+      "r1_weights": {
+        "rrf": 0.45,
+        "lexical_overlap": 0.2,
+        "cosine": 0.2,
+        "literal_phrase": 0.05,
+        "identifier": 0.05,
+        "metadata": 0.05
+      },
+      "query_cache": false,
+      "operating_query_logs": false,
+      "exact_2a": false
+    },
+    "defaults": {
+      "filter_mode": "B",
+      "reranker": "R0"
+    }
+  },
+  "variants": [
+    "B-R1"
+  ],
+  "started_at": "2026-10-20T08:43:19.845758+00:00",
+  "query_cache": false,
+  "labels_read": false
+}

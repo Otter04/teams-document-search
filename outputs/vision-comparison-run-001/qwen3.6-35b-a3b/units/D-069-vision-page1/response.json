@@ -1,0 +1,46 @@
+{
+  "id": "gen-1792375443-1pHN2zQJCyW9MFVQsR7g",
+  "object": "chat.completion",
+  "created": 1792375443,
+  "model": "qwen/qwen3.6-35b-a3b",
+  "provider": "DeepInfra",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"figures\": [\n    {\n      \"bbox\": [0.0, 0.15, 1.0, 0.95],\n      \"claims\": [\n        {\n          \"bbox\": [0.0, 0.15, 1.0, 0.95],\n          \"status\": \"observed\",\n          \"text\": \"여신관리시스템 DR 구축 네트워크 구성도 (Rev.1)의 전체 네트워크 토폴로지를 보여준다. 인터넷/전용회선이 방화벽(Fortigate)을 거쳐 코어 스위치(Cisco)로 연결되고, 코어 스위치는 본사 서버팜, DR 서버팜, 복제망으로 분기된다. 방화벽은 본사-DR 전용회선과 대전 DR 센터와도 연결되어 있다.\"\n        }\n      ],\n      \"kind\": \"diagram\",\n      \"nodes\": [\n        {\n          \"bbox\": [0.42, 0.22, 0.72, 0.28],\n          \"id\": \"node_1\",\n          \"label\": \"Internet / 전용회선\"\n        },\n        {\n          \"bbox\": [0.05, 0.35, 0.38, 0.45],\n          \"id\": \"node_2\",\n          \"label\": \"본사 -DR 전용회선 1Gbps x 2\"\n        },\n        {\n          \"bbox\": [0.35, 0.32, 0.65, 0.48],\n          \"id\": \"node_3\",\n          \"label\": \"방화벽\\nFortiGate 600F x 2 (본사) / FortiGate 400F x 2 (DR)\"\n        },\n        {\n          \"bbox\": [0.68, 0.35, 0.95, 0.45],\n          \"id\": \"node_4\",\n          \"label\": \"대전 DR 센터\"\n        },\n        {\n          \"bbox\": [0.35, 0.50, 0.65, 0.60],\n          \"id\": \"node_5\",\n          \"label\": \"코어 스위치\\nCisco N9K-C93180YC x 2\"\n        },\n        {\n          \"bbox\": [0.05, 0.65, 0.32, 0.80],\n          \"id\": \"node_6\",\n          \"label\": \"본사 서버팜\\n10.65.10.0/24\"\n        },\n        {\n          \"bbox\": [0.35, 0.65, 0.62, 0.80],\n          \"id\": \"node_7\",\n          \"label\": \"DR 서버팜\\n10.65.110.0/24\"\n        },\n        {\n          \"bbox\": [0.65, 0.65, 0.92, 0.80],\n          \"id\": \"node_8\",\n          \"label\": \"복제망\\n10.65.200.0/24\"\n        }\n      ],\n      \"relations\": [\n        {\n          \"bbox\": [0.55, 0.28, 0.55, 0.32],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node_1\",\n          \"label\": \"\",\n          \"to_node\": \"node_3\"\n        },\n        {\n          \"bbox\": [0.38, 0.40, 0.35, 0.40],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node_2\",\n          \"label\": \"\",\n          \"to_node\": \"node_3\"\n        },\n        {\n          \"bbox\": [0.65, 0.40, 0.68, 0.40],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node_3\",\n          \"label\": \"\",\n          \"to_node\": \"node_4\"\n        },\n        {\n          \"bbox\": [0.50, 0.48, 0.50, 0.50],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node_3\",\n          \"label\": \"\",\n          \"to_node\": \"node_5\"\n        },\n        {\n          \"bbox\": [0.35, 0.60, 0.18, 0.65],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node_5\",\n          \"label\": \"\",\n          \"to_node\": \"node_6\"\n        },\n        {\n          \"bbox\": [0.50, 0.60, 0.50, 0.65],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node_5\",\n          \"label\": \"\",\n          \"to_node\": \"node_7\"\n        },\n        {\n          \"bbox\": [0.65, 0.60, 0.82, 0.65],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node_5\",\n          \"label\": \"\",\n          \"to_node\": \"node_8\"\n        }\n      ]\n    }\n  ],\n  \"status\": \"complete\",\n  \"tables\": [],\n  \"texts\": [\n    {\n      \"bbox\": [0.05, 0.05, 0.95, 0.12],\n      \"kind\": \"heading\",\n      \"text\": \"여신관리시스템 DR 구축 네트워크 구성도 (Rev.1)\"\n    },\n    {\n      \"bbox\": [0.05, 0.13, 0.95, 0.15],\n      \"kind\": \"paragraph\",\n      \"text\": \"설치 위치 : 여의도 본사 IDC | 작성일 : 2025-08-27 | 작성 : 라움정보기술 기술지원팀\"\n    },\n    {\n      \"bbox\": [0.05, 0.90, 0.95, 0.92],\n      \"kind\": \"paragraph\",\n      \"text\": \"범례 : 실선 ≈ 1G/10G 이더넷 | (주) 도담캐피탈 전산 담당자 검토 필요\"\n    }\n  ],\n  \"warnings\": []\n}",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1551,
+    "completion_tokens": 1535,
+    "total_tokens": 3086,
+    "cost": 0.00161335,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00161335,
+      "upstream_inference_prompt_cost": 0.0001551,
+      "upstream_inference_completions_cost": 0.00145825
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

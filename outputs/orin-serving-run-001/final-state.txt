@@ -1,0 +1,13 @@
+2026-10-20T10:21:27+09:00
+               total        used        free      shared  buff/cache   available
+Mem:            61Gi        50Gi       1.4Gi       109Mi       9.0Gi       9.7Gi
+Swap:           30Gi       2.0Mi        30Gi
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/mmcblk1p1  469G  288G  158G  65% /media/sdcard
+rag-qwen36	Up 14 minutes	127.0.0.1:8001->8000/tcp
+test	Up 3 days	
+timesfm-test	Up 6 weeks	
+sdp-api	Up 2 months (healthy)	0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp
+status=running oom=false restarts=0 started=2026-10-20T01:06:50.796431207Z cmd=["serve","/models/qwen36","--served-model-name","qwen3.6-35b-a3b","--host","0.0.0.0","--port","8000","--dtype","half","--max-model-len","16384","--gpu-memory-utilization","0.80","--max-num-seqs","1","--max-num-batched-tokens","2048","--limit-mm-per-prompt","{\"image\":1,\"video\":0}","--reasoning-parser","qwen3","--default-chat-template-kwargs","{\"enable_thinking\":false}","--enforce-eager"] mounts=[{"Type":"bind","Source":"/media/sdcard/rag-runtime/cache","Destination":"/root/.cache","Mode":"","RW":true,"Propagation":"rprivate"},{"Type":"bind","Source":"/media/sdcard/models/Qwen3.6-35B-A3B-AWQ-4bit","Destination":"/models/qwen36","Mode":"","RW":false,"Propagation":"rprivate"}]
+
+health_http=200

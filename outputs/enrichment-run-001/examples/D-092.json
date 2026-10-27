@@ -1,0 +1,297 @@
+{
+  "schema_version": "1.0.0",
+  "record_kind": "enrichment_result",
+  "doc_id": "D-092",
+  "source": {
+    "file_name": "bhg-log01_game_log_rotate_20251129.log",
+    "format": "log",
+    "relative_path": "sites/운영팀/Shared Documents/별하게임즈/운영로그/2025-11/bhg-log01_game_log_rotate_20251129.log",
+    "sha256": "33c0280ccc445ff990d1019e15b1f6e71d566975d48d79fff26dfa6073bde8f6",
+    "web_url": null,
+    "encoding": "utf-8"
+  },
+  "input_record_sha256": "53bf3bcaf0b6a09a0980f02aabd73ff2e12cb99a834e32c2dba25c2c398032d9",
+  "rules_version": "rules-0.1.0",
+  "scope": "native_text_and_source_metadata",
+  "model_called": false,
+  "status": "partial",
+  "native_text_present": true,
+  "fields": {
+    "문서종류": {
+      "value": "실행 로그",
+      "status": "extracted",
+      "rule_id": "type.log_extension",
+      "evidence": [
+        {
+          "kind": "source",
+          "ref": "file_name",
+          "quote": "bhg-log01_game_log_rotate_20251129.log",
+          "loc": null
+        }
+      ],
+      "candidates": [],
+      "reason": null
+    },
+    "거래처": {
+      "value": "별하게임즈",
+      "status": "extracted",
+      "rule_id": "client.folder_alias",
+      "evidence": [
+        {
+          "kind": "source",
+          "ref": "relative_path",
+          "quote": "sites/운영팀/Shared Documents/별하게임즈/운영로그/2025-11/bhg-log01_game_log_rotate_20251129.log",
+          "loc": null
+        }
+      ],
+      "candidates": [],
+      "reason": null
+    },
+    "문서일자": {
+      "value": "2025-11-29",
+      "status": "extracted",
+      "rule_id": "date.log_start",
+      "evidence": [
+        {
+          "kind": "block",
+          "ref": "D-092-33c0280ccc44-line2",
+          "quote": "2025-11-29 02:03:43,366 INFO  [main] c.raum.batch.JobLauncher - Job: [GAME_LOG_ROTATE] launched with parameters: [{runDate=20251129}]",
+          "loc": {
+            "kind": "log",
+            "line_start": 2,
+            "line_end": 2
+          }
+        }
+      ],
+      "candidates": [],
+      "reason": null
+    },
+    "대상시스템": {
+      "value": "게임서버",
+      "status": "extracted",
+      "rule_id": "system.explicit_label",
+      "evidence": [
+        {
+          "kind": "block",
+          "ref": "D-092-33c0280ccc44-line1",
+          "quote": "2025-11-29 02:03:43,276 INFO  [main] c.raum.batch.JobLauncher - Target system: 게임서버 / host bhg-log01",
+          "loc": {
+            "kind": "log",
+            "line_start": 1,
+            "line_end": 1
+          }
+        }
+      ],
+      "candidates": [],
+      "reason": null
+    },
+    "상태": {
+      "value": null,
+      "status": "not_found_native",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "no supported unambiguous value in native scope"
+    },
+    "계약번호": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "계약유형": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "계약시작일": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "계약종료일": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "금액": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "통화": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "VAT": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "견적번호": {
+      "value": null,
+      "status": "not_found_native",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "no supported unambiguous value in native scope"
+    },
+    "견적유효기간": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "사이트": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "작업명": {
+      "value": "GAME_LOG_ROTATE",
+      "status": "extracted",
+      "rule_id": "job.explicit_label",
+      "evidence": [
+        {
+          "kind": "block",
+          "ref": "D-092-33c0280ccc44-line2",
+          "quote": "2025-11-29 02:03:43,366 INFO  [main] c.raum.batch.JobLauncher - Job: [GAME_LOG_ROTATE] launched with parameters: [{runDate=20251129}]",
+          "loc": {
+            "kind": "log",
+            "line_start": 2,
+            "line_end": 2
+          }
+        },
+        {
+          "kind": "block",
+          "ref": "D-092-33c0280ccc44-line216",
+          "quote": "2025-11-29 02:32:51,919 INFO  [main] o.s.b.c.l.support.SimpleJobLauncher - Job: [GAME_LOG_ROTATE] completed with the following status: [COMPLETED_WITH_WARNINGS]",
+          "loc": {
+            "kind": "log",
+            "line_start": 216,
+            "line_end": 216
+          }
+        }
+      ],
+      "candidates": [],
+      "reason": null
+    },
+    "로그시작": {
+      "value": "2025-11-29 02:03",
+      "status": "extracted",
+      "rule_id": "time.explicit_start",
+      "evidence": [
+        {
+          "kind": "block",
+          "ref": "D-092-33c0280ccc44-line2",
+          "quote": "2025-11-29 02:03:43,366 INFO  [main] c.raum.batch.JobLauncher - Job: [GAME_LOG_ROTATE] launched with parameters: [{runDate=20251129}]",
+          "loc": {
+            "kind": "log",
+            "line_start": 2,
+            "line_end": 2
+          }
+        }
+      ],
+      "candidates": [],
+      "reason": null
+    },
+    "로그종료": {
+      "value": "2025-11-29 02:32",
+      "status": "extracted",
+      "rule_id": "time.explicit_terminal",
+      "evidence": [
+        {
+          "kind": "block",
+          "ref": "D-092-33c0280ccc44-line216",
+          "quote": "2025-11-29 02:32:51,919 INFO  [main] o.s.b.c.l.support.SimpleJobLauncher - Job: [GAME_LOG_ROTATE] completed with the following status: [COMPLETED_WITH_WARNINGS]",
+          "loc": {
+            "kind": "log",
+            "line_start": 216,
+            "line_end": 216
+          }
+        }
+      ],
+      "candidates": [],
+      "reason": null
+    },
+    "실행결과": {
+      "value": "경고",
+      "status": "extracted",
+      "rule_id": "result.explicit_terminal",
+      "evidence": [
+        {
+          "kind": "block",
+          "ref": "D-092-33c0280ccc44-line216",
+          "quote": "2025-11-29 02:32:51,919 INFO  [main] o.s.b.c.l.support.SimpleJobLauncher - Job: [GAME_LOG_ROTATE] completed with the following status: [COMPLETED_WITH_WARNINGS]",
+          "loc": {
+            "kind": "log",
+            "line_start": 216,
+            "line_end": 216
+          }
+        }
+      ],
+      "candidates": [],
+      "reason": null
+    },
+    "오류코드": {
+      "value": "FS-W0087",
+      "status": "extracted",
+      "rule_id": "error.explicit_error_context",
+      "evidence": [
+        {
+          "kind": "block",
+          "ref": "D-092-33c0280ccc44-line131",
+          "quote": "2025-11-29 02:21:41,994 WARN  [step-2] c.raum.batch.DiskMonitor - FS-W0087: /var/log/game usage 87% on bhg-log01 (threshold 85%)",
+          "loc": {
+            "kind": "log",
+            "line_start": 131,
+            "line_end": 131
+          }
+        }
+      ],
+      "candidates": [],
+      "reason": null
+    },
+    "사업명": {
+      "value": null,
+      "status": "not_found_native",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "no supported unambiguous value in native scope"
+    }
+  },
+  "pending_visual_units": [],
+  "deferred": {
+    "summary": "not_run",
+    "family": "not_run",
+    "latest_version": "not_run",
+    "vision": "not_required_by_parser"
+  }
+}

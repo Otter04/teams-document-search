@@ -1,0 +1,36 @@
+{
+  "sha256": "529d1fd88e6ff04110a23245bbd4e68071aa992b61342649786f9adfe1772eea",
+  "snippets": [
+    {
+      "path": "/Users/kangdongkyoon/Downloads/RAG_예비데이터셋(클로드)/generator/gen.py",
+      "start_line": 102,
+      "end_line": 108,
+      "text": "def register(p, role, rel_dir, fname, fmt, dtype, date, family, latest, note=\"\", scan=\"N\", **fields):\n    doc_id = f\"D-{len(DOCS) + 1:03d}\"\n    rec = {k: \"N/A\" for k in FIELDS}\n    rec.update(doc_id=doc_id, 파일명=fname, 경로=\"/\" + rel_dir, 형식=fmt, 스캔=scan, 문서종류=dtype,\n               거래처=p[\"cp\"], 문서일자=ds(date), family=family, 최신본=latest, 비고=note, pid=p[\"id\"], role=role)\n    rec.update(fields)\n    DOCS.append(rec)"
+    },
+    {
+      "path": "/Users/kangdongkyoon/Downloads/RAG_예비데이터셋(클로드)/generator/gen.py",
+      "start_line": 208,
+      "end_line": 228,
+      "text": "def make_contracts(p):\n    sign = D(p[\"start\"]) - dt.timedelta(days=10)\n    draft_date = sign - dt.timedelta(days=12)\n    fam = f\"F-{p['id']}-CT\"\n    common = dict(사업명=p[\"name\"], 대상시스템=p[\"system\"], 계약번호=p[\"ct_no\"], 계약유형=p[\"ctype\"],\n                  계약시작일=p[\"start\"], 계약종료일=p[\"end\"], 금액=p[\"amount\"], 통화=p[\"cur\"], VAT=p[\"vat\"])\n    # draft\n    rel = doc_path(p, \"sales\", \"계약\")\n    fn = f\"{p['name']}_계약서(초안).docx\"\n    did, out = register(p, \"contract_draft\", rel, fn, \"docx\", \"계약서\", draft_date, fam, \"N\", 상태=\"초안\", **common)\n    build_contract_docx(p, out, True, sign)\n    touch(out, draft_date)\n    contract_strings(did, p, \"docx\")\n    # signed\n    fn = f\"{p['name']}_계약서(서명본).pdf\"\n    scan = \"Y\" if p.get(\"contract_scan\") else \"N\"\n    note = \"스캔본 — 텍스트 레이어 없음 (OCR 필요)\" if scan == \"Y\" else \"PDF 변환본\"\n    did, out = register(p, \"contract_signed\", rel, fn, \"pdf\", \"계약서\", sign, fam, \"Y\", note, scan, 상태=\"서명본\", **common)\n    tmp = Path(tempfile.mkdtemp()) / f\"{did}.docx\"\n    build_contract_docx(p, tmp, False, sign)\n    PDF_JOBS.append((tmp, out, scan == \"Y\", sign))"
+    },
+    {
+      "path": "/Users/kangdongkyoon/Downloads/RAG_예비데이터셋(클로드)/generator/gen.py",
+      "start_line": 406,
+      "end_line": 435,
+      "text": "def make_proposal(p):\n    if p.get(\"proposal\") is False:\n        return\n    date = D(p[\"d0\"])\n    amount = quote_total_v1(p) if len(p[\"q_no\"]) > 1 else p[\"amount\"]\n    rel = doc_path(p, \"sales\", \"제안\")\n    fam = f\"F-{p['id']}-PR\"\n    has_pdf = p.get(\"proposal_pdf\")\n    fn = R.choice([f\"{alias(p, 0)}_{p['name']}_제안서.pptx\", f\"제안서_{p['name']}_v1.0.pptx\"])\n    fields = dict(사업명=p[\"name\"], 대상시스템=p[\"system\"], 금액=amount, 통화=p[\"cur\"], VAT=p[\"vat\"])\n    did, out = register(p, \"proposal\", rel, fn, \"pptx\", \"제안서\", date, fam, \"N\" if has_pdf else \"Y\", **fields)\n    total_line = build_proposal(p, out, date, amount)\n    touch(out, date)\n    for d_ in [did]:\n        gs(d_, p[\"name\"], \"기타\", \"표지\")\n        gs(d_, p[\"feature\"] if p[\"feature\"] in p[\"goals\"] else p[\"goals\"][0], \"조항문구\", \"제안 목표 슬라이드\")\n        gs(d_, total_line, \"금액\", \"제안 금액 슬라이드\")\n    if has_pdf:\n        fn2 = Path(fn).with_suffix(\".pdf\").name\n        did2, out2 = register(p, \"proposal_pdf\", rel, fn2, \"pdf\", \"제안서\", date + dt.timedelta(days=1), fam, \"Y\",\n                              \"제안서 PPTX의 PDF 변환본(제출본)\", **fields)\n        PDF_JOBS.append((out, out2, False, date + dt.timedelta(days=1)))\n        gs(did2, p[\"name\"], \"기타\", \"1쪽 표지\")\n        gs(did2, p[\"feature\"] if p[\"feature\"] in p[\"goals\"] else p[\"goals\"][0], \"조항문구\", \"제안 목표 쪽\")\n        gs(did2, total_line, \"금액\", \"제안 금액 쪽\")\n        if p.get(\"dup\"):\n            fn3 = Path(fn).stem + \" (1).pdf\"\n            did3, out3 = register(p, \"proposal_dup\", rel, fn3, \"pdf\", \"제안서\", date + dt.timedelta(days=1), fam, \"N\",\n                                  \"제출본 PDF와 완전히 동일한 사본\", **fields)\n            PDF_JOBS.append((out, out3, False, date + dt.timedelta(days=1)))"
+    },
+    {
+      "path": "/Users/kangdongkyoon/Downloads/RAG_예비데이터셋(클로드)/generator/gen.py",
+      "start_line": 580,
+      "end_line": 604,
+      "text": "    net = p.get(\"net\")\n    if not net:\n        return\n    fam = f\"F-{p['id']}-NW\"\n    rel = doc_path(p, \"tech\")\n    base = D(p[\"start\"]) - dt.timedelta(days=5)\n    revs = max(p[\"net_revs\"], 1)\n    pref = CPS[p[\"cp\"]][\"prefix\"].upper()\n    fields = dict(사업명=p[\"name\"], 대상시스템=\"N/A\", 사이트=p[\"site\"])\n    for rev in range(1, revs + 1):\n        date = base + dt.timedelta(days=(rev - 1) * 21)\n        last = rev == revs\n        fn = R.choice([f\"네트워크구성도_{p['system']}_rev{rev}.pptx\", f\"{pref}_network_diagram_rev{rev}.pptx\"])\n        if p.get(\"net_scan\"):\n            fn = f\"{pref}_네트워크구성도_검토본_스캔.pdf\"\n            did, out = register(p, \"net\", rel, fn, \"pdf\", \"네트워크 구성도\", date, fam, \"Y\",\n                                \"출력 후 검토 서명한 구성도 스캔본 — 텍스트 레이어 없음\", \"Y\", **fields)\n            tmp = Path(tempfile.mkdtemp()) / f\"{did}.pptx\"\n            extras = build_net(p, tmp, rev, date)\n            PDF_JOBS.append((tmp, out, True, date))\n        else:\n            did, out = register(p, \"net\" if last else \"net_old\", rel, fn, \"pptx\", \"네트워크 구성도\", date, fam,\n                                \"Y\" if last else \"N\", **fields)\n            extras = build_net(p, out, rev, date)\n            touch(out, date)"
+    },
+    {
+      "path": "/Users/kangdongkyoon/Downloads/RAG_예비데이터셋(클로드)/generator/gen.py",
+      "start_line": 840,
+      "end_line": 855,
+      "text": "        elif base == \"mail\":\n            q = p[\"q_no\"][-1]\n            d = D(p[\"d0\"]) + dt.timedelta(days=30)\n            lines = [f\"From: 이준호 <junho.lee@raum.example>\", f\"To: 구매팀 <purchase@{CPS[p['cp']]['prefix']}.example>\",\n                     f\"Date: {ds(d)} 15:42\", f\"Subject: RE: [{p['name']}] 견적 관련 문의\", \"\",\n                     \"안녕하십니까, 라움정보기술 이준호입니다.\", \"\",\n                     f\"문의하신 {p['name']} 최종 견적({q}) 관련하여 답변드립니다.\",\n                     \"1) 1차 견적 대비 금액 조정은 인건비 단가 조정분이 반영된 것입니다.\",\n                     \"2) 유효기간 내 발주 시 견적 금액 그대로 계약 진행 가능합니다.\",\n                     f\"3) {p['goals'][-1] if p['goals'] else p['system']} 항목은 별도 협의 없이 포함되어 있습니다.\", \"\",\n                     \"감사합니다.\", \"\", \"-----Original Message-----\", f\"From: 구매팀 <purchase@{CPS[p['cp']]['prefix']}.example>\",\n                     f\"Subject: [{p['name']}] 견적 관련 문의\", \"1차 견적 대비 금액이 달라진 사유와 유효기간 확인 부탁드립니다.\"]\n            fn = f\"RE_{p['name']}_견적 관련 문의.txt\"\n            rel = doc_path(p, \"sales\", \"기타\")\n            did, out = register(p, \"txt_mail\", rel, fn, \"txt\", \"기타\", d, f\"F-{p['id']}-TE\", \"Y\", note,\n                                사업명=p[\"name\"], 대상시스템=\"N/A\", 견적번호=q)"
+    }
+  ],
+  "not_an_extractor_input": true
+}

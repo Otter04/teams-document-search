@@ -1,0 +1,228 @@
+{
+  "figures": [
+    {
+      "bbox": [
+        0.045,
+        0.047,
+        0.945,
+        0.947
+      ],
+      "claims": [
+        {
+          "bbox": [
+            0.045,
+            0.047,
+            0.945,
+            0.947
+          ],
+          "status": "observed",
+          "text": "PACS 스토리지 증설 네트워크 구성도 (Rev.1)의 전체 구조를 시각적으로 재현함. 상단에서 하단으로 Internet/전용회선, 방화벽, 코어 스위치, 하위 네트워크(의료영상망, SAN, 관리망)로 이어지는 계층형 구성을 보여줌. 양측에 SAN 스위치와 PACS 스토리지가 방화벽과 연결되어 있음."
+        }
+      ],
+      "kind": "diagram",
+      "nodes": [
+        {
+          "bbox": [
+            0.405,
+            0.213,
+            0.593,
+            0.313
+          ],
+          "id": "node1",
+          "label": "Internet / 전용회선"
+        },
+        {
+          "bbox": [
+            0.33,
+            0.353,
+            0.668,
+            0.467
+          ],
+          "id": "node2",
+          "label": "방화벽\nAhnLab TrusGuard × 2"
+        },
+        {
+          "bbox": [
+            0.038,
+            0.353,
+            0.293,
+            0.467
+          ],
+          "id": "node3",
+          "label": "SAN 스위치 Brocade G720 × 2"
+        },
+        {
+          "bbox": [
+            0.705,
+            0.353,
+            0.96,
+            0.467
+          ],
+          "id": "node4",
+          "label": "PACS 스토리지 300TB"
+        },
+        {
+          "bbox": [
+            0.33,
+            0.507,
+            0.668,
+            0.62
+          ],
+          "id": "node5",
+          "label": "코어 스위치\nCisco C9300 × 2"
+        },
+        {
+          "bbox": [
+            0.049,
+            0.7,
+            0.334,
+            0.833
+          ],
+          "id": "node6",
+          "label": "의료영상망\n10.43.20.0/24"
+        },
+        {
+          "bbox": [
+            0.356,
+            0.7,
+            0.641,
+            0.833
+          ],
+          "id": "node7",
+          "label": "SAN\nFC Fabric A/B"
+        },
+        {
+          "bbox": [
+            0.664,
+            0.7,
+            0.949,
+            0.833
+          ],
+          "id": "node8",
+          "label": "관리망\n10.43.99.0/24"
+        }
+      ],
+      "relations": [
+        {
+          "bbox": [
+            0.495,
+            0.313,
+            0.505,
+            0.353
+          ],
+          "direction": "undirected",
+          "from_node": "node1",
+          "label": "",
+          "to_node": "node2"
+        },
+        {
+          "bbox": [
+            0.293,
+            0.40907407407407403,
+            0.33,
+            0.4109259259259259
+          ],
+          "direction": "undirected",
+          "from_node": "node3",
+          "label": "",
+          "to_node": "node2"
+        },
+        {
+          "bbox": [
+            0.668,
+            0.40907407407407403,
+            0.705,
+            0.4109259259259259
+          ],
+          "direction": "undirected",
+          "from_node": "node2",
+          "label": "",
+          "to_node": "node4"
+        },
+        {
+          "bbox": [
+            0.495,
+            0.467,
+            0.505,
+            0.507
+          ],
+          "direction": "undirected",
+          "from_node": "node2",
+          "label": "",
+          "to_node": "node5"
+        },
+        {
+          "bbox": [
+            0.049,
+            0.62,
+            0.33,
+            0.7
+          ],
+          "direction": "undirected",
+          "from_node": "node5",
+          "label": "",
+          "to_node": "node6"
+        },
+        {
+          "bbox": [
+            0.495,
+            0.62,
+            0.505,
+            0.7
+          ],
+          "direction": "undirected",
+          "from_node": "node5",
+          "label": "",
+          "to_node": "node7"
+        },
+        {
+          "bbox": [
+            0.668,
+            0.62,
+            0.949,
+            0.7
+          ],
+          "direction": "undirected",
+          "from_node": "node5",
+          "label": "",
+          "to_node": "node8"
+        }
+      ]
+    }
+  ],
+  "status": "complete",
+  "tables": [],
+  "texts": [
+    {
+      "bbox": [
+        0.045,
+        0.047,
+        0.945,
+        0.153
+      ],
+      "kind": "heading",
+      "text": "PACS 스토리지 증설 네트워크 구성도 (Rev.1)"
+    },
+    {
+      "bbox": [
+        0.045,
+        0.14,
+        0.945,
+        0.207
+      ],
+      "kind": "paragraph",
+      "text": "설치 위치: 새봄병원 본관 전산실  |  작성일: 2025-03-27  |  작성: 라움정보기술 기술지원팀"
+    },
+    {
+      "bbox": [
+        0.045,
+        0.893,
+        0.945,
+        0.947
+      ],
+      "kind": "paragraph",
+      "text": "범례: 실선 = 1G/10G 이더넷 | 새봄병원 전산 담당자 검토 필요"
+    }
+  ],
+  "warnings": []
+}

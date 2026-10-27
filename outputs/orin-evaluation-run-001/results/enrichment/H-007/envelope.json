@@ -1,0 +1,49 @@
+{
+  "model": "qwen3.6-35b-a3b",
+  "provider": "local-vllm",
+  "quantization": "awq-4bit",
+  "kind": "enrichment",
+  "doc_id": "H-007",
+  "id": "H-007",
+  "request_sha256": "d555e335ec489073770936b851305966109606783c43ba3a82aa6d0aed7e488f",
+  "baseline_request_sha256": "31f2144c31163c7a5934683827714a3f41ae53f5e5458383f224e4a610d1a5df",
+  "messages_sha256": "ef6878c5c90a4c982ccfa2dcf428eaf717decfc4da205667d92142813f0c1bbf",
+  "response": {
+    "id": "chatcmpl-9e544039b955b424",
+    "object": "chat.completion",
+    "created": 1792468481,
+    "model": "qwen3.6-35b-a3b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"doc_id\": \"H-007\",\n  \"fields\": {\n    \"VAT\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"제안금액: KRW 28,000,000 (VAT 별도)\",\n          \"ref\": \"H-007-4e24175434bc-s1-shape2\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"별도\"\n    },\n    \"거래처\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"거래처: 누리콜드\",\n          \"ref\": \"H-007-4e24175434bc-s1-shape2\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"누리콜드\"\n    },\n    \"견적번호\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"문서 전체에서 견적번호를 명시하는 항목을 찾을 수 없습니다.\",\n      \"status\": \"not_found_in_input\",\n      \"value\": null\n    },\n    \"견적유효기간\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"문서에 견적 유효기간에 대한 정보가 포함되어 있지 않습니다.\",\n      \"status\": \"not_found_in_input\",\n      \"value\": null\n    },\n    \"계약번호\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"이 문서는 제안서이며 계약서가 아니므로 해당 필드가 적용되지 않습니다.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"계약시작일\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"이 문서는 제안서이며 계약서가 아니므로 해당 필드가 적용되지 않습니다.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"계약유형\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"이 문서는 제안서이며 계약서가 아니므로 해당 필드가 적용되지 않습니다.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"계약종료일\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"이 문서는 제안서이며 계약서가 아니므로 해당 필드가 적용되지 않습니다.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"금액\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"제안금액: KRW 28,000,000 (VAT 별도)\",\n          \"ref\": \"H-007-4e24175434bc-s1-shape2\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"28000000\"\n    },\n    \"대상시스템\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"대상 시스템: WMS\",\n          \"ref\": \"H-007-4e24175434bc-s1-shape2\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"WMS\"\n    },\n    \"로그시작\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"이 문서는 실행 로그가 아니므로 해당 필드가 적용되지 않습니다.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"로그종료\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"이 문서는 실행 로그가 아니므로 해당 필드가 적용되지 않습니다.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"문서일자\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"2026.09.05\",\n          \"ref\": \"H-007-4e24175434bc-s1-shape2\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"2026-09-05\"\n    },\n    \"문서종류\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"source\",\n          \"quote\": \"file_name: WMS 냉장입고 추적 제안서_최종.pptx\",\n          \"ref\": \"file_name\"\n        },\n        {\n          \"kind\": \"block\",\n          \"quote\": \"WMS 냉장입고 추적 제안서\",\n          \"ref\": \"H-007-4e24175434bc-s1-shape4\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"제안서\"\n    },\n    \"사업명\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"문서에 건명이나 사업명으로 명시된 구절이 없으며, 문서 제목은 프로젝트 이름으로 해석할 수 있으나 명확한 사업명 표기가 부족합니다.\",\n      \"status\": \"not_found_in_input\",\n      \"value\": null\n    },\n    \"사이트\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"이 문서는 네트워크/서버 구성도가 아니므로 설치 위치인 사이트 필드가 적용되지 않습니다.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"상태\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"문서상태: 최종\",\n          \"ref\": \"H-007-4e24175434bc-s1-shape2\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"최종\"\n    },\n    \"실행결과\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"이 문서는 실행 로그가 아니므로 해당 필드가 적용되지 않습니다.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"오류코드\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"문서에 오류 코드가 포함되어 있지 않습니다.\",\n      \"status\": \"not_found_in_input\",\n      \"value\": null\n    },\n    \"작성일\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"2026.09.05\",\n          \"ref\": \"H-007-4e24175434bc-s1-shape2\"\n        }\n      ],\n      \"reason\": \"표지 슬라이드에 명시된 날짜(2026.09.05)가 문서의 작성일로 간주됩니다.\",\n      \"status\": \"extracted\",\n      \"value\": \"2026-09-05\"\n    },\n    \"작업명\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"이 문서는 실행 로그가 아니므로 해당 필드가 적용되지 않습니다.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"통화\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"KRW 28,000,000\",\n          \"ref\": \"H-007-4e24175434bc-s1-shape2\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"KRW\"\n    },\n    \"표지일\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"2026.09.05\",\n          \"ref\": \"H-007-4e24175434bc-s1-shape2\"\n        }\n      ],\n      \"reason\": \"첫 페이지(슬라이드 1)의 표지에 명시된 날짜입니다.\",\n      \"status\": \"extracted\",\n      \"value\": \"2026-09-05\"\n    }\n  },\n  \"schema_version\": \"llm_enrichment_candidate_v1\",\n  \"summary\": [\n    {\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"WMS 냉장입고 추적 제안서\",\n          \"ref\": \"H-007-4e24175434bc-s1-shape4\"\n        }\n      ],\n      \"text\": \"본 문서는 누리콜드의 WMS 냉장 입고 시 팔레트 라벨과 온도 이력을 연결하고, TMS와 일별 집계 파일로 교환하는 내용을 담은 제안서입니다.\"\n    },\n    {\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"합성 평가 자료 - 실제 고객 제안이 아님\",\n          \"ref\": \"H-007-4e24175434bc-s1-shape3\"\n        }\n      ],\n      \"text\": \"문서 하단에 '합성 평가 자료 - 실제 고객 제안이 아님'이라는 경고문이 있어 실제 거래가 아닌 테스트 또는 평가용 데이터임을 나타냅니다.\"\n    },\n    {\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"제안금액: KRW 28,000,000 (VAT 별도)\",\n          \"ref\": \"H-007-4e24175434bc-s1-shape2\"\n        }\n      ],\n      \"text\": \"제안 금액은 28,000,000원이며 VAT는 별도이고, 문서 상태는 최종, 문서 일자는 2026년 9월 5일로 기록되어 있습니다.\"\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 8468,
+      "total_tokens": 10977,
+      "completion_tokens": 2509,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "http_status": 200,
+  "elapsed_ms": 400627
+}

@@ -1,0 +1,30 @@
+{
+  "settings": {
+    "bm25_fields": [
+      "body",
+      "context^0.3",
+      "table_header",
+      "metadata_text^0.3",
+      "title^0.5",
+      "job^4",
+      "role^4",
+      "identifier_text^3",
+      "system^0.25",
+      "client^0.25"
+    ],
+    "multi_match_type": "most_fields",
+    "concept_boost": 2,
+    "identifier_boost": 3,
+    "document_aggregation": "maximum_scored_chunk",
+    "vector": "exact float32 flat, cosine",
+    "reference_date": "2026-10-17",
+    "top_k": 5,
+    "source": "preexisting query and rule vocabulary; no score-weight tuning",
+    "client_alias_policy": "restore canonical-name expansion from the original native tokenizer for all clients"
+  },
+  "script_sha256": "adebbd271aed776c0d21921876d4db3743034c7db77e9cc5e0f2d5ded65754b6",
+  "query_inputs_sha256": "07c986a99580b1b2c6559037fbe048488b600e8f200ef4d8eec365b73bd2d30e",
+  "query_vectors_sha256": "97a685b1117c0703d544059f7528322b26dcd86b024ded3c29eaf7dc1da248d8",
+  "source_manifest_sha256": "0521e10525c432606cecf428d9e1b782d379bda13df0219980bf346894bd4f3c",
+  "new_model_calls": 0
+}

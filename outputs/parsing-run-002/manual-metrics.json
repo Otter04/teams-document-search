@@ -1,0 +1,18 @@
+{
+  "parse_success_rate": {
+    "value": 1.0,
+    "evidence": "qa/validation.json: 110/110 nonempty ok documents; source hashes match."
+  },
+  "encoding_error_documents": {
+    "value": 0,
+    "evidence": "qa/validation.json: strict decoding, CP949 and replacement-character checks."
+  },
+  "table_cell_accuracy": {
+    "value": 1.0,
+    "evidence": "qa/validation.json + qa/scan_table_validation.json: 26 tables/regions, 547/547 cells. Includes all 16 scan cells, separately scored 16/16 with 2/2 grid shapes and no extra tables on all 5 scan pages. Whitespace ignored only."
+  },
+  "ocr_cer": {
+    "value": 0.023865414710485134,
+    "evidence": "qa/validation.json + qa/ocr_reference.json: unchanged baseline references; NFC then collapse whitespace runs. 61/2556 chars, all 5 pages; diagram regionwise. No-whitespace 6/2014 unchanged. References assistant-prepared, human sign-off pending."
+  }
+}

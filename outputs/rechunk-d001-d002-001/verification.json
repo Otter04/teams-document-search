@@ -1,0 +1,56 @@
+{
+  "scope": [
+    "D-001",
+    "D-002"
+  ],
+  "target_input_tokens": [
+    400,
+    600
+  ],
+  "count_includes": [
+    "context",
+    "body including table headers",
+    "special tokens"
+  ],
+  "tokenizer_sha256": "21106b6d7dab2952c1d496fb21d5dc9db75c28ed361a05f5020bbba27810dd08",
+  "tokenizer_matches_existing_model": true,
+  "historical_token_counts_reproduced": 28,
+  "source_chunks_before": 26,
+  "source_chunks_after": 8,
+  "semantic_chunks_preserved": 2,
+  "title_only_chunks_before": 4,
+  "title_only_chunks_after": 0,
+  "within_target": 2,
+  "short_coherent_exceptions": 6,
+  "over_600": 0,
+  "source_text_lost_or_rewritten": false,
+  "all_26_original_chunks_preserved_once": true,
+  "source_reference_validation": "passed",
+  "both_documents_have_problem_goal_and_architecture_in_one_chunk": true,
+  "all_six_tables_with_titles_and_source_rows_preserved": true,
+  "new_inference_calls": 0,
+  "embeddings_generated": 0,
+  "production_index_changed": false,
+  "search_evaluation_performed": false,
+  "baseline_hashes_unchanged": true,
+  "baseline_hashes": {
+    "outputs/indexing-v31-001/prepared/parsed.jsonl": "b6e6c6a278f0bafe6b5bf5de625b95b1c975974c1bb619ff509ec3bcef777043",
+    "outputs/indexing-v31-001/prepared/indexing-records.jsonl": "58b3c0aa017c452f2632553cc3e756fec9f82d0bbdd2f11dc28864f4ebe77726",
+    "outputs/indexing-v31-001/prepared/enriched.jsonl": "8e8925c5a7834cb320f703c534a57402cfcaa843dbb8e38480ad39121e25f9f3",
+    "outputs/indexing-v31-001/prepared/chunks.jsonl": "f7465c13b063065f893c3424987bcf11a38baa4c7b6a9b45db68283f00aecd35",
+    "outputs/indexing-v31-001/prepared/semantic-chunks.jsonl": "0d3111f142df2e40298c7785c1c0a816cae67500026abba560b9e0d978bc1e41",
+    "outputs/indexing-v31-001/prepared/document-index.jsonl": "537e924c43218f1d732c36ceedc9b47bbe0310f0e36f6f73af5f3288b28120d4",
+    "outputs/indexing-v31-001/prepared/embedding-inputs.jsonl": "0c08d7c8affbd181c5b962bf63b38e378b34b30860a1316801107555bd439b1a",
+    "outputs/indexing-v31-001/prepared/embedding-manifest.json": "eaad210bdc298418016446fb59d1737803f6ce84c252f1f95e8be832449e3e35",
+    "outputs/indexing-v31-001/prepared/token-budget.json": "a6723fddf56c334a0a3488ccdd1905751927e62a93034b02bf60bc4d4686c387",
+    "outputs/indexing-v31-001/search-data/chunks.ndjson": "af1a981bdee4df1dfc71e01e3af80ef68d9f9c01a42a7bdab2acf441f15f4f04",
+    "outputs/indexing-v31-001/search-data/documents.json": "35d7592f2efbf81d6663134e5cf7114f76d8d00a94fc8685dbd5a9ac69ffd9b4",
+    "outputs/indexing-v31-001/search-data/chunks-mapping.json": "67d90e59228da03fc3e875f0e049271cb9144f461ce9b4be53ef67857b6e7396"
+  },
+  "limitations": [
+    "Reviewed outline for two documents only; no generalized production chunker.",
+    "400-token lower bound is not met for all coherent source sections.",
+    "Existing PDF extraction repetitions are preserved, not silently deduplicated.",
+    "No search quality claim follows from structural checks alone."
+  ]
+}

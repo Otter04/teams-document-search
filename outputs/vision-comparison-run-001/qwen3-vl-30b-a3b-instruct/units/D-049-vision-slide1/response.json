@@ -1,0 +1,46 @@
+{
+  "id": "gen-1792376061-XTqoAfQnt2VYPI2tB3en",
+  "object": "chat.completion",
+  "created": 1792376061,
+  "model": "qwen/qwen3-vl-30b-a3b-instruct",
+  "provider": "DeepInfra",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"figures\": [\n    {\n      \"bbox\": [0.045001, 0.226667, 0.945024, 0.593333],\n      \"claims\": [\n        {\n          \"bbox\": [0.045001, 0.226667, 0.945024, 0.593333],\n          \"status\": \"observed\",\n          \"text\": \"EMR 서버 구성도. L4 / 로드밸런서는 emr-was01, emr-was02, emr-db01, emr-db02 네 개의 서버로 연결된다. 각 서버는 이름, 역할, 운영체제, CPU/메모리, IP 주소를 포함한다.\"\n        }\n      ],\n      \"kind\": \"diagram\",\n      \"nodes\": [\n        {\n          \"bbox\": [0.367509, 0.226667, 0.630016, 0.333333],\n          \"id\": \"l4-load-balancer\",\n          \"label\": \"L4 / 로드밸런서\"\n        },\n        {\n          \"bbox\": [0.048751, 0.4, 0.256881, 0.593333],\n          \"id\": \"emr-was01\",\n          \"label\": \"emr-was01\\nEMR WAS\\nRHEL 8.10 | 16 vCPU / 64GB\\n10.43.10.11\"\n        },\n        {\n          \"bbox\": [0.279382, 0.4, 0.487512, 0.593333],\n          \"id\": \"emr-was02\",\n          \"label\": \"emr-was02\\nEMR WAS\\nRHEL 8.10 | 16 vCPU / 64GB\\n10.43.10.12\"\n        },\n        {\n          \"bbox\": [0.510013, 0.4, 0.718143, 0.593333],\n          \"id\": \"emr-db01\",\n          \"label\": \"emr-db01\\nEMR DB (Oracle 19c RAC)\\nRHEL 8.10 | 48 vCPU / 384GB\\n10.43.10.21\"\n        },\n        {\n          \"bbox\": [0.740644, 0.4, 0.948774, 0.593333],\n          \"id\": \"emr-db02\",\n          \"label\": \"emr-db02\\nEMR DB (Oracle 19c RAC)\\nRHEL 8.10 | 48 vCPU / 384GB\\n10.43.10.22\"\n        }\n      ],\n      \"relations\": [\n        {\n          \"bbox\": [0.045001, 0.333333, 0.367509, 0.4],\n          \"direction\": \"undirected\",\n          \"from_node\": \"l4-load-balancer\",\n          \"label\": \"\",\n          \"to_node\": \"emr-was01\"\n        },\n        {\n          \"bbox\": [0.279382, 0.333333, 0.630016, 0.4],\n          \"direction\": \"undirected\",\n          \"from_node\": \"l4-load-balancer\",\n          \"label\": \"\",\n          \"to_node\": \"emr-was02\"\n        },\n        {\n          \"bbox\": [0.510013, 0.333333, 0.945024, 0.4],\n          \"direction\": \"undirected\",\n          \"from_node\": \"l4-load-balancer\",\n          \"label\": \"\",\n          \"to_node\": \"emr-db01\"\n        },\n        {\n          \"bbox\": [0.740644, 0.333333, 0.945024, 0.4],\n          \"direction\": \"undirected\",\n          \"from_node\": \"l4-load-balancer\",\n          \"label\": \"\",\n          \"to_node\": \"emr-db02\"\n        }\n      ]\n    }\n  ],\n  \"status\": \"complete\",\n  \"tables\": [],\n  \"texts\": [\n    {\n      \"bbox\": [0.045001, 0.046667, 0.945024, 0.153333],\n      \"kind\": \"heading\",\n      \"text\": \"EMR 서버 구성도\"\n    },\n    {\n      \"bbox\": [0.045001, 0.14, 0.945024, 0.206667],\n      \"kind\": \"paragraph\",\n      \"text\": \"사업: EMR 시스템 유지보수  |  설치 위치: 새봄병원 본관 전산실  |  2025-06-28\"\n    },\n    {\n      \"bbox\": [0.367509, 0.226667, 0.630016, 0.333333],\n      \"kind\": \"paragraph\",\n      \"text\": \"L4 / 로드밸런서\"\n    },\n    {\n      \"bbox\": [0.048751, 0.4, 0.256881, 0.593333],\n      \"kind\": \"paragraph\",\n      \"text\": \"emr-was01\\nEMR WAS\\nRHEL 8.10 | 16 vCPU / 64GB\\n10.43.10.11\"\n    },\n    {\n      \"bbox\": [0.279382, 0.4, 0.487512, 0.593333],\n      \"kind\": \"paragraph\",\n      \"text\": \"emr-was02\\nEMR WAS\\nRHEL 8.10 | 16 vCPU / 64GB\\n10.43.10.12\"\n    },\n    {\n      \"bbox\": [0.510013, 0.4, 0.718143, 0.593333],\n      \"kind\": \"paragraph\",\n      \"text\": \"emr-db01\\nEMR DB (Oracle 19c RAC)\\nRHEL 8.10 | 48 vCPU / 384GB\\n10.43.10.21\"\n    },\n    {\n      \"bbox\": [0.740644, 0.4, 0.948774, 0.593333],\n      \"kind\": \"paragraph\",\n      \"text\": \"emr-db02\\nEMR DB (Oracle 19c RAC)\\nRHEL 8.10 | 48 vCPU / 384GB\\n10.43.10.22\"\n    }\n  ],\n  \"warnings\": []\n}",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4145,
+    "completion_tokens": 1706,
+    "total_tokens": 5851,
+    "cost": 0.00164535,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00164535,
+      "upstream_inference_prompt_cost": 0.00062175,
+      "upstream_inference_completions_cost": 0.0010236
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

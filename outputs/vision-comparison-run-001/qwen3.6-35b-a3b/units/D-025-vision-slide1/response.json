@@ -1,0 +1,46 @@
+{
+  "id": "gen-1792375283-1E1B51Zsa6vz6M49FGLe",
+  "object": "chat.completion",
+  "created": 1792375283,
+  "model": "qwen/qwen3.6-35b-a3b",
+  "provider": "DeepInfra",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"figures\": [\n    {\n      \"bbox\": [0.045, 0.047, 0.945, 0.947],\n      \"claims\": [\n        {\n          \"bbox\": [0.045, 0.047, 0.945, 0.947],\n          \"status\": \"observed\",\n          \"text\": \"평택센터 WMS 구축 네트워크 구성도 (Rev.1)의 전체 구조\"\n        },\n        {\n          \"bbox\": [0.33, 0.353, 0.668, 0.467],\n          \"status\": \"observed\",\n          \"text\": \"방화벽(SECUI MF2)과 코어 스위치(Aruba CX 8325)가 직렬로 연결되어 외부망과 내부망을 구분하는 구조\"\n        },\n        {\n          \"bbox\": [0.038, 0.353, 0.96, 0.467],\n          \"status\": \"observed\",\n          \"text\": \"무선 AP와 소터 제어망 스위치가 방화벽에 병렬로 연결되어 외부망에 직접 접근하는 구조\"\n        },\n        {\n          \"bbox\": [0.038, 0.7, 0.949, 0.833],\n          \"status\": \"observed\",\n          \"text\": \"서버팜, 무선 PDA 망, 소터 제어망이 코어 스위치에 연결되어 내부망으로 분리된 구조\"\n        }\n      ],\n      \"kind\": \"diagram\",\n      \"nodes\": [\n        {\n          \"bbox\": [0.405, 0.213, 0.593, 0.313],\n          \"id\": \"n1\",\n          \"label\": \"Internet / 전용회선\"\n        },\n        {\n          \"bbox\": [0.33, 0.353, 0.668, 0.467],\n          \"id\": \"n2\",\n          \"label\": \"방화벽\\nSECUI MF2 × 2\"\n        },\n        {\n          \"bbox\": [0.33, 0.507, 0.668, 0.62],\n          \"id\": \"n3\",\n          \"label\": \"코어 스위치\\nAruba CX 8325 × 2\"\n        },\n        {\n          \"bbox\": [0.038, 0.353, 0.293, 0.467],\n          \"id\": \"n4\",\n          \"label\": \"무선 AP 48대 (PDA용)\"\n        },\n        {\n          \"bbox\": [0.705, 0.353, 0.96, 0.467],\n          \"id\": \"n5\",\n          \"label\": \"소터 제어망 스위치 × 2\"\n        },\n        {\n          \"bbox\": [0.049, 0.7, 0.334, 0.833],\n          \"id\": \"n6\",\n          \"label\": \"서버팜\\n10.32.10.0/24\"\n        },\n        {\n          \"bbox\": [0.356, 0.7, 0.641, 0.833],\n          \"id\": \"n7\",\n          \"label\": \"무선 PDA 망\\n10.32.60.0/22\"\n        },\n        {\n          \"bbox\": [0.664, 0.7, 0.949, 0.833],\n          \"id\": \"n8\",\n          \"label\": \"소터 제어망\\n10.32.70.0/24\"\n        }\n      ],\n      \"relations\": [\n        {\n          \"bbox\": [0.495, 0.313, 0.505, 0.353],\n          \"direction\": \"undirected\",\n          \"from_node\": \"n1\",\n          \"label\": \"\",\n          \"to_node\": \"n2\"\n        },\n        {\n          \"bbox\": [0.495, 0.467, 0.505, 0.507],\n          \"direction\": \"undirected\",\n          \"from_node\": \"n2\",\n          \"label\": \"\",\n          \"to_node\": \"n3\"\n        },\n        {\n          \"bbox\": [0.33, 0.405, 0.33, 0.415],\n          \"direction\": \"undirected\",\n          \"from_node\": \"n2\",\n          \"label\": \"\",\n          \"to_node\": \"n4\"\n        },\n        {\n          \"bbox\": [0.668, 0.405, 0.668, 0.415],\n          \"direction\": \"undirected\",\n          \"from_node\": \"n2\",\n          \"label\": \"\",\n          \"to_node\": \"n5\"\n        },\n        {\n          \"bbox\": [0.33, 0.62, 0.33, 0.7],\n          \"direction\": \"undirected\",\n          \"from_node\": \"n3\",\n          \"label\": \"\",\n          \"to_node\": \"n6\"\n        },\n        {\n          \"bbox\": [0.5, 0.62, 0.5, 0.7],\n          \"direction\": \"undirected\",\n          \"from_node\": \"n3\",\n          \"label\": \"\",\n          \"to_node\": \"n7\"\n        },\n        {\n          \"bbox\": [0.668, 0.62, 0.668, 0.7],\n          \"direction\": \"undirected\",\n          \"from_node\": \"n3\",\n          \"label\": \"\",\n          \"to_node\": \"n8\"\n        }\n      ]\n    }\n  ],\n  \"status\": \"complete\",\n  \"tables\": [],\n  \"texts\": [\n    {\n      \"bbox\": [0.045, 0.047, 0.945, 0.153],\n      \"kind\": \"heading\",\n      \"text\": \"평택센터 WMS 구축 네트워크 구성도 (Rev.1)\"\n    },\n    {\n      \"bbox\": [0.045, 0.14, 0.945, 0.207],\n      \"kind\": \"paragraph\",\n      \"text\": \"설치 위치: 평택 물류센터  |  작성일: 2025-04-26  |  작성: 라움정보기술 기술지원팀\"\n    },\n    {\n      \"bbox\": [0.045, 0.893, 0.945, 0.947],\n      \"kind\": \"paragraph\",\n      \"text\": \"범례: 실선 = 1G/10G 이더넷 | (주)다온로지스 전산 담당자 검토 필요\"\n    }\n  ],\n  \"warnings\": []\n}",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3603,
+    "completion_tokens": 1723,
+    "total_tokens": 5326,
+    "cost": 0.00199715,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00199715,
+      "upstream_inference_prompt_cost": 0.0003603,
+      "upstream_inference_completions_cost": 0.00163685
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

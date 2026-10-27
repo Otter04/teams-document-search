@@ -1,0 +1,64 @@
+{
+  "failure_evidence": {
+    "log": "server-startup-49152.log",
+    "automatic_cache_gib": 26.81,
+    "driver_error": "NvMapMemAllocInternalTagged error 12",
+    "wrapper_error": "NVML_SUCCESS internal assertion",
+    "container_oom_killed": false
+  },
+  "diagnosis": "GPU memory allocation failed during oversized automatic cache allocation; NVML assertion is subsequent error reporting. Total capacity vs fragmentation not isolated.",
+  "changed_setting": {
+    "kv_cache_memory_bytes": 8589934592,
+    "note": "Overrides gpu_memory_utilization-based KV cache sizing. The retained 0.80 argument is not an enforced total-memory ceiling."
+  },
+  "unchanged": [
+    "model files",
+    "dtype half",
+    "cache dtype auto",
+    "context 49152",
+    "output cap 16384",
+    "max_num_seqs 1",
+    "max_num_batched_tokens 2048",
+    "eager mode",
+    "all frozen requests and evaluation criteria"
+  ],
+  "validation": "Server ready at 2026-10-20 11:35 KST. First full evaluation image D-044-vision-page2 completed HTTP 200, stop, 1275 output tokens, 217.047 seconds. Further jobs running; full-set and restart stability not yet established.",
+  "sources": [
+    "https://docs.vllm.ai/en/v0.19.0/configuration/engine_args/#--kv-cache-memory-bytes",
+    "https://github.com/pytorch/pytorch/blob/v2.10.0/c10/cuda/CUDACachingAllocator.cpp"
+  ],
+  "source_interpretation": "Upstream PyTorch places this NVML assertion in memory-error process reporting. The installed Jetson build line numbers differ; allocation error precedes it in the actual log.",
+  "second_fix": {
+    "mm_processor_cache_gb": 0,
+    "reason": "/tokenize populated frontend image cache without delivering data to engine; next generation saw absent engine item",
+    "preserved_attempt": "history/mm-cache-failure/D-044-vision-page2",
+    "quality_settings_changed": false
+  },
+  "third_fix": {
+    "skip_mm_profiling": true,
+    "reason": "Avoid maximum-feature dummy image memory profile in direct-cache-budget startup path; actual images and precision unchanged",
+    "validation": "Combined with targeted model-file page-cache eviction, server initialized and first image completed."
+  },
+  "file_cache_evidence": {
+    "method": "posix_fadvise DONTNEED, read-only existing model shard files only; no file content changes, no system-wide cache drop",
+    "files": [
+      "model-00005-of-00006.safetensors",
+      "model-00006-of-00006.safetensors",
+      "model-00003-of-00006.safetensors",
+      "model-00004-of-00006.safetensors",
+      "model-00002-of-00006.safetensors",
+      "model-00001-of-00006.safetensors"
+    ],
+    "before": {
+      "MemFree": "3628864 kB",
+      "MemAvailable": "31340524 kB",
+      "Cached": "27220160 kB"
+    },
+    "after": {
+      "MemFree": "27958644 kB",
+      "MemAvailable": "31343660 kB",
+      "Cached": "2915964 kB"
+    }
+  },
+  "updated_diagnosis": "Model shard filesystem cache consumed about 23 GiB after loading. Targeted read-cache eviction increased MemFree from about 3.5 to 26.7 GiB while MemAvailable barely changed. This exposes unified-memory pressure hidden by reclaimable-cache accounting. Pending actual generation to confirm recovery."
+}

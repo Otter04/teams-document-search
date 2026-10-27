@@ -1,0 +1,49 @@
+{
+  "model": "qwen3.6-35b-a3b",
+  "provider": "local-vllm",
+  "quantization": "awq-4bit",
+  "kind": "vision",
+  "doc_id": "D-020",
+  "id": "D-020-vision-slide5",
+  "request_sha256": "506801ca2a0b55b9680a8c85603340e55381b526940cd4b5641878471067b67f",
+  "baseline_request_sha256": "41c3b0bcd9171ac2346560737f0085eeaf1b4522b119684803b7845fc1ac2192",
+  "messages_sha256": "793c854181c9dea4625d5311f4e0216cb946375f73e36e6d2372e9f1f027520c",
+  "response": {
+    "id": "chatcmpl-8d90c25fc0c186e7",
+    "object": "chat.completion",
+    "created": 1792476314,
+    "model": "qwen3.6-35b-a3b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"figures\": [\n    {\n      \"bbox\": [0.045, 0.047, 0.945, 0.76],\n      \"claims\": [\n        {\n          \"bbox\": [0.045, 0.047, 0.945, 0.76],\n          \"status\": \"observed\",\n          \"text\": \"제안 아키텍처는 평택 물류센터에 설치되며, 사용자/외부망이 보안·네트워크(SECUI MF2 × 2)를 거쳐 WMS WAS(wms-was01, wms-was02), WMS DB(PostgreSQL 16, wms-db01), 소터 연동 미들웨어(wms-sorter01)로 연결된다.\"\n        }\n      ],\n      \"kind\": \"diagram\",\n      \"nodes\": [\n        {\n          \"bbox\": [0.39, 0.227, 0.615, 0.333],\n          \"id\": \"node_1\",\n          \"label\": \"사용자 / 외부망\"\n        },\n        {\n          \"bbox\": [0.353, 0.387, 0.653, 0.507],\n          \"id\": \"node_2\",\n          \"label\": \"보안·네트워크\\nSECUI MF2 × 2\"\n        },\n        {\n          \"bbox\": [0.068, 0.6, 0.27, 0.76],\n          \"id\": \"node_3\",\n          \"label\": \"WMS WAS\\nwms-was01\"\n        },\n        {\n          \"bbox\": [0.285, 0.6, 0.488, 0.76],\n          \"id\": \"node_4\",\n          \"label\": \"WMS WAS\\nwms-was02\"\n        },\n        {\n          \"bbox\": [0.503, 0.6, 0.705, 0.76],\n          \"id\": \"node_5\",\n          \"label\": \"WMS DB (PostgreSQL 16)\\nwms-db01\"\n        },\n        {\n          \"bbox\": [0.72, 0.6, 0.923, 0.76],\n          \"id\": \"node_6\",\n          \"label\": \"소터 연동 미들웨어\\nwms-sorter01\"\n        }\n      ],\n      \"relations\": [\n        {\n          \"bbox\": [0.502, 0.333, 0.502, 0.387],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node_1\",\n          \"label\": \"\",\n          \"to_node\": \"node_2\"\n        },\n        {\n          \"bbox\": [0.353, 0.507, 0.068, 0.6],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node_2\",\n          \"label\": \"\",\n          \"to_node\": \"node_3\"\n        },\n        {\n          \"bbox\": [0.353, 0.507, 0.285, 0.6],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node_2\",\n          \"label\": \"\",\n          \"to_node\": \"node_4\"\n        },\n        {\n          \"bbox\": [0.353, 0.507, 0.503, 0.6],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node_2\",\n          \"label\": \"\",\n          \"to_node\": \"node_5\"\n        },\n        {\n          \"bbox\": [0.353, 0.507, 0.72, 0.6],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node_2\",\n          \"label\": \"\",\n          \"to_node\": \"node_6\"\n        }\n      ]\n    }\n  ],\n  \"status\": \"complete\",\n  \"tables\": [],\n  \"texts\": [\n    {\n      \"bbox\": [0.045, 0.047, 0.945, 0.153],\n      \"kind\": \"heading\",\n      \"text\": \"제안 아키텍처\"\n    },\n    {\n      \"bbox\": [0.045, 0.14, 0.945, 0.207],\n      \"kind\": \"paragraph\",\n      \"text\": \"설치 위치: 평택 물류센터\"\n    }\n  ],\n  \"warnings\": []\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 3999,
+      "total_tokens": 5138,
+      "completion_tokens": 1139,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "http_status": 200,
+  "elapsed_ms": 179031
+}

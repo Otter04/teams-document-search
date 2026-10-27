@@ -1,0 +1,46 @@
+{
+  "id": "gen-1792375427-HoEETeLCxDAxlpE0higP",
+  "object": "chat.completion",
+  "created": 1792375427,
+  "model": "qwen/qwen3-vl-30b-a3b-instruct",
+  "provider": "DeepInfra",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"figures\": [\n    {\n      \"bbox\": [0.045001, 0.046667, 0.945024, 0.946667],\n      \"claims\": [\n        {\n          \"bbox\": [0.045001, 0.046667, 0.945024, 0.153333],\n          \"status\": \"observed\",\n          \"text\": \"평택센터 WMS 구축 네트워크 구성도 (Rev.1)\"\n        },\n        {\n          \"bbox\": [0.045001, 0.14, 0.945024, 0.206667],\n          \"status\": \"observed\",\n          \"text\": \"설치 위치: 평택 물류센터  |  작성일: 2025-04-26  |  작성: 라움정보기술 기술지원팀\"\n        },\n        {\n          \"bbox\": [0.045001, 0.893333, 0.945024, 0.946667],\n          \"status\": \"observed\",\n          \"text\": \"범례: 실선 = 1G/10G 이더넷 | (주)다온로지스 전산 담당자 검토 필요\"\n        },\n        {\n          \"bbox\": [0.045001, 0.046667, 0.945024, 0.946667],\n          \"status\": \"inferred\",\n          \"text\": \"이 이미지는 평택 물류센터에 설치될 WMS 시스템의 네트워크 구성을 보여주며, 인터넷/전용회선을 통해 방화벽과 코어 스위치를 거쳐 서버팜, 무선 PDA망, 소터 제어망으로 연결되는 구조를 나타낸다.\"\n        }\n      ],\n      \"kind\": \"diagram\",\n      \"nodes\": [\n        {\n          \"bbox\": [0.40501, 0.213333, 0.592515, 0.313333],\n          \"id\": \"node-1\",\n          \"label\": \"Internet / 전용회선\"\n        },\n        {\n          \"bbox\": [0.330008, 0.353333, 0.667517, 0.466667],\n          \"id\": \"node-2\",\n          \"label\": \"방화벽\\nSECUI MF2 × 2\"\n        },\n        {\n          \"bbox\": [0.330008, 0.506667, 0.667517, 0.62],\n          \"id\": \"node-3\",\n          \"label\": \"코어 스위치\\nAruba CX 8325 × 2\"\n        },\n        {\n          \"bbox\": [0.037501, 0.353333, 0.292507, 0.466667],\n          \"id\": \"node-4\",\n          \"label\": \"무선 AP 48대 (PDA용)\"\n        },\n        {\n          \"bbox\": [0.705018, 0.353333, 0.960024, 0.466667],\n          \"id\": \"node-5\",\n          \"label\": \"소터 제어망 스위치 × 2\"\n        },\n        {\n          \"bbox\": [0.048751, 0.7, 0.333758, 0.833333],\n          \"id\": \"node-6\",\n          \"label\": \"서버팜\\n10.32.10.0/24\"\n        },\n        {\n          \"bbox\": [0.356259, 0.7, 0.641266, 0.833333],\n          \"id\": \"node-7\",\n          \"label\": \"무선 PDA 망\\n10.32.60.0/22\"\n        },\n        {\n          \"bbox\": [0.663767, 0.7, 0.948774, 0.833333],\n          \"id\": \"node-8\",\n          \"label\": \"소터 제어망\\n10.32.70.0/24\"\n        }\n      ],\n      \"relations\": [\n        {\n          \"bbox\": [0.40501, 0.313333, 0.592515, 0.353333],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node-1\",\n          \"label\": \"\",\n          \"to_node\": \"node-2\"\n        },\n        {\n          \"bbox\": [0.330008, 0.466667, 0.667517, 0.506667],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node-2\",\n          \"label\": \"\",\n          \"to_node\": \"node-3\"\n        },\n        {\n          \"bbox\": [0.037501, 0.466667, 0.330008, 0.506667],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node-2\",\n          \"label\": \"\",\n          \"to_node\": \"node-4\"\n        },\n        {\n          \"bbox\": [0.667517, 0.466667, 0.960024, 0.506667],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node-2\",\n          \"label\": \"\",\n          \"to_node\": \"node-5\"\n        },\n        {\n          \"bbox\": [0.330008, 0.62, 0.667517, 0.7],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node-3\",\n          \"label\": \"\",\n          \"to_node\": \"node-6\"\n        },\n        {\n          \"bbox\": [0.330008, 0.62, 0.667517, 0.7],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node-3\",\n          \"label\": \"\",\n          \"to_node\": \"node-7\"\n        },\n        {\n          \"bbox\": [0.330008, 0.62, 0.667517, 0.7],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node-3\",\n          \"label\": \"\",\n          \"to_node\": \"node-8\"\n        }\n      ]\n    }\n  ],\n  \"status\": \"complete\",\n  \"tables\": [],\n  \"texts\": [\n    {\n      \"bbox\": [0.045001, 0.046667, 0.945024, 0.153333],\n      \"kind\": \"heading\",\n      \"text\": \"평택센터 WMS 구축 네트워크 구성도 (Rev.1)\"\n    },\n    {\n      \"bbox\": [0.045001, 0.14, 0.945024, 0.206667],\n      \"kind\": \"paragraph\",\n      \"text\": \"설치 위치: 평택 물류센터  |  작성일: 2025-04-26  |  작성: 라움정보기술 기술지원팀\"\n    },\n    {\n      \"bbox\": [0.40501, 0.213333, 0.592515, 0.313333],\n      \"kind\": \"paragraph\",\n      \"text\": \"Internet / 전용회선\"\n    },\n    {\n      \"bbox\": [0.330008, 0.353333, 0.667517, 0.466667],\n      \"kind\": \"paragraph\",\n      \"text\": \"방화벽\\nSECUI MF2 × 2\"\n    },\n    {\n      \"bbox\": [0.330008, 0.506667, 0.667517, 0.62],\n      \"kind\": \"paragraph\",\n      \"text\": \"코어 스위치\\nAruba CX 8325 × 2\"\n    },\n    {\n      \"bbox\": [0.037501, 0.353333, 0.292507, 0.466667],\n      \"kind\": \"paragraph\",\n      \"text\": \"무선 AP 48대 (PDA용)\"\n    },\n    {\n      \"bbox\": [0.705018, 0.353333, 0.960024, 0.466667],\n      \"kind\": \"paragraph\",\n      \"text\": \"소터 제어망 스위치 × 2\"\n    },\n    {\n      \"bbox\": [0.048751, 0.7, 0.333758, 0.833333],\n      \"kind\": \"paragraph\",\n      \"text\": \"서버팜\\n10.32.10.0/24\"\n    },\n    {\n      \"bbox\": [0.356259, 0.7, 0.641266, 0.833333],\n      \"kind\": \"paragraph\",\n      \"text\": \"무선 PDA 망\\n10.32.60.0/22\"\n    },\n    {\n      \"bbox\": [0.663767, 0.7, 0.948774, 0.833333],\n      \"kind\": \"paragraph\",\n      \"text\": \"소터 제어망\\n10.32.70.0/24\"\n    },\n    {\n      \"bbox\": [0.045001, 0.893333, 0.945024, 0.946667],\n      \"kind\": \"paragraph\",\n      \"text\": \"범례: 실선 = 1G/10G 이더넷 | (주)다온로지스 전산 담당자 검토 필요\"\n    }\n  ],\n  \"warnings\": []\n}",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4842,
+    "completion_tokens": 2512,
+    "total_tokens": 7354,
+    "cost": 0.0022335,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0022335,
+      "upstream_inference_prompt_cost": 0.0007263,
+      "upstream_inference_completions_cost": 0.0015072
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,423 @@
+{
+  "schema_version": "1.1.0",
+  "record_kind": "enrichment_result",
+  "doc_id": "D-002",
+  "source": {
+    "file_name": "㈜청람정밀_2025 MES 고도화 구축_제안서.pdf",
+    "format": "pdf",
+    "relative_path": "sites/영업1팀/Shared Documents/청람정밀/2025_2025 MES 고도화 구축/제안/㈜청람정밀_2025 MES 고도화 구축_제안서.pdf",
+    "sha256": "788391c986bb0593f7dd65ae1e3cdcea858b72437e449d280aa813f0375e017f",
+    "web_url": null,
+    "encoding": null
+  },
+  "input_record_sha256": "8756d2fc42ad3537179012a044656e1180f1718cf9bab7d598c7b6b476e87c96",
+  "rules_version": "rules-0.2.0",
+  "scope": "native_text_and_source_metadata",
+  "model_called": false,
+  "status": "partial",
+  "native_text_present": true,
+  "fields": {
+    "문서종류": {
+      "value": "제안서",
+      "status": "extracted",
+      "rule_id": "type.filename+type.native_title",
+      "evidence": [
+        {
+          "kind": "source",
+          "ref": "file_name",
+          "quote": "㈜청람정밀_2025 MES 고도화 구축_제안서.pdf",
+          "loc": null
+        },
+        {
+          "kind": "block",
+          "ref": "D-002-788391c986bb-p1-line2",
+          "quote": "제안서",
+          "loc": {
+            "kind": "pdf",
+            "page": 1,
+            "bbox": {
+              "frame_asset_id": "D-002-788391c986bb-page-1",
+              "x0": 0.07485355682854648,
+              "y0": 0.47264739259259264,
+              "x1": 0.14388079063236148,
+              "y1": 0.5171085037037038,
+              "precision": "exact"
+            }
+          }
+        }
+      ],
+      "candidates": [],
+      "reason": null
+    },
+    "거래처": {
+      "value": "청람정밀",
+      "status": "extracted",
+      "rule_id": "client.explicit_party_alias+client.folder_alias",
+      "evidence": [
+        {
+          "kind": "source",
+          "ref": "relative_path",
+          "quote": "sites/영업1팀/Shared Documents/청람정밀/2025_2025 MES 고도화 구축/제안/㈜청람정밀_2025 MES 고도화 구축_제안서.pdf",
+          "loc": null
+        },
+        {
+          "kind": "block",
+          "ref": "D-002-788391c986bb-p1-line3",
+          "quote": "㈜청람정밀 귀중",
+          "loc": {
+            "kind": "pdf",
+            "page": 1,
+            "bbox": {
+              "frame_asset_id": "D-002-788391c986bb-page-1",
+              "x0": 0.07485355682854648,
+              "y0": 0.7083689925925926,
+              "x1": 0.18681472016345463,
+              "y1": 0.7379745481481481,
+              "precision": "exact"
+            }
+          }
+        }
+      ],
+      "candidates": [],
+      "reason": null
+    },
+    "문서일자": {
+      "value": "2025-01-13",
+      "status": "extracted",
+      "rule_id": "date.proposal_cover",
+      "evidence": [
+        {
+          "kind": "block",
+          "ref": "D-002-788391c986bb-p1-line4",
+          "quote": "2025. 01. 13. | 라움정보기술 주식회사",
+          "loc": {
+            "kind": "pdf",
+            "page": 1,
+            "bbox": {
+              "frame_asset_id": "D-002-788391c986bb-page-1",
+              "x0": 0.07485355682854648,
+              "y0": 0.7536441981481482,
+              "x1": 0.3575953996961881,
+              "y1": 0.7846412148148149,
+              "precision": "exact"
+            }
+          }
+        }
+      ],
+      "candidates": [],
+      "reason": null
+    },
+    "대상시스템": {
+      "value": "MES",
+      "status": "extracted",
+      "rule_id": "system.filename_term+system.title_term",
+      "evidence": [
+        {
+          "kind": "source",
+          "ref": "file_name",
+          "quote": "㈜청람정밀_2025 MES 고도화 구축_제안서.pdf",
+          "loc": null
+        },
+        {
+          "kind": "block",
+          "ref": "D-002-788391c986bb-p1-line1",
+          "quote": "2025 MES 고도화 구축",
+          "loc": {
+            "kind": "pdf",
+            "page": 1,
+            "bbox": {
+              "frame_asset_id": "D-002-788391c986bb-page-1",
+              "x0": 0.07485355682854648,
+              "y0": 0.3177449574074074,
+              "x1": 0.5038229771501406,
+              "y1": 0.3952946962962963,
+              "precision": "exact"
+            }
+          }
+        }
+      ],
+      "candidates": [],
+      "reason": null
+    },
+    "상태": {
+      "value": null,
+      "status": "pending_vision",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "unresolved with native rules; visual units remain unprocessed"
+    },
+    "계약번호": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "계약유형": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "계약시작일": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "계약종료일": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "금액": {
+      "value": "265400000",
+      "status": "extracted",
+      "rule_id": "amount.labelled_representative",
+      "evidence": [
+        {
+          "kind": "block",
+          "ref": "D-002-788391c986bb-p8-line2",
+          "quote": "총 제안금액 : ₩265,400,000 ( 부가가치세 별도 )",
+          "loc": {
+            "kind": "pdf",
+            "page": 8,
+            "bbox": {
+              "frame_asset_id": "D-002-788391c986bb-page-8",
+              "x0": 0.07485355682854648,
+              "y0": 0.5763782907407408,
+              "x1": 0.5635974194373905,
+              "y1": 0.6190280296296296,
+              "precision": "exact"
+            }
+          }
+        }
+      ],
+      "candidates": [],
+      "reason": null
+    },
+    "통화": {
+      "value": "KRW",
+      "status": "extracted",
+      "rule_id": "currency.same_amount_span",
+      "evidence": [
+        {
+          "kind": "block",
+          "ref": "D-002-788391c986bb-p8-line2",
+          "quote": "총 제안금액 : ₩265,400,000 ( 부가가치세 별도 )",
+          "loc": {
+            "kind": "pdf",
+            "page": 8,
+            "bbox": {
+              "frame_asset_id": "D-002-788391c986bb-page-8",
+              "x0": 0.07485355682854648,
+              "y0": 0.5763782907407408,
+              "x1": 0.5635974194373905,
+              "y1": 0.6190280296296296,
+              "precision": "exact"
+            }
+          }
+        }
+      ],
+      "candidates": [],
+      "reason": null
+    },
+    "VAT": {
+      "value": "별도",
+      "status": "extracted",
+      "rule_id": "vat.same_representative_amount",
+      "evidence": [
+        {
+          "kind": "block",
+          "ref": "D-002-788391c986bb-p8-line2",
+          "quote": "총 제안금액 : ₩265,400,000 ( 부가가치세 별도 )",
+          "loc": {
+            "kind": "pdf",
+            "page": 8,
+            "bbox": {
+              "frame_asset_id": "D-002-788391c986bb-page-8",
+              "x0": 0.07485355682854648,
+              "y0": 0.5763782907407408,
+              "x1": 0.5635974194373905,
+              "y1": 0.6190280296296296,
+              "precision": "exact"
+            }
+          }
+        }
+      ],
+      "candidates": [],
+      "reason": null
+    },
+    "견적번호": {
+      "value": null,
+      "status": "pending_vision",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "unresolved with native rules; visual units remain unprocessed"
+    },
+    "견적유효기간": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "사이트": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "작업명": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "로그시작": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "로그종료": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "실행결과": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "오류코드": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "사업명": {
+      "value": null,
+      "status": "pending_vision",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "unresolved with native rules; visual units remain unprocessed"
+    }
+  },
+  "pending_visual_units": [
+    {
+      "unit_id": "vision:page1",
+      "loc": {
+        "kind": "pdf",
+        "page": 1
+      },
+      "reason": "native text page includes image content"
+    },
+    {
+      "unit_id": "vision:page2",
+      "loc": {
+        "kind": "pdf",
+        "page": 2
+      },
+      "reason": "native text page includes image content"
+    },
+    {
+      "unit_id": "vision:page3",
+      "loc": {
+        "kind": "pdf",
+        "page": 3
+      },
+      "reason": "native text page includes image content"
+    },
+    {
+      "unit_id": "vision:page4",
+      "loc": {
+        "kind": "pdf",
+        "page": 4
+      },
+      "reason": "native text page includes image content"
+    },
+    {
+      "unit_id": "vision:page5",
+      "loc": {
+        "kind": "pdf",
+        "page": 5
+      },
+      "reason": "native text page includes image content"
+    },
+    {
+      "unit_id": "vision:page9",
+      "loc": {
+        "kind": "pdf",
+        "page": 9
+      },
+      "reason": "native text page includes image content"
+    }
+  ],
+  "deferred": {
+    "summary": "not_run",
+    "family": "not_run",
+    "latest_version": "not_run",
+    "vision": "pending"
+  },
+  "date_context": {
+    "observations": [
+      {
+        "role": "cover_date",
+        "value": "2025-01-13",
+        "rule_id": "date.proposal_cover",
+        "evidence": [
+          {
+            "kind": "block",
+            "ref": "D-002-788391c986bb-p1-line4",
+            "quote": "2025. 01. 13. | 라움정보기술 주식회사",
+            "loc": {
+              "kind": "pdf",
+              "page": 1,
+              "bbox": {
+                "frame_asset_id": "D-002-788391c986bb-page-1",
+                "x0": 0.07485355682854648,
+                "y0": 0.7536441981481482,
+                "x1": 0.3575953996961881,
+                "y1": 0.7846412148148149,
+                "precision": "exact"
+              }
+            }
+          }
+        ],
+        "assertion": "source_statement_only"
+      }
+    ],
+    "selected_roles": [
+      "cover_date"
+    ],
+    "selection_reason": "source_specific_representative_date",
+    "actual_signature_verified": false
+  }
+}

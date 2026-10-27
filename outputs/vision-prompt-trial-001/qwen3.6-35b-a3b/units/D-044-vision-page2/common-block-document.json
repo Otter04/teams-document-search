@@ -1,0 +1,752 @@
+{
+  "schema_version": "1.0.0",
+  "record_kind": "run_result",
+  "doc_id": "D-044",
+  "source": {
+    "file_name": "PACS 스토리지 증설_계약서(서명본).pdf",
+    "format": "pdf",
+    "relative_path": "sites/영업2팀/Shared Documents/새봄병원/2025_PACS 스토리지 증설/계약/PACS 스토리지 증설_계약서(서명본).pdf",
+    "sha256": "de927cb754d7f23e154178cbae852e75a43b61a84cdf28d981d597e5a2b7081e",
+    "web_url": null,
+    "encoding": null
+  },
+  "coverage": {
+    "scope": "full_document",
+    "unit_inventory_complete": true,
+    "units": [
+      {
+        "unit_id": "native:page1",
+        "loc": {
+          "kind": "pdf",
+          "page": 1
+        },
+        "required": true,
+        "status": "completed",
+        "reason": null,
+        "block_ids": []
+      },
+      {
+        "unit_id": "vision:page1",
+        "loc": {
+          "kind": "pdf",
+          "page": 1
+        },
+        "required": true,
+        "status": "pending",
+        "reason": "page has insufficient native text; vision extraction required",
+        "block_ids": []
+      },
+      {
+        "unit_id": "native:page2",
+        "loc": {
+          "kind": "pdf",
+          "page": 2
+        },
+        "required": true,
+        "status": "completed",
+        "reason": null,
+        "block_ids": []
+      },
+      {
+        "unit_id": "vision:page2",
+        "loc": {
+          "kind": "pdf",
+          "page": 2
+        },
+        "required": true,
+        "status": "completed",
+        "reason": "model extraction; source accuracy not yet reviewed",
+        "block_ids": [
+          "D-044-vision-page2-b1",
+          "D-044-vision-page2-b2",
+          "D-044-vision-page2-b3",
+          "D-044-vision-page2-b4",
+          "D-044-vision-page2-b5",
+          "D-044-vision-page2-b6",
+          "D-044-vision-page2-b7",
+          "D-044-vision-page2-b8"
+        ]
+      }
+    ]
+  },
+  "runs": [
+    {
+      "run_id": "native",
+      "method": "native_parser",
+      "implementation": "parser-2.0.0",
+      "model_id": null,
+      "provider": null,
+      "quantization": null,
+      "prompt_version": null,
+      "input_asset_ids": []
+    },
+    {
+      "run_id": "vision-page2",
+      "method": "vision_llm",
+      "implementation": "rag-vision-1.0.0",
+      "model_id": "qwen/qwen3.6-35b-a3b",
+      "provider": "DeepInfra",
+      "quantization": "fp8",
+      "prompt_version": "vision-prompt-2.0.0",
+      "input_asset_ids": [
+        "D-044-de927cb754d7-page-2"
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "asset_id": "D-044-de927cb754d7-page-1",
+      "path": "assets/D-044/page-1.png",
+      "kind": "page_image",
+      "loc": {
+        "kind": "pdf",
+        "page": 1
+      },
+      "width": 1658,
+      "height": 2145,
+      "sha256": "6ee4fb6dac1018c2ee29b3bfb2d94a209d4f7698cef85e7cbbfbf3d587629e16"
+    },
+    {
+      "asset_id": "D-044-de927cb754d7-page-2",
+      "path": "assets/D-044/page-2.png",
+      "kind": "page_image",
+      "loc": {
+        "kind": "pdf",
+        "page": 2
+      },
+      "width": 1658,
+      "height": 2145,
+      "sha256": "0fbfee9efe04f3bc9966719a4a5b4b74c2a073ddec07c0025018736cda8a0941"
+    }
+  ],
+  "blocks": [
+    {
+      "block_id": "D-044-vision-page2-b1",
+      "parent_id": null,
+      "order": 1,
+      "type": "paragraph",
+      "text": "본 계약과 관련하여 분쟁이 발생한 경우 양 당사자는 협의하여 해결하며, 협의가 이루어지지 않을 때에는 서울중앙지방법원을 관할 법원으로 한다.",
+      "loc": {
+        "kind": "pdf",
+        "page": 2,
+        "bbox": {
+          "frame_asset_id": "D-044-de927cb754d7-page-2",
+          "x0": 0.12,
+          "y0": 0.12,
+          "x1": 0.88,
+          "y1": 0.22,
+          "precision": "approximate"
+        }
+      },
+      "heading_path": [],
+      "run_ref": "vision-page2",
+      "evidence": [
+        {
+          "evidence_id": "literal",
+          "kind": "literal",
+          "loc": {
+            "kind": "pdf",
+            "page": 2,
+            "bbox": {
+              "frame_asset_id": "D-044-de927cb754d7-page-2",
+              "x0": 0.12,
+              "y0": 0.12,
+              "x1": 0.88,
+              "y1": 0.22,
+              "precision": "approximate"
+            }
+          },
+          "quote": "본 계약과 관련하여 분쟁이 발생한 경우 양 당사자는 협의하여 해결하며, 협의가 이루어지지 않을 때에는 서울중앙지방법원을 관할 법원으로 한다."
+        }
+      ],
+      "claims": [],
+      "context_ids": [],
+      "content_refs": [],
+      "warnings": [
+        "model_output_needs_source_review"
+      ]
+    },
+    {
+      "block_id": "D-044-vision-page2-b2",
+      "parent_id": null,
+      "order": 2,
+      "type": "paragraph",
+      "text": "본 계약의 성립을 증명하기 위하여 계약서 2부를 작성하여 갑과 을이 기명날인한 후 각 1부씩 보관한다.",
+      "loc": {
+        "kind": "pdf",
+        "page": 2,
+        "bbox": {
+          "frame_asset_id": "D-044-de927cb754d7-page-2",
+          "x0": 0.12,
+          "y0": 0.24,
+          "x1": 0.88,
+          "y1": 0.32,
+          "precision": "approximate"
+        }
+      },
+      "heading_path": [],
+      "run_ref": "vision-page2",
+      "evidence": [
+        {
+          "evidence_id": "literal",
+          "kind": "literal",
+          "loc": {
+            "kind": "pdf",
+            "page": 2,
+            "bbox": {
+              "frame_asset_id": "D-044-de927cb754d7-page-2",
+              "x0": 0.12,
+              "y0": 0.24,
+              "x1": 0.88,
+              "y1": 0.32,
+              "precision": "approximate"
+            }
+          },
+          "quote": "본 계약의 성립을 증명하기 위하여 계약서 2부를 작성하여 갑과 을이 기명날인한 후 각 1부씩 보관한다."
+        }
+      ],
+      "claims": [],
+      "context_ids": [],
+      "content_refs": [],
+      "warnings": [
+        "model_output_needs_source_review"
+      ]
+    },
+    {
+      "block_id": "D-044-vision-page2-b3",
+      "parent_id": null,
+      "order": 3,
+      "type": "paragraph",
+      "text": "2025년 3월 22일",
+      "loc": {
+        "kind": "pdf",
+        "page": 2,
+        "bbox": {
+          "frame_asset_id": "D-044-de927cb754d7-page-2",
+          "x0": 0.4,
+          "y0": 0.34,
+          "x1": 0.6,
+          "y1": 0.36,
+          "precision": "approximate"
+        }
+      },
+      "heading_path": [],
+      "run_ref": "vision-page2",
+      "evidence": [
+        {
+          "evidence_id": "literal",
+          "kind": "literal",
+          "loc": {
+            "kind": "pdf",
+            "page": 2,
+            "bbox": {
+              "frame_asset_id": "D-044-de927cb754d7-page-2",
+              "x0": 0.4,
+              "y0": 0.34,
+              "x1": 0.6,
+              "y1": 0.36,
+              "precision": "approximate"
+            }
+          },
+          "quote": "2025년 3월 22일"
+        }
+      ],
+      "claims": [],
+      "context_ids": [],
+      "content_refs": [],
+      "warnings": [
+        "model_output_needs_source_review"
+      ]
+    },
+    {
+      "block_id": "D-044-vision-page2-b4",
+      "parent_id": null,
+      "order": 4,
+      "type": "table",
+      "text": "",
+      "loc": {
+        "kind": "pdf",
+        "page": 2,
+        "bbox": {
+          "frame_asset_id": "D-044-de927cb754d7-page-2",
+          "x0": 0.12,
+          "y0": 0.36,
+          "x1": 0.88,
+          "y1": 0.56,
+          "precision": "approximate"
+        }
+      },
+      "heading_path": [],
+      "run_ref": "vision-page2",
+      "evidence": [],
+      "claims": [],
+      "context_ids": [],
+      "content_refs": [],
+      "warnings": [
+        "model_output_needs_source_review"
+      ],
+      "table": {
+        "row_count": 4,
+        "column_count": 2,
+        "header_rows": [
+          1
+        ],
+        "header_status": "unknown",
+        "continued_from": null
+      }
+    },
+    {
+      "block_id": "D-044-vision-page2-b5",
+      "parent_id": "D-044-vision-page2-b4",
+      "order": 5,
+      "type": "table_row",
+      "text": "갑\t을",
+      "loc": {
+        "kind": "pdf",
+        "page": 2,
+        "bbox": {
+          "frame_asset_id": "D-044-de927cb754d7-page-2",
+          "x0": 0.12,
+          "y0": 0.36,
+          "x1": 0.88,
+          "y1": 0.56,
+          "precision": "approximate"
+        }
+      },
+      "heading_path": [],
+      "run_ref": "vision-page2",
+      "evidence": [
+        {
+          "evidence_id": "cell1",
+          "kind": "literal",
+          "loc": {
+            "kind": "pdf",
+            "page": 2,
+            "bbox": {
+              "frame_asset_id": "D-044-de927cb754d7-page-2",
+              "x0": 0.12,
+              "y0": 0.36,
+              "x1": 0.5,
+              "y1": 0.39,
+              "precision": "approximate"
+            }
+          },
+          "quote": "갑"
+        },
+        {
+          "evidence_id": "cell2",
+          "kind": "literal",
+          "loc": {
+            "kind": "pdf",
+            "page": 2,
+            "bbox": {
+              "frame_asset_id": "D-044-de927cb754d7-page-2",
+              "x0": 0.5,
+              "y0": 0.36,
+              "x1": 0.88,
+              "y1": 0.39,
+              "precision": "approximate"
+            }
+          },
+          "quote": "을"
+        }
+      ],
+      "claims": [],
+      "context_ids": [],
+      "content_refs": [],
+      "warnings": [
+        "model_output_needs_source_review"
+      ],
+      "cells": [
+        {
+          "row": 1,
+          "column": 1,
+          "row_span": 1,
+          "column_span": 1,
+          "text": "갑",
+          "value_status": "known",
+          "role": "header",
+          "value": null,
+          "formula": null,
+          "number_format": null,
+          "loc": {
+            "kind": "pdf",
+            "page": 2,
+            "bbox": {
+              "frame_asset_id": "D-044-de927cb754d7-page-2",
+              "x0": 0.12,
+              "y0": 0.36,
+              "x1": 0.5,
+              "y1": 0.39,
+              "precision": "approximate"
+            }
+          }
+        },
+        {
+          "row": 1,
+          "column": 2,
+          "row_span": 1,
+          "column_span": 1,
+          "text": "을",
+          "value_status": "known",
+          "role": "header",
+          "value": null,
+          "formula": null,
+          "number_format": null,
+          "loc": {
+            "kind": "pdf",
+            "page": 2,
+            "bbox": {
+              "frame_asset_id": "D-044-de927cb754d7-page-2",
+              "x0": 0.5,
+              "y0": 0.36,
+              "x1": 0.88,
+              "y1": 0.39,
+              "precision": "approximate"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "block_id": "D-044-vision-page2-b6",
+      "parent_id": "D-044-vision-page2-b4",
+      "order": 6,
+      "type": "table_row",
+      "text": "상호: 의료법인 새봄의료재단\t상호: 라움정보기술 주식회사",
+      "loc": {
+        "kind": "pdf",
+        "page": 2,
+        "bbox": {
+          "frame_asset_id": "D-044-de927cb754d7-page-2",
+          "x0": 0.12,
+          "y0": 0.36,
+          "x1": 0.88,
+          "y1": 0.56,
+          "precision": "approximate"
+        }
+      },
+      "heading_path": [],
+      "run_ref": "vision-page2",
+      "evidence": [
+        {
+          "evidence_id": "cell1",
+          "kind": "literal",
+          "loc": {
+            "kind": "pdf",
+            "page": 2,
+            "bbox": {
+              "frame_asset_id": "D-044-de927cb754d7-page-2",
+              "x0": 0.12,
+              "y0": 0.39,
+              "x1": 0.5,
+              "y1": 0.42,
+              "precision": "approximate"
+            }
+          },
+          "quote": "상호: 의료법인 새봄의료재단"
+        },
+        {
+          "evidence_id": "cell2",
+          "kind": "literal",
+          "loc": {
+            "kind": "pdf",
+            "page": 2,
+            "bbox": {
+              "frame_asset_id": "D-044-de927cb754d7-page-2",
+              "x0": 0.5,
+              "y0": 0.39,
+              "x1": 0.88,
+              "y1": 0.42,
+              "precision": "approximate"
+            }
+          },
+          "quote": "상호: 라움정보기술 주식회사"
+        }
+      ],
+      "claims": [],
+      "context_ids": [],
+      "content_refs": [],
+      "warnings": [
+        "model_output_needs_source_review"
+      ],
+      "cells": [
+        {
+          "row": 2,
+          "column": 1,
+          "row_span": 1,
+          "column_span": 1,
+          "text": "상호: 의료법인 새봄의료재단",
+          "value_status": "known",
+          "role": "data",
+          "value": null,
+          "formula": null,
+          "number_format": null,
+          "loc": {
+            "kind": "pdf",
+            "page": 2,
+            "bbox": {
+              "frame_asset_id": "D-044-de927cb754d7-page-2",
+              "x0": 0.12,
+              "y0": 0.39,
+              "x1": 0.5,
+              "y1": 0.42,
+              "precision": "approximate"
+            }
+          }
+        },
+        {
+          "row": 2,
+          "column": 2,
+          "row_span": 1,
+          "column_span": 1,
+          "text": "상호: 라움정보기술 주식회사",
+          "value_status": "known",
+          "role": "data",
+          "value": null,
+          "formula": null,
+          "number_format": null,
+          "loc": {
+            "kind": "pdf",
+            "page": 2,
+            "bbox": {
+              "frame_asset_id": "D-044-de927cb754d7-page-2",
+              "x0": 0.5,
+              "y0": 0.39,
+              "x1": 0.88,
+              "y1": 0.42,
+              "precision": "approximate"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "block_id": "D-044-vision-page2-b7",
+      "parent_id": "D-044-vision-page2-b4",
+      "order": 7,
+      "type": "table_row",
+      "text": "대표이사: 류정원 (인)\t대표이사: 정태오 (인)",
+      "loc": {
+        "kind": "pdf",
+        "page": 2,
+        "bbox": {
+          "frame_asset_id": "D-044-de927cb754d7-page-2",
+          "x0": 0.12,
+          "y0": 0.36,
+          "x1": 0.88,
+          "y1": 0.56,
+          "precision": "approximate"
+        }
+      },
+      "heading_path": [],
+      "run_ref": "vision-page2",
+      "evidence": [
+        {
+          "evidence_id": "cell1",
+          "kind": "literal",
+          "loc": {
+            "kind": "pdf",
+            "page": 2,
+            "bbox": {
+              "frame_asset_id": "D-044-de927cb754d7-page-2",
+              "x0": 0.12,
+              "y0": 0.42,
+              "x1": 0.5,
+              "y1": 0.45,
+              "precision": "approximate"
+            }
+          },
+          "quote": "대표이사: 류정원 (인)"
+        },
+        {
+          "evidence_id": "cell2",
+          "kind": "literal",
+          "loc": {
+            "kind": "pdf",
+            "page": 2,
+            "bbox": {
+              "frame_asset_id": "D-044-de927cb754d7-page-2",
+              "x0": 0.5,
+              "y0": 0.42,
+              "x1": 0.88,
+              "y1": 0.45,
+              "precision": "approximate"
+            }
+          },
+          "quote": "대표이사: 정태오 (인)"
+        }
+      ],
+      "claims": [],
+      "context_ids": [],
+      "content_refs": [],
+      "warnings": [
+        "model_output_needs_source_review"
+      ],
+      "cells": [
+        {
+          "row": 3,
+          "column": 1,
+          "row_span": 1,
+          "column_span": 1,
+          "text": "대표이사: 류정원 (인)",
+          "value_status": "known",
+          "role": "data",
+          "value": null,
+          "formula": null,
+          "number_format": null,
+          "loc": {
+            "kind": "pdf",
+            "page": 2,
+            "bbox": {
+              "frame_asset_id": "D-044-de927cb754d7-page-2",
+              "x0": 0.12,
+              "y0": 0.42,
+              "x1": 0.5,
+              "y1": 0.45,
+              "precision": "approximate"
+            }
+          }
+        },
+        {
+          "row": 3,
+          "column": 2,
+          "row_span": 1,
+          "column_span": 1,
+          "text": "대표이사: 정태오 (인)",
+          "value_status": "known",
+          "role": "data",
+          "value": null,
+          "formula": null,
+          "number_format": null,
+          "loc": {
+            "kind": "pdf",
+            "page": 2,
+            "bbox": {
+              "frame_asset_id": "D-044-de927cb754d7-page-2",
+              "x0": 0.5,
+              "y0": 0.42,
+              "x1": 0.88,
+              "y1": 0.45,
+              "precision": "approximate"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "block_id": "D-044-vision-page2-b8",
+      "parent_id": "D-044-vision-page2-b4",
+      "order": 8,
+      "type": "table_row",
+      "text": "주소: (생략)\t주소: 서울특별시 구로구 디지털로 000, 7층",
+      "loc": {
+        "kind": "pdf",
+        "page": 2,
+        "bbox": {
+          "frame_asset_id": "D-044-de927cb754d7-page-2",
+          "x0": 0.12,
+          "y0": 0.36,
+          "x1": 0.88,
+          "y1": 0.56,
+          "precision": "approximate"
+        }
+      },
+      "heading_path": [],
+      "run_ref": "vision-page2",
+      "evidence": [
+        {
+          "evidence_id": "cell1",
+          "kind": "literal",
+          "loc": {
+            "kind": "pdf",
+            "page": 2,
+            "bbox": {
+              "frame_asset_id": "D-044-de927cb754d7-page-2",
+              "x0": 0.12,
+              "y0": 0.45,
+              "x1": 0.5,
+              "y1": 0.48,
+              "precision": "approximate"
+            }
+          },
+          "quote": "주소: (생략)"
+        },
+        {
+          "evidence_id": "cell2",
+          "kind": "literal",
+          "loc": {
+            "kind": "pdf",
+            "page": 2,
+            "bbox": {
+              "frame_asset_id": "D-044-de927cb754d7-page-2",
+              "x0": 0.5,
+              "y0": 0.45,
+              "x1": 0.88,
+              "y1": 0.56,
+              "precision": "approximate"
+            }
+          },
+          "quote": "주소: 서울특별시 구로구 디지털로 000, 7층"
+        }
+      ],
+      "claims": [],
+      "context_ids": [],
+      "content_refs": [],
+      "warnings": [
+        "model_output_needs_source_review"
+      ],
+      "cells": [
+        {
+          "row": 4,
+          "column": 1,
+          "row_span": 1,
+          "column_span": 1,
+          "text": "주소: (생략)",
+          "value_status": "known",
+          "role": "data",
+          "value": null,
+          "formula": null,
+          "number_format": null,
+          "loc": {
+            "kind": "pdf",
+            "page": 2,
+            "bbox": {
+              "frame_asset_id": "D-044-de927cb754d7-page-2",
+              "x0": 0.12,
+              "y0": 0.45,
+              "x1": 0.5,
+              "y1": 0.48,
+              "precision": "approximate"
+            }
+          }
+        },
+        {
+          "row": 4,
+          "column": 2,
+          "row_span": 1,
+          "column_span": 1,
+          "text": "주소: 서울특별시 구로구 디지털로 000, 7층",
+          "value_status": "known",
+          "role": "data",
+          "value": null,
+          "formula": null,
+          "number_format": null,
+          "loc": {
+            "kind": "pdf",
+            "page": 2,
+            "bbox": {
+              "frame_asset_id": "D-044-de927cb754d7-page-2",
+              "x0": 0.5,
+              "y0": 0.45,
+              "x1": 0.88,
+              "y1": 0.56,
+              "precision": "approximate"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "warnings": []
+}

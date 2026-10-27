@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0.0",
+  "record_kind": "template",
+  "doc_id": "TEMPLATE",
+  "source": {
+    "file_name": "REPLACE.docx",
+    "format": "docx",
+    "sha256": null,
+    "relative_path": "REPLACE/source",
+    "web_url": null,
+    "encoding": null
+  },
+  "coverage": {
+    "scope": "template",
+    "unit_inventory_complete": false,
+    "units": []
+  },
+  "runs": [
+    {
+      "run_id": "design",
+      "method": "template",
+      "implementation": "REPLACE",
+      "model_id": null,
+      "provider": null,
+      "quantization": null,
+      "prompt_version": null,
+      "input_asset_ids": []
+    }
+  ],
+  "assets": [],
+  "blocks": [
+    {
+      "block_id": "TEMPLATE-caption",
+      "parent_id": null,
+      "order": 1,
+      "type": "caption",
+      "text": "REPLACE_CAPTION_TEXT",
+      "loc": {
+        "kind": "docx",
+        "paragraph_index": 1
+      },
+      "heading_path": [],
+      "run_ref": "design",
+      "evidence": [],
+      "claims": [],
+      "context_ids": [],
+      "content_refs": [],
+      "warnings": []
+    },
+    {
+      "block_id": "TEMPLATE-photo",
+      "parent_id": null,
+      "order": 2,
+      "type": "figure",
+      "text": "",
+      "loc": {
+        "kind": "docx",
+        "media_part": "word/media/REPLACE.png"
+      },
+      "heading_path": [],
+      "run_ref": "design",
+      "evidence": [
+        {
+          "evidence_id": "image-region",
+          "kind": "visual_region",
+          "loc": {
+            "kind": "docx",
+            "media_part": "word/media/REPLACE.png"
+          },
+          "quote": null
+        },
+        {
+          "evidence_id": "caption-source",
+          "kind": "context",
+          "loc": {
+            "kind": "docx",
+            "paragraph_index": 1
+          },
+          "quote": "REPLACE_CAPTION_TEXT"
+        }
+      ],
+      "claims": [
+        {
+          "claim_id": "observation",
+          "text": "REPLACE_SOURCE_SUPPORTED_OBSERVATION",
+          "status": "observed",
+          "evidence_ids": [
+            "image-region"
+          ]
+        },
+        {
+          "claim_id": "inference",
+          "text": "REPLACE_OPTIONAL_INFERENCE",
+          "status": "inferred",
+          "evidence_ids": [
+            "image-region",
+            "caption-source"
+          ]
+        }
+      ],
+      "context_ids": [
+        "TEMPLATE-caption"
+      ],
+      "content_refs": [],
+      "warnings": [],
+      "visual": {
+        "kind": "photo",
+        "nodes": [],
+        "relations": []
+      }
+    }
+  ],
+  "warnings": [
+    "사진 양식이며 실제 데이터셋에서 검증한 사진 예시가 아님. 원본 이미지와 좌표, 문맥, 실행 정보를 채울 것."
+  ]
+}

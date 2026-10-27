@@ -1,0 +1,46 @@
+{
+  "id": "gen-1792375754-XLj7eNwvSUkOchyGfXyE",
+  "object": "chat.completion",
+  "created": 1792375754,
+  "model": "qwen/qwen3.6-35b-a3b",
+  "provider": "DeepInfra",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"figures\": [\n    {\n      \"bbox\": [0.045, 0.213, 0.945, 0.833],\n      \"claims\": [\n        {\n          \"bbox\": [0.045, 0.213, 0.945, 0.833],\n          \"status\": \"observed\",\n          \"text\": \"네트워크 구성도: Internet/전용회선이 방화벽(FortiGate 200F HA)에 연결되고, OT망 방화벽(FortiGate 100F)이 방화벽과 연결된다. 코어 스위치(Cisco C9500)는 방화벽 아래에 위치하며, 서버팜(10.21.10.0/24), OT 설비망(10.21.50.0/24), 관리망(10.21.99.0/24)으로 분기된다.\"\n        }\n      ],\n      \"kind\": \"diagram\",\n      \"nodes\": [\n        {\n          \"bbox\": [0.405, 0.213, 0.593, 0.313],\n          \"id\": \"n1\",\n          \"label\": \"Internet / 전용회선\"\n        },\n        {\n          \"bbox\": [0.330, 0.353, 0.668, 0.467],\n          \"id\": \"n2\",\n          \"label\": \"방화벽\\nFortiGate 200F × 2 (HA)\"\n        },\n        {\n          \"bbox\": [0.038, 0.353, 0.293, 0.467],\n          \"id\": \"n3\",\n          \"label\": \"OT 망 방화벽 FortiGate 100F\"\n        },\n        {\n          \"bbox\": [0.330, 0.507, 0.668, 0.620],\n          \"id\": \"n4\",\n          \"label\": \"코어 스위치\\nCisco C9500-24Y4C × 2\"\n        },\n        {\n          \"bbox\": [0.038, 0.700, 0.293, 0.833],\n          \"id\": \"n5\",\n          \"label\": \"서버팜\\n10.21.10.0/24\"\n        },\n        {\n          \"bbox\": [0.356, 0.700, 0.641, 0.833],\n          \"id\": \"n6\",\n          \"label\": \"OT 설비망\\n10.21.50.0/24\"\n        },\n        {\n          \"bbox\": [0.664, 0.700, 0.949, 0.833],\n          \"id\": \"n7\",\n          \"label\": \"관리망\\n10.21.99.0/24\"\n        }\n      ],\n      \"relations\": [\n        {\n          \"bbox\": [0.495, 0.313, 0.505, 0.353],\n          \"direction\": \"undirected\",\n          \"from_node\": \"n1\",\n          \"label\": \"\",\n          \"to_node\": \"n2\"\n        },\n        {\n          \"bbox\": [0.293, 0.410, 0.330, 0.410],\n          \"direction\": \"undirected\",\n          \"from_node\": \"n3\",\n          \"label\": \"\",\n          \"to_node\": \"n2\"\n        },\n        {\n          \"bbox\": [0.495, 0.467, 0.495, 0.507],\n          \"direction\": \"undirected\",\n          \"from_node\": \"n2\",\n          \"label\": \"\",\n          \"to_node\": \"n4\"\n        },\n        {\n          \"bbox\": [0.330, 0.620, 0.165, 0.700],\n          \"direction\": \"undirected\",\n          \"from_node\": \"n4\",\n          \"label\": \"\",\n          \"to_node\": \"n5\"\n        },\n        {\n          \"bbox\": [0.495, 0.620, 0.495, 0.700],\n          \"direction\": \"undirected\",\n          \"from_node\": \"n4\",\n          \"label\": \"\",\n          \"to_node\": \"n6\"\n        },\n        {\n          \"bbox\": [0.668, 0.620, 0.833, 0.700],\n          \"direction\": \"undirected\",\n          \"from_node\": \"n4\",\n          \"label\": \"\",\n          \"to_node\": \"n7\"\n        }\n      ]\n    }\n  ],\n  \"status\": \"complete\",\n  \"tables\": [],\n  \"texts\": [\n    {\n      \"bbox\": [0.045, 0.047, 0.945, 0.153],\n      \"kind\": \"heading\",\n      \"text\": \"2025 MES 고도화 구축 네트워크 구성도 (Rev.1)\"\n    },\n    {\n      \"bbox\": [0.045, 0.140, 0.945, 0.207],\n      \"kind\": \"paragraph\",\n      \"text\": \"설치 위치: 화성 1공장 전산실  |  작성일: 2025-02-24  |  작성: 라움정보기술 기술지원팀\"\n    },\n    {\n      \"bbox\": [0.045, 0.893, 0.945, 0.947],\n      \"kind\": \"paragraph\",\n      \"text\": \"범례: 실선 = 1G/10G 이더넷 | ㈜청람정밀 전산 담당자 검토 필요\"\n    }\n  ],\n  \"warnings\": []\n}",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3435,
+    "completion_tokens": 1484,
+    "total_tokens": 4919,
+    "cost": 0.0017533,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0017533,
+      "upstream_inference_prompt_cost": 0.0003435,
+      "upstream_inference_completions_cost": 0.0014098
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

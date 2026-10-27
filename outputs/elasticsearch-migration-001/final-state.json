@@ -1,0 +1,103 @@
+{
+  "preserved_legacy_artifacts_hash_verified": 82,
+  "historical_postcopy_receipt_difference": [
+    {
+      "file": "orin-copy-verification.json",
+      "mac_sha256": "9d75ce55db2e320497d6df9c1df6dbc819ab0b432680e90eb489ecdc59c97769",
+      "orin_sha256": "500f931e90332a7339408ac2b7d49efb45e8f4569fc5937b93b9060b40e6cde3",
+      "reason": "historical transfer receipt was finalized on Mac after that package was copied; retained unchanged"
+    }
+  ],
+  "retired_index_files_removed": 2,
+  "health": {
+    "cluster_name": "rag-orin",
+    "status": "green",
+    "timed_out": false,
+    "number_of_nodes": 1,
+    "number_of_data_nodes": 1,
+    "active_primary_shards": 2,
+    "active_shards": 2,
+    "relocating_shards": 0,
+    "initializing_shards": 0,
+    "unassigned_shards": 0,
+    "unassigned_primary_shards": 0,
+    "delayed_unassigned_shards": 0,
+    "number_of_pending_tasks": 0,
+    "number_of_in_flight_fetch": 0,
+    "task_max_waiting_in_queue_millis": 0,
+    "active_shards_percent_as_number": 100.0
+  },
+  "aliases": {
+    "rag-chunks-v001": {
+      "aliases": {
+        "rag-chunks": {
+          "is_write_index": true
+        }
+      }
+    },
+    "rag-documents-v001": {
+      "aliases": {
+        "rag-documents": {
+          "is_write_index": true
+        }
+      }
+    }
+  },
+  "qwen_server_models": {
+    "object": "list",
+    "data": [
+      {
+        "id": "qwen3.6-35b-a3b",
+        "object": "model",
+        "created": 1792483044,
+        "owned_by": "vllm",
+        "root": "/models/qwen36",
+        "parent": null,
+        "max_model_len": 49152,
+        "permission": [
+          {
+            "id": "modelperm-b84d77e438544e89",
+            "object": "model_permission",
+            "created": 1792483044,
+            "allow_create_engine": false,
+            "allow_sampling": true,
+            "allow_logprobs": true,
+            "allow_search_indices": false,
+            "allow_view": true,
+            "allow_fine_tuning": false,
+            "organization": "*",
+            "group": null,
+            "is_blocking": false
+          }
+        ]
+      }
+    ]
+  },
+  "elasticsearch_container": {
+    "id": "58e2de05e6a1d9ffe8db256ca36647e2e05f1ac1edaf1513b7b76ec93bd8e3e8",
+    "image": "sha256:c1c91c87730a5c13e0fc7b42d44956f03a8f3653f3677fc683fd8b6d30f52bcd",
+    "memory_limit_bytes": 4294967296,
+    "runtime": "runc",
+    "ports": {
+      "9200/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "9200"
+        }
+      ]
+    },
+    "mounts": [
+      {
+        "Type": "bind",
+        "Source": "/media/sdcard/rag-runtime/elasticsearch-001/data",
+        "Destination": "/usr/share/elasticsearch/data",
+        "Mode": "",
+        "RW": true,
+        "Propagation": "rprivate"
+      }
+    ]
+  },
+  "resources": "rag-elasticsearch 2.547GiB / 4GiB\nrag-qwen36 31.51GiB / 61.37GiB\n",
+  "free_memory": "               total        used        free      shared  buff/cache   available\nMem:           62840       45706        9427          96        7706       16440\nSwap:          31420          44       31376\n",
+  "model_inference_calls": 0
+}

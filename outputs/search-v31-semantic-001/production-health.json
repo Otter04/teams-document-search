@@ -1,0 +1,63 @@
+{
+  "ready": true,
+  "documents": 195,
+  "embedding_model": "bge-m3",
+  "embedding_fingerprint": "b8b299238334245d36f1447b3c185acd5f7271d28973c544ed45b59d67161762",
+  "query_analysis_model": "qwen3.6-35b-a3b",
+  "startup_seconds": 14.314691541716456,
+  "config": {
+    "version": "search-1.8.4",
+    "llm_budget_seconds": 2.5,
+    "source_review": "source-review-v1",
+    "source_review_budget_seconds": 90,
+    "source_review_documents": 60,
+    "review_vector_k": 150,
+    "lexical_k": 50,
+    "vector_k": 50,
+    "num_candidates": 200,
+    "candidate_diversity_branch": "vector",
+    "candidate_per_document": 3,
+    "diversity_min_share": 0.5,
+    "candidate_batch": 150,
+    "candidate_max_rounds": 6,
+    "rrf_k": 60,
+    "rerank_k": 100,
+    "result_documents": 5,
+    "bm25_fields": [
+      "file_name^2",
+      "context^1.5",
+      "table_header^1.5",
+      "body"
+    ],
+    "minimum_should_match": "50%",
+    "additional_chunk_weight": 0.0,
+    "max_additional_chunks": 0,
+    "support_pool_k": 30,
+    "document_score": "best_matching_chunk",
+    "source_expression_preference": true,
+    "r1_weights": {
+      "rrf": 0.45,
+      "lexical_overlap": 0.2,
+      "cosine": 0.2,
+      "literal_phrase": 0.05,
+      "identifier": 0.05,
+      "metadata": 0.05
+    },
+    "query_cache": false,
+    "operating_query_logs": false,
+    "exact_2a": false,
+    "verified_metadata_preference": true,
+    "explicit_dates": "required_no_relaxation"
+  },
+  "defaults": {
+    "filter_mode": "B",
+    "reranker": "R1",
+    "release_status": "development_only",
+    "quality_gate": "development_accuracy_maintained_latency_tradeoff",
+    "reason": "search-1.8.4: existing150 148/150 retained, paraphrases16/16 (previous10/16), six previous failures all rank1. Conditional Qwen source review, literal quote and version guards, no new vocabulary rules. Overall mean1.37 to3.74s; no claim of 3-second target or independent validation. Explicit-date conflicts preserved."
+  },
+  "indices": {
+    "documents": "rag-search-documents-v003",
+    "chunks": "rag-search-chunks-v003"
+  }
+}

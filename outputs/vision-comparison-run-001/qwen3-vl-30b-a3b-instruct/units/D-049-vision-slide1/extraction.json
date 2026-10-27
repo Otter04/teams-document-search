@@ -1,0 +1,202 @@
+{
+  "figures": [
+    {
+      "bbox": [
+        0.045001,
+        0.226667,
+        0.945024,
+        0.593333
+      ],
+      "claims": [
+        {
+          "bbox": [
+            0.045001,
+            0.226667,
+            0.945024,
+            0.593333
+          ],
+          "status": "observed",
+          "text": "EMR 서버 구성도. L4 / 로드밸런서는 emr-was01, emr-was02, emr-db01, emr-db02 네 개의 서버로 연결된다. 각 서버는 이름, 역할, 운영체제, CPU/메모리, IP 주소를 포함한다."
+        }
+      ],
+      "kind": "diagram",
+      "nodes": [
+        {
+          "bbox": [
+            0.367509,
+            0.226667,
+            0.630016,
+            0.333333
+          ],
+          "id": "l4-load-balancer",
+          "label": "L4 / 로드밸런서"
+        },
+        {
+          "bbox": [
+            0.048751,
+            0.4,
+            0.256881,
+            0.593333
+          ],
+          "id": "emr-was01",
+          "label": "emr-was01\nEMR WAS\nRHEL 8.10 | 16 vCPU / 64GB\n10.43.10.11"
+        },
+        {
+          "bbox": [
+            0.279382,
+            0.4,
+            0.487512,
+            0.593333
+          ],
+          "id": "emr-was02",
+          "label": "emr-was02\nEMR WAS\nRHEL 8.10 | 16 vCPU / 64GB\n10.43.10.12"
+        },
+        {
+          "bbox": [
+            0.510013,
+            0.4,
+            0.718143,
+            0.593333
+          ],
+          "id": "emr-db01",
+          "label": "emr-db01\nEMR DB (Oracle 19c RAC)\nRHEL 8.10 | 48 vCPU / 384GB\n10.43.10.21"
+        },
+        {
+          "bbox": [
+            0.740644,
+            0.4,
+            0.948774,
+            0.593333
+          ],
+          "id": "emr-db02",
+          "label": "emr-db02\nEMR DB (Oracle 19c RAC)\nRHEL 8.10 | 48 vCPU / 384GB\n10.43.10.22"
+        }
+      ],
+      "relations": [
+        {
+          "bbox": [
+            0.045001,
+            0.333333,
+            0.367509,
+            0.4
+          ],
+          "direction": "undirected",
+          "from_node": "l4-load-balancer",
+          "label": "",
+          "to_node": "emr-was01"
+        },
+        {
+          "bbox": [
+            0.279382,
+            0.333333,
+            0.630016,
+            0.4
+          ],
+          "direction": "undirected",
+          "from_node": "l4-load-balancer",
+          "label": "",
+          "to_node": "emr-was02"
+        },
+        {
+          "bbox": [
+            0.510013,
+            0.333333,
+            0.945024,
+            0.4
+          ],
+          "direction": "undirected",
+          "from_node": "l4-load-balancer",
+          "label": "",
+          "to_node": "emr-db01"
+        },
+        {
+          "bbox": [
+            0.740644,
+            0.333333,
+            0.945024,
+            0.4
+          ],
+          "direction": "undirected",
+          "from_node": "l4-load-balancer",
+          "label": "",
+          "to_node": "emr-db02"
+        }
+      ]
+    }
+  ],
+  "status": "complete",
+  "tables": [],
+  "texts": [
+    {
+      "bbox": [
+        0.045001,
+        0.046667,
+        0.945024,
+        0.153333
+      ],
+      "kind": "heading",
+      "text": "EMR 서버 구성도"
+    },
+    {
+      "bbox": [
+        0.045001,
+        0.14,
+        0.945024,
+        0.206667
+      ],
+      "kind": "paragraph",
+      "text": "사업: EMR 시스템 유지보수  |  설치 위치: 새봄병원 본관 전산실  |  2025-06-28"
+    },
+    {
+      "bbox": [
+        0.367509,
+        0.226667,
+        0.630016,
+        0.333333
+      ],
+      "kind": "paragraph",
+      "text": "L4 / 로드밸런서"
+    },
+    {
+      "bbox": [
+        0.048751,
+        0.4,
+        0.256881,
+        0.593333
+      ],
+      "kind": "paragraph",
+      "text": "emr-was01\nEMR WAS\nRHEL 8.10 | 16 vCPU / 64GB\n10.43.10.11"
+    },
+    {
+      "bbox": [
+        0.279382,
+        0.4,
+        0.487512,
+        0.593333
+      ],
+      "kind": "paragraph",
+      "text": "emr-was02\nEMR WAS\nRHEL 8.10 | 16 vCPU / 64GB\n10.43.10.12"
+    },
+    {
+      "bbox": [
+        0.510013,
+        0.4,
+        0.718143,
+        0.593333
+      ],
+      "kind": "paragraph",
+      "text": "emr-db01\nEMR DB (Oracle 19c RAC)\nRHEL 8.10 | 48 vCPU / 384GB\n10.43.10.21"
+    },
+    {
+      "bbox": [
+        0.740644,
+        0.4,
+        0.948774,
+        0.593333
+      ],
+      "kind": "paragraph",
+      "text": "emr-db02\nEMR DB (Oracle 19c RAC)\nRHEL 8.10 | 48 vCPU / 384GB\n10.43.10.22"
+    }
+  ],
+  "warnings": []
+}

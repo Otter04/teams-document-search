@@ -1,0 +1,638 @@
+{
+  "schema_version": "1.0.0",
+  "record_kind": "design_example",
+  "doc_id": "D-069",
+  "source": {
+    "file_name": "DDC_네트워크구성도_검토본_스캔.pdf",
+    "format": "pdf",
+    "sha256": "0284bfe7f3a6b46e907b5e06e743e3019d21c8ff3440561670ffb8cbbd74cf74",
+    "relative_path": "sites/기술지원팀/Shared Documents/도담캐피탈/구성도/DDC_네트워크구성도_검토본_스캔.pdf",
+    "web_url": null,
+    "encoding": null
+  },
+  "coverage": {
+    "scope": "excerpt",
+    "unit_inventory_complete": false,
+    "units": [
+      {
+        "unit_id": "example-excerpt",
+        "loc": {
+          "kind": "pdf",
+          "page": 1
+        },
+        "required": true,
+        "status": "completed",
+        "reason": "설계 예시로 고른 일부 영역만 포함",
+        "block_ids": [
+          "D-069-p1-title",
+          "D-069-p1-diagram"
+        ]
+      }
+    ]
+  },
+  "runs": [
+    {
+      "run_id": "design",
+      "method": "manual_design",
+      "implementation": "source-inspected-schema-example-1.0",
+      "model_id": null,
+      "provider": null,
+      "quantization": null,
+      "prompt_version": null,
+      "input_asset_ids": []
+    }
+  ],
+  "assets": [
+    {
+      "asset_id": "D-069-page-1",
+      "path": "assets/D-069-1.png",
+      "kind": "page_image",
+      "loc": {
+        "kind": "pdf",
+        "page": 1
+      },
+      "width": 2601,
+      "height": 1463,
+      "sha256": "ba729b42d50a8759a0ec957dce8ea7a18749c3ca37cc63810b45ab52d0840c29"
+    }
+  ],
+  "blocks": [
+    {
+      "block_id": "D-069-p1-title",
+      "parent_id": null,
+      "order": 1,
+      "type": "heading",
+      "text": "여신관리시스템 DR 구축 네트워크 구성도 (Rev.1)",
+      "loc": {
+        "kind": "pdf",
+        "page": 1
+      },
+      "heading_path": [],
+      "run_ref": "design",
+      "evidence": [],
+      "claims": [],
+      "context_ids": [],
+      "content_refs": [],
+      "warnings": []
+    },
+    {
+      "block_id": "D-069-p1-diagram",
+      "parent_id": null,
+      "order": 2,
+      "type": "figure",
+      "text": "Internet / 전용회선\n본사-DR 전용회선 1Gbps × 2\n방화벽\nFortiGate 600F × 2 (본사) / FortiGate 400F × 2 (DR)\n대전 DR 센터\n코어 스위치\nCisco N9K-C93180YC × 2\n본사 서버팜\n10.65.10.0/24\nDR 서버팜\n10.65.110.0/24\n복제망\n10.65.200.0/24",
+      "loc": {
+        "kind": "pdf",
+        "page": 1,
+        "bbox": {
+          "frame_asset_id": "D-069-page-1",
+          "x0": 0.035,
+          "y0": 0.2,
+          "x1": 0.965,
+          "y1": 0.85,
+          "precision": "approximate"
+        }
+      },
+      "heading_path": [
+        "여신관리시스템 DR 구축 네트워크 구성도 (Rev.1)"
+      ],
+      "run_ref": "design",
+      "evidence": [
+        {
+          "evidence_id": "box-internet",
+          "kind": "visual_region",
+          "loc": {
+            "kind": "pdf",
+            "page": 1,
+            "bbox": {
+              "frame_asset_id": "D-069-page-1",
+              "x0": 0.405,
+              "y0": 0.21,
+              "x1": 0.597,
+              "y1": 0.315,
+              "precision": "approximate"
+            }
+          },
+          "quote": "Internet / 전용회선"
+        },
+        {
+          "evidence_id": "box-line",
+          "kind": "visual_region",
+          "loc": {
+            "kind": "pdf",
+            "page": 1,
+            "bbox": {
+              "frame_asset_id": "D-069-page-1",
+              "x0": 0.038,
+              "y0": 0.34,
+              "x1": 0.295,
+              "y1": 0.465,
+              "precision": "approximate"
+            }
+          },
+          "quote": "본사-DR 전용회선 1Gbps × 2"
+        },
+        {
+          "evidence_id": "box-firewall",
+          "kind": "visual_region",
+          "loc": {
+            "kind": "pdf",
+            "page": 1,
+            "bbox": {
+              "frame_asset_id": "D-069-page-1",
+              "x0": 0.33,
+              "y0": 0.35,
+              "x1": 0.67,
+              "y1": 0.47,
+              "precision": "approximate"
+            }
+          },
+          "quote": "방화벽\nFortiGate 600F × 2 (본사) / FortiGate 400F × 2 (DR)"
+        },
+        {
+          "evidence_id": "box-dr-site",
+          "kind": "visual_region",
+          "loc": {
+            "kind": "pdf",
+            "page": 1,
+            "bbox": {
+              "frame_asset_id": "D-069-page-1",
+              "x0": 0.703,
+              "y0": 0.357,
+              "x1": 0.962,
+              "y1": 0.48,
+              "precision": "approximate"
+            }
+          },
+          "quote": "대전 DR 센터"
+        },
+        {
+          "evidence_id": "box-core",
+          "kind": "visual_region",
+          "loc": {
+            "kind": "pdf",
+            "page": 1,
+            "bbox": {
+              "frame_asset_id": "D-069-page-1",
+              "x0": 0.329,
+              "y0": 0.5,
+              "x1": 0.668,
+              "y1": 0.624,
+              "precision": "approximate"
+            }
+          },
+          "quote": "코어 스위치\nCisco N9K-C93180YC × 2"
+        },
+        {
+          "evidence_id": "box-hq",
+          "kind": "visual_region",
+          "loc": {
+            "kind": "pdf",
+            "page": 1,
+            "bbox": {
+              "frame_asset_id": "D-069-page-1",
+              "x0": 0.045,
+              "y0": 0.689,
+              "x1": 0.335,
+              "y1": 0.832,
+              "precision": "approximate"
+            }
+          },
+          "quote": "본사 서버팜\n10.65.10.0/24"
+        },
+        {
+          "evidence_id": "box-dr",
+          "kind": "visual_region",
+          "loc": {
+            "kind": "pdf",
+            "page": 1,
+            "bbox": {
+              "frame_asset_id": "D-069-page-1",
+              "x0": 0.353,
+              "y0": 0.697,
+              "x1": 0.64,
+              "y1": 0.837,
+              "precision": "approximate"
+            }
+          },
+          "quote": "DR 서버팜\n10.65.110.0/24"
+        },
+        {
+          "evidence_id": "box-replication",
+          "kind": "visual_region",
+          "loc": {
+            "kind": "pdf",
+            "page": 1,
+            "bbox": {
+              "frame_asset_id": "D-069-page-1",
+              "x0": 0.661,
+              "y0": 0.704,
+              "x1": 0.943,
+              "y1": 0.847,
+              "precision": "approximate"
+            }
+          },
+          "quote": "복제망\n10.65.200.0/24"
+        },
+        {
+          "evidence_id": "edge-1",
+          "kind": "visual_region",
+          "loc": {
+            "kind": "pdf",
+            "page": 1,
+            "bbox": {
+              "frame_asset_id": "D-069-page-1",
+              "x0": 0.49,
+              "y0": 0.306,
+              "x1": 0.51,
+              "y1": 0.36,
+              "precision": "approximate"
+            }
+          },
+          "quote": null
+        },
+        {
+          "evidence_id": "edge-2",
+          "kind": "visual_region",
+          "loc": {
+            "kind": "pdf",
+            "page": 1,
+            "bbox": {
+              "frame_asset_id": "D-069-page-1",
+              "x0": 0.287,
+              "y0": 0.393,
+              "x1": 0.339,
+              "y1": 0.414,
+              "precision": "approximate"
+            }
+          },
+          "quote": null
+        },
+        {
+          "evidence_id": "edge-3",
+          "kind": "visual_region",
+          "loc": {
+            "kind": "pdf",
+            "page": 1,
+            "bbox": {
+              "frame_asset_id": "D-069-page-1",
+              "x0": 0.664,
+              "y0": 0.4,
+              "x1": 0.709,
+              "y1": 0.427,
+              "precision": "approximate"
+            }
+          },
+          "quote": null
+        },
+        {
+          "evidence_id": "edge-4",
+          "kind": "visual_region",
+          "loc": {
+            "kind": "pdf",
+            "page": 1,
+            "bbox": {
+              "frame_asset_id": "D-069-page-1",
+              "x0": 0.487,
+              "y0": 0.461,
+              "x1": 0.506,
+              "y1": 0.511,
+              "precision": "approximate"
+            }
+          },
+          "quote": null
+        },
+        {
+          "evidence_id": "edge-5",
+          "kind": "visual_region",
+          "loc": {
+            "kind": "pdf",
+            "page": 1,
+            "bbox": {
+              "frame_asset_id": "D-069-page-1",
+              "x0": 0.18,
+              "y0": 0.613,
+              "x1": 0.51,
+              "y1": 0.706,
+              "precision": "approximate"
+            }
+          },
+          "quote": null
+        },
+        {
+          "evidence_id": "edge-6",
+          "kind": "visual_region",
+          "loc": {
+            "kind": "pdf",
+            "page": 1,
+            "bbox": {
+              "frame_asset_id": "D-069-page-1",
+              "x0": 0.488,
+              "y0": 0.613,
+              "x1": 0.505,
+              "y1": 0.71,
+              "precision": "approximate"
+            }
+          },
+          "quote": null
+        },
+        {
+          "evidence_id": "edge-7",
+          "kind": "visual_region",
+          "loc": {
+            "kind": "pdf",
+            "page": 1,
+            "bbox": {
+              "frame_asset_id": "D-069-page-1",
+              "x0": 0.49,
+              "y0": 0.613,
+              "x1": 0.82,
+              "y1": 0.72,
+              "precision": "approximate"
+            }
+          },
+          "quote": null
+        }
+      ],
+      "claims": [
+        {
+          "claim_id": "c1",
+          "text": "도면에서 코어 스위치와 본사 서버팜 사이에 연결선이 있다.",
+          "status": "observed",
+          "evidence_ids": [
+            "box-core",
+            "box-hq",
+            "edge-5"
+          ]
+        },
+        {
+          "claim_id": "c2",
+          "text": "도면에서 코어 스위치와 DR 서버팜 사이에 연결선이 있다.",
+          "status": "observed",
+          "evidence_ids": [
+            "box-core",
+            "box-dr",
+            "edge-6"
+          ]
+        },
+        {
+          "claim_id": "c3",
+          "text": "도면에서 코어 스위치와 복제망 사이에 연결선이 있다.",
+          "status": "observed",
+          "evidence_ids": [
+            "box-core",
+            "box-replication",
+            "edge-7"
+          ]
+        },
+        {
+          "claim_id": "c4",
+          "text": "본사 서버팜에 10.65.10.0/24가 표기되어 있다.",
+          "status": "observed",
+          "evidence_ids": [
+            "box-hq"
+          ]
+        }
+      ],
+      "context_ids": [
+        "D-069-p1-title"
+      ],
+      "content_refs": [],
+      "warnings": [
+        "연결선에는 방향 화살표가 보이지 않음. 트래픽 방향, 자동 장애 전환, 실제 가동 여부는 이 그림으로 확정할 수 없음."
+      ],
+      "visual": {
+        "kind": "diagram",
+        "nodes": [
+          {
+            "node_id": "internet",
+            "label": "Internet / 전용회선",
+            "loc": {
+              "kind": "pdf",
+              "page": 1,
+              "bbox": {
+                "frame_asset_id": "D-069-page-1",
+                "x0": 0.405,
+                "y0": 0.21,
+                "x1": 0.597,
+                "y1": 0.315,
+                "precision": "approximate"
+              }
+            },
+            "evidence_ids": [
+              "box-internet"
+            ]
+          },
+          {
+            "node_id": "line",
+            "label": "본사-DR 전용회선 1Gbps × 2",
+            "loc": {
+              "kind": "pdf",
+              "page": 1,
+              "bbox": {
+                "frame_asset_id": "D-069-page-1",
+                "x0": 0.038,
+                "y0": 0.34,
+                "x1": 0.295,
+                "y1": 0.465,
+                "precision": "approximate"
+              }
+            },
+            "evidence_ids": [
+              "box-line"
+            ]
+          },
+          {
+            "node_id": "firewall",
+            "label": "방화벽\nFortiGate 600F × 2 (본사) / FortiGate 400F × 2 (DR)",
+            "loc": {
+              "kind": "pdf",
+              "page": 1,
+              "bbox": {
+                "frame_asset_id": "D-069-page-1",
+                "x0": 0.33,
+                "y0": 0.35,
+                "x1": 0.67,
+                "y1": 0.47,
+                "precision": "approximate"
+              }
+            },
+            "evidence_ids": [
+              "box-firewall"
+            ]
+          },
+          {
+            "node_id": "dr-site",
+            "label": "대전 DR 센터",
+            "loc": {
+              "kind": "pdf",
+              "page": 1,
+              "bbox": {
+                "frame_asset_id": "D-069-page-1",
+                "x0": 0.703,
+                "y0": 0.357,
+                "x1": 0.962,
+                "y1": 0.48,
+                "precision": "approximate"
+              }
+            },
+            "evidence_ids": [
+              "box-dr-site"
+            ]
+          },
+          {
+            "node_id": "core",
+            "label": "코어 스위치\nCisco N9K-C93180YC × 2",
+            "loc": {
+              "kind": "pdf",
+              "page": 1,
+              "bbox": {
+                "frame_asset_id": "D-069-page-1",
+                "x0": 0.329,
+                "y0": 0.5,
+                "x1": 0.668,
+                "y1": 0.624,
+                "precision": "approximate"
+              }
+            },
+            "evidence_ids": [
+              "box-core"
+            ]
+          },
+          {
+            "node_id": "hq",
+            "label": "본사 서버팜\n10.65.10.0/24",
+            "loc": {
+              "kind": "pdf",
+              "page": 1,
+              "bbox": {
+                "frame_asset_id": "D-069-page-1",
+                "x0": 0.045,
+                "y0": 0.689,
+                "x1": 0.335,
+                "y1": 0.832,
+                "precision": "approximate"
+              }
+            },
+            "evidence_ids": [
+              "box-hq"
+            ]
+          },
+          {
+            "node_id": "dr",
+            "label": "DR 서버팜\n10.65.110.0/24",
+            "loc": {
+              "kind": "pdf",
+              "page": 1,
+              "bbox": {
+                "frame_asset_id": "D-069-page-1",
+                "x0": 0.353,
+                "y0": 0.697,
+                "x1": 0.64,
+                "y1": 0.837,
+                "precision": "approximate"
+              }
+            },
+            "evidence_ids": [
+              "box-dr"
+            ]
+          },
+          {
+            "node_id": "replication",
+            "label": "복제망\n10.65.200.0/24",
+            "loc": {
+              "kind": "pdf",
+              "page": 1,
+              "bbox": {
+                "frame_asset_id": "D-069-page-1",
+                "x0": 0.661,
+                "y0": 0.704,
+                "x1": 0.943,
+                "y1": 0.847,
+                "precision": "approximate"
+              }
+            },
+            "evidence_ids": [
+              "box-replication"
+            ]
+          }
+        ],
+        "relations": [
+          {
+            "relation_id": "r1",
+            "from_node": "internet",
+            "to_node": "firewall",
+            "direction": "undirected",
+            "label": null,
+            "evidence_ids": [
+              "edge-1"
+            ]
+          },
+          {
+            "relation_id": "r2",
+            "from_node": "line",
+            "to_node": "firewall",
+            "direction": "undirected",
+            "label": null,
+            "evidence_ids": [
+              "edge-2"
+            ]
+          },
+          {
+            "relation_id": "r3",
+            "from_node": "firewall",
+            "to_node": "dr-site",
+            "direction": "undirected",
+            "label": null,
+            "evidence_ids": [
+              "edge-3"
+            ]
+          },
+          {
+            "relation_id": "r4",
+            "from_node": "firewall",
+            "to_node": "core",
+            "direction": "undirected",
+            "label": null,
+            "evidence_ids": [
+              "edge-4"
+            ]
+          },
+          {
+            "relation_id": "r5",
+            "from_node": "core",
+            "to_node": "hq",
+            "direction": "undirected",
+            "label": null,
+            "evidence_ids": [
+              "edge-5"
+            ]
+          },
+          {
+            "relation_id": "r6",
+            "from_node": "core",
+            "to_node": "dr",
+            "direction": "undirected",
+            "label": null,
+            "evidence_ids": [
+              "edge-6"
+            ]
+          },
+          {
+            "relation_id": "r7",
+            "from_node": "core",
+            "to_node": "replication",
+            "direction": "undirected",
+            "label": null,
+            "evidence_ids": [
+              "edge-7"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "warnings": [
+    "원본에 근거해 작성한 설계 예시. 비전 LLM 실행 결과가 아니며 문서 전체를 나타내지 않음."
+  ]
+}

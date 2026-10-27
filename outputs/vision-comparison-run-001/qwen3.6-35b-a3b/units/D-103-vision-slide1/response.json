@@ -1,0 +1,46 @@
+{
+  "id": "gen-1792375524-SX19DpdM2YjJGSxooqbB",
+  "object": "chat.completion",
+  "created": 1792375524,
+  "model": "qwen/qwen3.6-35b-a3b",
+  "provider": "DeepInfra",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"figures\": [\n    {\n      \"bbox\": [0.045, 0.046, 0.949, 0.85],\n      \"claims\": [\n        {\n          \"bbox\": [0.045, 0.046, 0.949, 0.85],\n          \"status\": \"observed\",\n          \"text\": \"시설관리시스템 서버 구성도는 L4 로드밸런서 아래에 fms-app01, fms-app02, fms-db01, fms-gis01 네 대의 서버가 연결되어 있음을 보여준다.\"\n        }\n      ],\n      \"kind\": \"diagram\",\n      \"nodes\": [\n        {\n          \"bbox\": [0.367, 0.226, 0.630, 0.333],\n          \"id\": \"node_lb\",\n          \"label\": \"L4 / 로드밸런서\"\n        },\n        {\n          \"bbox\": [0.048, 0.399, 0.257, 0.593],\n          \"id\": \"node_app01\",\n          \"label\": \"fms-app01\\nFMS 애플리케이션\\nWindows Server 2022 | 16 vCPU /\\n64GB\\n10.98.10.11\"\n        },\n        {\n          \"bbox\": [0.279, 0.399, 0.488, 0.593],\n          \"id\": \"node_app02\",\n          \"label\": \"fms-app02\\nFMS 애플리케이션\\nWindows Server 2022 | 16 vCPU /\\n64GB\\n10.98.10.12\"\n        },\n        {\n          \"bbox\": [0.510, 0.399, 0.718, 0.593],\n          \"id\": \"node_db01\",\n          \"label\": \"fms-db01\\nFMS DB (Tibero 7)\\nWindows Server 2022 | 24 vCPU /\\n128GB\\n10.98.10.21\"\n        },\n        {\n          \"bbox\": [0.740, 0.399, 0.949, 0.593],\n          \"id\": \"node_gis01\",\n          \"label\": \"fms-gis01\\nGIS 서버\\nWindows Server 2022 | 16 vCPU /\\n64GB\\n10.98.10.31\"\n        }\n      ],\n      \"relations\": [\n        {\n          \"bbox\": [0.367, 0.333, 0.257, 0.399],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node_lb\",\n          \"label\": \"\",\n          \"to_node\": \"node_app01\"\n        },\n        {\n          \"bbox\": [0.367, 0.333, 0.488, 0.399],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node_lb\",\n          \"label\": \"\",\n          \"to_node\": \"node_app02\"\n        },\n        {\n          \"bbox\": [0.367, 0.333, 0.718, 0.399],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node_lb\",\n          \"label\": \"\",\n          \"to_node\": \"node_db01\"\n        },\n        {\n          \"bbox\": [0.367, 0.333, 0.949, 0.399],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node_lb\",\n          \"label\": \"\",\n          \"to_node\": \"node_gis01\"\n        }\n      ]\n    }\n  ],\n  \"status\": \"complete\",\n  \"tables\": [],\n  \"texts\": [\n    {\n      \"bbox\": [0.045, 0.046, 0.949, 0.153],\n      \"kind\": \"heading\",\n      \"text\": \"시설관리시스템 서버 구성도\"\n    },\n    {\n      \"bbox\": [0.045, 0.140, 0.949, 0.206],\n      \"kind\": \"paragraph\",\n      \"text\": \"사업: 시설관리시스템 노후 서버 교체 | 설치 위치: 온새미도시공사 본사 전산실 | 2025-10-31\"\n    }\n  ],\n  \"warnings\": []\n}",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2945,
+    "completion_tokens": 1139,
+    "total_tokens": 4084,
+    "cost": 0.00137655,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00137655,
+      "upstream_inference_prompt_cost": 0.0002945,
+      "upstream_inference_completions_cost": 0.00108205
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

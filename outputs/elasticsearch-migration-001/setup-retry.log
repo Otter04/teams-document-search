@@ -1,0 +1,31 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 155B done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.elastic.co/elasticsearch/elasticsearch:8.19.23
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.1s
+
+#4 [1/2] FROM docker.elastic.co/elasticsearch/elasticsearch:8.19.23
+#4 CACHED
+
+#5 [2/2] RUN bin/elasticsearch-plugin install --batch analysis-nori
+#5 1.110 -> Installing analysis-nori
+#5 1.921 -> Downloading analysis-nori from elastic
+#5 8.924 WARNING: plugin has a policy file with no additional entitlements. Double check this is intentional.
+#5 8.929 -> Installed analysis-nori
+#5 8.929 -> Please restart Elasticsearch to activate any plugins installed
+#5 DONE 10.1s
+
+#6 exporting to image
+#6 exporting layers
+#6 exporting layers 0.2s done
+#6 writing image sha256:c1c91c87730a5c13e0fc7b42d44956f03a8f3653f3677fc683fd8b6d30f52bcd done
+#6 naming to docker.io/library/rag-elasticsearch-nori:8.19.23 0.0s done
+#6 DONE 0.2s
+58e2de05e6a1d9ffe8db256ca36647e2e05f1ac1edaf1513b7b76ec93bd8e3e8

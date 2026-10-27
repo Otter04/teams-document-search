@@ -1,0 +1,99 @@
+{
+  "figures": [
+    {
+      "bbox": [0.045, 0.227, 0.945, 0.76],
+      "claims": [
+        {
+          "bbox": [0.045, 0.227, 0.945, 0.76],
+          "status": "observed",
+          "text": "사용자/외부망이 보안·네트워크(FortiGate 200F x 2 HA)로 연결되고, 보안·네트워크가 하단의 MES 애플리케이션 2개와 MES DB 2개로 연결되는 계층형 아키텍처를 보여준다."
+        }
+      ],
+      "kind": "diagram",
+      "nodes": [
+        {
+          "bbox": [0.353, 0.227, 0.653, 0.333],
+          "id": "node_1",
+          "label": "사용자 / 외부망"
+        },
+        {
+          "bbox": [0.353, 0.387, 0.653, 0.507],
+          "id": "node_2",
+          "label": "보안·네트워크\nFortiGate 200F × 2 (HA)"
+        },
+        {
+          "bbox": [0.068, 0.6, 0.27, 0.76],
+          "id": "node_3",
+          "label": "MES 애플리케이션\nmes-app01"
+        },
+        {
+          "bbox": [0.285, 0.6, 0.488, 0.76],
+          "id": "node_4",
+          "label": "MES 애플리케이션\nmes-app02"
+        },
+        {
+          "bbox": [0.503, 0.6, 0.705, 0.76],
+          "id": "node_5",
+          "label": "MES DB (Oracle 19c)\nmes-db01"
+        },
+        {
+          "bbox": [0.72, 0.6, 0.923, 0.76],
+          "id": "node_6",
+          "label": "MES DB 스탠바이\nmes-db02"
+        }
+      ],
+      "relations": [
+        {
+          "bbox": [0.503, 0.333, 0.503, 0.387],
+          "direction": "undirected",
+          "from_node": "node_1",
+          "label": "",
+          "to_node": "node_2"
+        },
+        {
+          "bbox": [0.353, 0.507, 0.068, 0.6],
+          "direction": "undirected",
+          "from_node": "node_2",
+          "label": "",
+          "to_node": "node_3"
+        },
+        {
+          "bbox": [0.353, 0.507, 0.285, 0.6],
+          "direction": "undirected",
+          "from_node": "node_2",
+          "label": "",
+          "to_node": "node_4"
+        },
+        {
+          "bbox": [0.653, 0.507, 0.705, 0.6],
+          "direction": "undirected",
+          "from_node": "node_2",
+          "label": "",
+          "to_node": "node_5"
+        },
+        {
+          "bbox": [0.653, 0.507, 0.923, 0.6],
+          "direction": "undirected",
+          "from_node": "node_2",
+          "label": "",
+          "to_node": "node_6"
+        }
+      ]
+    }
+  ],
+  "status": "complete",
+  "tables": [],
+  "texts": [
+    {
+      "bbox": [0.045, 0.047, 0.945, 0.153],
+      "kind": "heading",
+      "text": "제안 아키텍처"
+    },
+    {
+      "bbox": [0.045, 0.14, 0.945, 0.207],
+      "kind": "paragraph",
+      "text": "설치 위치: 화성 1공장 전산실"
+    }
+  ],
+  "warnings": []
+}

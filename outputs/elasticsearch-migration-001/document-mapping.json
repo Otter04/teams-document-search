@@ -1,0 +1,292 @@
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 0,
+    "analysis": {
+      "tokenizer": {
+        "rag_nori_tokenizer": {
+          "type": "nori_tokenizer",
+          "decompound_mode": "mixed"
+        }
+      },
+      "analyzer": {
+        "rag_ko": {
+          "type": "custom",
+          "tokenizer": "rag_nori_tokenizer",
+          "filter": [
+            "nori_part_of_speech",
+            "nori_readingform",
+            "lowercase"
+          ]
+        }
+      }
+    },
+    "similarity": {
+      "rag_bm25": {
+        "type": "BM25",
+        "k1": 1.2,
+        "b": 0.75
+      }
+    }
+  },
+  "mappings": {
+    "dynamic": "strict",
+    "properties": {
+      "doc_id": {
+        "type": "keyword"
+      },
+      "chunk_id": {
+        "type": "keyword"
+      },
+      "kind": {
+        "type": "keyword"
+      },
+      "source_sha256": {
+        "type": "keyword"
+      },
+      "embedding_text_sha256": {
+        "type": "keyword"
+      },
+      "source_path": {
+        "type": "keyword"
+      },
+      "format": {
+        "type": "keyword"
+      },
+      "title": {
+        "type": "text",
+        "analyzer": "rag_ko",
+        "similarity": "rag_bm25"
+      },
+      "body": {
+        "type": "text",
+        "analyzer": "rag_ko",
+        "similarity": "rag_bm25"
+      },
+      "context": {
+        "type": "text",
+        "analyzer": "rag_ko",
+        "similarity": "rag_bm25"
+      },
+      "table_header": {
+        "type": "text",
+        "analyzer": "rag_ko",
+        "similarity": "rag_bm25"
+      },
+      "summary": {
+        "type": "text",
+        "analyzer": "rag_ko",
+        "similarity": "rag_bm25"
+      },
+      "metadata_text": {
+        "type": "text",
+        "analyzer": "rag_ko",
+        "similarity": "rag_bm25"
+      },
+      "job": {
+        "type": "text",
+        "analyzer": "rag_ko",
+        "similarity": "rag_bm25"
+      },
+      "role": {
+        "type": "text",
+        "analyzer": "rag_ko",
+        "similarity": "rag_bm25"
+      },
+      "identifier_text": {
+        "type": "text",
+        "analyzer": "rag_ko",
+        "similarity": "rag_bm25"
+      },
+      "system": {
+        "type": "text",
+        "analyzer": "rag_ko",
+        "similarity": "rag_bm25"
+      },
+      "client": {
+        "type": "text",
+        "analyzer": "rag_ko",
+        "similarity": "rag_bm25"
+      },
+      "metadata": {
+        "properties": {
+          "document_type": {
+            "type": "keyword"
+          },
+          "client": {
+            "type": "keyword"
+          },
+          "document_date": {
+            "type": "date",
+            "format": "strict_date_optional_time||yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm"
+          },
+          "target_system": {
+            "type": "keyword"
+          },
+          "status": {
+            "type": "keyword"
+          },
+          "contract_id": {
+            "type": "keyword"
+          },
+          "contract_type": {
+            "type": "keyword"
+          },
+          "contract_start": {
+            "type": "date",
+            "format": "strict_date_optional_time||yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm"
+          },
+          "contract_end": {
+            "type": "date",
+            "format": "strict_date_optional_time||yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm"
+          },
+          "amount": {
+            "type": "keyword"
+          },
+          "currency": {
+            "type": "keyword"
+          },
+          "vat": {
+            "type": "keyword"
+          },
+          "quote_id": {
+            "type": "keyword"
+          },
+          "quote_validity": {
+            "type": "keyword"
+          },
+          "site": {
+            "type": "keyword"
+          },
+          "job_name": {
+            "type": "keyword"
+          },
+          "log_start": {
+            "type": "date",
+            "format": "strict_date_optional_time||yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm"
+          },
+          "log_end": {
+            "type": "date",
+            "format": "strict_date_optional_time||yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm"
+          },
+          "execution_result": {
+            "type": "keyword"
+          },
+          "error_code": {
+            "type": "keyword"
+          },
+          "project_name": {
+            "type": "keyword"
+          },
+          "cover_date": {
+            "type": "date",
+            "format": "strict_date_optional_time||yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm"
+          },
+          "written_date": {
+            "type": "date",
+            "format": "strict_date_optional_time||yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm"
+          },
+          "file_modified_at": {
+            "type": "date_nanos"
+          }
+        },
+        "dynamic": "strict"
+      },
+      "metadata_statuses": {
+        "properties": {
+          "document_type": {
+            "type": "keyword"
+          },
+          "client": {
+            "type": "keyword"
+          },
+          "document_date": {
+            "type": "keyword"
+          },
+          "target_system": {
+            "type": "keyword"
+          },
+          "status": {
+            "type": "keyword"
+          },
+          "contract_id": {
+            "type": "keyword"
+          },
+          "contract_type": {
+            "type": "keyword"
+          },
+          "contract_start": {
+            "type": "keyword"
+          },
+          "contract_end": {
+            "type": "keyword"
+          },
+          "amount": {
+            "type": "keyword"
+          },
+          "currency": {
+            "type": "keyword"
+          },
+          "vat": {
+            "type": "keyword"
+          },
+          "quote_id": {
+            "type": "keyword"
+          },
+          "quote_validity": {
+            "type": "keyword"
+          },
+          "site": {
+            "type": "keyword"
+          },
+          "job_name": {
+            "type": "keyword"
+          },
+          "log_start": {
+            "type": "keyword"
+          },
+          "log_end": {
+            "type": "keyword"
+          },
+          "execution_result": {
+            "type": "keyword"
+          },
+          "error_code": {
+            "type": "keyword"
+          },
+          "project_name": {
+            "type": "keyword"
+          },
+          "cover_date": {
+            "type": "keyword"
+          },
+          "written_date": {
+            "type": "keyword"
+          },
+          "file_modified_at": {
+            "type": "keyword"
+          }
+        },
+        "dynamic": "strict"
+      },
+      "concepts": {
+        "type": "keyword"
+      },
+      "identifiers": {
+        "type": "keyword"
+      },
+      "original": {
+        "type": "object",
+        "enabled": false
+      },
+      "source_refs": {
+        "type": "object",
+        "enabled": false
+      },
+      "feature_evidence": {
+        "type": "object",
+        "enabled": false
+      }
+    }
+  }
+}

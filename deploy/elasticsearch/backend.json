@@ -1,0 +1,19 @@
+{
+  "backend": "elasticsearch",
+  "version": "8.19.23",
+  "host": "ubuntu@192.168.60.40",
+  "orin_endpoint": "http://127.0.0.1:9200",
+  "mac_ssh_tunnel_endpoint": "http://127.0.0.1:19200",
+  "container": "rag-elasticsearch",
+  "document_alias": "rag-documents",
+  "chunk_alias": "rag-chunks",
+  "text_analyzer": "rag_ko",
+  "text_similarity": "rag_bm25",
+  "embedding_model": "bge-m3",
+  "embedding_dimensions": 1024,
+  "vector_index_options": {"type": "flat"},
+  "vector_similarity": "cosine",
+  "source_artifact_directory": "/media/sdcard/rag-runtime/indexing-110-semantic-vector-001/final-index",
+  "deployment_directory": "/media/sdcard/rag-runtime/elasticsearch-001",
+  "scope": "indexed data and offline evaluation only; no application query or answer service"
+}

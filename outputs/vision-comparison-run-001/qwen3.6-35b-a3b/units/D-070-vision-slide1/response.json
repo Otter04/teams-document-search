@@ -1,0 +1,46 @@
+{
+  "id": "gen-1792375447-VQBYjFa0vxiPcBaDvYS6",
+  "object": "chat.completion",
+  "created": 1792375447,
+  "model": "qwen/qwen3.6-35b-a3b",
+  "provider": "DeepInfra",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"figures\": [\n    {\n      \"bbox\": [0.045, 0.047, 0.949, 0.75],\n      \"claims\": [\n        {\n          \"bbox\": [0.045, 0.047, 0.949, 0.75],\n          \"status\": \"observed\",\n          \"text\": \"여신관리시스템 DR 구축을 위한 서버 구성도를 보여준다. 여의도 본사 IDC에 설치되며, L4 로드밸런서가 4개의 서버(본사 AP, 본사 DB, DR AP, DR DB)로 트래픽을 분산하는 구조이다.\"\n        }\n      ],\n      \"kind\": \"diagram\",\n      \"nodes\": [\n        {\n          \"bbox\": [0.368, 0.227, 0.630, 0.333],\n          \"id\": \"node_lb\",\n          \"label\": \"L4 / 로드밸런서\"\n        },\n        {\n          \"bbox\": [0.049, 0.400, 0.257, 0.593],\n          \"id\": \"node_app01\",\n          \"label\": \"loan-app01\\n여신 AP (본사)\\nRHEL 9.4 | 16 vCPU / 64GB\\n10.65.10.11\"\n        },\n        {\n          \"bbox\": [0.279, 0.400, 0.488, 0.593],\n          \"id\": \"node_db01\",\n          \"label\": \"loan-db01\\n여신 DB (Oracle 19c)\\nRHEL 9.4 | 32 vCPU / 256GB\\n10.65.10.21\"\n        },\n        {\n          \"bbox\": [0.510, 0.400, 0.718, 0.593],\n          \"id\": \"node_app_dr01\",\n          \"label\": \"loan-app-dr01\\n여신 AP (DR)\\nRHEL 9.4 | 16 vCPU / 64GB\\n10.65.110.11\"\n        },\n        {\n          \"bbox\": [0.741, 0.400, 0.949, 0.593],\n          \"id\": \"node_db_dr01\",\n          \"label\": \"loan-db-dr01\\n여신 DB (DR, Data Guard)\\nRHEL 9.4 | 32 vCPU / 256GB\\n10.65.110.21\"\n        }\n      ],\n      \"relations\": [\n        {\n          \"bbox\": [0.368, 0.333, 0.257, 0.400],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node_lb\",\n          \"label\": \"\",\n          \"to_node\": \"node_app01\"\n        },\n        {\n          \"bbox\": [0.368, 0.333, 0.488, 0.400],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node_lb\",\n          \"label\": \"\",\n          \"to_node\": \"node_db01\"\n        },\n        {\n          \"bbox\": [0.630, 0.333, 0.718, 0.400],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node_lb\",\n          \"label\": \"\",\n          \"to_node\": \"node_app_dr01\"\n        },\n        {\n          \"bbox\": [0.630, 0.333, 0.949, 0.400],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node_lb\",\n          \"label\": \"\",\n          \"to_node\": \"node_db_dr01\"\n        }\n      ]\n    }\n  ],\n  \"status\": \"complete\",\n  \"tables\": [],\n  \"texts\": [\n    {\n      \"bbox\": [0.045, 0.047, 0.949, 0.153],\n      \"kind\": \"heading\",\n      \"text\": \"여신관리시스템 서버 구성도\"\n    },\n    {\n      \"bbox\": [0.045, 0.140, 0.949, 0.207],\n      \"kind\": \"paragraph\",\n      \"text\": \"사업: 여신관리시스템 DR 구축 | 설치 위치: 여의도 본사 IDC | 2025-08-29\"\n    }\n  ]\n, \"warnings\": []}",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2915,
+    "completion_tokens": 1149,
+    "total_tokens": 4064,
+    "cost": 0.00138305,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00138305,
+      "upstream_inference_prompt_cost": 0.0002915,
+      "upstream_inference_completions_cost": 0.00109155
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

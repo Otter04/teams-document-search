@@ -1,0 +1,46 @@
+{
+  "id": "gen-1792375411-y0eJkvgamZCU2Esnbfsh",
+  "object": "chat.completion",
+  "created": 1792375411,
+  "model": "qwen/qwen3.6-35b-a3b",
+  "provider": "DeepInfra",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"figures\": [\n    {\n      \"bbox\": [0.05, 0.15, 0.95, 0.85],\n      \"claims\": [\n        {\n          \"bbox\": [0.05, 0.15, 0.95, 0.85],\n          \"status\": \"observed\",\n          \"text\": \"제안 아키텍처는 미르내대 정보전산원에 설치되며, 외부망 사용자의 요청이 보안·네트워크(PaloAlto PA-3410 × 2)를 거쳐 학사 웹, API, DB로 전달되는 구조를 보여준다.\"\n        }\n      ],\n      \"kind\": \"diagram\",\n      \"nodes\": [\n        {\n          \"bbox\": [0.45, 0.27, 0.55, 0.30],\n          \"id\": \"node-1\",\n          \"label\": \"사용자 / 외부망\"\n        },\n        {\n          \"bbox\": [0.45, 0.42, 0.56, 0.47],\n          \"id\": \"node-2\",\n          \"label\": \"보안 · 네트워크\\nPaloAlto PA-3410 × 2\"\n        },\n        {\n          \"bbox\": [0.10, 0.66, 0.33, 0.71],\n          \"id\": \"node-3\",\n          \"label\": \"학사 웹 ( 오토스케일 그룹 )\\nhaksa-web01\"\n        },\n        {\n          \"bbox\": [0.35, 0.66, 0.58, 0.71],\n          \"id\": \"node-4\",\n          \"label\": \"학사 API\\nhaksa-api01\"\n        },\n        {\n          \"bbox\": [0.60, 0.66, 0.83, 0.71],\n          \"id\": \"node-5\",\n          \"label\": \"학사 DB (MySQL 8.0)\\nhaksa-db01\"\n        }\n      ],\n      \"relations\": [\n        {\n          \"bbox\": [0.50, 0.30, 0.50, 0.42],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node-1\",\n          \"label\": \"\",\n          \"to_node\": \"node-2\"\n        },\n        {\n          \"bbox\": [0.45, 0.47, 0.15, 0.66],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node-2\",\n          \"label\": \"\",\n          \"to_node\": \"node-3\"\n        },\n        {\n          \"bbox\": [0.50, 0.47, 0.46, 0.66],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node-2\",\n          \"label\": \"\",\n          \"to_node\": \"node-4\"\n        },\n        {\n          \"bbox\": [0.55, 0.47, 0.75, 0.66],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node-2\",\n          \"label\": \"\",\n          \"to_node\": \"node-5\"\n        }\n      ]\n    }\n  ],\n  \"status\": \"complete\",\n  \"tables\": [],\n  \"texts\": [\n    {\n      \"bbox\": [0.05, 0.07, 0.22, 0.12],\n      \"kind\": \"heading\",\n      \"text\": \"제안 아키텍처\"\n    },\n    {\n      \"bbox\": [0.05, 0.15, 0.23, 0.18],\n      \"kind\": \"paragraph\",\n      \"text\": \"설치 위치 : 미르내대 정보전산원\"\n    }\n  ]\n, \"warnings\": []}",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2770,
+    "completion_tokens": 959,
+    "total_tokens": 3729,
+    "cost": 0.00118805,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00118805,
+      "upstream_inference_prompt_cost": 0.000277,
+      "upstream_inference_completions_cost": 0.00091105
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

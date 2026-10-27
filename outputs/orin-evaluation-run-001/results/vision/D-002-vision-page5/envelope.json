@@ -1,0 +1,49 @@
+{
+  "model": "qwen3.6-35b-a3b",
+  "provider": "local-vllm",
+  "quantization": "awq-4bit",
+  "kind": "vision",
+  "doc_id": "D-002",
+  "id": "D-002-vision-page5",
+  "request_sha256": "df2ae8d3a8873e9dc500d563520e99be3285fec4d3d52d975f207b7374559036",
+  "baseline_request_sha256": "0cd61159b5e98e4370a97f7a19b0879fb07407761adf832fc9cf4a40acfbc127",
+  "messages_sha256": "6b4bde9f85bac06261095e558aa27155ed319815d165a6ae0f90f33c414c5ac3",
+  "response": {
+    "id": "chatcmpl-8e0d9a962a42ffcb",
+    "object": "chat.completion",
+    "created": 1792474787,
+    "model": "qwen3.6-35b-a3b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"figures\": [\n    {\n      \"bbox\": [0.05, 0.15, 0.95, 0.85],\n      \"claims\": [\n        {\n          \"bbox\": [0.05, 0.15, 0.95, 0.85],\n          \"status\": \"observed\",\n          \"text\": \"제안 아키텍처는 화성 1 공장 전산실에 설치되며, 외부망과 보안 네트워크(FortiGate 200F HA)를 통해 MES 애플리케이션과 데이터베이스로 연결되는 구조를 보여줍니다.\"\n        }\n      ],\n      \"kind\": \"diagram\",\n      \"nodes\": [\n        {\n          \"bbox\": [0.45, 0.27, 0.55, 0.30],\n          \"id\": \"node_1\",\n          \"label\": \"사용자 / 외부망\"\n        },\n        {\n          \"bbox\": [0.45, 0.42, 0.55, 0.48],\n          \"id\": \"node_2\",\n          \"label\": \"보안 · 네트워크\\nFortiGate 200F × 2 (HA)\"\n        },\n        {\n          \"bbox\": [0.12, 0.66, 0.28, 0.71],\n          \"id\": \"node_3\",\n          \"label\": \"MES 애플리케이션\\nmes-app01\"\n        },\n        {\n          \"bbox\": [0.32, 0.66, 0.48, 0.71],\n          \"id\": \"node_4\",\n          \"label\": \"MES 애플리케이션\\nmes-app02\"\n        },\n        {\n          \"bbox\": [0.52, 0.66, 0.68, 0.71],\n          \"id\": \"node_5\",\n          \"label\": \"MES DB (Oracle 19c)\\nmes-db01\"\n        },\n        {\n          \"bbox\": [0.72, 0.66, 0.88, 0.71],\n          \"id\": \"node_6\",\n          \"label\": \"MES DB 스탠바이\\nmes-db02\"\n        }\n      ],\n      \"relations\": [\n        {\n          \"bbox\": [0.50, 0.30, 0.50, 0.42],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node_1\",\n          \"label\": \"\",\n          \"to_node\": \"node_2\"\n        },\n        {\n          \"bbox\": [0.50, 0.48, 0.20, 0.66],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node_2\",\n          \"label\": \"\",\n          \"to_node\": \"node_3\"\n        },\n        {\n          \"bbox\": [0.50, 0.48, 0.40, 0.66],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node_2\",\n          \"label\": \"\",\n          \"to_node\": \"node_4\"\n        },\n        {\n          \"bbox\": [0.50, 0.48, 0.60, 0.66],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node_2\",\n          \"label\": \"\",\n          \"to_node\": \"node_5\"\n        },\n        {\n          \"bbox\": [0.50, 0.48, 0.80, 0.66],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node_2\",\n          \"label\": \"\",\n          \"to_node\": \"node_6\"\n        }\n      ]\n    }\n  ],\n  \"status\": \"complete\",\n  \"tables\": [],\n  \"texts\": [\n    {\n      \"bbox\": [0.05, 0.07, 0.22, 0.12],\n      \"kind\": \"heading\",\n      \"text\": \"제안 아키텍처\"\n    },\n    {\n      \"bbox\": [0.05, 0.15, 0.22, 0.18],\n      \"kind\": \"paragraph\",\n      \"text\": \"설치 위치 : 화성 1 공장 전산실\"\n    }\n  ],\n  \"warnings\": []\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 3870,
+      "total_tokens": 4946,
+      "completion_tokens": 1076,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "http_status": 200,
+  "elapsed_ms": 169706
+}

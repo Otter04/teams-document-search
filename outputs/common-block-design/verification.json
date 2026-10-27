@@ -1,0 +1,202 @@
+{
+  "scope": "schema_and_reference_integrity_only",
+  "model_called": false,
+  "vision_quality_evaluated": false,
+  "documents": [
+    {
+      "path": "examples/docx-D-005.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "path": "examples/log-D-010.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "path": "examples/pdf-diagram-D-069.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "path": "examples/pdf-scan-table-D-044.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "path": "examples/pdf-text-D-022.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "path": "examples/pptx-D-007.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "path": "examples/txt-D-052.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "path": "examples/xlsx-D-003.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "path": "templates/docx.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "path": "templates/embedded-photo.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "path": "templates/log.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "path": "templates/pdf-diagram.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "path": "templates/pdf-scan-table.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "path": "templates/pdf-text.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "path": "templates/pptx.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "path": "templates/txt.json",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "path": "templates/xlsx.json",
+      "valid": true,
+      "errors": []
+    }
+  ],
+  "negative_checks": [
+    {
+      "case": "missing_required_text",
+      "rejected": true,
+      "errors": [
+        "schema:blocks/1: 'text' is a required property"
+      ]
+    },
+    {
+      "case": "invented_direction_enum",
+      "rejected": true,
+      "errors": [
+        "schema:blocks/1/visual/relations/0/direction: 'downward' is not one of ['undirected', 'forward', 'bidirectional', 'unknown']"
+      ]
+    },
+    {
+      "case": "dangling_node",
+      "rejected": true,
+      "errors": [
+        "unknown relation endpoint"
+      ]
+    },
+    {
+      "case": "dangling_evidence",
+      "rejected": true,
+      "errors": [
+        "unknown claim evidence"
+      ]
+    },
+    {
+      "case": "parent_cycle",
+      "rejected": true,
+      "errors": [
+        "parent cycle"
+      ]
+    },
+    {
+      "case": "bbox_reversed",
+      "rejected": true,
+      "errors": [
+        "reversed/empty bbox"
+      ]
+    },
+    {
+      "case": "bbox_wrong_page",
+      "rejected": true,
+      "errors": [
+        "bbox/source location mismatch"
+      ]
+    },
+    {
+      "case": "missing_model_identity",
+      "rejected": true,
+      "errors": [
+        "schema:runs/0/model_id: None is not of type 'string'",
+        "schema:runs/0/provider: None is not of type 'string'",
+        "schema:runs/0/prompt_version: None is not of type 'string'",
+        "schema:runs/0/input_asset_ids: [] should be non-empty"
+      ]
+    },
+    {
+      "case": "example_marked_production",
+      "rejected": true,
+      "errors": [
+        "schema:coverage/scope: 'full_document' was expected",
+        "schema:coverage/unit_inventory_complete: True was expected",
+        "schema:runs/0/method: 'manual_design' is not one of ['native_parser', 'vision_llm']"
+      ]
+    },
+    {
+      "case": "overlapping_cells",
+      "rejected": true,
+      "errors": [
+        "overlapping table cells",
+        "unrepresented table cells"
+      ]
+    },
+    {
+      "case": "table_cell_omission",
+      "rejected": true,
+      "errors": [
+        "unrepresented table cells",
+        "row text must serialize its anchor cells once"
+      ]
+    },
+    {
+      "case": "unknown_unit_block",
+      "rejected": true,
+      "errors": [
+        "unknown unit block"
+      ]
+    },
+    {
+      "case": "duplicate_block_id",
+      "rejected": true,
+      "errors": [
+        "duplicate block_id",
+        "unknown unit block",
+        "self block reference"
+      ]
+    },
+    {
+      "case": "reversed_lines",
+      "rejected": true,
+      "errors": [
+        "reversed line range"
+      ]
+    }
+  ],
+  "passed": true
+}

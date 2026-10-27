@@ -1,0 +1,49 @@
+{
+  "model": "qwen3.6-35b-a3b",
+  "provider": "local-vllm",
+  "quantization": "awq-4bit",
+  "kind": "enrichment",
+  "doc_id": "D-005",
+  "id": "D-005",
+  "request_sha256": "101dd4382979b68f061da70c29eedf5b3dbdcc2db26162ac9e969a9009ee72f1",
+  "baseline_request_sha256": "25c1935c892ea09fd37c3b506d65bd0b90a0459a6a98b8031dea70c2328a00dc",
+  "messages_sha256": "e85f704e8ee9a51dc41b8b602fe9f2a99ebef9d847829ee010f2863bf107b084",
+  "response": {
+    "id": "chatcmpl-b0937aaed0104b11",
+    "object": "chat.completion",
+    "created": 1792465943,
+    "model": "qwen3.6-35b-a3b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"doc_id\": \"D-005\",\n  \"fields\": {\n    \"VAT\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"계약금액은 금 이억사천팔백만원정(₩248,000,000, 부가가치세 별도)으로 한다.\",\n          \"ref\": \"D-005-fb5c94ebaf39-p10\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"별도\"\n    },\n    \"거래처\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"㈜청람정밀(이하 갑이라 한다)\",\n          \"ref\": \"D-005-fb5c94ebaf39-p4\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"청람정밀\"\n    },\n    \"견적번호\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"문서 전체에 견적 번호 표기가 없음\",\n      \"status\": \"not_found_in_input\",\n      \"value\": null\n    },\n    \"견적유효기간\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"해당 필드는 계약서에 적용되지 않음\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"계약번호\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"계약번호: CT-2025-0112\",\n          \"ref\": \"D-005-fb5c94ebaf39-p3\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"CT-2025-0112\"\n    },\n    \"계약시작일\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"본 계약의 기간은 2025년 3월 1일부터 2025년 8월 31일까지로 한다.\",\n          \"ref\": \"D-005-fb5c94ebaf39-p8\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"2025-03-01\"\n    },\n    \"계약유형\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"문서에 명시된 계약 유형(예: 도급, 용역 등)이 없으며, 업무 내용만으로 유형을 추정할 수 없음\",\n      \"status\": \"not_found_in_input\",\n      \"value\": null\n    },\n    \"계약종료일\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"본 계약의 기간은 2025년 3월 1일부터 2025년 8월 31일까지로 한다.\",\n          \"ref\": \"D-005-fb5c94ebaf39-p8\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"2025-08-31\"\n    },\n    \"금액\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"계약금액은 금 이억사천팔백만원정(₩248,000,000, 부가가치세 별도)으로 한다.\",\n          \"ref\": \"D-005-fb5c94ebaf39-p10\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"248000000\"\n    },\n    \"대상시스템\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"2025 MES 고도화 구축 계약서\",\n          \"ref\": \"D-005-fb5c94ebaf39-p2\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"MES\"\n    },\n    \"로그시작\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"해당 필드는 실행 로그에 적용됨\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"로그종료\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"해당 필드는 실행 로그에 적용됨\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"문서일자\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"2025년 2월 19일\",\n          \"ref\": \"D-005-fb5c94ebaf39-p28\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"2025-02-19\"\n    },\n    \"문서종류\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"source\",\n          \"quote\": \"2025 MES 고도화 구축_계약서(초안).docx\",\n          \"ref\": \"file_name\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"계약서\"\n    },\n    \"사업명\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"「2025 MES 고도화 구축」(이하 본 사업이라 한다)\",\n          \"ref\": \"D-005-fb5c94ebaf39-p4\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"2025 MES 고도화 구축\"\n    },\n    \"사이트\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"해당 필드는 구성도에 명시된 설치 위치에 적용됨\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"상태\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"【초안 — 내부 검토용】\",\n          \"ref\": \"D-005-fb5c94ebaf39-p1\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"초안\"\n    },\n    \"실행결과\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"해당 필드는 실행 로그에 적용됨\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"오류코드\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"해당 필드는 실행 로그·기타 메모에서 명시된 오류 문맥으로 찾음. 해당 문서에는 오류 코드 없음\",\n      \"status\": \"not_found_in_input\",\n      \"value\": null\n    },\n    \"작성일\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"문서 내에 작성일이라고 명시된 날짜가 없음. 마지막 날인 날짜는 계약 성립 증명용이므로 작성일로 보기 어려움\",\n      \"status\": \"not_found_in_input\",\n      \"value\": null\n    },\n    \"작업명\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"해당 필드는 실행 로그에 적용됨\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"통화\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"계약금액은 금 이억사천팔백만원정(₩248,000,000, 부가가치세 별도)으로 한다.\",\n          \"ref\": \"D-005-fb5c94ebaf39-p10\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"KRW\"\n    },\n    \"표지일\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"문서 첫 페이지/슬라이드의 표지 날짜가 별도로 존재하지 않음\",\n      \"status\": \"not_found_in_input\",\n      \"value\": null\n    }\n  },\n  \"schema_version\": \"llm_enrichment_candidate_v1\",\n  \"summary\": [\n    {\"evidence\": [{\"kind\": \"block\", \"quote\": \"2025 MES 고도화 구축 계약서\", \"ref\": \"D-005-fb5c94ebaf39-p2\"}], \"text\": \"본 문서는 ㈜청람정밀과 라움정보기술 주식회사 간 2025 MES 고도화 구축에 관한 초안 계약서입니다.\"},\n    {\"evidence\": [{\"kind\": \"block\", \"quote\": \"본 계약의 기간은 2025년 3월 1일부터 2025년 8월 31일까지로 한다.\", \"ref\": \"D-005-fb5c94ebaf39-p8\"}, {\"kind\": \"block\", \"quote\": \"계약금액은 금 이억사천팔백만원정(₩248,000,000, 부가가치세 별도)으로 한다.\", \"ref\": \"D-005-fb5c94ebaf39-p10\"}], \"text\": \"계약 기간은 2025년 3월 1일부터 8월 31일까지이며, 계약 금액은 부가가치세 별도 기준 2억 4,800만 원입니다.\"},\n    {\"evidence\": [{\"kind\": \"block\", \"quote\": \"【초안 — 내부 검토용】\", \"ref\": \"D-005-fb5c94ebaf39-p1\"}, {\"kind\": \"block\", \"quote\": \"2025년 2월 19일\", \"ref\": \"D-005-fb5c94ebaf39-p28\"}], \"text\": \"문서 상태는 내부 검토용 초안이며, 문서 하단에 2025년 2월 19일이 기재되어 있습니다.\"}\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 9149,
+      "total_tokens": 11767,
+      "completion_tokens": 2618,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "http_status": 200,
+  "elapsed_ms": 417026
+}

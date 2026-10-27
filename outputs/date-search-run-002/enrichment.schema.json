@@ -1,0 +1,4086 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Native enrichment with date roles 1.1.0",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_kind",
+    "doc_id",
+    "source",
+    "input_record_sha256",
+    "rules_version",
+    "scope",
+    "model_called",
+    "status",
+    "native_text_present",
+    "fields",
+    "pending_visual_units",
+    "deferred",
+    "date_context"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.1.0"
+    },
+    "record_kind": {
+      "const": "enrichment_result"
+    },
+    "doc_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "type": "object"
+    },
+    "input_record_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "rules_version": {
+      "const": "rules-0.3.0"
+    },
+    "scope": {
+      "const": "native_text_and_source_metadata"
+    },
+    "model_called": {
+      "const": false
+    },
+    "status": {
+      "const": "partial"
+    },
+    "native_text_present": {
+      "type": "boolean"
+    },
+    "fields": {
+      "type": "object",
+      "required": [
+        "문서종류",
+        "거래처",
+        "문서일자",
+        "대상시스템",
+        "상태",
+        "계약번호",
+        "계약유형",
+        "계약시작일",
+        "계약종료일",
+        "금액",
+        "통화",
+        "VAT",
+        "견적번호",
+        "견적유효기간",
+        "사이트",
+        "작업명",
+        "로그시작",
+        "로그종료",
+        "실행결과",
+        "오류코드",
+        "사업명"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "문서종류": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "status",
+            "rule_id",
+            "evidence",
+            "candidates",
+            "reason"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "status": {
+              "enum": [
+                "extracted",
+                "pending_vision",
+                "needs_review",
+                "not_found_native",
+                "not_applicable"
+              ]
+            },
+            "rule_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "evidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "kind",
+                  "ref",
+                  "quote",
+                  "loc"
+                ],
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "block",
+                      "source"
+                    ]
+                  },
+                  "ref": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "quote": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "loc": {
+                    "type": [
+                      "object",
+                      "null"
+                    ]
+                  }
+                }
+              }
+            },
+            "candidates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "value",
+                  "rule_id",
+                  "evidence"
+                ],
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "kind",
+                        "ref",
+                        "quote",
+                        "loc"
+                      ],
+                      "properties": {
+                        "kind": {
+                          "enum": [
+                            "block",
+                            "source"
+                          ]
+                        },
+                        "ref": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "quote": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "loc": {
+                          "type": [
+                            "object",
+                            "null"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "extracted"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "minItems": 1
+                  },
+                  "candidates": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "const": null
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "value": {
+                    "const": null
+                  },
+                  "rule_id": {
+                    "const": null
+                  },
+                  "evidence": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "거래처": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "status",
+            "rule_id",
+            "evidence",
+            "candidates",
+            "reason"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "status": {
+              "enum": [
+                "extracted",
+                "pending_vision",
+                "needs_review",
+                "not_found_native",
+                "not_applicable"
+              ]
+            },
+            "rule_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "evidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "kind",
+                  "ref",
+                  "quote",
+                  "loc"
+                ],
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "block",
+                      "source"
+                    ]
+                  },
+                  "ref": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "quote": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "loc": {
+                    "type": [
+                      "object",
+                      "null"
+                    ]
+                  }
+                }
+              }
+            },
+            "candidates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "value",
+                  "rule_id",
+                  "evidence"
+                ],
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "kind",
+                        "ref",
+                        "quote",
+                        "loc"
+                      ],
+                      "properties": {
+                        "kind": {
+                          "enum": [
+                            "block",
+                            "source"
+                          ]
+                        },
+                        "ref": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "quote": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "loc": {
+                          "type": [
+                            "object",
+                            "null"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "extracted"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "minItems": 1
+                  },
+                  "candidates": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "const": null
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "value": {
+                    "const": null
+                  },
+                  "rule_id": {
+                    "const": null
+                  },
+                  "evidence": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "문서일자": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "status",
+            "rule_id",
+            "evidence",
+            "candidates",
+            "reason"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "status": {
+              "enum": [
+                "extracted",
+                "pending_vision",
+                "needs_review",
+                "not_found_native",
+                "not_applicable"
+              ]
+            },
+            "rule_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "evidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "kind",
+                  "ref",
+                  "quote",
+                  "loc"
+                ],
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "block",
+                      "source"
+                    ]
+                  },
+                  "ref": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "quote": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "loc": {
+                    "type": [
+                      "object",
+                      "null"
+                    ]
+                  }
+                }
+              }
+            },
+            "candidates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "value",
+                  "rule_id",
+                  "evidence"
+                ],
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "kind",
+                        "ref",
+                        "quote",
+                        "loc"
+                      ],
+                      "properties": {
+                        "kind": {
+                          "enum": [
+                            "block",
+                            "source"
+                          ]
+                        },
+                        "ref": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "quote": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "loc": {
+                          "type": [
+                            "object",
+                            "null"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "extracted"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "minItems": 1
+                  },
+                  "candidates": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "const": null
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "value": {
+                    "const": null
+                  },
+                  "rule_id": {
+                    "const": null
+                  },
+                  "evidence": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "대상시스템": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "status",
+            "rule_id",
+            "evidence",
+            "candidates",
+            "reason"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "status": {
+              "enum": [
+                "extracted",
+                "pending_vision",
+                "needs_review",
+                "not_found_native",
+                "not_applicable"
+              ]
+            },
+            "rule_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "evidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "kind",
+                  "ref",
+                  "quote",
+                  "loc"
+                ],
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "block",
+                      "source"
+                    ]
+                  },
+                  "ref": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "quote": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "loc": {
+                    "type": [
+                      "object",
+                      "null"
+                    ]
+                  }
+                }
+              }
+            },
+            "candidates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "value",
+                  "rule_id",
+                  "evidence"
+                ],
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "kind",
+                        "ref",
+                        "quote",
+                        "loc"
+                      ],
+                      "properties": {
+                        "kind": {
+                          "enum": [
+                            "block",
+                            "source"
+                          ]
+                        },
+                        "ref": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "quote": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "loc": {
+                          "type": [
+                            "object",
+                            "null"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "extracted"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "minItems": 1
+                  },
+                  "candidates": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "const": null
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "value": {
+                    "const": null
+                  },
+                  "rule_id": {
+                    "const": null
+                  },
+                  "evidence": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "상태": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "status",
+            "rule_id",
+            "evidence",
+            "candidates",
+            "reason"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "status": {
+              "enum": [
+                "extracted",
+                "pending_vision",
+                "needs_review",
+                "not_found_native",
+                "not_applicable"
+              ]
+            },
+            "rule_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "evidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "kind",
+                  "ref",
+                  "quote",
+                  "loc"
+                ],
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "block",
+                      "source"
+                    ]
+                  },
+                  "ref": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "quote": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "loc": {
+                    "type": [
+                      "object",
+                      "null"
+                    ]
+                  }
+                }
+              }
+            },
+            "candidates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "value",
+                  "rule_id",
+                  "evidence"
+                ],
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "kind",
+                        "ref",
+                        "quote",
+                        "loc"
+                      ],
+                      "properties": {
+                        "kind": {
+                          "enum": [
+                            "block",
+                            "source"
+                          ]
+                        },
+                        "ref": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "quote": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "loc": {
+                          "type": [
+                            "object",
+                            "null"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "extracted"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "minItems": 1
+                  },
+                  "candidates": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "const": null
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "value": {
+                    "const": null
+                  },
+                  "rule_id": {
+                    "const": null
+                  },
+                  "evidence": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "계약번호": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "status",
+            "rule_id",
+            "evidence",
+            "candidates",
+            "reason"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "status": {
+              "enum": [
+                "extracted",
+                "pending_vision",
+                "needs_review",
+                "not_found_native",
+                "not_applicable"
+              ]
+            },
+            "rule_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "evidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "kind",
+                  "ref",
+                  "quote",
+                  "loc"
+                ],
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "block",
+                      "source"
+                    ]
+                  },
+                  "ref": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "quote": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "loc": {
+                    "type": [
+                      "object",
+                      "null"
+                    ]
+                  }
+                }
+              }
+            },
+            "candidates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "value",
+                  "rule_id",
+                  "evidence"
+                ],
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "kind",
+                        "ref",
+                        "quote",
+                        "loc"
+                      ],
+                      "properties": {
+                        "kind": {
+                          "enum": [
+                            "block",
+                            "source"
+                          ]
+                        },
+                        "ref": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "quote": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "loc": {
+                          "type": [
+                            "object",
+                            "null"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "extracted"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "minItems": 1
+                  },
+                  "candidates": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "const": null
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "value": {
+                    "const": null
+                  },
+                  "rule_id": {
+                    "const": null
+                  },
+                  "evidence": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "계약유형": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "status",
+            "rule_id",
+            "evidence",
+            "candidates",
+            "reason"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "status": {
+              "enum": [
+                "extracted",
+                "pending_vision",
+                "needs_review",
+                "not_found_native",
+                "not_applicable"
+              ]
+            },
+            "rule_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "evidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "kind",
+                  "ref",
+                  "quote",
+                  "loc"
+                ],
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "block",
+                      "source"
+                    ]
+                  },
+                  "ref": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "quote": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "loc": {
+                    "type": [
+                      "object",
+                      "null"
+                    ]
+                  }
+                }
+              }
+            },
+            "candidates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "value",
+                  "rule_id",
+                  "evidence"
+                ],
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "kind",
+                        "ref",
+                        "quote",
+                        "loc"
+                      ],
+                      "properties": {
+                        "kind": {
+                          "enum": [
+                            "block",
+                            "source"
+                          ]
+                        },
+                        "ref": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "quote": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "loc": {
+                          "type": [
+                            "object",
+                            "null"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "extracted"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "minItems": 1
+                  },
+                  "candidates": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "const": null
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "value": {
+                    "const": null
+                  },
+                  "rule_id": {
+                    "const": null
+                  },
+                  "evidence": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "계약시작일": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "status",
+            "rule_id",
+            "evidence",
+            "candidates",
+            "reason"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "status": {
+              "enum": [
+                "extracted",
+                "pending_vision",
+                "needs_review",
+                "not_found_native",
+                "not_applicable"
+              ]
+            },
+            "rule_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "evidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "kind",
+                  "ref",
+                  "quote",
+                  "loc"
+                ],
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "block",
+                      "source"
+                    ]
+                  },
+                  "ref": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "quote": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "loc": {
+                    "type": [
+                      "object",
+                      "null"
+                    ]
+                  }
+                }
+              }
+            },
+            "candidates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "value",
+                  "rule_id",
+                  "evidence"
+                ],
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "kind",
+                        "ref",
+                        "quote",
+                        "loc"
+                      ],
+                      "properties": {
+                        "kind": {
+                          "enum": [
+                            "block",
+                            "source"
+                          ]
+                        },
+                        "ref": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "quote": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "loc": {
+                          "type": [
+                            "object",
+                            "null"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "extracted"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "minItems": 1
+                  },
+                  "candidates": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "const": null
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "value": {
+                    "const": null
+                  },
+                  "rule_id": {
+                    "const": null
+                  },
+                  "evidence": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "계약종료일": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "status",
+            "rule_id",
+            "evidence",
+            "candidates",
+            "reason"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "status": {
+              "enum": [
+                "extracted",
+                "pending_vision",
+                "needs_review",
+                "not_found_native",
+                "not_applicable"
+              ]
+            },
+            "rule_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "evidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "kind",
+                  "ref",
+                  "quote",
+                  "loc"
+                ],
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "block",
+                      "source"
+                    ]
+                  },
+                  "ref": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "quote": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "loc": {
+                    "type": [
+                      "object",
+                      "null"
+                    ]
+                  }
+                }
+              }
+            },
+            "candidates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "value",
+                  "rule_id",
+                  "evidence"
+                ],
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "kind",
+                        "ref",
+                        "quote",
+                        "loc"
+                      ],
+                      "properties": {
+                        "kind": {
+                          "enum": [
+                            "block",
+                            "source"
+                          ]
+                        },
+                        "ref": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "quote": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "loc": {
+                          "type": [
+                            "object",
+                            "null"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "extracted"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "minItems": 1
+                  },
+                  "candidates": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "const": null
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "value": {
+                    "const": null
+                  },
+                  "rule_id": {
+                    "const": null
+                  },
+                  "evidence": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "금액": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "status",
+            "rule_id",
+            "evidence",
+            "candidates",
+            "reason"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "status": {
+              "enum": [
+                "extracted",
+                "pending_vision",
+                "needs_review",
+                "not_found_native",
+                "not_applicable"
+              ]
+            },
+            "rule_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "evidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "kind",
+                  "ref",
+                  "quote",
+                  "loc"
+                ],
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "block",
+                      "source"
+                    ]
+                  },
+                  "ref": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "quote": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "loc": {
+                    "type": [
+                      "object",
+                      "null"
+                    ]
+                  }
+                }
+              }
+            },
+            "candidates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "value",
+                  "rule_id",
+                  "evidence"
+                ],
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "kind",
+                        "ref",
+                        "quote",
+                        "loc"
+                      ],
+                      "properties": {
+                        "kind": {
+                          "enum": [
+                            "block",
+                            "source"
+                          ]
+                        },
+                        "ref": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "quote": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "loc": {
+                          "type": [
+                            "object",
+                            "null"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "extracted"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "minItems": 1
+                  },
+                  "candidates": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "const": null
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "value": {
+                    "const": null
+                  },
+                  "rule_id": {
+                    "const": null
+                  },
+                  "evidence": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "통화": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "status",
+            "rule_id",
+            "evidence",
+            "candidates",
+            "reason"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "status": {
+              "enum": [
+                "extracted",
+                "pending_vision",
+                "needs_review",
+                "not_found_native",
+                "not_applicable"
+              ]
+            },
+            "rule_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "evidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "kind",
+                  "ref",
+                  "quote",
+                  "loc"
+                ],
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "block",
+                      "source"
+                    ]
+                  },
+                  "ref": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "quote": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "loc": {
+                    "type": [
+                      "object",
+                      "null"
+                    ]
+                  }
+                }
+              }
+            },
+            "candidates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "value",
+                  "rule_id",
+                  "evidence"
+                ],
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "kind",
+                        "ref",
+                        "quote",
+                        "loc"
+                      ],
+                      "properties": {
+                        "kind": {
+                          "enum": [
+                            "block",
+                            "source"
+                          ]
+                        },
+                        "ref": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "quote": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "loc": {
+                          "type": [
+                            "object",
+                            "null"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "extracted"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "minItems": 1
+                  },
+                  "candidates": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "const": null
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "value": {
+                    "const": null
+                  },
+                  "rule_id": {
+                    "const": null
+                  },
+                  "evidence": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "VAT": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "status",
+            "rule_id",
+            "evidence",
+            "candidates",
+            "reason"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "status": {
+              "enum": [
+                "extracted",
+                "pending_vision",
+                "needs_review",
+                "not_found_native",
+                "not_applicable"
+              ]
+            },
+            "rule_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "evidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "kind",
+                  "ref",
+                  "quote",
+                  "loc"
+                ],
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "block",
+                      "source"
+                    ]
+                  },
+                  "ref": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "quote": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "loc": {
+                    "type": [
+                      "object",
+                      "null"
+                    ]
+                  }
+                }
+              }
+            },
+            "candidates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "value",
+                  "rule_id",
+                  "evidence"
+                ],
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "kind",
+                        "ref",
+                        "quote",
+                        "loc"
+                      ],
+                      "properties": {
+                        "kind": {
+                          "enum": [
+                            "block",
+                            "source"
+                          ]
+                        },
+                        "ref": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "quote": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "loc": {
+                          "type": [
+                            "object",
+                            "null"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "extracted"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "minItems": 1
+                  },
+                  "candidates": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "const": null
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "value": {
+                    "const": null
+                  },
+                  "rule_id": {
+                    "const": null
+                  },
+                  "evidence": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "견적번호": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "status",
+            "rule_id",
+            "evidence",
+            "candidates",
+            "reason"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "status": {
+              "enum": [
+                "extracted",
+                "pending_vision",
+                "needs_review",
+                "not_found_native",
+                "not_applicable"
+              ]
+            },
+            "rule_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "evidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "kind",
+                  "ref",
+                  "quote",
+                  "loc"
+                ],
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "block",
+                      "source"
+                    ]
+                  },
+                  "ref": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "quote": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "loc": {
+                    "type": [
+                      "object",
+                      "null"
+                    ]
+                  }
+                }
+              }
+            },
+            "candidates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "value",
+                  "rule_id",
+                  "evidence"
+                ],
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "kind",
+                        "ref",
+                        "quote",
+                        "loc"
+                      ],
+                      "properties": {
+                        "kind": {
+                          "enum": [
+                            "block",
+                            "source"
+                          ]
+                        },
+                        "ref": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "quote": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "loc": {
+                          "type": [
+                            "object",
+                            "null"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "extracted"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "minItems": 1
+                  },
+                  "candidates": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "const": null
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "value": {
+                    "const": null
+                  },
+                  "rule_id": {
+                    "const": null
+                  },
+                  "evidence": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "견적유효기간": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "status",
+            "rule_id",
+            "evidence",
+            "candidates",
+            "reason"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "status": {
+              "enum": [
+                "extracted",
+                "pending_vision",
+                "needs_review",
+                "not_found_native",
+                "not_applicable"
+              ]
+            },
+            "rule_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "evidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "kind",
+                  "ref",
+                  "quote",
+                  "loc"
+                ],
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "block",
+                      "source"
+                    ]
+                  },
+                  "ref": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "quote": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "loc": {
+                    "type": [
+                      "object",
+                      "null"
+                    ]
+                  }
+                }
+              }
+            },
+            "candidates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "value",
+                  "rule_id",
+                  "evidence"
+                ],
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "kind",
+                        "ref",
+                        "quote",
+                        "loc"
+                      ],
+                      "properties": {
+                        "kind": {
+                          "enum": [
+                            "block",
+                            "source"
+                          ]
+                        },
+                        "ref": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "quote": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "loc": {
+                          "type": [
+                            "object",
+                            "null"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "extracted"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "minItems": 1
+                  },
+                  "candidates": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "const": null
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "value": {
+                    "const": null
+                  },
+                  "rule_id": {
+                    "const": null
+                  },
+                  "evidence": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "사이트": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "status",
+            "rule_id",
+            "evidence",
+            "candidates",
+            "reason"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "status": {
+              "enum": [
+                "extracted",
+                "pending_vision",
+                "needs_review",
+                "not_found_native",
+                "not_applicable"
+              ]
+            },
+            "rule_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "evidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "kind",
+                  "ref",
+                  "quote",
+                  "loc"
+                ],
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "block",
+                      "source"
+                    ]
+                  },
+                  "ref": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "quote": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "loc": {
+                    "type": [
+                      "object",
+                      "null"
+                    ]
+                  }
+                }
+              }
+            },
+            "candidates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "value",
+                  "rule_id",
+                  "evidence"
+                ],
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "kind",
+                        "ref",
+                        "quote",
+                        "loc"
+                      ],
+                      "properties": {
+                        "kind": {
+                          "enum": [
+                            "block",
+                            "source"
+                          ]
+                        },
+                        "ref": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "quote": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "loc": {
+                          "type": [
+                            "object",
+                            "null"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "extracted"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "minItems": 1
+                  },
+                  "candidates": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "const": null
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "value": {
+                    "const": null
+                  },
+                  "rule_id": {
+                    "const": null
+                  },
+                  "evidence": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "작업명": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "status",
+            "rule_id",
+            "evidence",
+            "candidates",
+            "reason"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "status": {
+              "enum": [
+                "extracted",
+                "pending_vision",
+                "needs_review",
+                "not_found_native",
+                "not_applicable"
+              ]
+            },
+            "rule_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "evidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "kind",
+                  "ref",
+                  "quote",
+                  "loc"
+                ],
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "block",
+                      "source"
+                    ]
+                  },
+                  "ref": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "quote": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "loc": {
+                    "type": [
+                      "object",
+                      "null"
+                    ]
+                  }
+                }
+              }
+            },
+            "candidates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "value",
+                  "rule_id",
+                  "evidence"
+                ],
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "kind",
+                        "ref",
+                        "quote",
+                        "loc"
+                      ],
+                      "properties": {
+                        "kind": {
+                          "enum": [
+                            "block",
+                            "source"
+                          ]
+                        },
+                        "ref": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "quote": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "loc": {
+                          "type": [
+                            "object",
+                            "null"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "extracted"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "minItems": 1
+                  },
+                  "candidates": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "const": null
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "value": {
+                    "const": null
+                  },
+                  "rule_id": {
+                    "const": null
+                  },
+                  "evidence": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "로그시작": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "status",
+            "rule_id",
+            "evidence",
+            "candidates",
+            "reason"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "status": {
+              "enum": [
+                "extracted",
+                "pending_vision",
+                "needs_review",
+                "not_found_native",
+                "not_applicable"
+              ]
+            },
+            "rule_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "evidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "kind",
+                  "ref",
+                  "quote",
+                  "loc"
+                ],
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "block",
+                      "source"
+                    ]
+                  },
+                  "ref": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "quote": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "loc": {
+                    "type": [
+                      "object",
+                      "null"
+                    ]
+                  }
+                }
+              }
+            },
+            "candidates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "value",
+                  "rule_id",
+                  "evidence"
+                ],
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "kind",
+                        "ref",
+                        "quote",
+                        "loc"
+                      ],
+                      "properties": {
+                        "kind": {
+                          "enum": [
+                            "block",
+                            "source"
+                          ]
+                        },
+                        "ref": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "quote": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "loc": {
+                          "type": [
+                            "object",
+                            "null"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "extracted"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "minItems": 1
+                  },
+                  "candidates": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "const": null
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "value": {
+                    "const": null
+                  },
+                  "rule_id": {
+                    "const": null
+                  },
+                  "evidence": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "로그종료": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "status",
+            "rule_id",
+            "evidence",
+            "candidates",
+            "reason"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "status": {
+              "enum": [
+                "extracted",
+                "pending_vision",
+                "needs_review",
+                "not_found_native",
+                "not_applicable"
+              ]
+            },
+            "rule_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "evidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "kind",
+                  "ref",
+                  "quote",
+                  "loc"
+                ],
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "block",
+                      "source"
+                    ]
+                  },
+                  "ref": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "quote": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "loc": {
+                    "type": [
+                      "object",
+                      "null"
+                    ]
+                  }
+                }
+              }
+            },
+            "candidates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "value",
+                  "rule_id",
+                  "evidence"
+                ],
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "kind",
+                        "ref",
+                        "quote",
+                        "loc"
+                      ],
+                      "properties": {
+                        "kind": {
+                          "enum": [
+                            "block",
+                            "source"
+                          ]
+                        },
+                        "ref": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "quote": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "loc": {
+                          "type": [
+                            "object",
+                            "null"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "extracted"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "minItems": 1
+                  },
+                  "candidates": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "const": null
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "value": {
+                    "const": null
+                  },
+                  "rule_id": {
+                    "const": null
+                  },
+                  "evidence": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "실행결과": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "status",
+            "rule_id",
+            "evidence",
+            "candidates",
+            "reason"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "status": {
+              "enum": [
+                "extracted",
+                "pending_vision",
+                "needs_review",
+                "not_found_native",
+                "not_applicable"
+              ]
+            },
+            "rule_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "evidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "kind",
+                  "ref",
+                  "quote",
+                  "loc"
+                ],
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "block",
+                      "source"
+                    ]
+                  },
+                  "ref": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "quote": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "loc": {
+                    "type": [
+                      "object",
+                      "null"
+                    ]
+                  }
+                }
+              }
+            },
+            "candidates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "value",
+                  "rule_id",
+                  "evidence"
+                ],
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "kind",
+                        "ref",
+                        "quote",
+                        "loc"
+                      ],
+                      "properties": {
+                        "kind": {
+                          "enum": [
+                            "block",
+                            "source"
+                          ]
+                        },
+                        "ref": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "quote": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "loc": {
+                          "type": [
+                            "object",
+                            "null"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "extracted"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "minItems": 1
+                  },
+                  "candidates": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "const": null
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "value": {
+                    "const": null
+                  },
+                  "rule_id": {
+                    "const": null
+                  },
+                  "evidence": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "오류코드": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "status",
+            "rule_id",
+            "evidence",
+            "candidates",
+            "reason"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "status": {
+              "enum": [
+                "extracted",
+                "pending_vision",
+                "needs_review",
+                "not_found_native",
+                "not_applicable"
+              ]
+            },
+            "rule_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "evidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "kind",
+                  "ref",
+                  "quote",
+                  "loc"
+                ],
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "block",
+                      "source"
+                    ]
+                  },
+                  "ref": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "quote": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "loc": {
+                    "type": [
+                      "object",
+                      "null"
+                    ]
+                  }
+                }
+              }
+            },
+            "candidates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "value",
+                  "rule_id",
+                  "evidence"
+                ],
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "kind",
+                        "ref",
+                        "quote",
+                        "loc"
+                      ],
+                      "properties": {
+                        "kind": {
+                          "enum": [
+                            "block",
+                            "source"
+                          ]
+                        },
+                        "ref": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "quote": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "loc": {
+                          "type": [
+                            "object",
+                            "null"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "extracted"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "minItems": 1
+                  },
+                  "candidates": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "const": null
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "value": {
+                    "const": null
+                  },
+                  "rule_id": {
+                    "const": null
+                  },
+                  "evidence": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "사업명": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "status",
+            "rule_id",
+            "evidence",
+            "candidates",
+            "reason"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "status": {
+              "enum": [
+                "extracted",
+                "pending_vision",
+                "needs_review",
+                "not_found_native",
+                "not_applicable"
+              ]
+            },
+            "rule_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "evidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "kind",
+                  "ref",
+                  "quote",
+                  "loc"
+                ],
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "block",
+                      "source"
+                    ]
+                  },
+                  "ref": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "quote": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "loc": {
+                    "type": [
+                      "object",
+                      "null"
+                    ]
+                  }
+                }
+              }
+            },
+            "candidates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "value",
+                  "rule_id",
+                  "evidence"
+                ],
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "kind",
+                        "ref",
+                        "quote",
+                        "loc"
+                      ],
+                      "properties": {
+                        "kind": {
+                          "enum": [
+                            "block",
+                            "source"
+                          ]
+                        },
+                        "ref": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "quote": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "loc": {
+                          "type": [
+                            "object",
+                            "null"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "extracted"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "minItems": 1
+                  },
+                  "candidates": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "const": null
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "value": {
+                    "const": null
+                  },
+                  "rule_id": {
+                    "const": null
+                  },
+                  "evidence": {
+                    "maxItems": 0
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "pending_visual_units": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "unit_id",
+          "loc",
+          "reason"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "unit_id": {
+            "type": "string"
+          },
+          "loc": {
+            "type": "object"
+          },
+          "reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "deferred": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "summary",
+        "family",
+        "latest_version",
+        "vision"
+      ],
+      "properties": {
+        "summary": {
+          "const": "not_run"
+        },
+        "family": {
+          "const": "not_run"
+        },
+        "latest_version": {
+          "const": "not_run"
+        },
+        "vision": {
+          "enum": [
+            "pending",
+            "not_required_by_parser"
+          ]
+        }
+      }
+    },
+    "date_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "observations",
+        "selected_roles",
+        "selection_reason",
+        "actual_signature_verified"
+      ],
+      "properties": {
+        "observations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "role",
+              "value",
+              "rule_id",
+              "evidence",
+              "assertion"
+            ],
+            "properties": {
+              "role": {
+                "enum": [
+                  "contract_period_end",
+                  "contract_period_start",
+                  "cover_date",
+                  "diagram_header_date",
+                  "email_sent_date",
+                  "execution_start_date",
+                  "explicit_document_date",
+                  "explicit_written_date",
+                  "inspection_date",
+                  "memo_date",
+                  "quote_date",
+                  "signing_block_printed_date"
+                ]
+              },
+              "value": {
+                "type": "string",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+              },
+              "rule_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "kind",
+                    "ref",
+                    "quote",
+                    "loc"
+                  ],
+                  "properties": {
+                    "kind": {
+                      "enum": [
+                        "block",
+                        "source"
+                      ]
+                    },
+                    "ref": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "quote": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "loc": {
+                      "type": [
+                        "object",
+                        "null"
+                      ]
+                    }
+                  }
+                },
+                "minItems": 1
+              },
+              "assertion": {
+                "const": "source_statement_only"
+              }
+            }
+          }
+        },
+        "selected_roles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "selection_reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "actual_signature_verified": {
+          "const": false
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

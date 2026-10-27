@@ -1,0 +1,46 @@
+{
+  "id": "gen-1792375737-pcosOOmVcK2xd5NjCqVU",
+  "object": "chat.completion",
+  "created": 1792375737,
+  "model": "qwen/qwen3-vl-30b-a3b-instruct",
+  "provider": "DeepInfra",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"figures\": [\n    {\n      \"bbox\": [0.045001, 0.226667, 0.945024, 0.593333],\n      \"claims\": [\n        {\n          \"bbox\": [0.045001, 0.226667, 0.945024, 0.593333],\n          \"status\": \"observed\",\n          \"text\": \"여신관리시스템 서버 구성도는 L4 / 로드밸런서에서 시작하여 loan-app01, loan-db01, loan-app-dr01, loan-db-dr01로 연결되는 구조를 보여준다. 각 서버는 이름, 역할, 운영체제, CPU/메모리 사양, IP 주소를 포함한다.\"\n        }\n      ],\n      \"kind\": \"diagram\",\n      \"nodes\": [\n        {\n          \"bbox\": [0.367509, 0.226667, 0.630016, 0.333333],\n          \"id\": \"L4 / 로드밸런서\",\n          \"label\": \"L4 / 로드밸런서\"\n        },\n        {\n          \"bbox\": [0.048751, 0.4, 0.256881, 0.593333],\n          \"id\": \"loan-app01\",\n          \"label\": \"loan-app01\\n여신 AP (본사)\\nRHEL 9.4 | 16 vCPU / 64GB\\n10.65.10.11\"\n        },\n        {\n          \"bbox\": [0.279382, 0.4, 0.487512, 0.593333],\n          \"id\": \"loan-db01\",\n          \"label\": \"loan-db01\\n여신 DB (Oracle 19c)\\nRHEL 9.4 | 32 vCPU / 256GB\\n10.65.10.21\"\n        },\n        {\n          \"bbox\": [0.510013, 0.4, 0.718143, 0.593333],\n          \"id\": \"loan-app-dr01\",\n          \"label\": \"loan-app-dr01\\n여신 AP (DR)\\nRHEL 9.4 | 16 vCPU / 64GB\\n10.65.110.11\"\n        },\n        {\n          \"bbox\": [0.740644, 0.4, 0.948774, 0.593333],\n          \"id\": \"loan-db-dr01\",\n          \"label\": \"loan-db-dr01\\n여신 DB (DR, Data Guard)\\nRHEL 9.4 | 32 vCPU / 256GB\\n10.65.110.21\"\n        }\n      ],\n      \"relations\": [\n        {\n          \"bbox\": [0.045001, 0.226667, 0.945024, 0.593333],\n          \"direction\": \"undirected\",\n          \"from_node\": \"L4 / 로드밸런서\",\n          \"label\": \"\",\n          \"to_node\": \"loan-app01\"\n        },\n        {\n          \"bbox\": [0.045001, 0.226667, 0.945024, 0.593333],\n          \"direction\": \"undirected\",\n          \"from_node\": \"L4 / 로드밸런서\",\n          \"label\": \"\",\n          \"to_node\": \"loan-db01\"\n        },\n        {\n          \"bbox\": [0.045001, 0.226667, 0.945024, 0.593333],\n          \"direction\": \"undirected\",\n          \"from_node\": \"L4 / 로드밸런서\",\n          \"label\": \"\",\n          \"to_node\": \"loan-app-dr01\"\n        },\n        {\n          \"bbox\": [0.045001, 0.226667, 0.945024, 0.593333],\n          \"direction\": \"undirected\",\n          \"from_node\": \"L4 / 로드밸런서\",\n          \"label\": \"\",\n          \"to_node\": \"loan-db-dr01\"\n        }\n      ]\n    }\n  ],\n  \"status\": \"complete\",\n  \"tables\": [],\n  \"texts\": [\n    {\n      \"bbox\": [0.045001, 0.046667, 0.945024, 0.153333],\n      \"kind\": \"heading\",\n      \"text\": \"여신관리시스템 서버 구성도\"\n    },\n    {\n      \"bbox\": [0.045001, 0.14, 0.945024, 0.206667],\n      \"kind\": \"paragraph\",\n      \"text\": \"사업: 여신관리시스템 DR 구축  |  설치 위치: 여의도 본사 IDC  |  2025-08-29\"\n    },\n    {\n      \"bbox\": [0.367509, 0.226667, 0.630016, 0.333333],\n      \"kind\": \"paragraph\",\n      \"text\": \"L4 / 로드밸런서\"\n    },\n    {\n      \"bbox\": [0.048751, 0.4, 0.256881, 0.593333],\n      \"kind\": \"paragraph\",\n      \"text\": \"loan-app01\\n여신 AP (본사)\\nRHEL 9.4 | 16 vCPU / 64GB\\n10.65.10.11\"\n    },\n    {\n      \"bbox\": [0.279382, 0.4, 0.487512, 0.593333],\n      \"kind\": \"paragraph\",\n      \"text\": \"loan-db01\\n여신 DB (Oracle 19c)\\nRHEL 9.4 | 32 vCPU / 256GB\\n10.65.10.21\"\n    },\n    {\n      \"bbox\": [0.510013, 0.4, 0.718143, 0.593333],\n      \"kind\": \"paragraph\",\n      \"text\": \"loan-app-dr01\\n여신 AP (DR)\\nRHEL 9.4 | 16 vCPU / 64GB\\n10.65.110.11\"\n    },\n    {\n      \"bbox\": [0.740644, 0.4, 0.948774, 0.593333],\n      \"kind\": \"paragraph\",\n      \"text\": \"loan-db-dr01\\n여신 DB (DR, Data Guard)\\nRHEL 9.4 | 32 vCPU / 256GB\\n10.65.110.21\"\n    }\n  ],\n  \"warnings\": []\n}",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4140,
+    "completion_tokens": 1727,
+    "total_tokens": 5867,
+    "cost": 0.0016572,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0016572,
+      "upstream_inference_prompt_cost": 0.000621,
+      "upstream_inference_completions_cost": 0.0010362
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

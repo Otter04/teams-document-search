@@ -1,0 +1,24 @@
+"""Summarize the immutable first evaluation without altering retrieval or answers."""
+from common import *
+import csv,statistics
+
+def main():
+ run=OUT/'evaluation/run-001';summary=read(run/'summary.json');scores=read(run/'scores.json');responses=rows(run/'responses.jsonl');assembly=read(OUT/'prepared/assembly.json');embedding=read(OUT/'prepared/embedding-manifest.json');admission=read(OUT/'vision-transfer-review.json')
+ times=sorted(r['client_seconds'] for r in responses);llms=[r.get('response',{}).get('query_plan',{}).get('llm',{}) for r in responses]
+ timing={'total_client_seconds':sum(times),'mean_seconds':statistics.mean(times),'median_seconds':statistics.median(times),'p95_seconds':times[min(len(times)-1,int(len(times)*.95))],'min_seconds':times[0],'max_seconds':times[-1],'request_errors':sum('error' in r for r in responses),'llm_details':llms}
+ write(run/'timing.json',timing)
+ pct=lambda n,d:f'{100*n/d:.1f}%'
+ lines_=['# v3.1 인덱싱 및 150질문 최초 평가','', '평가 기준: 각 질문에서 **필수 정답 대표 문서가 모두 최종 상위5에 포함되는지**. 한 문서만 맞은 경우, 다른 버전만 나온 경우, 추가 정답은 별도 지표다. 검색 규칙은 search-1.6.1, 질문 분석 ON 2.5초, B/R1 유지. 점수 확인 후 검색 튜닝·정답 수정은 하지 않았다.','', '|범위|성공 / 전체|성공률|','|---|---:|---:|']
+ for label,key in [('기존 기준 결과','baseline_old125'),('v3.1에서 기존 질문','old125_same_gold'),('신규 질문','new25'),('전체','all150')]:
+  s=summary[key];n=s['all_required_representatives_found'];d=s['questions'];lines_.append(f'|{label}|{n}/{d}|{pct(n,d)}|')
+ lines_+=['',f"신규25개 목표90%: **{'달성' if summary['new25_goal_reached'] else '미달'}**. 기존 성공에서 실패로 바뀐 질문: {', '.join(summary['regressed']) or '없음'}. 개선된 기존 질문: {', '.join(summary['improved']) or '없음'}.", '', '## 인덱싱 범위','', '- 파일198개 중 기존 제외 대상 bin/tgz/zip 3개를 뺀195문서 적재. 기존155개 결과 재사용/근거 연결 + 신규40개 파싱.', '- 기존과 바이트 동일140개, 재디자인15개. 원본 해시·수정시각·크기 보존. 표지/작성일과 파일수정시각 분리.', '- 신규 형식: DOC4/PPT3/XLS3 별도 변환, YAML4/JSON2/XML1/HTML1/CSV1/JMX1 어댑터. HTML/CSV/XLS 표의 셀·행·열과 출처를 검사.', '- 신규 비전4건: D-180 스캔 발주서, D-182/D-183 서명란, D-185 그래프. 장식 표지6건 제외. 원시 응답을 보존하고 출처 대조 검수본만 채택.', '- 규칙 보강195문서. 기존 의미 보강17개 재사용 + 신규14개 Orin 원문 발췌 보강. 합계31개 선택적 요약; 전 문서 요약은 생성하지 않음.', f"- {assembly['source_chunks']:,}개 원문 청크 +31개 의미 보강 청크 =3,754개. bge-m3 기존1,244개 재사용, 신규2,510개 생성. 1024차원/L2 검증, 입력 잘림0. 임베딩 {embedding['elapsed_seconds']:.1f}초.", '- Elasticsearch v003의195문서·3,754청크 저장 내용을 전수 대조. Nori 동작 확인. v001110문서/1,089청크 및 v002155문서/1,244청크 보존.', '- 새 색인 이름 및 재개 설정 표현 검사에서 발견한 내보내기 오류는 데이터 적재 전에 수정했다. 검색 매개변수나 알고리즘 변경은 없었다.', '', '## 최초 실패 사례','']
+ for r in scores:
+  if r['all_required_representatives_found']:continue
+  lines_+=[f"### {r['query_id']} — {r['query']}", '']
+  for c in r['expected_cards']:
+   if c['priority']=='필수':lines_.append(f"- 정답 {c['representative']} `{c['title']}`: "+(f"{c['representative_rank']}위" if c['representative_rank'] else f"최종 상위5 없음 / 분류 `{c['reason']}` / 후보 경로 {', '.join(c['candidate_branches']) or '없음'}"))
+  lines_.append('- 실제 상위5: '+('; '.join(f"{c['rank']}위 {c['doc_id']} {c['title']}" for c in r['top5']) or '없음'));lines_.append('')
+ lines_+=['## 처리 시간과 한계','',f"150질문 평균 {timing['mean_seconds']:.3f}초, 중앙값 {timing['median_seconds']:.3f}초, 95백분위 {timing['p95_seconds']:.3f}초, 최대 {timing['max_seconds']:.3f}초. 요청 오류 {timing['request_errors']}건. 정답 여부와 관계없이 모든150질문 시간을 포함한다.", '- 기존 Q-068/069의 명시 날짜 정책과 정답표 충돌은 기존대로 별도 취급한다. 날짜 조건을 임의로 풀어 성공 점수를 만들지 않는다.', '- 개발 평가세트의 제공 정답과 비교한 결과이며, 독립적인 현업 정확도나 정보추출 정확도 점수가 아니다.', '- 구형 Word 변환에서 일부 표 형태 내용은 연속 문단으로 전달됐다. 별도 textutil 읽기와 공백 제외 문자 전수 비교를 통과했지만 행·열 복원까지 검증했다고 보지 않는다. 진단용 직접 PDF 렌더는 한글 폰트 누락으로 비전 입력에 사용하지 않았다.', '- D-198은 약26,000줄로 원문 청크2,364개를 차지한다. 원본 반복을 임의로 삭제하지 않았다.', '- 재디자인 PPTX의 옛 화면 좌표는 제거하고 슬라이드/도형 근거로 연결했다. PDF 본문 위치와 기존 업무 그림/도형은 보존 검사를 통과했다.', '- 요약은 선택된 원문 발췌로 비포괄적이다. 전체 원문 청크도 함께 저장했다. 비전과 보강은 assistant 원문 검수이며 독립 사람 검수와 구분한다.', '', '## 결과 파일','', '- `evaluation/run-001/summary.json`: 기존/신규 성공 집계와 회귀 목록', '- `evaluation/run-001/query-results.csv`: 150개 질문의 정답·실제 상위5·성공·시간', '- `evaluation/run-001/responses.jsonl`: 변경하지 않은 최초 검색 응답', '- `evaluation/run-001/date-policy-audit.json`: 기존 명시 날짜 정책의 독립 메타데이터 대조', '- `prepared/assembly.json`, `prepared/embedding-manifest.json`: 인덱싱/벡터 현황', '- `search-data/index-verification.json`: Elasticsearch 전수 저장 대조', '', '검색 화면: http://127.0.0.1:18022/ (VPN·SSH 연결 필요). 기존 v2 화면18021은 유지.', '']
+ (OUT/'REPORT.md').write_text('\n'.join(lines_))
+ write(OUT/'completion.json',{'state':'indexed_and_first_search_evaluation_complete','documents':195,'chunks':3754,'questions':150,'new_questions':25,'retrieval_tuned_after_first_results':False,'paid_external_calls':0,'goal_reached_new25':summary['new25_goal_reached'],'old_regressions':summary['regressed'],'artifacts':{str(p.relative_to(OUT)):sha(p) for p in [run/'responses.jsonl',run/'summary.json',run/'freeze.json',OUT/'prepared/assembly.json',OUT/'prepared/embedding-manifest.json',OUT/'search-data/index-verification.json']}})
+if __name__=='__main__':main()

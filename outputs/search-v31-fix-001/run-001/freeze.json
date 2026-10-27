@@ -1,0 +1,86 @@
+{
+  "started_at": "2026-10-24T16:15:24.557098+00:00",
+  "health": {
+    "ready": true,
+    "documents": 195,
+    "embedding_model": "bge-m3",
+    "embedding_fingerprint": "b8b299238334245d36f1447b3c185acd5f7271d28973c544ed45b59d67161762",
+    "query_analysis_model": "qwen3.6-35b-a3b",
+    "startup_seconds": 14.922662382945418,
+    "config": {
+      "version": "search-1.7.0",
+      "llm_budget_seconds": 2.5,
+      "lexical_k": 50,
+      "vector_k": 50,
+      "num_candidates": 200,
+      "candidate_per_document": 3,
+      "candidate_batch": 150,
+      "candidate_max_rounds": 6,
+      "rrf_k": 60,
+      "rerank_k": 100,
+      "result_documents": 5,
+      "bm25_fields": [
+        "file_name^2",
+        "context^1.5",
+        "table_header^1.5",
+        "body"
+      ],
+      "minimum_should_match": "50%",
+      "additional_chunk_weight": 0.0,
+      "max_additional_chunks": 0,
+      "support_pool_k": 30,
+      "document_score": "best_matching_chunk",
+      "source_expression_preference": true,
+      "r1_weights": {
+        "rrf": 0.45,
+        "lexical_overlap": 0.2,
+        "cosine": 0.2,
+        "literal_phrase": 0.05,
+        "identifier": 0.05,
+        "metadata": 0.05
+      },
+      "query_cache": false,
+      "operating_query_logs": false,
+      "exact_2a": false,
+      "verified_metadata_preference": true,
+      "explicit_dates": "required_no_relaxation"
+    },
+    "defaults": {
+      "filter_mode": "B",
+      "reranker": "R1",
+      "release_status": "development_only",
+      "quality_gate": "development_retrieval_targets_met_policy_conflicts_preserved",
+      "reason": "search-1.6.1: v002 required representatives in top5: old97/99, new26/26. Q-068/Q-069 retain explicit-date policy instead of old relaxed-date gold. Independent relevance and production validation remain pending. Timeout 2.5s: 12s produced identical top5 orders for all125 at higher latency."
+    },
+    "indices": {
+      "documents": "rag-search-documents-v003",
+      "chunks": "rag-search-chunks-v003"
+    }
+  },
+  "inputs_sha256": "ec6c2b4e7d840b6f7353cb5ec8dbf0225088035dc688b859715a6a4fdb9173e4",
+  "endpoint": "http://127.0.0.1:8022/search",
+  "labels_sent": false,
+  "filter_mode": "B",
+  "reranker": "R1",
+  "use_llm": true,
+  "code_hashes": {
+    "engine.py": "7dca50a3780fdfe5d146a9b2402dcfe85111e754e5baff6f70ecff49400e23df",
+    "fixtures_remote.py": "ad3b3877e02c475fa9f32893c26530cb640de15725ac1eb9334e870d93c7a5d3",
+    "verify_runtime.py": "1e63fa1c59f85085a7a1fbdd5e8c0fb9e3d312fb4ab9062b944d8e845e4ac6aa",
+    "evaluate_dataset.py": "31ca7ef92c21d6dff5d0a2ac592f1038377edff869e7235086bfaebc46eed8f2",
+    "test_boundaries.py": "601c4a7371caa359145047573bd890a3953c93b970d833d2412cbeb6844bb901",
+    "test_search.py": "e60cead4471ed15fe439fc3f2d36dc9c1b68d680dc7b12030a1d5a830e944a9e",
+    "evaluate_remote.py": "f14efadd5a738fce0dc2fa2fbff792498f187bfc994059a63b71f2e69b523002",
+    "streaming.py": "dec3640b0ef549f7a0c5d213ff0a8a34fd8117c5132454a3ad76b4da9f1970ac",
+    "audit_date_policy.py": "53dd68df35dfaf49fb614a8a6e74b0b2640512ab5cd3948d02f1d2ae3a9254b6",
+    "compare_dataset.py": "184af34566116c32e9e920d31027a571e4276c5d34de4c98f9bfecebeadf96b1",
+    "test_v2_policy.py": "0921c7a1b52d2c7c7eb9c6b217a102ea6603297335eed9a96d39178b298448f0",
+    "load_index.py": "9b5cafdce0c97fe66da8587dbc014b7973f67b008f525a25897726dd36873e57",
+    "score_dataset.py": "5aa12d099e56ab3affe3e3047191fd5ba1fd51ff35430a68076ced2b918a784c",
+    "query.py": "1d7e1ca9efcfd7ef6eb7701c16ab94184e2e743570218aa24a40621f58d8ec46",
+    "prepare.py": "de4c304b7bdf00bc8e335af7bb522838e7551b2c4abaf210d7daf0526947bf83",
+    "content.py": "95abcc6e80753b89427d50e6a05e191f7f8239ce6f403ca8a8b57dc6ec405dac",
+    "score.py": "1801422fd1c6b6bd7c84e45c3ef8f2f81be41659b4f48f7a776af0db9485ebf7",
+    "service.py": "9719f3a37c0418295e4a42c655f4968da89eba8fd570868e9e0eea126cb628d4"
+  }
+}

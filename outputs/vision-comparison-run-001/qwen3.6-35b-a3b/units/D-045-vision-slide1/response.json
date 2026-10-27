@@ -1,0 +1,46 @@
+{
+  "id": "gen-1792375371-p03KFEmkP7pSWFRxa4Xl",
+  "object": "chat.completion",
+  "created": 1792375371,
+  "model": "qwen/qwen3.6-35b-a3b",
+  "provider": "DeepInfra",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"figures\": [\n    {\n      \"bbox\": [0.045, 0.047, 0.945, 0.947],\n      \"claims\": [\n        {\n          \"bbox\": [0.045, 0.047, 0.945, 0.947],\n          \"status\": \"observed\",\n          \"text\": \"PACS 스토리지 증설 네트워크 구성도 (Rev.1)의 전체 구조를 시각적으로 재현함. 상단에서 하단으로 Internet/전용회선, 방화벽, 코어 스위치, 하위 네트워크(의료영상망, SAN, 관리망)로 이어지는 계층형 구성을 보여줌. 양측에 SAN 스위치와 PACS 스토리지가 방화벽과 연결되어 있음.\"\n        }\n      ],\n      \"kind\": \"diagram\",\n      \"nodes\": [\n        {\n          \"bbox\": [0.405, 0.213, 0.593, 0.313],\n          \"id\": \"node1\",\n          \"label\": \"Internet / 전용회선\"\n        },\n        {\n          \"bbox\": [0.330, 0.353, 0.668, 0.467],\n          \"id\": \"node2\",\n          \"label\": \"방화벽\\nAhnLab TrusGuard × 2\"\n        },\n        {\n          \"bbox\": [0.038, 0.353, 0.293, 0.467],\n          \"id\": \"node3\",\n          \"label\": \"SAN 스위치 Brocade G720 × 2\"\n        },\n        {\n          \"bbox\": [0.705, 0.353, 0.960, 0.467],\n          \"id\": \"node4\",\n          \"label\": \"PACS 스토리지 300TB\"\n        },\n        {\n          \"bbox\": [0.330, 0.507, 0.668, 0.620],\n          \"id\": \"node5\",\n          \"label\": \"코어 스위치\\nCisco C9300 × 2\"\n        },\n        {\n          \"bbox\": [0.049, 0.700, 0.334, 0.833],\n          \"id\": \"node6\",\n          \"label\": \"의료영상망\\n10.43.20.0/24\"\n        },\n        {\n          \"bbox\": [0.356, 0.700, 0.641, 0.833],\n          \"id\": \"node7\",\n          \"label\": \"SAN\\nFC Fabric A/B\"\n        },\n        {\n          \"bbox\": [0.664, 0.700, 0.949, 0.833],\n          \"id\": \"node8\",\n          \"label\": \"관리망\\n10.43.99.0/24\"\n        }\n      ],\n      \"relations\": [\n        {\n          \"bbox\": [0.495, 0.313, 0.505, 0.353],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node1\",\n          \"label\": \"\",\n          \"to_node\": \"node2\"\n        },\n        {\n          \"bbox\": [0.293, 0.410, 0.330, 0.410],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node3\",\n          \"label\": \"\",\n          \"to_node\": \"node2\"\n        },\n        {\n          \"bbox\": [0.668, 0.410, 0.705, 0.410],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node2\",\n          \"label\": \"\",\n          \"to_node\": \"node4\"\n        },\n        {\n          \"bbox\": [0.495, 0.467, 0.505, 0.507],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node2\",\n          \"label\": \"\",\n          \"to_node\": \"node5\"\n        },\n        {\n          \"bbox\": [0.330, 0.620, 0.049, 0.700],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node5\",\n          \"label\": \"\",\n          \"to_node\": \"node6\"\n        },\n        {\n          \"bbox\": [0.495, 0.620, 0.505, 0.700],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node5\",\n          \"label\": \"\",\n          \"to_node\": \"node7\"\n        },\n        {\n          \"bbox\": [0.668, 0.620, 0.949, 0.700],\n          \"direction\": \"undirected\",\n          \"from_node\": \"node5\",\n          \"label\": \"\",\n          \"to_node\": \"node8\"\n        }\n      ]\n    }\n  ],\n  \"status\": \"complete\",\n  \"tables\": [],\n  \"texts\": [\n    {\n      \"bbox\": [0.045, 0.047, 0.945, 0.153],\n      \"kind\": \"heading\",\n      \"text\": \"PACS 스토리지 증설 네트워크 구성도 (Rev.1)\"\n    },\n    {\n      \"bbox\": [0.045, 0.140, 0.945, 0.207],\n      \"kind\": \"paragraph\",\n      \"text\": \"설치 위치: 새봄병원 본관 전산실  |  작성일: 2025-03-27  |  작성: 라움정보기술 기술지원팀\"\n    },\n    {\n      \"bbox\": [0.045, 0.893, 0.945, 0.947],\n      \"kind\": \"paragraph\",\n      \"text\": \"범례: 실선 = 1G/10G 이더넷 | 새봄병원 전산 담당자 검토 필요\"\n    }\n  ]\n,\n  \"warnings\": []\n}",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3523,
+    "completion_tokens": 1563,
+    "total_tokens": 5086,
+    "cost": 0.00183715,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00183715,
+      "upstream_inference_prompt_cost": 0.0003523,
+      "upstream_inference_completions_cost": 0.00148485
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

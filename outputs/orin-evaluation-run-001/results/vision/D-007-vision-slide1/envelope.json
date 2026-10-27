@@ -1,0 +1,49 @@
+{
+  "model": "qwen3.6-35b-a3b",
+  "provider": "local-vllm",
+  "quantization": "awq-4bit",
+  "kind": "vision",
+  "doc_id": "D-007",
+  "id": "D-007-vision-slide1",
+  "request_sha256": "57d3b73e7f07c5b2be83111bf3b641616afcd849f61307cf34cc77f12c05ab93",
+  "baseline_request_sha256": "fd1ebedcbe760ff0d1fd931e4ded175b194b4179c6fba32506b2006669b812c0",
+  "messages_sha256": "2f38f11f3009705c7ebbe3c98ba30e54ca7118f11ceed5e8982e2e6ee0283a47",
+  "response": {
+    "id": "chatcmpl-917a74ef0f720fc0",
+    "object": "chat.completion",
+    "created": 1792475128,
+    "model": "qwen3.6-35b-a3b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"figures\": [\n    {\n      \"bbox\": [0.04, 0.05, 0.96, 0.95],\n      \"claims\": [\n        {\n          \"bbox\": [0.04, 0.05, 0.96, 0.95],\n          \"status\": \"observed\",\n          \"text\": \"2025 MES 고도화 구축 네트워크 구성도 (Rev.1)의 네트워크 토폴로지\"\n        }\n      ],\n      \"kind\": \"diagram\",\n      \"nodes\": [\n        {\n          \"bbox\": [0.405, 0.213, 0.593, 0.313],\n          \"id\": \"n1\",\n          \"label\": \"Internet / 전용회선\"\n        },\n        {\n          \"bbox\": [0.330, 0.353, 0.668, 0.467],\n          \"id\": \"n2\",\n          \"label\": \"방화벽\\nFortiGate 200F × 2 (HA)\"\n        },\n        {\n          \"bbox\": [0.038, 0.353, 0.293, 0.467],\n          \"id\": \"n3\",\n          \"label\": \"OT 망 방화벽 FortiGate 100F\"\n        },\n        {\n          \"bbox\": [0.330, 0.507, 0.668, 0.620],\n          \"id\": \"n4\",\n          \"label\": \"코어 스위치\\nCisco C9500-24Y4C × 2\"\n        },\n        {\n          \"bbox\": [0.049, 0.700, 0.334, 0.833],\n          \"id\": \"n5\",\n          \"label\": \"서버팜\\n10.21.10.0/24\"\n        },\n        {\n          \"bbox\": [0.356, 0.700, 0.641, 0.833],\n          \"id\": \"n6\",\n          \"label\": \"OT 설비망\\n10.21.50.0/24\"\n        },\n        {\n          \"bbox\": [0.664, 0.700, 0.949, 0.833],\n          \"id\": \"n7\",\n          \"label\": \"관리망\\n10.21.99.0/24\"\n        }\n      ],\n      \"relations\": [\n        {\n          \"bbox\": [0.495, 0.313, 0.505, 0.353],\n          \"direction\": \"undirected\",\n          \"from_node\": \"n1\",\n          \"label\": \"\",\n          \"to_node\": \"n2\"\n        },\n        {\n          \"bbox\": [0.293, 0.410, 0.330, 0.410],\n          \"direction\": \"undirected\",\n          \"from_node\": \"n3\",\n          \"label\": \"\",\n          \"to_node\": \"n2\"\n        },\n        {\n          \"bbox\": [0.495, 0.467, 0.495, 0.507],\n          \"direction\": \"undirected\",\n          \"from_node\": \"n2\",\n          \"label\": \"\",\n          \"to_node\": \"n4\"\n        },\n        {\n          \"bbox\": [0.330, 0.620, 0.049, 0.700],\n          \"direction\": \"undirected\",\n          \"from_node\": \"n4\",\n          \"label\": \"\",\n          \"to_node\": \"n5\"\n        },\n        {\n          \"bbox\": [0.495, 0.620, 0.495, 0.700],\n          \"direction\": \"undirected\",\n          \"from_node\": \"n4\",\n          \"label\": \"\",\n          \"to_node\": \"n6\"\n        },\n        {\n          \"bbox\": [0.668, 0.620, 0.949, 0.700],\n          \"direction\": \"undirected\",\n          \"from_node\": \"n4\",\n          \"label\": \"\",\n          \"to_node\": \"n7\"\n        }\n      ]\n    }\n  ],\n  \"status\": \"complete\",\n  \"tables\": [],\n  \"texts\": [\n    {\n      \"bbox\": [0.045, 0.047, 0.945, 0.153],\n      \"kind\": \"heading\",\n      \"text\": \"2025 MES 고도화 구축 네트워크 구성도 (Rev.1)\"\n    },\n    {\n      \"bbox\": [0.045, 0.140, 0.945, 0.207],\n      \"kind\": \"paragraph\",\n      \"text\": \"설치 위치: 화성 1공장 전산실 | 작성일: 2025-02-24 | 작성: 라움정보기술 기술지원팀\"\n    },\n    {\n      \"bbox\": [0.045, 0.893, 0.945, 0.947],\n      \"kind\": \"paragraph\",\n      \"text\": \"범례: 실선 = 1G/10G 이더넷 | ㈜청람정밀 전산 담당자 검토 필요\"\n    }\n  ],\n  \"warnings\": []\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 4533,
+      "total_tokens": 5901,
+      "completion_tokens": 1368,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "http_status": 200,
+  "elapsed_ms": 216382
+}

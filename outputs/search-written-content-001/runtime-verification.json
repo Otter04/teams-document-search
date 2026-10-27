@@ -1,0 +1,61 @@
+{
+  "health": {
+    "ready": true,
+    "documents": 110,
+    "embedding_model": "bge-m3",
+    "embedding_fingerprint": "b8b299238334245d36f1447b3c185acd5f7271d28973c544ed45b59d67161762",
+    "query_analysis_model": "qwen3.6-35b-a3b",
+    "startup_seconds": 12.73754633590579,
+    "config": {
+      "version": "search-1.1.0",
+      "llm_budget_seconds": 2.5,
+      "lexical_k": 50,
+      "vector_k": 50,
+      "num_candidates": 200,
+      "rrf_k": 60,
+      "rerank_k": 30,
+      "result_documents": 5,
+      "bm25_fields": [
+        "file_name^2",
+        "context^1.5",
+        "table_header^1.5",
+        "body"
+      ],
+      "minimum_should_match": "50%",
+      "additional_chunk_weight": 0.1,
+      "max_additional_chunks": 3,
+      "r1_weights": {
+        "rrf": 0.45,
+        "lexical_overlap": 0.2,
+        "cosine": 0.2,
+        "literal_phrase": 0.05,
+        "identifier": 0.05,
+        "metadata": 0.05
+      },
+      "query_cache": false,
+      "operating_query_logs": false,
+      "exact_2a": false
+    },
+    "defaults": {
+      "filter_mode": "B",
+      "reranker": "R1",
+      "release_status": "development_only",
+      "quality_gate": "not_all_passed",
+      "reason": "S-07: A-R0 54 vs B-R0 55, B has zero gold exclusions. B-R1 +4 hits, no type decline, latency passed. Final acceptance remains blocked by G1, representative-label review and old ES number-query regression."
+    }
+  },
+  "counts": {
+    "rag-documents": 110,
+    "rag-chunks": 1089,
+    "rag-search-documents-v001": 110,
+    "rag-search-chunks-v001": 1089
+  },
+  "old_aliases_unchanged": true,
+  "code_hashes": {
+    "query.py": "426dad6c7d6f25883f2148c7ef3ae281a2f10da623de97f13efa2064c7eb725c",
+    "content.py": "95abcc6e80753b89427d50e6a05e191f7f8239ce6f403ca8a8b57dc6ec405dac",
+    "engine.py": "32ac8b2fb064d5320d073c0ca9b0b88d1a6894732125f4ae36c4c0fd0f5a1e67",
+    "index.html": "cac053ebdbbdb4881f7148ca98eee1b5acee22d85d53944de0e3435fb27e6f29"
+  },
+  "containers": "rag-search: Up 3 minutes\nrag-elasticsearch: Up 2 hours\nrag-qwen36: Up 7 hours\n"
+}

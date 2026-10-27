@@ -1,0 +1,53 @@
+Use case: text-localization / precise infographic edit.
+Asset type: Korean RAG architecture diagram, project deliverable.
+Input image is the EDIT TARGET. Modify this existing Korean diagram, preserving its visual identity: white background, rounded lavender process cards with indigo Korean text, mint storage cards with dark teal text, warm gray metric/environment cards, medium-gray arrows, thin dashed rounded containers, clean Korean sans-serif font. Preserve the original left-to-right FIVE stages, four storage boxes, FIVE search stages, bottom two runtime boxes and legend. Do not invent components or completed implementation status. Produce a very crisp, readable, high-resolution landscape diagram. All Korean text must be exact and unclipped.
+
+Main change: show a vision-capable LLM understanding the semantic meaning and context of images, tables and diagrams during stage 2 parsing. This is an intended design, not a finished model implementation. Do not put the string "OCR" anywhere. Keep stages 3-5 and search conceptually as in the original.
+
+Top dashed indexing container:
+Header: "인덱싱 · 문서가 올라올 때 (설계 방향)"
+Five process cards in one row, with right arrows:
+1) "1 수집" / "변경분 동기화"
+2) "2 파싱" / "문서 파서 + 비전 LLM" / "공통 블록 변환"
+3) "3 문서 보강" / "메타데이터 추출"
+4) "4 청킹" / "문맥 머리말"
+5) "5 색인" / "토큰 + 임베딩"
+Below each, respective gray metric cards:
+"수집·반영률", "내용·구조·맥락", "정확도·환각률", "잘림·누락", "Recall@5"
+
+Expand this top container vertically to insert a compact, clearly legible stage-2 detail area below the metric row, visually associated with the "2 파싱" card. It must not obscure the main arrows:
+Small label "파싱 상세"
+Two input paths converging into a common-output card:
+- "일반 문서" → "텍스트·표 추출"
+- "이미지·스캔 PDF" → "비전 LLM" with subtitle "글자·표 관계·구성도 흐름·사진의 의미"
+Both paths converge at a mint common-output box labeled "공통 블록" with subtitle "내용·구조·시각적 맥락 + 원문 위치".
+This is an inset of stage 2, not an extra sixth indexing stage. The common-output box should route toward the existing original/intermediate storage below, and progression still goes from stage 2 to document enrichment.
+A small clear note within this area: "비전 LLM의 모델·출력 규격·평가 기준은 설계 예정".
+
+Below top container, preserve four storage cards:
+"원본·중간 결과" / "파일·이미지·블록 JSON"
+"메타데이터 DB" / "문서·거래처 사전"
+"청크 인덱스" / "BM25 + 벡터 + 필터"
+"문서 인덱스" / "요약 + 메타데이터"
+Show sensible same source/downstream arrows as original: original+parsed common blocks→original/intermediate storage; enrichment→metadata DB; chunking/indexing→chunk index; indexing→document index.
+Metadata DB arrow into filter generation; chunk index arrow into hybrid; document index arrow into document grouping.
+
+Search dashed container, original five cards and arrows:
+"질문" / "자연어" →
+"필터 생성" / "LLM → JSON" →
+"하이브리드" / "키워드 + 벡터" →
+"문서별 묶기" / "청크 → 문서" →
+"결과" / "링크 + 근거 위치"
+Header/footer label: "검색 · 질문할 때 (방향만 결정, 상세 설계 전)"
+
+Bottom dashed runtime container same styling:
+Left box: "테스트 · OpenRouter" / "오픈소스 비전 LLM, 양자화 고정"
+Right arrow to right box: "운영 · DGX Spark" / "128GB 통합 메모리, 사내 실행"
+Label: "모델 실행 환경 · 같은 평가세트로 통과 후 전환"
+
+Bottom legend: lavender swatch "처리 단계"; mint swatch "저장소"; warm gray swatch "단계별 평가 지표 / 실행 환경".
+Preserve spacious professional alignment and high Korean text legibility. Give the new stage-2 inset enough space by increasing canvas height moderately; never shrink the labels into tiny text. No logos, no decorative illustrations, no gradients, no invented accuracy values.
+
+Final refinement: Move the search section heading below its five cards inside the dashed container. Ensure the metadata DB arrow terminates at the filter-generation card without label collision; preserve all other content.
+
+Method: built-in image generation/edit tool. Original PNG retained.

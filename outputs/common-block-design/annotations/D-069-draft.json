@@ -1,0 +1,288 @@
+{
+  "annotation_version": "1.0-draft",
+  "status": "assistant_prepared_needs_human_review",
+  "doc_id": "D-069",
+  "source_sha256": "0284bfe7f3a6b46e907b5e06e743e3019d21c8ff3440561670ffb8cbbd74cf74",
+  "page": 1,
+  "scope": "8 boxes and 7 visible connector lines; no directional arrowheads",
+  "nodes": [
+    {
+      "node_id": "internet",
+      "label": "Internet / 전용회선",
+      "loc": {
+        "kind": "pdf",
+        "page": 1,
+        "bbox": {
+          "frame_asset_id": "D-069-page-1",
+          "x0": 0.405,
+          "y0": 0.21,
+          "x1": 0.597,
+          "y1": 0.315,
+          "precision": "approximate"
+        }
+      },
+      "evidence_ids": [
+        "box-internet"
+      ]
+    },
+    {
+      "node_id": "line",
+      "label": "본사-DR 전용회선 1Gbps × 2",
+      "loc": {
+        "kind": "pdf",
+        "page": 1,
+        "bbox": {
+          "frame_asset_id": "D-069-page-1",
+          "x0": 0.038,
+          "y0": 0.34,
+          "x1": 0.295,
+          "y1": 0.465,
+          "precision": "approximate"
+        }
+      },
+      "evidence_ids": [
+        "box-line"
+      ]
+    },
+    {
+      "node_id": "firewall",
+      "label": "방화벽\nFortiGate 600F × 2 (본사) / FortiGate 400F × 2 (DR)",
+      "loc": {
+        "kind": "pdf",
+        "page": 1,
+        "bbox": {
+          "frame_asset_id": "D-069-page-1",
+          "x0": 0.33,
+          "y0": 0.35,
+          "x1": 0.67,
+          "y1": 0.47,
+          "precision": "approximate"
+        }
+      },
+      "evidence_ids": [
+        "box-firewall"
+      ]
+    },
+    {
+      "node_id": "dr-site",
+      "label": "대전 DR 센터",
+      "loc": {
+        "kind": "pdf",
+        "page": 1,
+        "bbox": {
+          "frame_asset_id": "D-069-page-1",
+          "x0": 0.703,
+          "y0": 0.357,
+          "x1": 0.962,
+          "y1": 0.48,
+          "precision": "approximate"
+        }
+      },
+      "evidence_ids": [
+        "box-dr-site"
+      ]
+    },
+    {
+      "node_id": "core",
+      "label": "코어 스위치\nCisco N9K-C93180YC × 2",
+      "loc": {
+        "kind": "pdf",
+        "page": 1,
+        "bbox": {
+          "frame_asset_id": "D-069-page-1",
+          "x0": 0.329,
+          "y0": 0.5,
+          "x1": 0.668,
+          "y1": 0.624,
+          "precision": "approximate"
+        }
+      },
+      "evidence_ids": [
+        "box-core"
+      ]
+    },
+    {
+      "node_id": "hq",
+      "label": "본사 서버팜\n10.65.10.0/24",
+      "loc": {
+        "kind": "pdf",
+        "page": 1,
+        "bbox": {
+          "frame_asset_id": "D-069-page-1",
+          "x0": 0.045,
+          "y0": 0.689,
+          "x1": 0.335,
+          "y1": 0.832,
+          "precision": "approximate"
+        }
+      },
+      "evidence_ids": [
+        "box-hq"
+      ]
+    },
+    {
+      "node_id": "dr",
+      "label": "DR 서버팜\n10.65.110.0/24",
+      "loc": {
+        "kind": "pdf",
+        "page": 1,
+        "bbox": {
+          "frame_asset_id": "D-069-page-1",
+          "x0": 0.353,
+          "y0": 0.697,
+          "x1": 0.64,
+          "y1": 0.837,
+          "precision": "approximate"
+        }
+      },
+      "evidence_ids": [
+        "box-dr"
+      ]
+    },
+    {
+      "node_id": "replication",
+      "label": "복제망\n10.65.200.0/24",
+      "loc": {
+        "kind": "pdf",
+        "page": 1,
+        "bbox": {
+          "frame_asset_id": "D-069-page-1",
+          "x0": 0.661,
+          "y0": 0.704,
+          "x1": 0.943,
+          "y1": 0.847,
+          "precision": "approximate"
+        }
+      },
+      "evidence_ids": [
+        "box-replication"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "r1",
+      "from_node": "internet",
+      "to_node": "firewall",
+      "direction": "undirected",
+      "label": null,
+      "evidence_ids": [
+        "edge-1"
+      ]
+    },
+    {
+      "relation_id": "r2",
+      "from_node": "line",
+      "to_node": "firewall",
+      "direction": "undirected",
+      "label": null,
+      "evidence_ids": [
+        "edge-2"
+      ]
+    },
+    {
+      "relation_id": "r3",
+      "from_node": "firewall",
+      "to_node": "dr-site",
+      "direction": "undirected",
+      "label": null,
+      "evidence_ids": [
+        "edge-3"
+      ]
+    },
+    {
+      "relation_id": "r4",
+      "from_node": "firewall",
+      "to_node": "core",
+      "direction": "undirected",
+      "label": null,
+      "evidence_ids": [
+        "edge-4"
+      ]
+    },
+    {
+      "relation_id": "r5",
+      "from_node": "core",
+      "to_node": "hq",
+      "direction": "undirected",
+      "label": null,
+      "evidence_ids": [
+        "edge-5"
+      ]
+    },
+    {
+      "relation_id": "r6",
+      "from_node": "core",
+      "to_node": "dr",
+      "direction": "undirected",
+      "label": null,
+      "evidence_ids": [
+        "edge-6"
+      ]
+    },
+    {
+      "relation_id": "r7",
+      "from_node": "core",
+      "to_node": "replication",
+      "direction": "undirected",
+      "label": null,
+      "evidence_ids": [
+        "edge-7"
+      ]
+    }
+  ],
+  "required_facts": [
+    {
+      "claim_id": "c1",
+      "text": "도면에서 코어 스위치와 본사 서버팜 사이에 연결선이 있다.",
+      "status": "observed",
+      "evidence_ids": [
+        "box-core",
+        "box-hq",
+        "edge-5"
+      ]
+    },
+    {
+      "claim_id": "c2",
+      "text": "도면에서 코어 스위치와 DR 서버팜 사이에 연결선이 있다.",
+      "status": "observed",
+      "evidence_ids": [
+        "box-core",
+        "box-dr",
+        "edge-6"
+      ]
+    },
+    {
+      "claim_id": "c3",
+      "text": "도면에서 코어 스위치와 복제망 사이에 연결선이 있다.",
+      "status": "observed",
+      "evidence_ids": [
+        "box-core",
+        "box-replication",
+        "edge-7"
+      ]
+    },
+    {
+      "claim_id": "c4",
+      "text": "본사 서버팜에 10.65.10.0/24가 표기되어 있다.",
+      "status": "observed",
+      "evidence_ids": [
+        "box-hq"
+      ]
+    }
+  ],
+  "critical_strings": [
+    "FortiGate 600F × 2 (본사)",
+    "FortiGate 400F × 2 (DR)",
+    "Cisco N9K-C93180YC × 2",
+    "10.65.10.0/24",
+    "10.65.110.0/24",
+    "10.65.200.0/24"
+  ],
+  "unsupported_claims": [
+    "본사 서버팜과 DR 서버팜이 서로 직접 연결되어 있다.",
+    "DR 센터로 자동 장애 전환된다.",
+    "연결선이 위에서 아래로의 단방향 트래픽을 뜻한다."
+  ],
+  "warning": "설계 예시와 같은 작성자가 만든 초안. 독립 평가 정답이나 측정 결과가 아님. 운영 검증에 사용하기 전 독립 검수 필요."
+}

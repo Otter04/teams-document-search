@@ -1,0 +1,297 @@
+{
+  "schema_version": "1.0.0",
+  "record_kind": "enrichment_result",
+  "doc_id": "D-010",
+  "source": {
+    "file_name": "mes-app01_mes_daily_close_20250902.log",
+    "format": "log",
+    "relative_path": "sites/운영팀/Shared Documents/청람정밀/운영로그/2025-09/mes-app01_mes_daily_close_20250902.log",
+    "sha256": "698f53e2fb0888b59d1712b19cc987ef67c5bd1c18a4703204e6c02682278f4e",
+    "web_url": null,
+    "encoding": "utf-8"
+  },
+  "input_record_sha256": "f258243dab8560697eaf818de2a568ddb0d7525ffa4996a1cff5dcd177083c70",
+  "rules_version": "rules-0.1.0",
+  "scope": "native_text_and_source_metadata",
+  "model_called": false,
+  "status": "partial",
+  "native_text_present": true,
+  "fields": {
+    "문서종류": {
+      "value": "실행 로그",
+      "status": "extracted",
+      "rule_id": "type.log_extension",
+      "evidence": [
+        {
+          "kind": "source",
+          "ref": "file_name",
+          "quote": "mes-app01_mes_daily_close_20250902.log",
+          "loc": null
+        }
+      ],
+      "candidates": [],
+      "reason": null
+    },
+    "거래처": {
+      "value": "청람정밀",
+      "status": "extracted",
+      "rule_id": "client.folder_alias",
+      "evidence": [
+        {
+          "kind": "source",
+          "ref": "relative_path",
+          "quote": "sites/운영팀/Shared Documents/청람정밀/운영로그/2025-09/mes-app01_mes_daily_close_20250902.log",
+          "loc": null
+        }
+      ],
+      "candidates": [],
+      "reason": null
+    },
+    "문서일자": {
+      "value": "2025-09-02",
+      "status": "extracted",
+      "rule_id": "date.log_start",
+      "evidence": [
+        {
+          "kind": "block",
+          "ref": "D-010-698f53e2fb08-line2",
+          "quote": "2025-09-02 02:04:04,300 INFO  [main] c.raum.batch.JobLauncher - Job: [MES_DAILY_CLOSE] launched with parameters: [{runDate=20250902}]",
+          "loc": {
+            "kind": "log",
+            "line_start": 2,
+            "line_end": 2
+          }
+        }
+      ],
+      "candidates": [],
+      "reason": null
+    },
+    "대상시스템": {
+      "value": "MES",
+      "status": "extracted",
+      "rule_id": "system.explicit_label",
+      "evidence": [
+        {
+          "kind": "block",
+          "ref": "D-010-698f53e2fb08-line1",
+          "quote": "2025-09-02 02:04:04,479 INFO  [main] c.raum.batch.JobLauncher - Target system: MES / host mes-app01",
+          "loc": {
+            "kind": "log",
+            "line_start": 1,
+            "line_end": 1
+          }
+        }
+      ],
+      "candidates": [],
+      "reason": null
+    },
+    "상태": {
+      "value": null,
+      "status": "not_found_native",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "no supported unambiguous value in native scope"
+    },
+    "계약번호": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "계약유형": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "계약시작일": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "계약종료일": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "금액": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "통화": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "VAT": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "견적번호": {
+      "value": null,
+      "status": "not_found_native",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "no supported unambiguous value in native scope"
+    },
+    "견적유효기간": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "사이트": {
+      "value": null,
+      "status": "not_applicable",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "field is outside the declared metadata scope for this document type; not a claim of source absence"
+    },
+    "작업명": {
+      "value": "MES_DAILY_CLOSE",
+      "status": "extracted",
+      "rule_id": "job.explicit_label",
+      "evidence": [
+        {
+          "kind": "block",
+          "ref": "D-010-698f53e2fb08-line2",
+          "quote": "2025-09-02 02:04:04,300 INFO  [main] c.raum.batch.JobLauncher - Job: [MES_DAILY_CLOSE] launched with parameters: [{runDate=20250902}]",
+          "loc": {
+            "kind": "log",
+            "line_start": 2,
+            "line_end": 2
+          }
+        },
+        {
+          "kind": "block",
+          "ref": "D-010-698f53e2fb08-line161",
+          "quote": "2025-09-02 02:25:42,876 INFO  [main] o.s.b.c.l.support.SimpleJobLauncher - Job: [MES_DAILY_CLOSE] completed with the following status: [FAILED]",
+          "loc": {
+            "kind": "log",
+            "line_start": 161,
+            "line_end": 161
+          }
+        }
+      ],
+      "candidates": [],
+      "reason": null
+    },
+    "로그시작": {
+      "value": "2025-09-02 02:04",
+      "status": "extracted",
+      "rule_id": "time.explicit_start",
+      "evidence": [
+        {
+          "kind": "block",
+          "ref": "D-010-698f53e2fb08-line2",
+          "quote": "2025-09-02 02:04:04,300 INFO  [main] c.raum.batch.JobLauncher - Job: [MES_DAILY_CLOSE] launched with parameters: [{runDate=20250902}]",
+          "loc": {
+            "kind": "log",
+            "line_start": 2,
+            "line_end": 2
+          }
+        }
+      ],
+      "candidates": [],
+      "reason": null
+    },
+    "로그종료": {
+      "value": "2025-09-02 02:25",
+      "status": "extracted",
+      "rule_id": "time.explicit_terminal",
+      "evidence": [
+        {
+          "kind": "block",
+          "ref": "D-010-698f53e2fb08-line161",
+          "quote": "2025-09-02 02:25:42,876 INFO  [main] o.s.b.c.l.support.SimpleJobLauncher - Job: [MES_DAILY_CLOSE] completed with the following status: [FAILED]",
+          "loc": {
+            "kind": "log",
+            "line_start": 161,
+            "line_end": 161
+          }
+        }
+      ],
+      "candidates": [],
+      "reason": null
+    },
+    "실행결과": {
+      "value": "실패",
+      "status": "extracted",
+      "rule_id": "result.explicit_terminal",
+      "evidence": [
+        {
+          "kind": "block",
+          "ref": "D-010-698f53e2fb08-line161",
+          "quote": "2025-09-02 02:25:42,876 INFO  [main] o.s.b.c.l.support.SimpleJobLauncher - Job: [MES_DAILY_CLOSE] completed with the following status: [FAILED]",
+          "loc": {
+            "kind": "log",
+            "line_start": 161,
+            "line_end": 161
+          }
+        }
+      ],
+      "candidates": [],
+      "reason": null
+    },
+    "오류코드": {
+      "value": "ORA-01555",
+      "status": "extracted",
+      "rule_id": "error.explicit_error_context",
+      "evidence": [
+        {
+          "kind": "block",
+          "ref": "D-010-698f53e2fb08-line157",
+          "quote": "2025-09-02 02:25:41,738 ERROR [step-3] c.raum.batch.ItemWriter - ORA-01555: snapshot too old: rollback segment number 7 with name \"_SYSSMU7$\" too small",
+          "loc": {
+            "kind": "log",
+            "line_start": 157,
+            "line_end": 157
+          }
+        }
+      ],
+      "candidates": [],
+      "reason": null
+    },
+    "사업명": {
+      "value": null,
+      "status": "not_found_native",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "no supported unambiguous value in native scope"
+    }
+  },
+  "pending_visual_units": [],
+  "deferred": {
+    "summary": "not_run",
+    "family": "not_run",
+    "latest_version": "not_run",
+    "vision": "not_required_by_parser"
+  }
+}

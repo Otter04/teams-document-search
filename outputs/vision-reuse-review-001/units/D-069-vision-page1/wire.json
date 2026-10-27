@@ -1,0 +1,228 @@
+{
+  "figures": [
+    {
+      "bbox": [
+        0.0,
+        0.15,
+        1.0,
+        0.95
+      ],
+      "claims": [
+        {
+          "bbox": [
+            0.0,
+            0.15,
+            1.0,
+            0.95
+          ],
+          "status": "observed",
+          "text": "여신관리시스템 DR 구축 네트워크 구성도 (Rev.1)의 전체 네트워크 토폴로지를 보여준다. 인터넷/전용회선이 방화벽(Fortigate)을 거쳐 코어 스위치(Cisco)로 연결되고, 코어 스위치는 본사 서버팜, DR 서버팜, 복제망으로 분기된다. 방화벽은 본사-DR 전용회선과 대전 DR 센터와도 연결되어 있다."
+        }
+      ],
+      "kind": "diagram",
+      "nodes": [
+        {
+          "bbox": [
+            0.42,
+            0.22,
+            0.72,
+            0.28
+          ],
+          "id": "node_1",
+          "label": "Internet / 전용회선"
+        },
+        {
+          "bbox": [
+            0.05,
+            0.35,
+            0.38,
+            0.45
+          ],
+          "id": "node_2",
+          "label": "본사 -DR 전용회선 1Gbps x 2"
+        },
+        {
+          "bbox": [
+            0.35,
+            0.32,
+            0.65,
+            0.48
+          ],
+          "id": "node_3",
+          "label": "방화벽\nFortiGate 600F x 2 (본사) / FortiGate 400F x 2 (DR)"
+        },
+        {
+          "bbox": [
+            0.68,
+            0.35,
+            0.95,
+            0.45
+          ],
+          "id": "node_4",
+          "label": "대전 DR 센터"
+        },
+        {
+          "bbox": [
+            0.35,
+            0.5,
+            0.65,
+            0.6
+          ],
+          "id": "node_5",
+          "label": "코어 스위치\nCisco N9K-C93180YC x 2"
+        },
+        {
+          "bbox": [
+            0.05,
+            0.65,
+            0.32,
+            0.8
+          ],
+          "id": "node_6",
+          "label": "본사 서버팜\n10.65.10.0/24"
+        },
+        {
+          "bbox": [
+            0.35,
+            0.65,
+            0.62,
+            0.8
+          ],
+          "id": "node_7",
+          "label": "DR 서버팜\n10.65.110.0/24"
+        },
+        {
+          "bbox": [
+            0.65,
+            0.65,
+            0.92,
+            0.8
+          ],
+          "id": "node_8",
+          "label": "복제망\n10.65.200.0/24"
+        }
+      ],
+      "relations": [
+        {
+          "bbox": [
+            0.5496155324875048,
+            0.28,
+            0.5503844675124953,
+            0.32
+          ],
+          "direction": "undirected",
+          "from_node": "node_1",
+          "label": "",
+          "to_node": "node_3"
+        },
+        {
+          "bbox": [
+            0.35,
+            0.39931647300068357,
+            0.38,
+            0.4006835269993165
+          ],
+          "direction": "undirected",
+          "from_node": "node_2",
+          "label": "",
+          "to_node": "node_3"
+        },
+        {
+          "bbox": [
+            0.65,
+            0.39931647300068357,
+            0.68,
+            0.4006835269993165
+          ],
+          "direction": "undirected",
+          "from_node": "node_3",
+          "label": "",
+          "to_node": "node_4"
+        },
+        {
+          "bbox": [
+            0.4996155324875048,
+            0.48,
+            0.5003844675124952,
+            0.5
+          ],
+          "direction": "undirected",
+          "from_node": "node_3",
+          "label": "",
+          "to_node": "node_5"
+        },
+        {
+          "bbox": [
+            0.18,
+            0.6,
+            0.35,
+            0.65
+          ],
+          "direction": "undirected",
+          "from_node": "node_5",
+          "label": "",
+          "to_node": "node_6"
+        },
+        {
+          "bbox": [
+            0.4996155324875048,
+            0.6,
+            0.5003844675124952,
+            0.65
+          ],
+          "direction": "undirected",
+          "from_node": "node_5",
+          "label": "",
+          "to_node": "node_7"
+        },
+        {
+          "bbox": [
+            0.65,
+            0.6,
+            0.82,
+            0.65
+          ],
+          "direction": "undirected",
+          "from_node": "node_5",
+          "label": "",
+          "to_node": "node_8"
+        }
+      ]
+    }
+  ],
+  "status": "complete",
+  "tables": [],
+  "texts": [
+    {
+      "bbox": [
+        0.05,
+        0.05,
+        0.95,
+        0.12
+      ],
+      "kind": "heading",
+      "text": "여신관리시스템 DR 구축 네트워크 구성도 (Rev.1)"
+    },
+    {
+      "bbox": [
+        0.05,
+        0.13,
+        0.95,
+        0.15
+      ],
+      "kind": "paragraph",
+      "text": "설치 위치 : 여의도 본사 IDC | 작성일 : 2025-08-27 | 작성 : 라움정보기술 기술지원팀"
+    },
+    {
+      "bbox": [
+        0.05,
+        0.9,
+        0.95,
+        0.92
+      ],
+      "kind": "paragraph",
+      "text": "범례 : 실선 = 1G/10G 이더넷 | (주) 도담캐피탈 전산 담당자 검토 필요"
+    }
+  ],
+  "warnings": []
+}

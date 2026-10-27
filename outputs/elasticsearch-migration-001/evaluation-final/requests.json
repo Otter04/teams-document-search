@@ -1,0 +1,7258 @@
+[
+  {
+    "query_id": "Q-001",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "계약서"
+        },
+        {
+          "field": "대상시스템",
+          "op": "eq",
+          "value": "MES"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "계약서"
+          ],
+          "text": "계약서",
+          "span": [
+            13,
+            16
+          ]
+        },
+        {
+          "field": "대상시스템",
+          "value": "MES",
+          "text": "mes",
+          "span": [
+            5,
+            8
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "청람정밀 MES 고도화 계약서",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "계약서"
+          },
+          {
+            "field": "대상시스템",
+            "op": "eq",
+            "value": "MES"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "계약서"
+            ],
+            "text": "계약서",
+            "span": [
+              13,
+              16
+            ]
+          },
+          {
+            "field": "대상시스템",
+            "value": "MES",
+            "text": "mes",
+            "span": [
+              5,
+              8
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "청람정밀 MES 고도화 계약서 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.document_type": "계약서"
+              }
+            },
+            {
+              "term": {
+                "metadata_statuses.target_system": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.target_system": "MES"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-002",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [],
+      "recognized": [],
+      "warnings": [],
+      "lexical_query": "CT-2025-0112",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [],
+        "recognized": [],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "CT-2025-0112 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  },
+                  {
+                    "term": {
+                      "identifiers": {
+                        "value": "ct-2025-0112",
+                        "boost": 3
+                      }
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": []
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-003",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [],
+      "recognized": [],
+      "warnings": [],
+      "lexical_query": "설비 데이터를 1초 단위로 수집하겠다고 제안한 문서",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [],
+        "recognized": [],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "설비 데이터를 1초 단위로 수집하겠다고 제안한 문서 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": []
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-004",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [],
+      "recognized": [],
+      "warnings": [],
+      "lexical_query": "청람 화성 공장 OT 설비망 IP 대역",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [],
+        "recognized": [],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "청람 화성 공장 OT 설비망 IP 대역 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": []
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-005",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [],
+      "recognized": [],
+      "warnings": [],
+      "lexical_query": "mes-db01 서버 사양",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [],
+        "recognized": [],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "mes-db01 서버 사양 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  },
+                  {
+                    "term": {
+                      "identifiers": {
+                        "value": "mes-db01",
+                        "boost": 3
+                      }
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": []
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-006",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "실행 로그"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "실행 로그"
+          ],
+          "text": "배치 로그",
+          "span": [
+            15,
+            20
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "ORA-01555 오류 난 배치 로그",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "실행 로그"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "실행 로그"
+            ],
+            "text": "배치 로그",
+            "span": [
+              15,
+              20
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "ORA-01555 오류 난 배치 로그 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  },
+                  {
+                    "term": {
+                      "concepts": {
+                        "value": "concept:error",
+                        "boost": 2
+                      }
+                    }
+                  },
+                  {
+                    "term": {
+                      "identifiers": {
+                        "value": "ora-01555",
+                        "boost": 3
+                      }
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.document_type": "실행 로그"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-007",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "견적서"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "견적서"
+          ],
+          "text": "견적",
+          "span": [
+            20,
+            22
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "Cheongram Precision 견적 최종본",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "견적서"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "견적서"
+            ],
+            "text": "견적",
+            "span": [
+              20,
+              22
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "Cheongram Precision 견적 최종본 청람정밀",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.document_type": "견적서"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-008",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "계약서"
+        },
+        {
+          "field": "대상시스템",
+          "op": "eq",
+          "value": "ERP"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "계약서"
+          ],
+          "text": "계약",
+          "span": [
+            20,
+            22
+          ]
+        },
+        {
+          "field": "대상시스템",
+          "value": "ERP",
+          "text": "erp",
+          "span": [
+            11,
+            14
+          ]
+        }
+      ],
+      "warnings": [
+        "ambiguous_date_role"
+      ],
+      "lexical_query": "청람정밀 2025년 ERP 유지보수 계약",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "계약서"
+          },
+          {
+            "field": "대상시스템",
+            "op": "eq",
+            "value": "ERP"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "계약서"
+            ],
+            "text": "계약",
+            "span": [
+              20,
+              22
+            ]
+          },
+          {
+            "field": "대상시스템",
+            "value": "ERP",
+            "text": "erp",
+            "span": [
+              11,
+              14
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "청람정밀 2025년 ERP 유지보수 계약 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.document_type": "계약서"
+              }
+            },
+            {
+              "term": {
+                "metadata_statuses.target_system": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.target_system": "ERP"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-009",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "계약서"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "계약서"
+          ],
+          "text": "계약",
+          "span": [
+            23,
+            25
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "장애 나면 4시간 안에 현장에 와야 하는 계약",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "계약서"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "계약서"
+            ],
+            "text": "계약",
+            "span": [
+              23,
+              25
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "장애 나면 4시간 안에 현장에 와야 하는 계약 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.document_type": "계약서"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-010",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [],
+      "recognized": [],
+      "warnings": [],
+      "lexical_query": "BKP-E1042",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [],
+        "recognized": [],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "BKP-E1042 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  },
+                  {
+                    "term": {
+                      "identifiers": {
+                        "value": "bkp-e1042",
+                        "boost": 3
+                      }
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": []
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-011",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "기타"
+        },
+        {
+          "field": "대상시스템",
+          "op": "eq",
+          "value": "ERP"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "기타"
+          ],
+          "text": "통화 메모",
+          "span": [
+            20,
+            25
+          ]
+        },
+        {
+          "field": "대상시스템",
+          "value": "ERP",
+          "text": "erp",
+          "span": [
+            0,
+            3
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "ERP 백업 디스크 부족 관련 고객 통화 메모",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "기타"
+          },
+          {
+            "field": "대상시스템",
+            "op": "eq",
+            "value": "ERP"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "기타"
+            ],
+            "text": "통화 메모",
+            "span": [
+              20,
+              25
+            ]
+          },
+          {
+            "field": "대상시스템",
+            "value": "ERP",
+            "text": "erp",
+            "span": [
+              0,
+              3
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "ERP 백업 디스크 부족 관련 고객 통화 메모 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  },
+                  {
+                    "term": {
+                      "concepts": {
+                        "value": "concept:backup",
+                        "boost": 2
+                      }
+                    }
+                  },
+                  {
+                    "term": {
+                      "concepts": {
+                        "value": "concept:disk",
+                        "boost": 2
+                      }
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.document_type": "기타"
+              }
+            },
+            {
+              "term": {
+                "metadata_statuses.target_system": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.target_system": "ERP"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-012",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "견적서"
+        },
+        {
+          "field": "대상시스템",
+          "op": "eq",
+          "value": "WMS"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "견적서"
+          ],
+          "text": "견적서",
+          "span": [
+            13,
+            16
+          ]
+        },
+        {
+          "field": "대상시스템",
+          "value": "WMS",
+          "text": "wms",
+          "span": [
+            9,
+            12
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "다온로지스 평택 WMS 견적서",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "견적서"
+          },
+          {
+            "field": "대상시스템",
+            "op": "eq",
+            "value": "WMS"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "견적서"
+            ],
+            "text": "견적서",
+            "span": [
+              13,
+              16
+            ]
+          },
+          {
+            "field": "대상시스템",
+            "value": "WMS",
+            "text": "wms",
+            "span": [
+              9,
+              12
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "다온로지스 평택 WMS 견적서 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.document_type": "견적서"
+              }
+            },
+            {
+              "term": {
+                "metadata_statuses.target_system": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.target_system": "WMS"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-013",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [],
+      "recognized": [],
+      "warnings": [],
+      "lexical_query": "Q-2504-02",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [],
+        "recognized": [],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "Q-2504-02 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  },
+                  {
+                    "term": {
+                      "identifiers": {
+                        "value": "q-2504-02",
+                        "boost": 3
+                      }
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": []
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-014",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "계약서"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "계약서"
+          ],
+          "text": "계약",
+          "span": [
+            19,
+            21
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "소터 연동이 포함된 물류센터 구축 계약",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "계약서"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "계약서"
+            ],
+            "text": "계약",
+            "span": [
+              19,
+              21
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "소터 연동이 포함된 물류센터 구축 계약 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.document_type": "계약서"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-015",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [],
+      "recognized": [],
+      "warnings": [],
+      "lexical_query": "PDA 무선망 대역 알려줘",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [],
+        "recognized": [],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "PDA 무선망 대역 알려줘 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": []
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-016",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [],
+      "recognized": [],
+      "warnings": [],
+      "lexical_query": "NET-E0110 타임아웃",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [],
+        "recognized": [],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "NET-E0110 타임아웃 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  },
+                  {
+                    "term": {
+                      "concepts": {
+                        "value": "concept:timeout",
+                        "boost": 2
+                      }
+                    }
+                  },
+                  {
+                    "term": {
+                      "identifiers": {
+                        "value": "net-e0110",
+                        "boost": 3
+                      }
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": []
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-017",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "대상시스템",
+          "op": "eq",
+          "value": "WMS"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "대상시스템",
+          "value": "WMS",
+          "text": "wms",
+          "span": [
+            0,
+            3
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "WMS 2.3.0 배포 때 헬스체크 느렸던 기록",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "대상시스템",
+            "op": "eq",
+            "value": "WMS"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "대상시스템",
+            "value": "WMS",
+            "text": "wms",
+            "span": [
+              0,
+              3
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "WMS 2.3.0 배포 때 헬스체크 느렸던 기록 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  },
+                  {
+                    "term": {
+                      "concepts": {
+                        "value": "concept:deploy",
+                        "boost": 2
+                      }
+                    }
+                  },
+                  {
+                    "term": {
+                      "concepts": {
+                        "value": "concept:healthcheck",
+                        "boost": 2
+                      }
+                    }
+                  },
+                  {
+                    "term": {
+                      "concepts": {
+                        "value": "concept:slow",
+                        "boost": 2
+                      }
+                    }
+                  },
+                  {
+                    "term": {
+                      "identifiers": {
+                        "value": "2.3.0",
+                        "boost": 3
+                      }
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.target_system": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.target_system": "WMS"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-018",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "계약서"
+        },
+        {
+          "field": "대상시스템",
+          "op": "eq",
+          "value": "TMS"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "계약서"
+          ],
+          "text": "계약서",
+          "span": [
+            12,
+            15
+          ]
+        },
+        {
+          "field": "대상시스템",
+          "value": "TMS",
+          "text": "tms",
+          "span": [
+            5,
+            8
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "다온물류 TMS 이전 계약서",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "계약서"
+          },
+          {
+            "field": "대상시스템",
+            "op": "eq",
+            "value": "TMS"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "계약서"
+            ],
+            "text": "계약서",
+            "span": [
+              12,
+              15
+            ]
+          },
+          {
+            "field": "대상시스템",
+            "value": "TMS",
+            "text": "tms",
+            "span": [
+              5,
+              8
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "다온물류 TMS 이전 계약서 다온로지스",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.document_type": "계약서"
+              }
+            },
+            {
+              "term": {
+                "metadata_statuses.target_system": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.target_system": "TMS"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-019",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [],
+      "recognized": [],
+      "warnings": [
+        "multiple_document_kinds"
+      ],
+      "lexical_query": "임대 IDC 계약 만료 때문에 서버 옮기자고 한 제안",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [],
+        "recognized": [],
+        "warnings": [
+          "multiple_document_kinds"
+        ]
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "임대 IDC 계약 만료 때문에 서버 옮기자고 한 제안 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": []
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-020",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "실행 로그"
+        },
+        {
+          "field": "대상시스템",
+          "op": "eq",
+          "value": "TMS"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "실행 로그"
+          ],
+          "text": "작업 로그",
+          "span": [
+            7,
+            12
+          ]
+        },
+        {
+          "field": "대상시스템",
+          "value": "TMS",
+          "text": "tms",
+          "span": [
+            0,
+            3
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "TMS 전환 작업 로그",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "실행 로그"
+          },
+          {
+            "field": "대상시스템",
+            "op": "eq",
+            "value": "TMS"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "실행 로그"
+            ],
+            "text": "작업 로그",
+            "span": [
+              7,
+              12
+            ]
+          },
+          {
+            "field": "대상시스템",
+            "value": "TMS",
+            "text": "tms",
+            "span": [
+              0,
+              3
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "TMS 전환 작업 로그 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  },
+                  {
+                    "term": {
+                      "concepts": {
+                        "value": "intent:cutover",
+                        "boost": 2
+                      }
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.document_type": "실행 로그"
+              }
+            },
+            {
+              "term": {
+                "metadata_statuses.target_system": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.target_system": "TMS"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-021",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [],
+      "recognized": [],
+      "warnings": [],
+      "lexical_query": "tms-db01 IP 주소",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [],
+        "recognized": [],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "tms-db01 IP 주소 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  },
+                  {
+                    "term": {
+                      "identifiers": {
+                        "value": "tms-db01",
+                        "boost": 3
+                      }
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": []
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-022",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "계약서"
+        },
+        {
+          "field": "대상시스템",
+          "op": "eq",
+          "value": "PACS"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "계약서"
+          ],
+          "text": "계약서",
+          "span": [
+            18,
+            21
+          ]
+        },
+        {
+          "field": "대상시스템",
+          "value": "PACS",
+          "text": "pacs",
+          "span": [
+            5,
+            9
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "새봄병원 PACS 스토리지 증설 계약서 서명본",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "계약서"
+          },
+          {
+            "field": "대상시스템",
+            "op": "eq",
+            "value": "PACS"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "계약서"
+            ],
+            "text": "계약서",
+            "span": [
+              18,
+              21
+            ]
+          },
+          {
+            "field": "대상시스템",
+            "value": "PACS",
+            "text": "pacs",
+            "span": [
+              5,
+              9
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "새봄병원 PACS 스토리지 증설 계약서 서명본 새봄의료재단",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  },
+                  {
+                    "term": {
+                      "concepts": {
+                        "value": "concept:storage",
+                        "boost": 2
+                      }
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.document_type": "계약서"
+              }
+            },
+            {
+              "term": {
+                "metadata_statuses.target_system": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.target_system": "PACS"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-023",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "제안서"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "제안서"
+          ],
+          "text": "제안",
+          "span": [
+            15,
+            17
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "스토리지 300TB 늘리는 제안",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "제안서"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "제안서"
+            ],
+            "text": "제안",
+            "span": [
+              15,
+              17
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "스토리지 300TB 늘리는 제안 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  },
+                  {
+                    "term": {
+                      "concepts": {
+                        "value": "concept:storage",
+                        "boost": 2
+                      }
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.document_type": "제안서"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-024",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "in",
+          "value": [
+            "네트워크 구성도",
+            "서버 구성도"
+          ]
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "네트워크 구성도",
+            "서버 구성도"
+          ],
+          "text": "구성도",
+          "span": [
+            20,
+            23
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "Brocade SAN 스위치 들어간 구성도",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "in",
+            "value": [
+              "네트워크 구성도",
+              "서버 구성도"
+            ]
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "네트워크 구성도",
+              "서버 구성도"
+            ],
+            "text": "구성도",
+            "span": [
+              20,
+              23
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "Brocade SAN 스위치 들어간 구성도 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  },
+                  {
+                    "term": {
+                      "concepts": {
+                        "value": "concept:switch",
+                        "boost": 2
+                      }
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "terms": {
+                "metadata.document_type": [
+                  "네트워크 구성도",
+                  "서버 구성도"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-025",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [],
+      "recognized": [],
+      "warnings": [],
+      "lexical_query": "CT-2025-0164",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [],
+        "recognized": [],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "CT-2025-0164 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  },
+                  {
+                    "term": {
+                      "identifiers": {
+                        "value": "ct-2025-0164",
+                        "boost": 3
+                      }
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": []
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-026",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "계약서"
+        },
+        {
+          "field": "대상시스템",
+          "op": "eq",
+          "value": "EMR"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "계약서"
+          ],
+          "text": "계약",
+          "span": [
+            16,
+            18
+          ]
+        },
+        {
+          "field": "대상시스템",
+          "value": "EMR",
+          "text": "emr",
+          "span": [
+            7,
+            10
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "새봄의료재단 EMR 유지보수 계약",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "계약서"
+          },
+          {
+            "field": "대상시스템",
+            "op": "eq",
+            "value": "EMR"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "계약서"
+            ],
+            "text": "계약",
+            "span": [
+              16,
+              18
+            ]
+          },
+          {
+            "field": "대상시스템",
+            "value": "EMR",
+            "text": "emr",
+            "span": [
+              7,
+              10
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "새봄의료재단 EMR 유지보수 계약 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.document_type": "계약서"
+              }
+            },
+            {
+              "term": {
+                "metadata_statuses.target_system": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.target_system": "EMR"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-027",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "계약서"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "계약서"
+          ],
+          "text": "계약",
+          "span": [
+            26,
+            28
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "2시간 안에 원격 대응 시작하기로 한 유지보수 계약",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "계약서"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "계약서"
+            ],
+            "text": "계약",
+            "span": [
+              26,
+              28
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "2시간 안에 원격 대응 시작하기로 한 유지보수 계약 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.document_type": "계약서"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-028",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [],
+      "recognized": [],
+      "warnings": [],
+      "lexical_query": "BKP-E2210 테이프 드라이브 오류",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [],
+        "recognized": [],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "BKP-E2210 테이프 드라이브 오류 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  },
+                  {
+                    "term": {
+                      "concepts": {
+                        "value": "concept:error",
+                        "boost": 2
+                      }
+                    }
+                  },
+                  {
+                    "term": {
+                      "identifiers": {
+                        "value": "bkp-e2210",
+                        "boost": 3
+                      }
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": []
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-029",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "기타"
+        },
+        {
+          "field": "대상시스템",
+          "op": "eq",
+          "value": "EMR"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "기타"
+          ],
+          "text": "메모",
+          "span": [
+            26,
+            28
+          ]
+        },
+        {
+          "field": "대상시스템",
+          "value": "EMR",
+          "text": "emr",
+          "span": [
+            0,
+            3
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "EMR 테이프 백업 문제로 고객이 요청한 내용 메모",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "기타"
+          },
+          {
+            "field": "대상시스템",
+            "op": "eq",
+            "value": "EMR"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "기타"
+            ],
+            "text": "메모",
+            "span": [
+              26,
+              28
+            ]
+          },
+          {
+            "field": "대상시스템",
+            "value": "EMR",
+            "text": "emr",
+            "span": [
+              0,
+              3
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "EMR 테이프 백업 문제로 고객이 요청한 내용 메모 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  },
+                  {
+                    "term": {
+                      "concepts": {
+                        "value": "concept:backup",
+                        "boost": 2
+                      }
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.document_type": "기타"
+              }
+            },
+            {
+              "term": {
+                "metadata_statuses.target_system": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.target_system": "EMR"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-030",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [],
+      "recognized": [],
+      "warnings": [],
+      "lexical_query": "emr-db02 IP",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [],
+        "recognized": [],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "emr-db02 IP ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  },
+                  {
+                    "term": {
+                      "identifiers": {
+                        "value": "emr-db02",
+                        "boost": 3
+                      }
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": []
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-031",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "견적서"
+        },
+        {
+          "field": "대상시스템",
+          "op": "eq",
+          "value": "학사정보시스템"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "견적서"
+          ],
+          "text": "견적",
+          "span": [
+            21,
+            23
+          ]
+        },
+        {
+          "field": "대상시스템",
+          "value": "학사정보시스템",
+          "text": "학사정보시스템",
+          "span": [
+            5,
+            12
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "미르내대 학사정보시스템 클라우드 전환 견적",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "견적서"
+          },
+          {
+            "field": "대상시스템",
+            "op": "eq",
+            "value": "학사정보시스템"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "견적서"
+            ],
+            "text": "견적",
+            "span": [
+              21,
+              23
+            ]
+          },
+          {
+            "field": "대상시스템",
+            "value": "학사정보시스템",
+            "text": "학사정보시스템",
+            "span": [
+              5,
+              12
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "미르내대 학사정보시스템 클라우드 전환 견적 미르내대학교",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.document_type": "견적서"
+              }
+            },
+            {
+              "term": {
+                "metadata_statuses.target_system": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.target_system": "학사정보시스템"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-032",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [],
+      "recognized": [],
+      "warnings": [],
+      "lexical_query": "수강신청 몰릴 때 자동으로 서버 늘리는 구성",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [],
+        "recognized": [],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "수강신청 몰릴 때 자동으로 서버 늘리는 구성 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  },
+                  {
+                    "term": {
+                      "concepts": {
+                        "value": "intent:autoscale",
+                        "boost": 2
+                      }
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": []
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-033",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [],
+      "recognized": [],
+      "warnings": [],
+      "lexical_query": "10.54.128.0/17",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [],
+        "recognized": [],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "10.54.128.0/17 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  },
+                  {
+                    "term": {
+                      "identifiers": {
+                        "value": "10.54.128.0/17",
+                        "boost": 3
+                      }
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": []
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-034",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "실행 로그"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "실행 로그"
+          ],
+          "text": "로그",
+          "span": [
+            11,
+            13
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "오토스케일링 테스트 로그",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "실행 로그"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "실행 로그"
+            ],
+            "text": "로그",
+            "span": [
+              11,
+              13
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "오토스케일링 테스트 로그 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  },
+                  {
+                    "term": {
+                      "concepts": {
+                        "value": "concept:autoscale",
+                        "boost": 2
+                      }
+                    }
+                  },
+                  {
+                    "term": {
+                      "concepts": {
+                        "value": "concept:test",
+                        "boost": 2
+                      }
+                    }
+                  },
+                  {
+                    "term": {
+                      "concepts": {
+                        "value": "intent:autoscale",
+                        "boost": 2
+                      }
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.document_type": "실행 로그"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-035",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "계약서"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "계약서"
+          ],
+          "text": "계약서",
+          "span": [
+            12,
+            15
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "도담캐피탈 DR 구축 계약서",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "계약서"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "계약서"
+            ],
+            "text": "계약서",
+            "span": [
+              12,
+              15
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "도담캐피탈 DR 구축 계약서 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.document_type": "계약서"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-036",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "제안서"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "제안서"
+          ],
+          "text": "제안",
+          "span": [
+            22,
+            24
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "RTO 3시간 RPO 15분 목표로 한 제안",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "제안서"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "제안서"
+            ],
+            "text": "제안",
+            "span": [
+              22,
+              24
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "RTO 3시간 RPO 15분 목표로 한 제안 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.document_type": "제안서"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-037",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "in",
+          "value": [
+            "네트워크 구성도",
+            "서버 구성도"
+          ]
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "네트워크 구성도",
+            "서버 구성도"
+          ],
+          "text": "구성도",
+          "span": [
+            17,
+            20
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "본사랑 대전 DR센터 전용회선 구성도",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "in",
+            "value": [
+              "네트워크 구성도",
+              "서버 구성도"
+            ]
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "네트워크 구성도",
+              "서버 구성도"
+            ],
+            "text": "구성도",
+            "span": [
+              17,
+              20
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "본사랑 대전 DR센터 전용회선 구성도 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "terms": {
+                "metadata.document_type": [
+                  "네트워크 구성도",
+                  "서버 구성도"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-038",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [],
+      "recognized": [],
+      "warnings": [],
+      "lexical_query": "loan-db-dr01",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [],
+        "recognized": [],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "loan-db-dr01 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  },
+                  {
+                    "term": {
+                      "concepts": {
+                        "value": "concept:database",
+                        "boost": 2
+                      }
+                    }
+                  },
+                  {
+                    "term": {
+                      "identifiers": {
+                        "value": "loan-db-dr01",
+                        "boost": 3
+                      }
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": []
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-039",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [],
+      "recognized": [],
+      "warnings": [],
+      "lexical_query": "Data Guard 전환 훈련 결과",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [],
+        "recognized": [],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "Data Guard 전환 훈련 결과 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  },
+                  {
+                    "term": {
+                      "concepts": {
+                        "value": "concept:dataguard",
+                        "boost": 2
+                      }
+                    }
+                  },
+                  {
+                    "term": {
+                      "concepts": {
+                        "value": "concept:drill",
+                        "boost": 2
+                      }
+                    }
+                  },
+                  {
+                    "term": {
+                      "concepts": {
+                        "value": "concept:switchover",
+                        "boost": 2
+                      }
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": []
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-040",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "제안서"
+        },
+        {
+          "field": "대상시스템",
+          "op": "eq",
+          "value": "온라인몰"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "제안서"
+          ],
+          "text": "제안서",
+          "span": [
+            14,
+            17
+          ]
+        },
+        {
+          "field": "대상시스템",
+          "value": "온라인몰",
+          "text": "온라인몰",
+          "span": [
+            5,
+            9
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "해솔유통 온라인몰 이중화 제안서",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "제안서"
+          },
+          {
+            "field": "대상시스템",
+            "op": "eq",
+            "value": "온라인몰"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "제안서"
+            ],
+            "text": "제안서",
+            "span": [
+              14,
+              17
+            ]
+          },
+          {
+            "field": "대상시스템",
+            "value": "온라인몰",
+            "text": "온라인몰",
+            "span": [
+              5,
+              9
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "해솔유통 온라인몰 이중화 제안서 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.document_type": "제안서"
+              }
+            },
+            {
+              "term": {
+                "metadata_statuses.target_system": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.target_system": "온라인몰"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-041",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "in",
+          "value": [
+            "네트워크 구성도",
+            "서버 구성도"
+          ]
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "네트워크 구성도",
+            "서버 구성도"
+          ],
+          "text": "구성도",
+          "span": [
+            28,
+            31
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "L4 스위치 Active-Standby로 이중화한 구성도",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "in",
+            "value": [
+              "네트워크 구성도",
+              "서버 구성도"
+            ]
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "네트워크 구성도",
+              "서버 구성도"
+            ],
+            "text": "구성도",
+            "span": [
+              28,
+              31
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "L4 스위치 Active-Standby로 이중화한 구성도 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  },
+                  {
+                    "term": {
+                      "concepts": {
+                        "value": "concept:switch",
+                        "boost": 2
+                      }
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "terms": {
+                "metadata.document_type": [
+                  "네트워크 구성도",
+                  "서버 구성도"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-042",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "실행 로그"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "실행 로그"
+          ],
+          "text": "로그",
+          "span": [
+            20,
+            22
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "페일오버 테스트에서 502 에러 난 로그",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "실행 로그"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "실행 로그"
+            ],
+            "text": "로그",
+            "span": [
+              20,
+              22
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "페일오버 테스트에서 502 에러 난 로그 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  },
+                  {
+                    "term": {
+                      "concepts": {
+                        "value": "concept:error",
+                        "boost": 2
+                      }
+                    }
+                  },
+                  {
+                    "term": {
+                      "concepts": {
+                        "value": "concept:failover",
+                        "boost": 2
+                      }
+                    }
+                  },
+                  {
+                    "term": {
+                      "concepts": {
+                        "value": "concept:test",
+                        "boost": 2
+                      }
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.document_type": "실행 로그"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-043",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [],
+      "recognized": [],
+      "warnings": [],
+      "lexical_query": "mall-db02",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [],
+        "recognized": [],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "mall-db02 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  },
+                  {
+                    "term": {
+                      "identifiers": {
+                        "value": "mall-db02",
+                        "boost": 3
+                      }
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": []
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-044",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [],
+      "recognized": [],
+      "warnings": [
+        "multiple_document_kinds"
+      ],
+      "lexical_query": "해솔마트 견적 관련 메일",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [],
+        "recognized": [],
+        "warnings": [
+          "multiple_document_kinds"
+        ]
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "해솔마트 견적 관련 메일 해솔유통",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": []
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-045",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "계약서"
+        },
+        {
+          "field": "대상시스템",
+          "op": "eq",
+          "value": "게임서버"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "계약서"
+          ],
+          "text": "계약",
+          "span": [
+            17,
+            19
+          ]
+        },
+        {
+          "field": "대상시스템",
+          "value": "게임서버",
+          "text": "게임서버",
+          "span": [
+            6,
+            10
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "별하게임즈 게임서버 운영 대행 계약",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "계약서"
+          },
+          {
+            "field": "대상시스템",
+            "op": "eq",
+            "value": "게임서버"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "계약서"
+            ],
+            "text": "계약",
+            "span": [
+              17,
+              19
+            ]
+          },
+          {
+            "field": "대상시스템",
+            "value": "게임서버",
+            "text": "게임서버",
+            "span": [
+              6,
+              10
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "별하게임즈 게임서버 운영 대행 계약 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.document_type": "계약서"
+              }
+            },
+            {
+              "term": {
+                "metadata_statuses.target_system": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.target_system": "게임서버"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-046",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "계약서"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "계약서"
+          ],
+          "text": "계약",
+          "span": [
+            19,
+            21
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "24시간 365일 관제 조건 있는 계약",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "계약서"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "계약서"
+            ],
+            "text": "계약",
+            "span": [
+              19,
+              21
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "24시간 365일 관제 조건 있는 계약 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.document_type": "계약서"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-047",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "실행 로그"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "실행 로그"
+          ],
+          "text": "로그",
+          "span": [
+            3,
+            5
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "게임 로그 디스크 87% 경고",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "실행 로그"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "실행 로그"
+            ],
+            "text": "로그",
+            "span": [
+              3,
+              5
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "게임 로그 디스크 87% 경고 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  },
+                  {
+                    "term": {
+                      "concepts": {
+                        "value": "concept:disk",
+                        "boost": 2
+                      }
+                    }
+                  },
+                  {
+                    "term": {
+                      "concepts": {
+                        "value": "concept:warning",
+                        "boost": 2
+                      }
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.document_type": "실행 로그"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-048",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "네트워크 구성도"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "네트워크 구성도"
+          ],
+          "text": "네트워크 구성도",
+          "span": [
+            16,
+            24
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "Anti-DDoS 장비 있는 네트워크 구성도",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "네트워크 구성도"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "네트워크 구성도"
+            ],
+            "text": "네트워크 구성도",
+            "span": [
+              16,
+              24
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "Anti-DDoS 장비 있는 네트워크 구성도 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  },
+                  {
+                    "term": {
+                      "concepts": {
+                        "value": "concept:network",
+                        "boost": 2
+                      }
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.document_type": "네트워크 구성도"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-049",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "계약서"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "계약서"
+          ],
+          "text": "계약",
+          "span": [
+            16,
+            18
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "별하게임즈 로그분석 라이선스 계약",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "계약서"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "계약서"
+            ],
+            "text": "계약",
+            "span": [
+              16,
+              18
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "별하게임즈 로그분석 라이선스 계약 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.document_type": "계약서"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-050",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [],
+      "recognized": [],
+      "warnings": [],
+      "lexical_query": "달러로 계약한 라이선스",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [],
+        "recognized": [],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "달러로 계약한 라이선스 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": []
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-051",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [],
+      "recognized": [],
+      "warnings": [],
+      "lexical_query": "Q-2509-02",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [],
+        "recognized": [],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "Q-2509-02 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  },
+                  {
+                    "term": {
+                      "identifiers": {
+                        "value": "q-2509-02",
+                        "boost": 3
+                      }
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": []
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-052",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "계약서"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "계약서"
+          ],
+          "text": "계약서",
+          "span": [
+            14,
+            17
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "온새미도시공사 서버 교체 계약서",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "계약서"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "계약서"
+            ],
+            "text": "계약서",
+            "span": [
+              14,
+              17
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "온새미도시공사 서버 교체 계약서 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.document_type": "계약서"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-053",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "견적서"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "견적서"
+          ],
+          "text": "견적",
+          "span": [
+            12,
+            14
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "부가세 포함 금액으로 견적 낸 공공기관 건",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "견적서"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "견적서"
+            ],
+            "text": "견적",
+            "span": [
+              12,
+              14
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "부가세 포함 금액으로 견적 낸 공공기관 건 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.document_type": "견적서"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-054",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "제안서"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "제안서"
+          ],
+          "text": "제안",
+          "span": [
+            32,
+            34
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "Windows Server 2012 R2 지원 종료 대응 제안",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "제안서"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "제안서"
+            ],
+            "text": "제안",
+            "span": [
+              32,
+              34
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "Windows Server 2012 R2 지원 종료 대응 제안 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.document_type": "제안서"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-055",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [],
+      "recognized": [],
+      "warnings": [],
+      "lexical_query": "fms-gis01",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [],
+        "recognized": [],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "fms-gis01 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  },
+                  {
+                    "term": {
+                      "identifiers": {
+                        "value": "fms-gis01",
+                        "boost": 3
+                      }
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": []
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-056",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "계약서"
+        },
+        {
+          "field": "대상시스템",
+          "op": "eq",
+          "value": "ERP"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "계약서"
+          ],
+          "text": "계약",
+          "span": [
+            20,
+            22
+          ]
+        },
+        {
+          "field": "대상시스템",
+          "value": "ERP",
+          "text": "erp",
+          "span": [
+            11,
+            14
+          ]
+        }
+      ],
+      "warnings": [
+        "ambiguous_date_role"
+      ],
+      "lexical_query": "청람정밀 2026년 ERP 유지보수 계약",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "계약서"
+          },
+          {
+            "field": "대상시스템",
+            "op": "eq",
+            "value": "ERP"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "계약서"
+            ],
+            "text": "계약",
+            "span": [
+              20,
+              22
+            ]
+          },
+          {
+            "field": "대상시스템",
+            "value": "ERP",
+            "text": "erp",
+            "span": [
+              11,
+              14
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "청람정밀 2026년 ERP 유지보수 계약 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.document_type": "계약서"
+              }
+            },
+            {
+              "term": {
+                "metadata_statuses.target_system": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.target_system": "ERP"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-057",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "계약서"
+        }
+      ],
+      "recognized": [
+        {
+          "field": "문서종류",
+          "values": [
+            "계약서"
+          ],
+          "text": "계약",
+          "span": [
+            16,
+            18
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "3시간 이내 현장 도착 조건 계약",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "계약서"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "계약서"
+            ],
+            "text": "계약",
+            "span": [
+              16,
+              18
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "3시간 이내 현장 도착 조건 계약 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.document_type": "계약서"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-058",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [],
+      "recognized": [],
+      "warnings": [],
+      "lexical_query": "CT-2025-0402",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [],
+        "recognized": [],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "CT-2025-0402 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  },
+                  {
+                    "term": {
+                      "identifiers": {
+                        "value": "ct-2025-0402",
+                        "boost": 3
+                      }
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": []
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-059",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "로그시작",
+          "op": "gte",
+          "value": "2025-09-01 00:00"
+        },
+        {
+          "field": "로그시작",
+          "op": "lte",
+          "value": "2025-09-30 23:59"
+        },
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "실행 로그"
+        },
+        {
+          "field": "실행결과",
+          "op": "eq",
+          "value": "실패"
+        }
+      ],
+      "recognized": [
+        {
+          "rule": "calendar_period",
+          "text": "2025년 9월",
+          "span": [
+            0,
+            8
+          ],
+          "field": "로그시작",
+          "start": "2025-09-01 00:00",
+          "end": "2025-09-30 23:59"
+        },
+        {
+          "rule": "explicit_final_status",
+          "text": "실패한",
+          "span": [
+            10,
+            13
+          ],
+          "value": "실패"
+        },
+        {
+          "field": "문서종류",
+          "values": [
+            "실행 로그"
+          ],
+          "text": "로그",
+          "span": [
+            14,
+            16
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "에   로그",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "실행 로그"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "실행 로그"
+            ],
+            "text": "로그",
+            "span": [
+              14,
+              16
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "에   로그 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.log_start": "extracted"
+              }
+            },
+            {
+              "range": {
+                "metadata.log_start": {
+                  "gte": "2025-09-01 00:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "metadata_statuses.log_start": "extracted"
+              }
+            },
+            {
+              "range": {
+                "metadata.log_start": {
+                  "lte": "2025-09-30 23:59"
+                }
+              }
+            },
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.document_type": "실행 로그"
+              }
+            },
+            {
+              "term": {
+                "metadata_statuses.execution_result": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.execution_result": "실패"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-060",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "로그시작",
+          "op": "gte",
+          "value": "2025-12-01 00:00"
+        },
+        {
+          "field": "로그시작",
+          "op": "lte",
+          "value": "2025-12-31 23:59"
+        },
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "실행 로그"
+        }
+      ],
+      "recognized": [
+        {
+          "rule": "calendar_period",
+          "text": "작년 12월",
+          "span": [
+            0,
+            6
+          ],
+          "field": "로그시작",
+          "start": "2025-12-01 00:00",
+          "end": "2025-12-31 23:59"
+        },
+        {
+          "field": "문서종류",
+          "values": [
+            "실행 로그"
+          ],
+          "text": "로그",
+          "span": [
+            13,
+            15
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "DB 백업 로그",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "실행 로그"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "실행 로그"
+            ],
+            "text": "로그",
+            "span": [
+              13,
+              15
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "DB 백업 로그 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  },
+                  {
+                    "term": {
+                      "concepts": {
+                        "value": "concept:backup",
+                        "boost": 2
+                      }
+                    }
+                  },
+                  {
+                    "term": {
+                      "concepts": {
+                        "value": "concept:database",
+                        "boost": 2
+                      }
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.log_start": "extracted"
+              }
+            },
+            {
+              "range": {
+                "metadata.log_start": {
+                  "gte": "2025-12-01 00:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "metadata_statuses.log_start": "extracted"
+              }
+            },
+            {
+              "range": {
+                "metadata.log_start": {
+                  "lte": "2025-12-31 23:59"
+                }
+              }
+            },
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.document_type": "실행 로그"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "Q-061",
+    "plan": {
+      "reference_date": "2026-10-17",
+      "timezone": "Asia/Seoul",
+      "filters": [
+        {
+          "field": "로그시작",
+          "op": "gte",
+          "value": "2026-01-01 00:00"
+        },
+        {
+          "field": "로그시작",
+          "op": "lte",
+          "value": "2026-12-31 23:59"
+        },
+        {
+          "field": "문서종류",
+          "op": "eq",
+          "value": "실행 로그"
+        }
+      ],
+      "recognized": [
+        {
+          "rule": "calendar_period",
+          "text": "올해",
+          "span": [
+            0,
+            2
+          ],
+          "field": "로그시작",
+          "start": "2026-01-01 00:00",
+          "end": "2026-12-31 23:59"
+        },
+        {
+          "field": "문서종류",
+          "values": [
+            "실행 로그"
+          ],
+          "text": "로그",
+          "span": [
+            9,
+            11
+          ]
+        }
+      ],
+      "warnings": [],
+      "lexical_query": "돌린 백업 로그",
+      "conditions_verified": false,
+      "explicit_condition_rules": {
+        "filters": [
+          {
+            "field": "문서종류",
+            "op": "eq",
+            "value": "실행 로그"
+          }
+        ],
+        "recognized": [
+          {
+            "field": "문서종류",
+            "values": [
+              "실행 로그"
+            ],
+            "text": "로그",
+            "span": [
+              9,
+              11
+            ]
+          }
+        ],
+        "warnings": []
+      },
+      "date_role_search": false,
+      "sort": null,
+      "requires_clarification": false
+    },
+    "request": {
+      "size": 110,
+      "track_total_hits": true,
+      "_source": [
+        "doc_id",
+        "chunk_id",
+        "source_refs"
+      ],
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "bool": {
+                "should": [
+                  {
+                    "multi_match": {
+                      "query": "돌린 백업 로그 ",
+                      "fields": [
+                        "body",
+                        "context^0.3",
+                        "table_header",
+                        "metadata_text^0.3",
+                        "title^0.5",
+                        "job^4",
+                        "role^4",
+                        "identifier_text^3",
+                        "system^0.25",
+                        "client^0.25"
+                      ],
+                      "type": "most_fields"
+                    }
+                  },
+                  {
+                    "term": {
+                      "concepts": {
+                        "value": "concept:backup",
+                        "boost": 2
+                      }
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "filter": [
+            {
+              "term": {
+                "metadata_statuses.log_start": "extracted"
+              }
+            },
+            {
+              "range": {
+                "metadata.log_start": {
+                  "gte": "2026-01-01 00:00"
+                }
+              }
+            },
+            {
+              "term": {
+                "metadata_statuses.log_start": "extracted"
+              }
+            },
+            {
+              "range": {
+                "metadata.log_start": {
+                  "lte": "2026-12-31 23:59"
+                }
+              }
+            },
+            {
+              "term": {
+                "metadata_statuses.document_type": "extracted"
+              }
+            },
+            {
+              "term": {
+                "metadata.document_type": "실행 로그"
+              }
+            }
+          ]
+        }
+      },
+      "collapse": {
+        "field": "doc_id"
+      },
+      "sort": [
+        {
+          "_score": "desc"
+        },
+        {
+          "doc_id": "asc"
+        }
+      ]
+    }
+  }
+]

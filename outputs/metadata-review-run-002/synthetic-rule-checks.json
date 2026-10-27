@@ -1,0 +1,139 @@
+[
+  {
+    "name": "draft_with_explicit_written_date",
+    "synthetic": true,
+    "not_part_of_110_document_score": true,
+    "note": "D-005의 계약번호 문단을 명시적 작성일로 바꾼 합성 검사",
+    "field": "문서일자",
+    "expected_value": "2025-02-07",
+    "before": {
+      "value": null,
+      "status": "needs_review",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [
+        {
+          "value": "2025-02-07",
+          "rule_id": "date.explicit_label",
+          "evidence": [
+            {
+              "kind": "block",
+              "ref": "D-005-fb5c94ebaf39-p3",
+              "quote": "작성일: 2025-02-07",
+              "loc": {
+                "kind": "docx",
+                "paragraph_index": 3
+              }
+            }
+          ]
+        },
+        {
+          "value": "2025-02-19",
+          "rule_id": "date.contract_signing_block",
+          "evidence": [
+            {
+              "kind": "block",
+              "ref": "D-005-fb5c94ebaf39-p28",
+              "quote": "2025년 2월 19일",
+              "loc": {
+                "kind": "docx",
+                "paragraph_index": 28
+              }
+            }
+          ]
+        }
+      ],
+      "reason": "draft signing-block date may be planned signing date, not document creation date"
+    },
+    "after": {
+      "value": "2025-02-07",
+      "status": "extracted",
+      "rule_id": "date.role.explicit_written_date",
+      "evidence": [
+        {
+          "kind": "block",
+          "ref": "D-005-fb5c94ebaf39-p3",
+          "quote": "작성일: 2025-02-07",
+          "loc": {
+            "kind": "docx",
+            "paragraph_index": 3
+          }
+        }
+      ],
+      "candidates": [],
+      "reason": null
+    },
+    "new_validation_errors": []
+  },
+  {
+    "name": "neutral_filename_current_subject",
+    "synthetic": true,
+    "not_part_of_110_document_score": true,
+    "note": "D-030의 파일명을 중립적인 이름으로 바꾼 합성 검사",
+    "field": "대상시스템",
+    "expected_value": "WMS",
+    "before": {
+      "value": null,
+      "status": "not_found_native",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "no supported unambiguous value in native scope"
+    },
+    "after": {
+      "value": "WMS",
+      "status": "extracted",
+      "rule_id": "system.mail_subject",
+      "evidence": [
+        {
+          "kind": "block",
+          "ref": "D-030-5a6dba1c7f55-line1",
+          "quote": "From: 이준호 <junho.lee@raum.example>\nTo: 구매팀 <purchase@dln.example>\nDate: 2025-04-09 15:42\nSubject: RE: [평택센터 WMS 구축] 견적 관련 문의",
+          "loc": {
+            "kind": "txt",
+            "line_start": 1,
+            "line_end": 4
+          }
+        }
+      ],
+      "candidates": [],
+      "reason": null
+    },
+    "new_validation_errors": []
+  },
+  {
+    "name": "incidental_inline_label",
+    "synthetic": true,
+    "not_part_of_110_document_score": true,
+    "note": "본문에 다른 문서의 날짜가 언급되는 합성 검사",
+    "field": "문서일자",
+    "expected_value": null,
+    "before": {
+      "value": "2025-01-01",
+      "status": "extracted",
+      "rule_id": "date.explicit_label",
+      "evidence": [
+        {
+          "kind": "block",
+          "ref": "test-1",
+          "quote": "회의록 작성일: 2025-01-01은 참고용입니다.",
+          "loc": {
+            "kind": "docx",
+            "paragraph_index": 1
+          }
+        }
+      ],
+      "candidates": [],
+      "reason": null
+    },
+    "after": {
+      "value": null,
+      "status": "needs_review",
+      "rule_id": null,
+      "evidence": [],
+      "candidates": [],
+      "reason": "date label is outside supported document/header context"
+    },
+    "new_validation_errors": []
+  }
+]

@@ -1,0 +1,202 @@
+{
+  "figures": [
+    {
+      "bbox": [
+        0.045001,
+        0.226667,
+        0.945024,
+        0.593333
+      ],
+      "claims": [
+        {
+          "bbox": [
+            0.045001,
+            0.226667,
+            0.945024,
+            0.593333
+          ],
+          "status": "observed",
+          "text": "WMS 서버 구성도. L4 / 로드밸런서에서 wms-was01, wms-was02, wms-db01, wms-sorter01로 연결되어 있다."
+        }
+      ],
+      "kind": "diagram",
+      "nodes": [
+        {
+          "bbox": [
+            0.367509,
+            0.226667,
+            0.630016,
+            0.333333
+          ],
+          "id": "l4-load-balancer",
+          "label": "L4 / 로드밸런서"
+        },
+        {
+          "bbox": [
+            0.048751,
+            0.4,
+            0.256881,
+            0.593333
+          ],
+          "id": "wms-was01",
+          "label": "wms-was01\nWMS WAS\nRocky Linux 9.3 | 16 vCPU / 64GB\n10.32.10.11"
+        },
+        {
+          "bbox": [
+            0.279382,
+            0.4,
+            0.487512,
+            0.593333
+          ],
+          "id": "wms-was02",
+          "label": "wms-was02\nWMS WAS\nRocky Linux 9.3 | 16 vCPU / 64GB\n10.32.10.12"
+        },
+        {
+          "bbox": [
+            0.510013,
+            0.4,
+            0.718143,
+            0.593333
+          ],
+          "id": "wms-db01",
+          "label": "wms-db01\nWMS DB (PostgreSQL 16)\nRocky Linux 9.3 | 32 vCPU / 192GB\n10.32.10.21"
+        },
+        {
+          "bbox": [
+            0.740644,
+            0.4,
+            0.948774,
+            0.593333
+          ],
+          "id": "wms-sorter01",
+          "label": "wms-sorter01\n소터 연동 미들웨어\nUbuntu 22.04 | 8 vCPU / 16GB\n10.32.70.11"
+        }
+      ],
+      "relations": [
+        {
+          "bbox": [
+            0.045001,
+            0.226667,
+            0.945024,
+            0.593333
+          ],
+          "direction": "undirected",
+          "from_node": "l4-load-balancer",
+          "label": "",
+          "to_node": "wms-was01"
+        },
+        {
+          "bbox": [
+            0.045001,
+            0.226667,
+            0.945024,
+            0.593333
+          ],
+          "direction": "undirected",
+          "from_node": "l4-load-balancer",
+          "label": "",
+          "to_node": "wms-was02"
+        },
+        {
+          "bbox": [
+            0.045001,
+            0.226667,
+            0.945024,
+            0.593333
+          ],
+          "direction": "undirected",
+          "from_node": "l4-load-balancer",
+          "label": "",
+          "to_node": "wms-db01"
+        },
+        {
+          "bbox": [
+            0.045001,
+            0.226667,
+            0.945024,
+            0.593333
+          ],
+          "direction": "undirected",
+          "from_node": "l4-load-balancer",
+          "label": "",
+          "to_node": "wms-sorter01"
+        }
+      ]
+    }
+  ],
+  "status": "complete",
+  "tables": [],
+  "texts": [
+    {
+      "bbox": [
+        0.045001,
+        0.046667,
+        0.945024,
+        0.153333
+      ],
+      "kind": "heading",
+      "text": "WMS 서버 구성도"
+    },
+    {
+      "bbox": [
+        0.045001,
+        0.14,
+        0.945024,
+        0.206667
+      ],
+      "kind": "paragraph",
+      "text": "사업: 평택센터 WMS 구축  |  설치 위치: 평택 물류센터  |  2025-04-28"
+    },
+    {
+      "bbox": [
+        0.367509,
+        0.226667,
+        0.630016,
+        0.333333
+      ],
+      "kind": "paragraph",
+      "text": "L4 / 로드밸런서"
+    },
+    {
+      "bbox": [
+        0.048751,
+        0.4,
+        0.256881,
+        0.593333
+      ],
+      "kind": "paragraph",
+      "text": "wms-was01\nWMS WAS\nRocky Linux 9.3 | 16 vCPU / 64GB\n10.32.10.11"
+    },
+    {
+      "bbox": [
+        0.279382,
+        0.4,
+        0.487512,
+        0.593333
+      ],
+      "kind": "paragraph",
+      "text": "wms-was02\nWMS WAS\nRocky Linux 9.3 | 16 vCPU / 64GB\n10.32.10.12"
+    },
+    {
+      "bbox": [
+        0.510013,
+        0.4,
+        0.718143,
+        0.593333
+      ],
+      "kind": "paragraph",
+      "text": "wms-db01\nWMS DB (PostgreSQL 16)\nRocky Linux 9.3 | 32 vCPU / 192GB\n10.32.10.21"
+    },
+    {
+      "bbox": [
+        0.740644,
+        0.4,
+        0.948774,
+        0.593333
+      ],
+      "kind": "paragraph",
+      "text": "wms-sorter01\n소터 연동 미들웨어\nUbuntu 22.04 | 8 vCPU / 16GB\n10.32.70.11"
+    }
+  ],
+  "warnings": []
+}

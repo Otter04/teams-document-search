@@ -1,0 +1,226 @@
+{
+  "figures": [
+    {
+      "bbox": [
+        0.045,
+        0.047,
+        0.945,
+        0.947
+      ],
+      "claims": [
+        {
+          "bbox": [
+            0.045,
+            0.047,
+            0.945,
+            0.947
+          ],
+          "status": "observed",
+          "text": "온라인몰 인프라 이중화 네트워크 구성도 (Rev.1)의 전체 구조"
+        },
+        {
+          "bbox": [
+            0.33,
+            0.353,
+            0.668,
+            0.467
+          ],
+          "status": "observed",
+          "text": "방화벽(FortiGate 400F x 2)과 L4 스위치(Piolink PAS-K x 2)가 병렬로 연결되어 있음을 시각적으로 보여줌"
+        },
+        {
+          "bbox": [
+            0.045,
+            0.7,
+            0.949,
+            0.833
+          ],
+          "status": "observed",
+          "text": "코어 스위치에서 DMZ, 서버팜, 관리망으로 트래픽이 분기되는 구조"
+        }
+      ],
+      "kind": "diagram",
+      "nodes": [
+        {
+          "bbox": [
+            0.405,
+            0.213,
+            0.593,
+            0.313
+          ],
+          "id": "n1",
+          "label": "Internet / 전용회선"
+        },
+        {
+          "bbox": [
+            0.33,
+            0.353,
+            0.668,
+            0.467
+          ],
+          "id": "n2",
+          "label": "방화벽\nFortiGate 400F × 2"
+        },
+        {
+          "bbox": [
+            0.038,
+            0.353,
+            0.293,
+            0.467
+          ],
+          "id": "n3",
+          "label": "L4 스위치 Piolink PAS-K × 2 (Active-Standby)"
+        },
+        {
+          "bbox": [
+            0.33,
+            0.507,
+            0.668,
+            0.62
+          ],
+          "id": "n4",
+          "label": "코어 스위치\nArista 7050X3 × 2"
+        },
+        {
+          "bbox": [
+            0.049,
+            0.7,
+            0.334,
+            0.833
+          ],
+          "id": "n5",
+          "label": "DMZ\n10.76.20.0/24"
+        },
+        {
+          "bbox": [
+            0.356,
+            0.7,
+            0.641,
+            0.833
+          ],
+          "id": "n6",
+          "label": "서버팜\n10.76.10.0/24"
+        },
+        {
+          "bbox": [
+            0.664,
+            0.7,
+            0.949,
+            0.833
+          ],
+          "id": "n7",
+          "label": "관리망\n10.76.99.0/24"
+        }
+      ],
+      "relations": [
+        {
+          "bbox": [
+            0.498,
+            0.313,
+            0.5,
+            0.353
+          ],
+          "direction": "undirected",
+          "from_node": "n1",
+          "label": "",
+          "to_node": "n2"
+        },
+        {
+          "bbox": [
+            0.293,
+            0.41,
+            0.33,
+            0.412
+          ],
+          "direction": "undirected",
+          "from_node": "n3",
+          "label": "",
+          "to_node": "n2"
+        },
+        {
+          "bbox": [
+            0.498,
+            0.467,
+            0.5,
+            0.507
+          ],
+          "direction": "undirected",
+          "from_node": "n2",
+          "label": "",
+          "to_node": "n4"
+        },
+        {
+          "bbox": [
+            0.049,
+            0.62,
+            0.33,
+            0.7
+          ],
+          "direction": "undirected",
+          "from_node": "n4",
+          "label": "",
+          "to_node": "n5"
+        },
+        {
+          "bbox": [
+            0.498,
+            0.62,
+            0.5,
+            0.7
+          ],
+          "direction": "undirected",
+          "from_node": "n4",
+          "label": "",
+          "to_node": "n6"
+        },
+        {
+          "bbox": [
+            0.668,
+            0.62,
+            0.949,
+            0.7
+          ],
+          "direction": "undirected",
+          "from_node": "n4",
+          "label": "",
+          "to_node": "n7"
+        }
+      ]
+    }
+  ],
+  "status": "complete",
+  "tables": [],
+  "texts": [
+    {
+      "bbox": [
+        0.045,
+        0.047,
+        0.945,
+        0.153
+      ],
+      "kind": "heading",
+      "text": "온라인몰 인프라 이중화 네트워크 구성도 (Rev.1)"
+    },
+    {
+      "bbox": [
+        0.045,
+        0.14,
+        0.945,
+        0.207
+      ],
+      "kind": "paragraph",
+      "text": "설치 위치: 판교 IDC  |  작성일: 2025-01-27  |  작성: 라움정보기술 기술지원팀"
+    },
+    {
+      "bbox": [
+        0.045,
+        0.893,
+        0.945,
+        0.947
+      ],
+      "kind": "paragraph",
+      "text": "범례: 실선 = 1G/10G 이더넷 | 해솔유통㈜ 전산 담당자 검토 필요"
+    }
+  ],
+  "warnings": []
+}

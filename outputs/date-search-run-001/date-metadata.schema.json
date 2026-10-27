@@ -1,0 +1,245 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "doc_id",
+    "source_sha256",
+    "source_metadata",
+    "visual_pending",
+    "fields"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "doc_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "source_metadata": {
+      "type": "object",
+      "required": [
+        "doc_id",
+        "source_sha256",
+        "relative_path",
+        "modified_at_utc",
+        "modified_at_ns",
+        "collected_at_utc",
+        "origin",
+        "semantics"
+      ]
+    },
+    "visual_pending": {
+      "type": "boolean"
+    },
+    "fields": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "작성일",
+        "파일최종수정일",
+        "표지일"
+      ],
+      "properties": {
+        "표지일": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "status",
+            "role",
+            "evidence",
+            "observations"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "status": {
+              "enum": [
+                "extracted",
+                "not_observed_native",
+                "needs_review"
+              ]
+            },
+            "role": {
+              "const": "cover_date"
+            },
+            "evidence": {
+              "type": "array"
+            },
+            "observations": {
+              "type": "array"
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "extracted"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "minItems": 1
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "value": {
+                    "const": null
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "작성일": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "status",
+            "role",
+            "evidence",
+            "observations"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "status": {
+              "enum": [
+                "extracted",
+                "not_observed_native",
+                "needs_review"
+              ]
+            },
+            "role": {
+              "const": "explicit_written_date"
+            },
+            "evidence": {
+              "type": "array"
+            },
+            "observations": {
+              "type": "array"
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "extracted"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "minItems": 1
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "value": {
+                    "const": null
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "파일최종수정일": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "status",
+            "role",
+            "evidence",
+            "observations"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "status": {
+              "enum": [
+                "extracted",
+                "not_observed_native",
+                "needs_review"
+              ]
+            },
+            "role": {
+              "const": "file_modified_at"
+            },
+            "evidence": {
+              "type": "array"
+            },
+            "observations": {
+              "type": "array"
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "extracted"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "minItems": 1
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "value": {
+                    "const": null
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

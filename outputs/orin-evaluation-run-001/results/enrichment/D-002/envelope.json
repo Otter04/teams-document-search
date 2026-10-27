@@ -1,0 +1,49 @@
+{
+  "model": "qwen3.6-35b-a3b",
+  "provider": "local-vllm",
+  "quantization": "awq-4bit",
+  "kind": "enrichment",
+  "doc_id": "D-002",
+  "id": "D-002",
+  "request_sha256": "671b4ec21d477cf37d78b747a8b3cbcb55a8a22ce48bf3f63a877ddb36672e52",
+  "baseline_request_sha256": "339a6f352d5bbc4d5b9a35451a64a8edfdfcf4071fa3575b654e2bfdd2ae38eb",
+  "messages_sha256": "837b65018fe3e2141e04616a58475d35ff24a64bda1a3bb48d5a1542a8f249ae",
+  "response": {
+    "id": "chatcmpl-b3a266ef4969562d",
+    "object": "chat.completion",
+    "created": 1792465533,
+    "model": "qwen3.6-35b-a3b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"doc_id\": \"D-002\",\n  \"fields\": {\n    \"VAT\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"총 제안금액 : ₩265,400,000 ( 부가가치세 별도 )\",\n          \"ref\": \"D-002-788391c986bb-p8-line2\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"별도\"\n    },\n    \"거래처\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"㈜청람정밀 귀중\",\n          \"ref\": \"D-002-788391c986bb-p1-line3\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"청람정밀\"\n    },\n    \"견적번호\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"문서 전체에서 명시적인 견적 번호를 찾을 수 없습니다.\",\n      \"status\": \"not_found_in_input\"\n    ,\n    \"value\": null\n    },\n    \"견적유효기간\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"문서 종류가 제안서이며, 유효기간에 대한 명시적 언급이 없습니다.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"계약번호\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"문서 종류가 계약서가 아니며, 계약 번호가 명시되지 않았습니다.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"계약시작일\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"문서 종류가 계약서가 아니며, 계약 시작일이 명시되지 않았습니다.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"계약유형\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"문서 종류가 계약서가 아니며, 계약 유형이 명시되지 않았습니다.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"계약종료일\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"문서 종류가 계약서가 아니며, 계약 종료일이 명시되지 않았습니다.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"금액\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"총 제안금액 : ₩265,400,000\",\n          \"ref\": \"D-002-788391c986bb-p8-line2\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"265400000\"\n    },\n    \"대상시스템\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"source\",\n          \"quote\": \"file_name: ㈜청람정밀_2025 MES 고도화 구축_제안서.pdf\",\n          \"ref\": \"file_name\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"MES\"\n    },\n    \"로그시작\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"문서 종류가 실행 로그가 아니므로 해당 필드가 적용되지 않습니다.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"로그종료\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"문서 종류가 실행 로그가 아니므로 해당 필드가 적용되지 않습니다.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"문서일자\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"2025. 01. 13. | 라움정보기술 주식회사\",\n          \"ref\": \"D-002-788391c986bb-p1-line4\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"2025-01-13\"\n    },\n    \"문서종류\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"제안서\",\n          \"ref\": \"D-002-788391c986bb-p1-line2\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"제안서\"\n    },\n    \"사업명\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"2025 MES 고도화 구축\",\n          \"ref\": \"D-002-788391c986bb-p1-line1\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"2025 MES 고도화 구축\"\n    },\n    \"사이트\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"설치 위치 : 화성 1 공장 전산실\",\n          \"ref\": \"D-002-788391c986bb-p5-line2\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"화성 1 공장 전산실\"\n    },\n    \"상태\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"문서에 초안/최종/서명본 등의 상태 표기가 없습니다.\",\n      \"status\": \"not_found_in_input\",\n      \"value\": null\n    },\n    \"실행결과\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"문서 종류가 실행 로그가 아니므로 해당 필드가 적용되지 않습니다.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"오류코드\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"문서 종류가 실행 로그나 오류 관련 메모가 아니므로 해당 필드가 적용되지 않습니다.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"작성일\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"2025. 01. 13.\",\n          \"ref\": \"D-002-788391c986bb-p1-line4\"\n        }\n      ],\n      \"reason\": \"표지 페이지의 작성일로 간주합니다.\",\n      \"status\": \"extracted\",\n      \"value\": \"2025-01-13\"\n    },\n    \"작업명\": {\n      \"candidates\": [],\n      \"evidence\": [],\n      \"reason\": \"문서 종류가 실행 로그가 아니므로 해당 필드가 적용되지 않습니다.\",\n      \"status\": \"not_applicable\",\n      \"value\": null\n    },\n    \"통화\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"₩265,400,000\",\n          \"ref\": \"D-002-788391c986bb-p8-line2\"\n        }\n      ],\n      \"reason\": null,\n      \"status\": \"extracted\",\n      \"value\": \"KRW\"\n    },\n    \"표지일\": {\n      \"candidates\": [],\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"2025. 01. 13.\",\n          \"ref\": \"D-002-788391c986bb-p1-line4\"\n        }\n      ],\n      \"reason\": \"제안서 첫 페이지(표지)에 명시된 날짜입니다.\",\n      \"status\": \"extracted\",\n      \"value\": \"2025-01-13\"\n    }\n  },\n  \"schema_version\": \"llm_enrichment_candidate_v1\",\n  \"summary\": [\n    {\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"2025 MES 고도화 구축\",\n          \"ref\": \"D-002-788391c986bb-p1-line1\"\n        }\n      ],\n      \"text\": \"라움정보기술은 청람정밀을 대상으로 2025년 1월 13일자로 MES 고도화 구축 사업을 제안하였습니다.\"\n    },\n    {\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"설치 위치 : 화성 1 공장 전산실\",\n          \"ref\": \"D-002-788391c986bb-p5-line2\"\n        }\n      ],\n      \"text\": \"구축 대상 시스템은 MES이며, 설치 위치는 화성 1 공장 전산실로 명시되어 있습니다.\"\n    },\n    {\n      \"evidence\": [\n        {\n          \"kind\": \"block\",\n          \"quote\": \"총 제안금액 : ₩265,400,000 ( 부가가치세 별도 )\",\n          \"ref\": \"D-002-788391c986bb-p8-line2\"\n        }\n      ],\n      \"text\": \"총 제안 금액은 부가가치세 별도 기준 265,400,000원이며, 추진 일정은 2025년 3월 1일부터 8월 31일까지로 계획되었습니다.\"\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 31628,
+      "total_tokens": 34118,
+      "completion_tokens": 2490,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "http_status": 200,
+  "elapsed_ms": 409984
+}

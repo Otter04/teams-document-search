@@ -1,0 +1,186 @@
+{
+  "validator_version": "vision-quality-3.0.0",
+  "decision": "candidate_with_warnings",
+  "baseline_errors": [],
+  "issues": [
+    {
+      "code": "DUPLICATE_LITERAL",
+      "severity": "warning",
+      "paths": [
+        "texts[1]",
+        "figures[0].nodes[0]"
+      ],
+      "detail": "Same/contained literal in the same image region.",
+      "evidence": {
+        "text": "목표 1\n설비 데이터 1초 단위 실시간 수집",
+        "other_text": "목표 1\n설비 데이터 1초 단위 실시간 수집"
+      },
+      "original_severity": "error",
+      "blocks_transfer": false
+    },
+    {
+      "code": "DUPLICATE_LITERAL",
+      "severity": "warning",
+      "paths": [
+        "texts[2]",
+        "figures[0].nodes[1]"
+      ],
+      "detail": "Same/contained literal in the same image region.",
+      "evidence": {
+        "text": "목표 2\nERP 생산실적 자동 연동",
+        "other_text": "목표 2\nERP 생산실적 자동 연동"
+      },
+      "original_severity": "error",
+      "blocks_transfer": false
+    },
+    {
+      "code": "DUPLICATE_LITERAL",
+      "severity": "warning",
+      "paths": [
+        "texts[3]",
+        "figures[0].nodes[2]"
+      ],
+      "detail": "Same/contained literal in the same image region.",
+      "evidence": {
+        "text": "목표 3\nMES 서버 가상화 전환",
+        "other_text": "목표 3\nMES 서버 가상화 전환"
+      },
+      "original_severity": "error",
+      "blocks_transfer": false
+    },
+    {
+      "code": "DUPLICATE_SOURCE_LITERAL_REVIEW",
+      "severity": "warning",
+      "paths": [
+        "texts[1]",
+        "figures[0].nodes[0]"
+      ],
+      "detail": "Literal repeats more often than in supplied native context; inspect location/segmentation before deduplication.",
+      "evidence": {
+        "text": "목표 1\n설비 데이터 1초 단위 실시간 수집",
+        "source_block_id": "D-001-1d471e709d1c-s4-shape3",
+        "source_occurrences": 1,
+        "output_occurrences": 2
+      },
+      "original_severity": "review",
+      "blocks_transfer": false
+    },
+    {
+      "code": "DUPLICATE_SOURCE_LITERAL_REVIEW",
+      "severity": "warning",
+      "paths": [
+        "texts[1]",
+        "figures[0].nodes[0]"
+      ],
+      "detail": "Literal repeats more often than in supplied native context; inspect location/segmentation before deduplication.",
+      "evidence": {
+        "text": "설비 데이터 1초 단위 실시간 수집",
+        "source_block_id": "D-001-1d471e709d1c-s4-shape3",
+        "source_occurrences": 1,
+        "output_occurrences": 2
+      },
+      "original_severity": "review",
+      "blocks_transfer": false
+    },
+    {
+      "code": "DUPLICATE_SOURCE_LITERAL_REVIEW",
+      "severity": "warning",
+      "paths": [
+        "texts[2]",
+        "figures[0].nodes[1]"
+      ],
+      "detail": "Literal repeats more often than in supplied native context; inspect location/segmentation before deduplication.",
+      "evidence": {
+        "text": "목표 2\nERP 생산실적 자동 연동",
+        "source_block_id": "D-001-1d471e709d1c-s4-shape4",
+        "source_occurrences": 1,
+        "output_occurrences": 2
+      },
+      "original_severity": "review",
+      "blocks_transfer": false
+    },
+    {
+      "code": "DUPLICATE_SOURCE_LITERAL_REVIEW",
+      "severity": "warning",
+      "paths": [
+        "texts[2]",
+        "figures[0].nodes[1]"
+      ],
+      "detail": "Literal repeats more often than in supplied native context; inspect location/segmentation before deduplication.",
+      "evidence": {
+        "text": "ERP 생산실적 자동 연동",
+        "source_block_id": "D-001-1d471e709d1c-s4-shape4",
+        "source_occurrences": 1,
+        "output_occurrences": 2
+      },
+      "original_severity": "review",
+      "blocks_transfer": false
+    },
+    {
+      "code": "DUPLICATE_SOURCE_LITERAL_REVIEW",
+      "severity": "warning",
+      "paths": [
+        "texts[3]",
+        "figures[0].nodes[2]"
+      ],
+      "detail": "Literal repeats more often than in supplied native context; inspect location/segmentation before deduplication.",
+      "evidence": {
+        "text": "목표 3\nMES 서버 가상화 전환",
+        "source_block_id": "D-001-1d471e709d1c-s4-shape5",
+        "source_occurrences": 1,
+        "output_occurrences": 2
+      },
+      "original_severity": "review",
+      "blocks_transfer": false
+    },
+    {
+      "code": "DUPLICATE_SOURCE_LITERAL_REVIEW",
+      "severity": "warning",
+      "paths": [
+        "texts[3]",
+        "figures[0].nodes[2]"
+      ],
+      "detail": "Literal repeats more often than in supplied native context; inspect location/segmentation before deduplication.",
+      "evidence": {
+        "text": "MES 서버 가상화 전환",
+        "source_block_id": "D-001-1d471e709d1c-s4-shape5",
+        "source_occurrences": 1,
+        "output_occurrences": 2
+      },
+      "original_severity": "review",
+      "blocks_transfer": false
+    }
+  ],
+  "meaning_accuracy_verified": false,
+  "native_context_available": true,
+  "previous_v2_decision": "reject",
+  "transfer_allowed": true,
+  "review_required": true,
+  "usage": {
+    "prompt_tokens": 4237,
+    "completion_tokens": 907,
+    "total_tokens": 5144,
+    "cost": 0.00117975,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00117975,
+      "upstream_inference_prompt_cost": 0.00063555,
+      "upstream_inference_completions_cost": 0.0005442
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "cost_usd": 0.00117975,
+  "reported_model": "qwen/qwen3-vl-30b-a3b-instruct",
+  "provider": "DeepInfra",
+  "response_id": "gen-1792388815-XDWjtMxiZFfdp0q8NQky"
+}

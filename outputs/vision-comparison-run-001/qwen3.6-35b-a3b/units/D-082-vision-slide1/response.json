@@ -1,0 +1,46 @@
+{
+  "id": "gen-1792375493-P8t53MfrGDwPClofhcmZ",
+  "object": "chat.completion",
+  "created": 1792375493,
+  "model": "qwen/qwen3.6-35b-a3b",
+  "provider": "DeepInfra",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"figures\": [\n    {\n      \"bbox\": [0.045, 0.047, 0.945, 0.947],\n      \"claims\": [\n        {\n          \"bbox\": [0.045, 0.047, 0.945, 0.947],\n          \"status\": \"observed\",\n          \"text\": \"온라인몰 인프라 이중화 네트워크 구성도 (Rev.2)\"\n        },\n        {\n          \"bbox\": [0.045, 0.14, 0.945, 0.207],\n          \"status\": \"observed\",\n          \"text\": \"설치 위치: 판교 IDC | 작성일: 2025-02-17 | 작성: 라움정보기술 기술지원팀\"\n        },\n        {\n          \"bbox\": [0.045, 0.353, 0.945, 0.833],\n          \"status\": \"observed\",\n          \"text\": \"네트워크는 인터넷/전용회선에서 방화벽(FortiGate 400F x 2)을 거쳐 코어 스위치(Arista 7050X3 x 2)로 연결되며, 코어 스위치는 DMZ, 서버팜, 관리망 세 영역으로 분기된다. 방화벽은 L4 스위치(Piolink PAS-K x 2)와 DMZ 웹서버(2대)와도 연결되어 있다.\"\n        },\n        {\n          \"bbox\": [0.045, 0.893, 0.945, 0.947],\n          \"status\": \"observed\",\n          \"text\": \"범례에 따르면 실선은 1G/10G 이더넷을 의미하며, 해솔유통㈜ 전산 담당자의 검토가 필요하다고 명시되어 있다.\"\n        }\n      ],\n      \"kind\": \"diagram\",\n      \"nodes\": [\n        {\n          \"bbox\": [0.405, 0.213, 0.593, 0.313],\n          \"id\": \"n1\",\n          \"label\": \"Internet / 전용회선\"\n        },\n        {\n          \"bbox\": [0.330, 0.353, 0.668, 0.467],\n          \"id\": \"n2\",\n          \"label\": \"방화벽\\nFortiGate 400F × 2\"\n        },\n        {\n          \"bbox\": [0.330, 0.507, 0.668, 0.620],\n          \"id\": \"n3\",\n          \"label\": \"코어 스위치\\nArista 7050X3 × 2\"\n        },\n        {\n          \"bbox\": [0.038, 0.353, 0.293, 0.467],\n          \"id\": \"n4\",\n          \"label\": \"L4 스위치 Piolink PAS-K × 2 (Active-Standby)\"\n        },\n        {\n          \"bbox\": [0.705, 0.353, 0.960, 0.467],\n          \"id\": \"n5\",\n          \"label\": \"DMZ 웹서버 2대\"\n        },\n        {\n          \"bbox\": [0.049, 0.700, 0.334, 0.833],\n          \"id\": \"n6\",\n          \"label\": \"DMZ\\n10.76.20.0/24\"\n        },\n        {\n          \"bbox\": [0.356, 0.700, 0.641, 0.833],\n          \"id\": \"n7\",\n          \"label\": \"서버팜\\n10.76.10.0/24\"\n        },\n        {\n          \"bbox\": [0.664, 0.700, 0.949, 0.833],\n          \"id\": \"n8\",\n          \"label\": \"관리망\\n10.76.99.0/24\"\n        }\n      ],\n      \"relations\": [\n        {\n          \"bbox\": [0.495, 0.313, 0.500, 0.353],\n          \"direction\": \"undirected\",\n          \"from_node\": \"n1\",\n          \"label\": \"\",\n          \"to_node\": \"n2\"\n        },\n        {\n          \"bbox\": [0.330, 0.467, 0.330, 0.507],\n          \"direction\": \"undirected\",\n          \"from_node\": \"n2\",\n          \"label\": \"\",\n          \"to_node\": \"n3\"\n        },\n        {\n          \"bbox\": [0.293, 0.410, 0.330, 0.410],\n          \"direction\": \"undirected\",\n          \"from_node\": \"n4\",\n          \"label\": \"\",\n          \"to_node\": \"n2\"\n        },\n        {\n          \"bbox\": [0.668, 0.410, 0.705, 0.410],\n          \"direction\": \"undirected\",\n          \"from_node\": \"n2\",\n          \"label\": \"\",\n          \"to_node\": \"n5\"\n        },\n        {\n          \"bbox\": [0.334, 0.620, 0.356, 0.700],\n          \"direction\": \"undirected\",\n          \"from_node\": \"n3\",\n          \"label\": \"\",\n          \"to_node\": \"n6\"\n        },\n        {\n          \"bbox\": [0.500, 0.620, 0.500, 0.700],\n          \"direction\": \"undirected\",\n          \"from_node\": \"n3\",\n          \"label\": \"\",\n          \"to_node\": \"n7\"\n        },\n        {\n          \"bbox\": [0.641, 0.620, 0.664, 0.700],\n          \"direction\": \"undirected\",\n          \"from_node\": \"n3\",\n          \"label\": \"\",\n          \"to_node\": \"n8\"\n        }\n      ]\n    }\n  ],\n  \"status\": \"complete\",\n  \"tables\": [],\n  \"texts\": [\n    {\n      \"bbox\": [0.045, 0.047, 0.945, 0.153],\n      \"kind\": \"heading\",\n      \"text\": \"온라인몰 인프라 이중화 네트워크 구성도 (Rev.2)\"\n    },\n    {\n      \"bbox\": [0.045, 0.140, 0.945, 0.207],\n      \"kind\": \"paragraph\",\n      \"text\": \"설치 위치: 판교 IDC | 작성일: 2025-02-17 | 작성: 라움정보기술 기술지원팀\"\n    },\n    {\n      \"bbox\": [0.045, 0.893, 0.945, 0.947],\n      \"kind\": \"paragraph\",\n      \"text\": \"범례: 실선 = 1G/10G 이더넷 | 해솔유통㈜ 전산 담당자 검토 필요\"\n    }\n  ]\n  ,\n  \"warnings\": []\n}",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3538,
+    "completion_tokens": 1829,
+    "total_tokens": 5367,
+    "cost": 0.00209135,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00209135,
+      "upstream_inference_prompt_cost": 0.0003538,
+      "upstream_inference_completions_cost": 0.00173755
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}
