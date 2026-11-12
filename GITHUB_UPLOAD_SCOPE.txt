@@ -1,22 +1,11 @@
-GitHub snapshot — 2026-10-27
+GitHub update — 2026-11-12
 
-The repository contains development code, design documents, local datasets,
-and evaluation outputs, subject to .gitignore.
+Current scope: question rewriting A/B, lexical and semantic retrieval, RRF and API reranking.
+README and docs/ARCHITECTURE.md are the current entry points.
+evaluation/publication-manifest.json lists the selected update files and hashes.
+Existing repository history and the 2026-10-27 Release are historical snapshots, not current runtime backups.
 
-A complete workspace archive is published as a GitHub Release attachment:
-teams-document-search-full-2026-10-27.zip
-It additionally includes work/, temporary dependencies, caches, generated
-large indexes and original ZIP/TAR bundles that are not tracked in Git.
-The archive contains BACKUP_MANIFEST.json, with each file's SHA-256 hash
-and a list of exclusions. SHA256SUMS.txt verifies the archive itself.
-
-Excluded from both the repository and the full archive:
-- credentials and private-key/environment files;
-- .git internal metadata (the repository itself preserves Git history).
-Symbolic links are preserved as links. External linked folders, external
-original datasets, Orin model weights and Elasticsearch volumes are not
-copied into the archive because they are outside this workspace.
-
-Local original files are preserved. Historical reports do not imply that
-reported services are currently running. Full backup restores the archived
-workspace files; credentials must be supplied separately.
+No credentials, model weights, environments, raw API response archives or new bulk vector exports are included.
+Original local experiment responses remain unchanged. The offline replay is runnable without API calls.
+Fresh search requires the external resources described in docs/SETUP.md and evaluation/runtime-resources.json.
+New condition judgment and Jev experiments are outside this publication.

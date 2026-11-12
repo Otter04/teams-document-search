@@ -1,0 +1,343 @@
+{
+ "count": 3022,
+ "mapping": {
+  "rag-search-chunks-v006-token-nori": {
+   "mappings": {
+    "dynamic": "strict",
+    "properties": {
+     "body": {
+      "type": "text",
+      "analyzer": "rag_ko",
+      "similarity": "rag_bm25"
+     },
+     "chunk_id": {
+      "type": "keyword"
+     },
+     "client": {
+      "type": "text",
+      "analyzer": "rag_ko",
+      "similarity": "rag_bm25"
+     },
+     "context": {
+      "type": "text",
+      "analyzer": "rag_ko",
+      "similarity": "rag_bm25"
+     },
+     "copy_group": {
+      "type": "keyword"
+     },
+     "doc_id": {
+      "type": "keyword"
+     },
+     "embedding": {
+      "type": "dense_vector",
+      "dims": 1024,
+      "index": true,
+      "similarity": "cosine",
+      "index_options": {
+       "type": "flat"
+      }
+     },
+     "embedding_text_sha256": {
+      "type": "keyword"
+     },
+     "family_id": {
+      "type": "keyword"
+     },
+     "feature_evidence": {
+      "type": "object",
+      "enabled": false
+     },
+     "file_name": {
+      "type": "text",
+      "analyzer": "rag_ko",
+      "similarity": "rag_bm25"
+     },
+     "format": {
+      "type": "keyword"
+     },
+     "identifier_text": {
+      "type": "text",
+      "analyzer": "rag_ko",
+      "similarity": "rag_bm25"
+     },
+     "identifiers": {
+      "type": "keyword"
+     },
+     "job": {
+      "type": "text",
+      "analyzer": "rag_ko",
+      "similarity": "rag_bm25"
+     },
+     "kind": {
+      "type": "keyword"
+     },
+     "latest_version": {
+      "type": "boolean"
+     },
+     "metadata": {
+      "dynamic": "strict",
+      "properties": {
+       "amount": {
+        "type": "keyword"
+       },
+       "client": {
+        "type": "keyword"
+       },
+       "contract_end": {
+        "type": "date",
+        "format": "strict_date_optional_time||yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm"
+       },
+       "contract_id": {
+        "type": "keyword"
+       },
+       "contract_start": {
+        "type": "date",
+        "format": "strict_date_optional_time||yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm"
+       },
+       "contract_type": {
+        "type": "keyword"
+       },
+       "cover_date": {
+        "type": "date",
+        "format": "strict_date_optional_time||yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm"
+       },
+       "currency": {
+        "type": "keyword"
+       },
+       "document_date": {
+        "type": "date",
+        "format": "strict_date_optional_time||yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm"
+       },
+       "document_type": {
+        "type": "keyword"
+       },
+       "error_code": {
+        "type": "keyword"
+       },
+       "execution_result": {
+        "type": "keyword"
+       },
+       "file_modified_at": {
+        "type": "date_nanos"
+       },
+       "job_name": {
+        "type": "keyword"
+       },
+       "log_end": {
+        "type": "date",
+        "format": "strict_date_optional_time||yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm"
+       },
+       "log_start": {
+        "type": "date",
+        "format": "strict_date_optional_time||yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm"
+       },
+       "project_name": {
+        "type": "keyword"
+       },
+       "quote_id": {
+        "type": "keyword"
+       },
+       "quote_validity": {
+        "type": "keyword"
+       },
+       "site": {
+        "type": "keyword"
+       },
+       "status": {
+        "type": "keyword"
+       },
+       "target_system": {
+        "type": "keyword"
+       },
+       "vat": {
+        "type": "keyword"
+       },
+       "written_date": {
+        "type": "date",
+        "format": "strict_date_optional_time||yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm"
+       }
+      }
+     },
+     "metadata_statuses": {
+      "dynamic": "strict",
+      "properties": {
+       "amount": {
+        "type": "keyword"
+       },
+       "client": {
+        "type": "keyword"
+       },
+       "contract_end": {
+        "type": "keyword"
+       },
+       "contract_id": {
+        "type": "keyword"
+       },
+       "contract_start": {
+        "type": "keyword"
+       },
+       "contract_type": {
+        "type": "keyword"
+       },
+       "cover_date": {
+        "type": "keyword"
+       },
+       "currency": {
+        "type": "keyword"
+       },
+       "document_date": {
+        "type": "keyword"
+       },
+       "document_type": {
+        "type": "keyword"
+       },
+       "error_code": {
+        "type": "keyword"
+       },
+       "execution_result": {
+        "type": "keyword"
+       },
+       "file_modified_at": {
+        "type": "keyword"
+       },
+       "job_name": {
+        "type": "keyword"
+       },
+       "log_end": {
+        "type": "keyword"
+       },
+       "log_start": {
+        "type": "keyword"
+       },
+       "project_name": {
+        "type": "keyword"
+       },
+       "quote_id": {
+        "type": "keyword"
+       },
+       "quote_validity": {
+        "type": "keyword"
+       },
+       "site": {
+        "type": "keyword"
+       },
+       "status": {
+        "type": "keyword"
+       },
+       "target_system": {
+        "type": "keyword"
+       },
+       "vat": {
+        "type": "keyword"
+       },
+       "written_date": {
+        "type": "keyword"
+       }
+      }
+     },
+     "metadata_text": {
+      "type": "text",
+      "analyzer": "rag_ko",
+      "similarity": "rag_bm25"
+     },
+     "original": {
+      "type": "object",
+      "enabled": false
+     },
+     "role": {
+      "type": "text",
+      "analyzer": "rag_ko",
+      "similarity": "rag_bm25"
+     },
+     "source_path": {
+      "type": "keyword"
+     },
+     "source_refs": {
+      "type": "object",
+      "enabled": false
+     },
+     "source_sha256": {
+      "type": "keyword"
+     },
+     "summary": {
+      "type": "text",
+      "analyzer": "rag_ko",
+      "similarity": "rag_bm25"
+     },
+     "system": {
+      "type": "text",
+      "analyzer": "rag_ko",
+      "similarity": "rag_bm25"
+     },
+     "table_header": {
+      "type": "text",
+      "analyzer": "rag_ko",
+      "similarity": "rag_bm25"
+     },
+     "title": {
+      "type": "text",
+      "analyzer": "rag_ko",
+      "similarity": "rag_bm25"
+     },
+     "vector_id": {
+      "type": "integer"
+     },
+     "version_label": {
+      "type": "keyword"
+     }
+    }
+   }
+  }
+ },
+ "settings": {
+  "rag-search-chunks-v006-token-nori": {
+   "settings": {
+    "index": {
+     "routing": {
+      "allocation": {
+       "include": {
+        "_tier_preference": "data_content"
+       }
+      }
+     },
+     "number_of_shards": "1",
+     "provided_name": "rag-search-chunks-v006-token-nori",
+     "similarity": {
+      "rag_bm25": {
+       "type": "BM25",
+       "b": "0.75",
+       "k1": "1.2"
+      }
+     },
+     "creation_date": "1793241942400",
+     "analysis": {
+      "analyzer": {
+       "rag_ko": {
+        "filter": [
+         "nori_part_of_speech",
+         "nori_readingform",
+         "lowercase"
+        ],
+        "type": "custom",
+        "tokenizer": "rag_nori_tokenizer"
+       }
+      },
+      "tokenizer": {
+       "rag_nori_tokenizer": {
+        "type": "nori_tokenizer",
+        "decompound_mode": "mixed"
+       }
+      }
+     },
+     "number_of_replicas": "0",
+     "uuid": "sID4BxfnQUuW-veNdEhzbw",
+     "version": {
+      "created": "8537000"
+     }
+    }
+   }
+  }
+ },
+ "all_sources_vectors_equal": true
+}

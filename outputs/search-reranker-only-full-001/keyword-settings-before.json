@@ -1,0 +1,93 @@
+{
+ "rag-search-context-no-filename-20261104": {
+  "settings": {
+   "index": {
+    "routing": {
+     "allocation": {
+      "include": {
+       "_tier_preference": "data_content"
+      }
+     }
+    },
+    "number_of_shards": "1",
+    "provided_name": "rag-search-context-no-filename-20261104",
+    "similarity": {
+     "rag_bm25": {
+      "type": "BM25",
+      "b": "0.75",
+      "k1": "1.2"
+     }
+    },
+    "creation_date": "1793760410624",
+    "analysis": {
+     "filter": {
+      "rag_noun_pos": {
+       "type": "nori_part_of_speech",
+       "stoptags": [
+        "E",
+        "IC",
+        "J",
+        "MAG",
+        "MAJ",
+        "MM",
+        "NA",
+        "NP",
+        "SC",
+        "SE",
+        "SF",
+        "SP",
+        "SSC",
+        "SSO",
+        "SY",
+        "UNA",
+        "UNKNOWN",
+        "VA",
+        "VCN",
+        "VCP",
+        "VV",
+        "VX",
+        "VSV",
+        "XPN",
+        "XR",
+        "XSA",
+        "XSN",
+        "XSV"
+       ]
+      }
+     },
+     "analyzer": {
+      "rag_ko": {
+       "filter": [
+        "nori_part_of_speech",
+        "nori_readingform",
+        "lowercase"
+       ],
+       "type": "custom",
+       "tokenizer": "rag_nori_tokenizer"
+      },
+      "rag_ko_noun_query": {
+       "filter": [
+        "rag_noun_pos",
+        "nori_readingform",
+        "lowercase"
+       ],
+       "type": "custom",
+       "tokenizer": "rag_nori_tokenizer"
+      }
+     },
+     "tokenizer": {
+      "rag_nori_tokenizer": {
+       "type": "nori_tokenizer",
+       "decompound_mode": "mixed"
+      }
+     }
+    },
+    "number_of_replicas": "0",
+    "uuid": "r08_iFL5QQWyuAOIjZzoVg",
+    "version": {
+     "created": "8537000"
+    }
+   }
+  }
+ }
+}

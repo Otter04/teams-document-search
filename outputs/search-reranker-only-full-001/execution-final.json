@@ -1,0 +1,73 @@
+{
+ "initial_workers": 3,
+ "later_max_workers": 5,
+ "tail": {
+  "questions": [
+   "Q-130-P08",
+   "EX100-I033",
+   "EX100-I037",
+   "EX100-I057",
+   "EX100-I058",
+   "EX100-I059",
+   "EX100-I060",
+   "EX100-I061",
+   "EX100-I062",
+   "EX100-I063",
+   "EX100-I064",
+   "EX100-I065",
+   "EX100-I066",
+   "EX100-I067",
+   "EX100-I068",
+   "EX100-I069",
+   "EX100-I070",
+   "EX100-I071",
+   "EX100-I072",
+   "EX100-I073",
+   "EX100-I074"
+  ],
+  "completed_transport_failures": [
+   "Q-130-P08",
+   "EX100-I033",
+   "EX100-I037"
+  ],
+  "extra_workers": 2,
+  "max_combined_workers": 5,
+  "reason": "User requested quickest completion without delay analysis; all request settings unchanged. Existing exclusive per-stage request markers prevent duplicate calls."
+ },
+ "final_retry": {
+  "query_id": "EX100-I033",
+  "attempt": 4,
+  "transport_timeout_seconds": 300,
+  "model_payload_unchanged": true
+ },
+ "requests": {
+  "rewrite": {
+   "attempts": 82,
+   "successful": 82,
+   "failed": 0
+  },
+  "embedding": {
+   "attempts": 83,
+   "successful": 82,
+   "failed": 1
+  },
+  "rerank": {
+   "attempts": 98,
+   "successful": 82,
+   "failed": 16
+  }
+ },
+ "resumed_questions": [
+  "Q-130-P07",
+  "Q-130-P08",
+  "EX100-I033",
+  "EX100-I037"
+ ],
+ "all_model_endpoints_remote": true,
+ "second_qwen_calls": 0,
+ "helpers_sha256": {
+  "finish_tail.py": "93afc10afa0d199b9e98838a5c74d353cfd479df99589deb9b7c384cb53c469d",
+  "finish_last.py": "3027c8314711af5a52d17872da6a20a713b844d2878e86ee8ce9cec43d3e1d9f",
+  "finalize.py": "06a71dc76142fee16ca3a341f1279300150f929b8a85355dc291bcc1d76dfe33"
+ }
+}

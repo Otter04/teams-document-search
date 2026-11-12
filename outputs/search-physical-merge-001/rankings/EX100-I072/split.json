@@ -1,0 +1,2520 @@
+{
+  "query_id": "EX100-I072",
+  "query": "미르내대 학사 서비스를 똑같이 여러 개 띄워 나눠 처리하게 해 놨잖아. 동시에 몇 개를 띄우도록 고쳤는지 실제 수정된 배포 설정을 찾아줘.",
+  "condition": "split",
+  "keyword_request": {
+    "size": 50,
+    "_source": [
+      "doc_id",
+      "chunk_id"
+    ],
+    "sort": [
+      {
+        "_score": "desc"
+      },
+      {
+        "chunk_id": "asc"
+      }
+    ],
+    "query": {
+      "bool": {
+        "must": [
+          {
+            "multi_match": {
+              "query": "미르내대 학사 서비스를 똑같이 여러 개 띄워 나눠 처리하게 해 놨잖아. 동시에 몇 개를 띄우도록 고쳤는지 실제 수정된 배포 설정을 찾아줘.",
+              "fields": [
+                "file_name^1",
+                "context^2",
+                "table_header^1",
+                "body^1"
+              ],
+              "type": "most_fields",
+              "analyzer": "rag_ko_noun_query",
+              "minimum_should_match": "1"
+            }
+          }
+        ],
+        "filter": [
+          {
+            "multi_match": {
+              "query": "미르내대 학사 서비스를 똑같이 여러 개 띄워 나눠 처리하게 해 놨잖아. 동시에 몇 개를 띄우도록 고쳤는지 실제 수정된 배포 설정을 찾아줘.",
+              "fields": [
+                "file_name",
+                "context",
+                "table_header",
+                "body"
+              ],
+              "type": "cross_fields",
+              "analyzer": "rag_ko_noun_query",
+              "minimum_should_match": "20%"
+            }
+          }
+        ]
+      }
+    },
+    "track_total_hits": true
+  },
+  "filters": [],
+  "query_vector_sha256": "7ae31a9e9a7990e9e86ad58aec1543ddcb52d657841deaed3d371ccf39edc40b",
+  "keyword_hits": [
+    {
+      "chunk_id": "D-183-T-4ea17f8dea6e1753",
+      "doc_id": "D-183",
+      "score": 63.122124
+    },
+    {
+      "chunk_id": "D-129-T-38e33ed2d95d570f",
+      "doc_id": "D-129",
+      "score": 53.17324
+    },
+    {
+      "chunk_id": "D-057-T-948960143e53d0ca",
+      "doc_id": "D-057",
+      "score": 47.557888
+    },
+    {
+      "chunk_id": "D-061-T-f89487c9f79a5b7a",
+      "doc_id": "D-061",
+      "score": 46.6056
+    },
+    {
+      "chunk_id": "D-053-T-2ce421ecc999fa16",
+      "doc_id": "D-053",
+      "score": 45.576477
+    },
+    {
+      "chunk_id": "D-054-T-874554e1418f0d0a",
+      "doc_id": "D-054",
+      "score": 45.131165
+    },
+    {
+      "chunk_id": "D-053-T-0a02a18f074d67c4",
+      "doc_id": "D-053",
+      "score": 44.56433
+    },
+    {
+      "chunk_id": "D-054-T-4a6c63894c4bdfb2",
+      "doc_id": "D-054",
+      "score": 43.26146
+    },
+    {
+      "chunk_id": "D-171-T-9f2e2c61883363d3",
+      "doc_id": "D-171",
+      "score": 40.91748
+    },
+    {
+      "chunk_id": "D-159-T-c2ae6ca478d16063",
+      "doc_id": "D-159",
+      "score": 40.526577
+    },
+    {
+      "chunk_id": "D-060-T-dd89c6b142ac94b8",
+      "doc_id": "D-060",
+      "score": 40.03018
+    },
+    {
+      "chunk_id": "D-188-T-5871e85754c47cc7",
+      "doc_id": "D-188",
+      "score": 39.989372
+    },
+    {
+      "chunk_id": "D-058-T-9934e564ed820ae1",
+      "doc_id": "D-058",
+      "score": 38.34105
+    },
+    {
+      "chunk_id": "D-113-T-deb881b420f2c12d",
+      "doc_id": "D-113",
+      "score": 36.84488
+    },
+    {
+      "chunk_id": "D-114-T-731aa35be7bb2fc2",
+      "doc_id": "D-114",
+      "score": 36.84488
+    },
+    {
+      "chunk_id": "D-059-T-3f27148ab569a040",
+      "doc_id": "D-059",
+      "score": 36.355427
+    },
+    {
+      "chunk_id": "D-185-T-34d4b90f406c429a",
+      "doc_id": "D-185",
+      "score": 36.150642
+    },
+    {
+      "chunk_id": "D-055-T-b9ffb2428269f69e",
+      "doc_id": "D-055",
+      "score": 34.741043
+    },
+    {
+      "chunk_id": "D-056-T-e0bf080bd2ebf9e4",
+      "doc_id": "D-056",
+      "score": 34.55992
+    },
+    {
+      "chunk_id": "D-159-SEM-59f362fd4f1cf01d",
+      "doc_id": "D-159",
+      "score": 34.486786
+    },
+    {
+      "chunk_id": "D-171-SEM-accbca637232ffdb",
+      "doc_id": "D-171",
+      "score": 33.165703
+    },
+    {
+      "chunk_id": "D-184-T-b99445c6263d31f1",
+      "doc_id": "D-184",
+      "score": 32.452656
+    },
+    {
+      "chunk_id": "D-057-T-428fc83b5efbbd03",
+      "doc_id": "D-057",
+      "score": 32.364285
+    },
+    {
+      "chunk_id": "D-170-T-3ee883345250f2e1",
+      "doc_id": "D-170",
+      "score": 32.19995
+    },
+    {
+      "chunk_id": "D-171-T-65d0e6224b3913fa",
+      "doc_id": "D-171",
+      "score": 31.931004
+    },
+    {
+      "chunk_id": "D-170-SEM-2704dee96f71e48a",
+      "doc_id": "D-170",
+      "score": 30.759815
+    },
+    {
+      "chunk_id": "D-058-T-98c4e9859a2eefb5",
+      "doc_id": "D-058",
+      "score": 29.6673
+    },
+    {
+      "chunk_id": "D-183-T-e19104c4af9e6b1e",
+      "doc_id": "D-183",
+      "score": 26.60398
+    },
+    {
+      "chunk_id": "D-057-T-c0a8716f9b8f52ff",
+      "doc_id": "D-057",
+      "score": 26.485552
+    },
+    {
+      "chunk_id": "D-183-T-9728575fd2d2001b",
+      "doc_id": "D-183",
+      "score": 26.159595
+    },
+    {
+      "chunk_id": "D-063-T-6a49e90a334b5bbe",
+      "doc_id": "D-063",
+      "score": 25.48949
+    },
+    {
+      "chunk_id": "D-170-T-d3c746af213ff251",
+      "doc_id": "D-170",
+      "score": 23.653048
+    },
+    {
+      "chunk_id": "D-062-T-bd16551e0dcb7ac8",
+      "doc_id": "D-062",
+      "score": 23.448038
+    },
+    {
+      "chunk_id": "D-054-T-b320dbb0458d97bd",
+      "doc_id": "D-054",
+      "score": 21.711033
+    },
+    {
+      "chunk_id": "D-150-T-8039b7dd0bdd80ff",
+      "doc_id": "D-150",
+      "score": 21.639175
+    },
+    {
+      "chunk_id": "D-159-T-9544609ced7ae2ff",
+      "doc_id": "D-159",
+      "score": 20.19421
+    },
+    {
+      "chunk_id": "D-170-T-0cb3008c54760cd9",
+      "doc_id": "D-170",
+      "score": 20.19421
+    },
+    {
+      "chunk_id": "D-171-T-1ca8c89c9d85f46e",
+      "doc_id": "D-171",
+      "score": 20.19421
+    },
+    {
+      "chunk_id": "D-154-T-dadfd1c7693ed572",
+      "doc_id": "D-154",
+      "score": 20.15322
+    },
+    {
+      "chunk_id": "D-168-T-c4934ae3059e7356",
+      "doc_id": "D-168",
+      "score": 20.15322
+    },
+    {
+      "chunk_id": "D-062-T-4866d6a3f232ebdb",
+      "doc_id": "D-062",
+      "score": 19.516727
+    },
+    {
+      "chunk_id": "D-062-T-a2fabe1f83978eb3",
+      "doc_id": "D-062",
+      "score": 19.516727
+    },
+    {
+      "chunk_id": "D-062-T-c196ef8205f51600",
+      "doc_id": "D-062",
+      "score": 19.516727
+    },
+    {
+      "chunk_id": "D-057-T-05fd3d7225519322",
+      "doc_id": "D-057",
+      "score": 18.36713
+    },
+    {
+      "chunk_id": "D-057-T-06554163c777a8e5",
+      "doc_id": "D-057",
+      "score": 18.36713
+    },
+    {
+      "chunk_id": "D-057-T-269cb3b0ff8b1cd1",
+      "doc_id": "D-057",
+      "score": 18.36713
+    },
+    {
+      "chunk_id": "D-057-T-40bc5ace5dde1ffb",
+      "doc_id": "D-057",
+      "score": 18.36713
+    },
+    {
+      "chunk_id": "D-057-T-945703f70d033e8d",
+      "doc_id": "D-057",
+      "score": 18.36713
+    },
+    {
+      "chunk_id": "D-057-T-c537ff7e799c54db",
+      "doc_id": "D-057",
+      "score": 18.36713
+    },
+    {
+      "chunk_id": "D-057-T-f28f9e2dd99df9b6",
+      "doc_id": "D-057",
+      "score": 18.36713
+    }
+  ],
+  "semantic_hits": [
+    {
+      "chunk_id": "D-061-T-f89487c9f79a5b7a",
+      "doc_id": "D-061",
+      "score": 0.8098583
+    },
+    {
+      "chunk_id": "D-184-T-b99445c6263d31f1",
+      "doc_id": "D-184",
+      "score": 0.8094083
+    },
+    {
+      "chunk_id": "D-187-T-95282a49c5365148",
+      "doc_id": "D-187",
+      "score": 0.80825996
+    },
+    {
+      "chunk_id": "D-185-T-34d4b90f406c429a",
+      "doc_id": "D-185",
+      "score": 0.8041892
+    },
+    {
+      "chunk_id": "D-061-T-71dff6083b6434ef",
+      "doc_id": "D-061",
+      "score": 0.80142605
+    },
+    {
+      "chunk_id": "D-053-T-2ce421ecc999fa16",
+      "doc_id": "D-053",
+      "score": 0.7968582
+    },
+    {
+      "chunk_id": "D-054-T-874554e1418f0d0a",
+      "doc_id": "D-054",
+      "score": 0.79445523
+    },
+    {
+      "chunk_id": "D-060-T-dd89c6b142ac94b8",
+      "doc_id": "D-060",
+      "score": 0.793812
+    },
+    {
+      "chunk_id": "D-188-T-5871e85754c47cc7",
+      "doc_id": "D-188",
+      "score": 0.78964245
+    },
+    {
+      "chunk_id": "D-059-T-3f27148ab569a040",
+      "doc_id": "D-059",
+      "score": 0.7889965
+    },
+    {
+      "chunk_id": "D-183-T-4ea17f8dea6e1753",
+      "doc_id": "D-183",
+      "score": 0.7872895
+    },
+    {
+      "chunk_id": "D-054-T-9bb8f7c323095807",
+      "doc_id": "D-054",
+      "score": 0.7835211
+    },
+    {
+      "chunk_id": "D-063-T-4ba108fa9c21df65",
+      "doc_id": "D-063",
+      "score": 0.78314507
+    },
+    {
+      "chunk_id": "D-063-T-ddb5d7a38d71bc9a",
+      "doc_id": "D-063",
+      "score": 0.7809738
+    },
+    {
+      "chunk_id": "D-053-T-269ff4b968ef5e95",
+      "doc_id": "D-053",
+      "score": 0.77932924
+    },
+    {
+      "chunk_id": "D-057-T-c0a8716f9b8f52ff",
+      "doc_id": "D-057",
+      "score": 0.77898943
+    },
+    {
+      "chunk_id": "D-063-T-23decbb8e95098c2",
+      "doc_id": "D-063",
+      "score": 0.7789729
+    },
+    {
+      "chunk_id": "D-063-T-2e7f1230c69a488f",
+      "doc_id": "D-063",
+      "score": 0.7787078
+    },
+    {
+      "chunk_id": "D-063-T-dadc2c4bcd86475d",
+      "doc_id": "D-063",
+      "score": 0.77852076
+    },
+    {
+      "chunk_id": "D-063-T-a8d1b706f6df29e9",
+      "doc_id": "D-063",
+      "score": 0.7785167
+    },
+    {
+      "chunk_id": "D-063-T-eb9cb1c20ec1f68f",
+      "doc_id": "D-063",
+      "score": 0.77834076
+    },
+    {
+      "chunk_id": "D-054-T-c8de4ae5a291f5ac",
+      "doc_id": "D-054",
+      "score": 0.77822554
+    },
+    {
+      "chunk_id": "D-063-T-49bf5175a2e10426",
+      "doc_id": "D-063",
+      "score": 0.77822554
+    },
+    {
+      "chunk_id": "D-063-T-5d152748debabb2b",
+      "doc_id": "D-063",
+      "score": 0.7780285
+    },
+    {
+      "chunk_id": "D-063-T-675b6c4a07fe6711",
+      "doc_id": "D-063",
+      "score": 0.77791536
+    },
+    {
+      "chunk_id": "D-063-T-f7b31ec0d30e1f08",
+      "doc_id": "D-063",
+      "score": 0.77775955
+    },
+    {
+      "chunk_id": "D-063-T-ac0f573741807b0b",
+      "doc_id": "D-063",
+      "score": 0.7776976
+    },
+    {
+      "chunk_id": "D-186-T-0cf21b0a08de61a4",
+      "doc_id": "D-186",
+      "score": 0.7776763
+    },
+    {
+      "chunk_id": "D-063-T-8e5b35fb76e69f60",
+      "doc_id": "D-063",
+      "score": 0.77766746
+    },
+    {
+      "chunk_id": "D-063-T-f18226e81432f833",
+      "doc_id": "D-063",
+      "score": 0.77743435
+    },
+    {
+      "chunk_id": "D-168-T-c4934ae3059e7356",
+      "doc_id": "D-168",
+      "score": 0.7770213
+    },
+    {
+      "chunk_id": "D-063-T-67ac47e1a321cf3c",
+      "doc_id": "D-063",
+      "score": 0.77677524
+    },
+    {
+      "chunk_id": "D-063-T-ce5eacd2de7d18e1",
+      "doc_id": "D-063",
+      "score": 0.7764887
+    },
+    {
+      "chunk_id": "D-063-T-95a507b6c5ba4bdc",
+      "doc_id": "D-063",
+      "score": 0.77626765
+    },
+    {
+      "chunk_id": "D-063-T-da051863ca7cc647",
+      "doc_id": "D-063",
+      "score": 0.7758595
+    },
+    {
+      "chunk_id": "D-063-T-6d6d911c04377587",
+      "doc_id": "D-063",
+      "score": 0.77570343
+    },
+    {
+      "chunk_id": "D-063-T-ef6f3e44294085ab",
+      "doc_id": "D-063",
+      "score": 0.7753924
+    },
+    {
+      "chunk_id": "D-063-T-0eb5fc822f3973fb",
+      "doc_id": "D-063",
+      "score": 0.7747592
+    },
+    {
+      "chunk_id": "D-129-T-38e33ed2d95d570f",
+      "doc_id": "D-129",
+      "score": 0.7742892
+    },
+    {
+      "chunk_id": "D-154-T-dadfd1c7693ed572",
+      "doc_id": "D-154",
+      "score": 0.77427727
+    },
+    {
+      "chunk_id": "D-062-T-bd16551e0dcb7ac8",
+      "doc_id": "D-062",
+      "score": 0.77339053
+    },
+    {
+      "chunk_id": "D-063-T-25c6501c65633349",
+      "doc_id": "D-063",
+      "score": 0.7732725
+    },
+    {
+      "chunk_id": "D-170-T-e530838ed093b042",
+      "doc_id": "D-170",
+      "score": 0.77297413
+    },
+    {
+      "chunk_id": "D-054-T-b320dbb0458d97bd",
+      "doc_id": "D-054",
+      "score": 0.77203363
+    },
+    {
+      "chunk_id": "D-170-T-2eca19c39b605412",
+      "doc_id": "D-170",
+      "score": 0.7715852
+    },
+    {
+      "chunk_id": "D-190-T-d4027426d12a293d",
+      "doc_id": "D-190",
+      "score": 0.7711525
+    },
+    {
+      "chunk_id": "D-171-T-812090576ce2e4c5",
+      "doc_id": "D-171",
+      "score": 0.7711162
+    },
+    {
+      "chunk_id": "D-188-T-cb0d1ee982b53b6f",
+      "doc_id": "D-188",
+      "score": 0.77110404
+    },
+    {
+      "chunk_id": "D-057-T-948960143e53d0ca",
+      "doc_id": "D-057",
+      "score": 0.7707238
+    },
+    {
+      "chunk_id": "D-191-T-bae1138c118fbf95",
+      "doc_id": "D-191",
+      "score": 0.77044404
+    }
+  ],
+  "semantic_details": {
+    "took_ms": 5,
+    "rounds": [
+      {
+        "hits": 50,
+        "distinct_documents": 21,
+        "retained": 50,
+        "excluded_saturated_documents": 0,
+        "diversity_applied": false
+      }
+    ],
+    "raw_unique_chunks": 50,
+    "retained_chunks": 50,
+    "retained_documents": 21,
+    "per_document_cap": null,
+    "diversity_applied": false,
+    "refill_limit_reached": false
+  },
+  "rrf": [
+    {
+      "chunk_id": "D-061-T-f89487c9f79a5b7a",
+      "doc_id": "D-061",
+      "score": 0.04841188524590164,
+      "branches": {
+        "keyword": {
+          "rank": 4,
+          "original_score": 46.6056,
+          "normalized_score": 0.015625,
+          "contribution": 0.015625
+        },
+        "semantic": {
+          "rank": 1,
+          "original_score": 0.8098583,
+          "normalized_score": 0.01639344262295082,
+          "contribution": 0.03278688524590164
+        }
+      }
+    },
+    {
+      "chunk_id": "D-053-T-2ce421ecc999fa16",
+      "doc_id": "D-053",
+      "score": 0.04568764568764569,
+      "branches": {
+        "keyword": {
+          "rank": 5,
+          "original_score": 45.576477,
+          "normalized_score": 0.015384615384615385,
+          "contribution": 0.015384615384615385
+        },
+        "semantic": {
+          "rank": 6,
+          "original_score": 0.7968582,
+          "normalized_score": 0.015151515151515152,
+          "contribution": 0.030303030303030304
+        }
+      }
+    },
+    {
+      "chunk_id": "D-054-T-874554e1418f0d0a",
+      "doc_id": "D-054",
+      "score": 0.04500226142017187,
+      "branches": {
+        "keyword": {
+          "rank": 6,
+          "original_score": 45.131165,
+          "normalized_score": 0.015151515151515152,
+          "contribution": 0.015151515151515152
+        },
+        "semantic": {
+          "rank": 7,
+          "original_score": 0.79445523,
+          "normalized_score": 0.014925373134328358,
+          "contribution": 0.029850746268656716
+        }
+      }
+    },
+    {
+      "chunk_id": "D-183-T-4ea17f8dea6e1753",
+      "doc_id": "D-183",
+      "score": 0.04456245670745786,
+      "branches": {
+        "keyword": {
+          "rank": 1,
+          "original_score": 63.122124,
+          "normalized_score": 0.01639344262295082,
+          "contribution": 0.01639344262295082
+        },
+        "semantic": {
+          "rank": 11,
+          "original_score": 0.7872895,
+          "normalized_score": 0.014084507042253521,
+          "contribution": 0.028169014084507043
+        }
+      }
+    },
+    {
+      "chunk_id": "D-184-T-b99445c6263d31f1",
+      "doc_id": "D-184",
+      "score": 0.04445318646734854,
+      "branches": {
+        "keyword": {
+          "rank": 22,
+          "original_score": 32.452656,
+          "normalized_score": 0.012195121951219513,
+          "contribution": 0.012195121951219513
+        },
+        "semantic": {
+          "rank": 2,
+          "original_score": 0.8094083,
+          "normalized_score": 0.016129032258064516,
+          "contribution": 0.03225806451612903
+        }
+      }
+    },
+    {
+      "chunk_id": "D-185-T-34d4b90f406c429a",
+      "doc_id": "D-185",
+      "score": 0.04423701298701299,
+      "branches": {
+        "keyword": {
+          "rank": 17,
+          "original_score": 36.150642,
+          "normalized_score": 0.012987012987012988,
+          "contribution": 0.012987012987012988
+        },
+        "semantic": {
+          "rank": 4,
+          "original_score": 0.8041892,
+          "normalized_score": 0.015625,
+          "contribution": 0.03125
+        }
+      }
+    },
+    {
+      "chunk_id": "D-060-T-dd89c6b142ac94b8",
+      "doc_id": "D-060",
+      "score": 0.043496271748135876,
+      "branches": {
+        "keyword": {
+          "rank": 11,
+          "original_score": 40.03018,
+          "normalized_score": 0.014084507042253521,
+          "contribution": 0.014084507042253521
+        },
+        "semantic": {
+          "rank": 8,
+          "original_score": 0.793812,
+          "normalized_score": 0.014705882352941176,
+          "contribution": 0.029411764705882353
+        }
+      }
+    },
+    {
+      "chunk_id": "D-188-T-5871e85754c47cc7",
+      "doc_id": "D-188",
+      "score": 0.0428743961352657,
+      "branches": {
+        "keyword": {
+          "rank": 12,
+          "original_score": 39.989372,
+          "normalized_score": 0.013888888888888888,
+          "contribution": 0.013888888888888888
+        },
+        "semantic": {
+          "rank": 9,
+          "original_score": 0.78964245,
+          "normalized_score": 0.014492753623188406,
+          "contribution": 0.028985507246376812
+        }
+      }
+    },
+    {
+      "chunk_id": "D-059-T-3f27148ab569a040",
+      "doc_id": "D-059",
+      "score": 0.04172932330827067,
+      "branches": {
+        "keyword": {
+          "rank": 16,
+          "original_score": 36.355427,
+          "normalized_score": 0.013157894736842105,
+          "contribution": 0.013157894736842105
+        },
+        "semantic": {
+          "rank": 10,
+          "original_score": 0.7889965,
+          "normalized_score": 0.014285714285714285,
+          "contribution": 0.02857142857142857
+        }
+      }
+    },
+    {
+      "chunk_id": "D-057-T-c0a8716f9b8f52ff",
+      "doc_id": "D-057",
+      "score": 0.037551744529863984,
+      "branches": {
+        "keyword": {
+          "rank": 29,
+          "original_score": 26.485552,
+          "normalized_score": 0.011235955056179775,
+          "contribution": 0.011235955056179775
+        },
+        "semantic": {
+          "rank": 16,
+          "original_score": 0.77898943,
+          "normalized_score": 0.013157894736842105,
+          "contribution": 0.02631578947368421
+        }
+      }
+    },
+    {
+      "chunk_id": "D-129-T-38e33ed2d95d570f",
+      "doc_id": "D-129",
+      "score": 0.03633105246008472,
+      "branches": {
+        "keyword": {
+          "rank": 2,
+          "original_score": 53.17324,
+          "normalized_score": 0.016129032258064516,
+          "contribution": 0.016129032258064516
+        },
+        "semantic": {
+          "rank": 39,
+          "original_score": 0.7742892,
+          "normalized_score": 0.010101010101010102,
+          "contribution": 0.020202020202020204
+        }
+      }
+    },
+    {
+      "chunk_id": "D-057-T-948960143e53d0ca",
+      "doc_id": "D-057",
+      "score": 0.03422163972622688,
+      "branches": {
+        "keyword": {
+          "rank": 3,
+          "original_score": 47.557888,
+          "normalized_score": 0.015873015873015872,
+          "contribution": 0.015873015873015872
+        },
+        "semantic": {
+          "rank": 49,
+          "original_score": 0.7707238,
+          "normalized_score": 0.009174311926605505,
+          "contribution": 0.01834862385321101
+        }
+      }
+    },
+    {
+      "chunk_id": "D-168-T-c4934ae3059e7356",
+      "doc_id": "D-168",
+      "score": 0.03197802197802198,
+      "branches": {
+        "keyword": {
+          "rank": 40,
+          "original_score": 20.15322,
+          "normalized_score": 0.01,
+          "contribution": 0.01
+        },
+        "semantic": {
+          "rank": 31,
+          "original_score": 0.7770213,
+          "normalized_score": 0.01098901098901099,
+          "contribution": 0.02197802197802198
+        }
+      }
+    },
+    {
+      "chunk_id": "D-187-T-95282a49c5365148",
+      "doc_id": "D-187",
+      "score": 0.031746031746031744,
+      "branches": {
+        "semantic": {
+          "rank": 3,
+          "original_score": 0.80825996,
+          "normalized_score": 0.015873015873015872,
+          "contribution": 0.031746031746031744
+        }
+      }
+    },
+    {
+      "chunk_id": "D-061-T-71dff6083b6434ef",
+      "doc_id": "D-061",
+      "score": 0.03076923076923077,
+      "branches": {
+        "semantic": {
+          "rank": 5,
+          "original_score": 0.80142605,
+          "normalized_score": 0.015384615384615385,
+          "contribution": 0.03076923076923077
+        }
+      }
+    },
+    {
+      "chunk_id": "D-062-T-bd16551e0dcb7ac8",
+      "doc_id": "D-062",
+      "score": 0.030554668370062814,
+      "branches": {
+        "keyword": {
+          "rank": 33,
+          "original_score": 23.448038,
+          "normalized_score": 0.010752688172043012,
+          "contribution": 0.010752688172043012
+        },
+        "semantic": {
+          "rank": 41,
+          "original_score": 0.77339053,
+          "normalized_score": 0.009900990099009901,
+          "contribution": 0.019801980198019802
+        }
+      }
+    },
+    {
+      "chunk_id": "D-154-T-dadfd1c7693ed572",
+      "doc_id": "D-154",
+      "score": 0.0301010101010101,
+      "branches": {
+        "keyword": {
+          "rank": 39,
+          "original_score": 20.15322,
+          "normalized_score": 0.010101010101010102,
+          "contribution": 0.010101010101010102
+        },
+        "semantic": {
+          "rank": 40,
+          "original_score": 0.77427727,
+          "normalized_score": 0.01,
+          "contribution": 0.02
+        }
+      }
+    },
+    {
+      "chunk_id": "D-054-T-b320dbb0458d97bd",
+      "doc_id": "D-054",
+      "score": 0.02986906710310966,
+      "branches": {
+        "keyword": {
+          "rank": 34,
+          "original_score": 21.711033,
+          "normalized_score": 0.010638297872340425,
+          "contribution": 0.010638297872340425
+        },
+        "semantic": {
+          "rank": 44,
+          "original_score": 0.77203363,
+          "normalized_score": 0.009615384615384616,
+          "contribution": 0.019230769230769232
+        }
+      }
+    },
+    {
+      "chunk_id": "D-054-T-9bb8f7c323095807",
+      "doc_id": "D-054",
+      "score": 0.027777777777777776,
+      "branches": {
+        "semantic": {
+          "rank": 12,
+          "original_score": 0.7835211,
+          "normalized_score": 0.013888888888888888,
+          "contribution": 0.027777777777777776
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-4ba108fa9c21df65",
+      "doc_id": "D-063",
+      "score": 0.0273972602739726,
+      "branches": {
+        "semantic": {
+          "rank": 13,
+          "original_score": 0.78314507,
+          "normalized_score": 0.0136986301369863,
+          "contribution": 0.0273972602739726
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-ddb5d7a38d71bc9a",
+      "doc_id": "D-063",
+      "score": 0.02702702702702703,
+      "branches": {
+        "semantic": {
+          "rank": 14,
+          "original_score": 0.7809738,
+          "normalized_score": 0.013513513513513514,
+          "contribution": 0.02702702702702703
+        }
+      }
+    },
+    {
+      "chunk_id": "D-053-T-269ff4b968ef5e95",
+      "doc_id": "D-053",
+      "score": 0.02666666666666667,
+      "branches": {
+        "semantic": {
+          "rank": 15,
+          "original_score": 0.77932924,
+          "normalized_score": 0.013333333333333334,
+          "contribution": 0.02666666666666667
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-23decbb8e95098c2",
+      "doc_id": "D-063",
+      "score": 0.025974025974025976,
+      "branches": {
+        "semantic": {
+          "rank": 17,
+          "original_score": 0.7789729,
+          "normalized_score": 0.012987012987012988,
+          "contribution": 0.025974025974025976
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-2e7f1230c69a488f",
+      "doc_id": "D-063",
+      "score": 0.02564102564102564,
+      "branches": {
+        "semantic": {
+          "rank": 18,
+          "original_score": 0.7787078,
+          "normalized_score": 0.01282051282051282,
+          "contribution": 0.02564102564102564
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-dadc2c4bcd86475d",
+      "doc_id": "D-063",
+      "score": 0.02531645569620253,
+      "branches": {
+        "semantic": {
+          "rank": 19,
+          "original_score": 0.77852076,
+          "normalized_score": 0.012658227848101266,
+          "contribution": 0.02531645569620253
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-a8d1b706f6df29e9",
+      "doc_id": "D-063",
+      "score": 0.025,
+      "branches": {
+        "semantic": {
+          "rank": 20,
+          "original_score": 0.7785167,
+          "normalized_score": 0.0125,
+          "contribution": 0.025
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-eb9cb1c20ec1f68f",
+      "doc_id": "D-063",
+      "score": 0.024691358024691357,
+      "branches": {
+        "semantic": {
+          "rank": 21,
+          "original_score": 0.77834076,
+          "normalized_score": 0.012345679012345678,
+          "contribution": 0.024691358024691357
+        }
+      }
+    },
+    {
+      "chunk_id": "D-054-T-c8de4ae5a291f5ac",
+      "doc_id": "D-054",
+      "score": 0.024390243902439025,
+      "branches": {
+        "semantic": {
+          "rank": 22,
+          "original_score": 0.77822554,
+          "normalized_score": 0.012195121951219513,
+          "contribution": 0.024390243902439025
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-49bf5175a2e10426",
+      "doc_id": "D-063",
+      "score": 0.024096385542168676,
+      "branches": {
+        "semantic": {
+          "rank": 23,
+          "original_score": 0.77822554,
+          "normalized_score": 0.012048192771084338,
+          "contribution": 0.024096385542168676
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-5d152748debabb2b",
+      "doc_id": "D-063",
+      "score": 0.023809523809523808,
+      "branches": {
+        "semantic": {
+          "rank": 24,
+          "original_score": 0.7780285,
+          "normalized_score": 0.011904761904761904,
+          "contribution": 0.023809523809523808
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-675b6c4a07fe6711",
+      "doc_id": "D-063",
+      "score": 0.023529411764705882,
+      "branches": {
+        "semantic": {
+          "rank": 25,
+          "original_score": 0.77791536,
+          "normalized_score": 0.011764705882352941,
+          "contribution": 0.023529411764705882
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-f7b31ec0d30e1f08",
+      "doc_id": "D-063",
+      "score": 0.023255813953488372,
+      "branches": {
+        "semantic": {
+          "rank": 26,
+          "original_score": 0.77775955,
+          "normalized_score": 0.011627906976744186,
+          "contribution": 0.023255813953488372
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-ac0f573741807b0b",
+      "doc_id": "D-063",
+      "score": 0.022988505747126436,
+      "branches": {
+        "semantic": {
+          "rank": 27,
+          "original_score": 0.7776976,
+          "normalized_score": 0.011494252873563218,
+          "contribution": 0.022988505747126436
+        }
+      }
+    },
+    {
+      "chunk_id": "D-186-T-0cf21b0a08de61a4",
+      "doc_id": "D-186",
+      "score": 0.022727272727272728,
+      "branches": {
+        "semantic": {
+          "rank": 28,
+          "original_score": 0.7776763,
+          "normalized_score": 0.011363636363636364,
+          "contribution": 0.022727272727272728
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-8e5b35fb76e69f60",
+      "doc_id": "D-063",
+      "score": 0.02247191011235955,
+      "branches": {
+        "semantic": {
+          "rank": 29,
+          "original_score": 0.77766746,
+          "normalized_score": 0.011235955056179775,
+          "contribution": 0.02247191011235955
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-f18226e81432f833",
+      "doc_id": "D-063",
+      "score": 0.022222222222222223,
+      "branches": {
+        "semantic": {
+          "rank": 30,
+          "original_score": 0.77743435,
+          "normalized_score": 0.011111111111111112,
+          "contribution": 0.022222222222222223
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-67ac47e1a321cf3c",
+      "doc_id": "D-063",
+      "score": 0.021739130434782608,
+      "branches": {
+        "semantic": {
+          "rank": 32,
+          "original_score": 0.77677524,
+          "normalized_score": 0.010869565217391304,
+          "contribution": 0.021739130434782608
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-ce5eacd2de7d18e1",
+      "doc_id": "D-063",
+      "score": 0.021505376344086023,
+      "branches": {
+        "semantic": {
+          "rank": 33,
+          "original_score": 0.7764887,
+          "normalized_score": 0.010752688172043012,
+          "contribution": 0.021505376344086023
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-95a507b6c5ba4bdc",
+      "doc_id": "D-063",
+      "score": 0.02127659574468085,
+      "branches": {
+        "semantic": {
+          "rank": 34,
+          "original_score": 0.77626765,
+          "normalized_score": 0.010638297872340425,
+          "contribution": 0.02127659574468085
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-da051863ca7cc647",
+      "doc_id": "D-063",
+      "score": 0.021052631578947368,
+      "branches": {
+        "semantic": {
+          "rank": 35,
+          "original_score": 0.7758595,
+          "normalized_score": 0.010526315789473684,
+          "contribution": 0.021052631578947368
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-6d6d911c04377587",
+      "doc_id": "D-063",
+      "score": 0.020833333333333332,
+      "branches": {
+        "semantic": {
+          "rank": 36,
+          "original_score": 0.77570343,
+          "normalized_score": 0.010416666666666666,
+          "contribution": 0.020833333333333332
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-ef6f3e44294085ab",
+      "doc_id": "D-063",
+      "score": 0.020618556701030927,
+      "branches": {
+        "semantic": {
+          "rank": 37,
+          "original_score": 0.7753924,
+          "normalized_score": 0.010309278350515464,
+          "contribution": 0.020618556701030927
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-0eb5fc822f3973fb",
+      "doc_id": "D-063",
+      "score": 0.02040816326530612,
+      "branches": {
+        "semantic": {
+          "rank": 38,
+          "original_score": 0.7747592,
+          "normalized_score": 0.01020408163265306,
+          "contribution": 0.02040816326530612
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-25c6501c65633349",
+      "doc_id": "D-063",
+      "score": 0.0196078431372549,
+      "branches": {
+        "semantic": {
+          "rank": 42,
+          "original_score": 0.7732725,
+          "normalized_score": 0.00980392156862745,
+          "contribution": 0.0196078431372549
+        }
+      }
+    },
+    {
+      "chunk_id": "D-170-T-e530838ed093b042",
+      "doc_id": "D-170",
+      "score": 0.019417475728155338,
+      "branches": {
+        "semantic": {
+          "rank": 43,
+          "original_score": 0.77297413,
+          "normalized_score": 0.009708737864077669,
+          "contribution": 0.019417475728155338
+        }
+      }
+    },
+    {
+      "chunk_id": "D-170-T-2eca19c39b605412",
+      "doc_id": "D-170",
+      "score": 0.01904761904761905,
+      "branches": {
+        "semantic": {
+          "rank": 45,
+          "original_score": 0.7715852,
+          "normalized_score": 0.009523809523809525,
+          "contribution": 0.01904761904761905
+        }
+      }
+    },
+    {
+      "chunk_id": "D-190-T-d4027426d12a293d",
+      "doc_id": "D-190",
+      "score": 0.018867924528301886,
+      "branches": {
+        "semantic": {
+          "rank": 46,
+          "original_score": 0.7711525,
+          "normalized_score": 0.009433962264150943,
+          "contribution": 0.018867924528301886
+        }
+      }
+    },
+    {
+      "chunk_id": "D-171-T-812090576ce2e4c5",
+      "doc_id": "D-171",
+      "score": 0.018691588785046728,
+      "branches": {
+        "semantic": {
+          "rank": 47,
+          "original_score": 0.7711162,
+          "normalized_score": 0.009345794392523364,
+          "contribution": 0.018691588785046728
+        }
+      }
+    },
+    {
+      "chunk_id": "D-188-T-cb0d1ee982b53b6f",
+      "doc_id": "D-188",
+      "score": 0.018518518518518517,
+      "branches": {
+        "semantic": {
+          "rank": 48,
+          "original_score": 0.77110404,
+          "normalized_score": 0.009259259259259259,
+          "contribution": 0.018518518518518517
+        }
+      }
+    },
+    {
+      "chunk_id": "D-191-T-bae1138c118fbf95",
+      "doc_id": "D-191",
+      "score": 0.01818181818181818,
+      "branches": {
+        "semantic": {
+          "rank": 50,
+          "original_score": 0.77044404,
+          "normalized_score": 0.00909090909090909,
+          "contribution": 0.01818181818181818
+        }
+      }
+    },
+    {
+      "chunk_id": "D-053-T-0a02a18f074d67c4",
+      "doc_id": "D-053",
+      "score": 0.014925373134328358,
+      "branches": {
+        "keyword": {
+          "rank": 7,
+          "original_score": 44.56433,
+          "normalized_score": 0.014925373134328358,
+          "contribution": 0.014925373134328358
+        }
+      }
+    },
+    {
+      "chunk_id": "D-054-T-4a6c63894c4bdfb2",
+      "doc_id": "D-054",
+      "score": 0.014705882352941176,
+      "branches": {
+        "keyword": {
+          "rank": 8,
+          "original_score": 43.26146,
+          "normalized_score": 0.014705882352941176,
+          "contribution": 0.014705882352941176
+        }
+      }
+    },
+    {
+      "chunk_id": "D-171-T-9f2e2c61883363d3",
+      "doc_id": "D-171",
+      "score": 0.014492753623188406,
+      "branches": {
+        "keyword": {
+          "rank": 9,
+          "original_score": 40.91748,
+          "normalized_score": 0.014492753623188406,
+          "contribution": 0.014492753623188406
+        }
+      }
+    },
+    {
+      "chunk_id": "D-159-T-c2ae6ca478d16063",
+      "doc_id": "D-159",
+      "score": 0.014285714285714285,
+      "branches": {
+        "keyword": {
+          "rank": 10,
+          "original_score": 40.526577,
+          "normalized_score": 0.014285714285714285,
+          "contribution": 0.014285714285714285
+        }
+      }
+    },
+    {
+      "chunk_id": "D-058-T-9934e564ed820ae1",
+      "doc_id": "D-058",
+      "score": 0.0136986301369863,
+      "branches": {
+        "keyword": {
+          "rank": 13,
+          "original_score": 38.34105,
+          "normalized_score": 0.0136986301369863,
+          "contribution": 0.0136986301369863
+        }
+      }
+    },
+    {
+      "chunk_id": "D-113-T-deb881b420f2c12d",
+      "doc_id": "D-113",
+      "score": 0.013513513513513514,
+      "branches": {
+        "keyword": {
+          "rank": 14,
+          "original_score": 36.84488,
+          "normalized_score": 0.013513513513513514,
+          "contribution": 0.013513513513513514
+        }
+      }
+    },
+    {
+      "chunk_id": "D-114-T-731aa35be7bb2fc2",
+      "doc_id": "D-114",
+      "score": 0.013333333333333334,
+      "branches": {
+        "keyword": {
+          "rank": 15,
+          "original_score": 36.84488,
+          "normalized_score": 0.013333333333333334,
+          "contribution": 0.013333333333333334
+        }
+      }
+    },
+    {
+      "chunk_id": "D-055-T-b9ffb2428269f69e",
+      "doc_id": "D-055",
+      "score": 0.01282051282051282,
+      "branches": {
+        "keyword": {
+          "rank": 18,
+          "original_score": 34.741043,
+          "normalized_score": 0.01282051282051282,
+          "contribution": 0.01282051282051282
+        }
+      }
+    },
+    {
+      "chunk_id": "D-056-T-e0bf080bd2ebf9e4",
+      "doc_id": "D-056",
+      "score": 0.012658227848101266,
+      "branches": {
+        "keyword": {
+          "rank": 19,
+          "original_score": 34.55992,
+          "normalized_score": 0.012658227848101266,
+          "contribution": 0.012658227848101266
+        }
+      }
+    },
+    {
+      "chunk_id": "D-159-SEM-59f362fd4f1cf01d",
+      "doc_id": "D-159",
+      "score": 0.0125,
+      "branches": {
+        "keyword": {
+          "rank": 20,
+          "original_score": 34.486786,
+          "normalized_score": 0.0125,
+          "contribution": 0.0125
+        }
+      }
+    },
+    {
+      "chunk_id": "D-171-SEM-accbca637232ffdb",
+      "doc_id": "D-171",
+      "score": 0.012345679012345678,
+      "branches": {
+        "keyword": {
+          "rank": 21,
+          "original_score": 33.165703,
+          "normalized_score": 0.012345679012345678,
+          "contribution": 0.012345679012345678
+        }
+      }
+    },
+    {
+      "chunk_id": "D-057-T-428fc83b5efbbd03",
+      "doc_id": "D-057",
+      "score": 0.012048192771084338,
+      "branches": {
+        "keyword": {
+          "rank": 23,
+          "original_score": 32.364285,
+          "normalized_score": 0.012048192771084338,
+          "contribution": 0.012048192771084338
+        }
+      }
+    },
+    {
+      "chunk_id": "D-170-T-3ee883345250f2e1",
+      "doc_id": "D-170",
+      "score": 0.011904761904761904,
+      "branches": {
+        "keyword": {
+          "rank": 24,
+          "original_score": 32.19995,
+          "normalized_score": 0.011904761904761904,
+          "contribution": 0.011904761904761904
+        }
+      }
+    },
+    {
+      "chunk_id": "D-171-T-65d0e6224b3913fa",
+      "doc_id": "D-171",
+      "score": 0.011764705882352941,
+      "branches": {
+        "keyword": {
+          "rank": 25,
+          "original_score": 31.931004,
+          "normalized_score": 0.011764705882352941,
+          "contribution": 0.011764705882352941
+        }
+      }
+    },
+    {
+      "chunk_id": "D-170-SEM-2704dee96f71e48a",
+      "doc_id": "D-170",
+      "score": 0.011627906976744186,
+      "branches": {
+        "keyword": {
+          "rank": 26,
+          "original_score": 30.759815,
+          "normalized_score": 0.011627906976744186,
+          "contribution": 0.011627906976744186
+        }
+      }
+    },
+    {
+      "chunk_id": "D-058-T-98c4e9859a2eefb5",
+      "doc_id": "D-058",
+      "score": 0.011494252873563218,
+      "branches": {
+        "keyword": {
+          "rank": 27,
+          "original_score": 29.6673,
+          "normalized_score": 0.011494252873563218,
+          "contribution": 0.011494252873563218
+        }
+      }
+    },
+    {
+      "chunk_id": "D-183-T-e19104c4af9e6b1e",
+      "doc_id": "D-183",
+      "score": 0.011363636363636364,
+      "branches": {
+        "keyword": {
+          "rank": 28,
+          "original_score": 26.60398,
+          "normalized_score": 0.011363636363636364,
+          "contribution": 0.011363636363636364
+        }
+      }
+    },
+    {
+      "chunk_id": "D-183-T-9728575fd2d2001b",
+      "doc_id": "D-183",
+      "score": 0.011111111111111112,
+      "branches": {
+        "keyword": {
+          "rank": 30,
+          "original_score": 26.159595,
+          "normalized_score": 0.011111111111111112,
+          "contribution": 0.011111111111111112
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-6a49e90a334b5bbe",
+      "doc_id": "D-063",
+      "score": 0.01098901098901099,
+      "branches": {
+        "keyword": {
+          "rank": 31,
+          "original_score": 25.48949,
+          "normalized_score": 0.01098901098901099,
+          "contribution": 0.01098901098901099
+        }
+      }
+    },
+    {
+      "chunk_id": "D-170-T-d3c746af213ff251",
+      "doc_id": "D-170",
+      "score": 0.010869565217391304,
+      "branches": {
+        "keyword": {
+          "rank": 32,
+          "original_score": 23.653048,
+          "normalized_score": 0.010869565217391304,
+          "contribution": 0.010869565217391304
+        }
+      }
+    },
+    {
+      "chunk_id": "D-150-T-8039b7dd0bdd80ff",
+      "doc_id": "D-150",
+      "score": 0.010526315789473684,
+      "branches": {
+        "keyword": {
+          "rank": 35,
+          "original_score": 21.639175,
+          "normalized_score": 0.010526315789473684,
+          "contribution": 0.010526315789473684
+        }
+      }
+    },
+    {
+      "chunk_id": "D-159-T-9544609ced7ae2ff",
+      "doc_id": "D-159",
+      "score": 0.010416666666666666,
+      "branches": {
+        "keyword": {
+          "rank": 36,
+          "original_score": 20.19421,
+          "normalized_score": 0.010416666666666666,
+          "contribution": 0.010416666666666666
+        }
+      }
+    },
+    {
+      "chunk_id": "D-170-T-0cb3008c54760cd9",
+      "doc_id": "D-170",
+      "score": 0.010309278350515464,
+      "branches": {
+        "keyword": {
+          "rank": 37,
+          "original_score": 20.19421,
+          "normalized_score": 0.010309278350515464,
+          "contribution": 0.010309278350515464
+        }
+      }
+    },
+    {
+      "chunk_id": "D-171-T-1ca8c89c9d85f46e",
+      "doc_id": "D-171",
+      "score": 0.01020408163265306,
+      "branches": {
+        "keyword": {
+          "rank": 38,
+          "original_score": 20.19421,
+          "normalized_score": 0.01020408163265306,
+          "contribution": 0.01020408163265306
+        }
+      }
+    },
+    {
+      "chunk_id": "D-062-T-4866d6a3f232ebdb",
+      "doc_id": "D-062",
+      "score": 0.009900990099009901,
+      "branches": {
+        "keyword": {
+          "rank": 41,
+          "original_score": 19.516727,
+          "normalized_score": 0.009900990099009901,
+          "contribution": 0.009900990099009901
+        }
+      }
+    },
+    {
+      "chunk_id": "D-062-T-a2fabe1f83978eb3",
+      "doc_id": "D-062",
+      "score": 0.00980392156862745,
+      "branches": {
+        "keyword": {
+          "rank": 42,
+          "original_score": 19.516727,
+          "normalized_score": 0.00980392156862745,
+          "contribution": 0.00980392156862745
+        }
+      }
+    },
+    {
+      "chunk_id": "D-062-T-c196ef8205f51600",
+      "doc_id": "D-062",
+      "score": 0.009708737864077669,
+      "branches": {
+        "keyword": {
+          "rank": 43,
+          "original_score": 19.516727,
+          "normalized_score": 0.009708737864077669,
+          "contribution": 0.009708737864077669
+        }
+      }
+    },
+    {
+      "chunk_id": "D-057-T-05fd3d7225519322",
+      "doc_id": "D-057",
+      "score": 0.009615384615384616,
+      "branches": {
+        "keyword": {
+          "rank": 44,
+          "original_score": 18.36713,
+          "normalized_score": 0.009615384615384616,
+          "contribution": 0.009615384615384616
+        }
+      }
+    },
+    {
+      "chunk_id": "D-057-T-06554163c777a8e5",
+      "doc_id": "D-057",
+      "score": 0.009523809523809525,
+      "branches": {
+        "keyword": {
+          "rank": 45,
+          "original_score": 18.36713,
+          "normalized_score": 0.009523809523809525,
+          "contribution": 0.009523809523809525
+        }
+      }
+    },
+    {
+      "chunk_id": "D-057-T-269cb3b0ff8b1cd1",
+      "doc_id": "D-057",
+      "score": 0.009433962264150943,
+      "branches": {
+        "keyword": {
+          "rank": 46,
+          "original_score": 18.36713,
+          "normalized_score": 0.009433962264150943,
+          "contribution": 0.009433962264150943
+        }
+      }
+    },
+    {
+      "chunk_id": "D-057-T-40bc5ace5dde1ffb",
+      "doc_id": "D-057",
+      "score": 0.009345794392523364,
+      "branches": {
+        "keyword": {
+          "rank": 47,
+          "original_score": 18.36713,
+          "normalized_score": 0.009345794392523364,
+          "contribution": 0.009345794392523364
+        }
+      }
+    },
+    {
+      "chunk_id": "D-057-T-945703f70d033e8d",
+      "doc_id": "D-057",
+      "score": 0.009259259259259259,
+      "branches": {
+        "keyword": {
+          "rank": 48,
+          "original_score": 18.36713,
+          "normalized_score": 0.009259259259259259,
+          "contribution": 0.009259259259259259
+        }
+      }
+    },
+    {
+      "chunk_id": "D-057-T-c537ff7e799c54db",
+      "doc_id": "D-057",
+      "score": 0.009174311926605505,
+      "branches": {
+        "keyword": {
+          "rank": 49,
+          "original_score": 18.36713,
+          "normalized_score": 0.009174311926605505,
+          "contribution": 0.009174311926605505
+        }
+      }
+    },
+    {
+      "chunk_id": "D-057-T-f28f9e2dd99df9b6",
+      "doc_id": "D-057",
+      "score": 0.00909090909090909,
+      "branches": {
+        "keyword": {
+          "rank": 50,
+          "original_score": 18.36713,
+          "normalized_score": 0.00909090909090909,
+          "contribution": 0.00909090909090909
+        }
+      }
+    }
+  ],
+  "final": [
+    {
+      "chunk_id": "D-061-T-f89487c9f79a5b7a",
+      "doc_id": "D-061",
+      "score": 2.630956849195422,
+      "branches": {
+        "keyword": {
+          "rank": 4,
+          "original_score": 46.6056,
+          "normalized_score": 0.6309568491954217,
+          "contribution": 0.6309568491954217
+        },
+        "semantic": {
+          "rank": 1,
+          "original_score": 0.8098583,
+          "normalized_score": 1.0,
+          "contribution": 2.0
+        }
+      }
+    },
+    {
+      "chunk_id": "D-184-T-b99445c6263d31f1",
+      "doc_id": "D-184",
+      "score": 2.2918908597361334,
+      "branches": {
+        "keyword": {
+          "rank": 22,
+          "original_score": 32.452656,
+          "normalized_score": 0.3147252349089802,
+          "contribution": 0.3147252349089802
+        },
+        "semantic": {
+          "rank": 2,
+          "original_score": 0.8094083,
+          "normalized_score": 0.9885828124135767,
+          "contribution": 1.9771656248271534
+        }
+      }
+    },
+    {
+      "chunk_id": "D-185-T-34d4b90f406c429a",
+      "doc_id": "D-185",
+      "score": 2.1096851141144786,
+      "branches": {
+        "keyword": {
+          "rank": 17,
+          "original_score": 36.150642,
+          "normalized_score": 0.3973525725419603,
+          "contribution": 0.3973525725419603
+        },
+        "semantic": {
+          "rank": 4,
+          "original_score": 0.8041892,
+          "normalized_score": 0.8561662707862592,
+          "contribution": 1.7123325415725184
+        }
+      }
+    },
+    {
+      "chunk_id": "D-053-T-2ce421ecc999fa16",
+      "doc_id": "D-053",
+      "score": 1.9482974518086857,
+      "branches": {
+        "keyword": {
+          "rank": 5,
+          "original_score": 45.576477,
+          "normalized_score": 0.6079622533297625,
+          "contribution": 0.6079622533297625
+        },
+        "semantic": {
+          "rank": 6,
+          "original_score": 0.7968582,
+          "normalized_score": 0.6701675992394616,
+          "contribution": 1.3403351984789231
+        }
+      }
+    },
+    {
+      "chunk_id": "D-187-T-95282a49c5365148",
+      "doc_id": "D-187",
+      "score": 1.9188953439694145,
+      "branches": {
+        "semantic": {
+          "rank": 3,
+          "original_score": 0.80825996,
+          "normalized_score": 0.9594476719847073,
+          "contribution": 1.9188953439694145
+        }
+      }
+    },
+    {
+      "chunk_id": "D-183-T-4ea17f8dea6e1753",
+      "doc_id": "D-183",
+      "score": 1.8547901191091734,
+      "branches": {
+        "keyword": {
+          "rank": 1,
+          "original_score": 63.122124,
+          "normalized_score": 1.0,
+          "contribution": 1.0
+        },
+        "semantic": {
+          "rank": 11,
+          "original_score": 0.7872895,
+          "normalized_score": 0.4273950595545867,
+          "contribution": 0.8547901191091734
+        }
+      }
+    },
+    {
+      "chunk_id": "D-054-T-874554e1418f0d0a",
+      "doc_id": "D-054",
+      "score": 1.8164134149294189,
+      "branches": {
+        "keyword": {
+          "rank": 6,
+          "original_score": 45.131165,
+          "normalized_score": 0.5980122575818021,
+          "contribution": 0.5980122575818021
+        },
+        "semantic": {
+          "rank": 7,
+          "original_score": 0.79445523,
+          "normalized_score": 0.6092005786738084,
+          "contribution": 1.2184011573476168
+        }
+      }
+    },
+    {
+      "chunk_id": "D-060-T-dd89c6b142ac94b8",
+      "doc_id": "D-060",
+      "score": 1.6697981868787255,
+      "branches": {
+        "keyword": {
+          "rank": 11,
+          "original_score": 40.03018,
+          "normalized_score": 0.48403648540317096,
+          "contribution": 0.48403648540317096
+        },
+        "semantic": {
+          "rank": 8,
+          "original_score": 0.793812,
+          "normalized_score": 0.5928808507377773,
+          "contribution": 1.1857617014755546
+        }
+      }
+    },
+    {
+      "chunk_id": "D-061-T-71dff6083b6434ef",
+      "doc_id": "D-061",
+      "score": 1.5721218665528658,
+      "branches": {
+        "semantic": {
+          "rank": 5,
+          "original_score": 0.80142605,
+          "normalized_score": 0.7860609332764329,
+          "contribution": 1.5721218665528658
+        }
+      }
+    },
+    {
+      "chunk_id": "D-188-T-5871e85754c47cc7",
+      "doc_id": "D-188",
+      "score": 1.457310669126856,
+      "branches": {
+        "keyword": {
+          "rank": 12,
+          "original_score": 39.989372,
+          "normalized_score": 0.48312467654447694,
+          "contribution": 0.48312467654447694
+        },
+        "semantic": {
+          "rank": 9,
+          "original_score": 0.78964245,
+          "normalized_score": 0.4870929962911896,
+          "contribution": 0.9741859925823791
+        }
+      }
+    },
+    {
+      "chunk_id": "D-059-T-3f27148ab569a040",
+      "doc_id": "D-059",
+      "score": 1.3433367786206067,
+      "branches": {
+        "keyword": {
+          "rank": 16,
+          "original_score": 36.355427,
+          "normalized_score": 0.40192826302244616,
+          "contribution": 0.40192826302244616
+        },
+        "semantic": {
+          "rank": 10,
+          "original_score": 0.7889965,
+          "normalized_score": 0.47070425779908026,
+          "contribution": 0.9414085155981605
+        }
+      }
+    },
+    {
+      "chunk_id": "D-129-T-38e33ed2d95d570f",
+      "doc_id": "D-129",
+      "score": 0.9728185466156196,
+      "branches": {
+        "keyword": {
+          "rank": 2,
+          "original_score": 53.17324,
+          "normalized_score": 0.7777033776387057,
+          "contribution": 0.7777033776387057
+        },
+        "semantic": {
+          "rank": 39,
+          "original_score": 0.7742892,
+          "normalized_score": 0.09755758448845699,
+          "contribution": 0.19511516897691397
+        }
+      }
+    },
+    {
+      "chunk_id": "D-057-T-948960143e53d0ca",
+      "doc_id": "D-057",
+      "score": 0.6664305307406443,
+      "branches": {
+        "keyword": {
+          "rank": 3,
+          "original_score": 47.557888,
+          "normalized_score": 0.6522346534109691,
+          "contribution": 0.6522346534109691
+        },
+        "semantic": {
+          "rank": 49,
+          "original_score": 0.7707238,
+          "normalized_score": 0.0070979386648376,
+          "contribution": 0.0141958773296752
+        }
+      }
+    },
+    {
+      "chunk_id": "D-054-T-9bb8f7c323095807",
+      "doc_id": "D-054",
+      "score": 0.6635699871061875,
+      "branches": {
+        "semantic": {
+          "rank": 12,
+          "original_score": 0.7835211,
+          "normalized_score": 0.33178499355309377,
+          "contribution": 0.6635699871061875
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-4ba108fa9c21df65",
+      "doc_id": "D-063",
+      "score": 0.6444890757812016,
+      "branches": {
+        "semantic": {
+          "rank": 13,
+          "original_score": 0.78314507,
+          "normalized_score": 0.3222445378906008,
+          "contribution": 0.6444890757812016
+        }
+      }
+    },
+    {
+      "chunk_id": "D-057-T-c0a8716f9b8f52ff",
+      "doc_id": "D-057",
+      "score": 0.6150162106920676,
+      "branches": {
+        "keyword": {
+          "rank": 29,
+          "original_score": 26.485552,
+          "normalized_score": 0.18139700789592328,
+          "contribution": 0.18139700789592328
+        },
+        "semantic": {
+          "rank": 16,
+          "original_score": 0.77898943,
+          "normalized_score": 0.21680960139807212,
+          "contribution": 0.43361920279614424
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-ddb5d7a38d71bc9a",
+      "doc_id": "D-063",
+      "score": 0.5343122007111155,
+      "branches": {
+        "semantic": {
+          "rank": 14,
+          "original_score": 0.7809738,
+          "normalized_score": 0.26715610035555776,
+          "contribution": 0.5343122007111155
+        }
+      }
+    },
+    {
+      "chunk_id": "D-053-T-269ff4b968ef5e95",
+      "doc_id": "D-053",
+      "score": 0.4508622006350001,
+      "branches": {
+        "semantic": {
+          "rank": 15,
+          "original_score": 0.77932924,
+          "normalized_score": 0.22543110031750005,
+          "contribution": 0.4508622006350001
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-23decbb8e95098c2",
+      "doc_id": "D-063",
+      "score": 0.43278042008146106,
+      "branches": {
+        "semantic": {
+          "rank": 17,
+          "original_score": 0.7789729,
+          "normalized_score": 0.21639021004073053,
+          "contribution": 0.43278042008146106
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-2e7f1230c69a488f",
+      "doc_id": "D-063",
+      "score": 0.41932843595185837,
+      "branches": {
+        "semantic": {
+          "rank": 18,
+          "original_score": 0.7787078,
+          "normalized_score": 0.20966421797592918,
+          "contribution": 0.41932843595185837
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-dadc2c4bcd86475d",
+      "doc_id": "D-063",
+      "score": 0.40983745476891004,
+      "branches": {
+        "semantic": {
+          "rank": 19,
+          "original_score": 0.77852076,
+          "normalized_score": 0.20491872738445502,
+          "contribution": 0.40983745476891004
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-a8d1b706f6df29e9",
+      "doc_id": "D-063",
+      "score": 0.4096314379617908,
+      "branches": {
+        "semantic": {
+          "rank": 20,
+          "original_score": 0.7785167,
+          "normalized_score": 0.2048157189808954,
+          "contribution": 0.4096314379617908
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-eb9cb1c20ec1f68f",
+      "doc_id": "D-063",
+      "score": 0.4007037046997691,
+      "branches": {
+        "semantic": {
+          "rank": 21,
+          "original_score": 0.77834076,
+          "normalized_score": 0.20035185234988456,
+          "contribution": 0.4007037046997691
+        }
+      }
+    },
+    {
+      "chunk_id": "D-054-T-c8de4ae5a291f5ac",
+      "doc_id": "D-054",
+      "score": 0.39485708979440387,
+      "branches": {
+        "semantic": {
+          "rank": 22,
+          "original_score": 0.77822554,
+          "normalized_score": 0.19742854489720194,
+          "contribution": 0.39485708979440387
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-49bf5175a2e10426",
+      "doc_id": "D-063",
+      "score": 0.39485708979440387,
+      "branches": {
+        "semantic": {
+          "rank": 23,
+          "original_score": 0.77822554,
+          "normalized_score": 0.19742854489720194,
+          "contribution": 0.39485708979440387
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-5d152748debabb2b",
+      "doc_id": "D-063",
+      "score": 0.3848586780520557,
+      "branches": {
+        "semantic": {
+          "rank": 24,
+          "original_score": 0.7780285,
+          "normalized_score": 0.19242933902602785,
+          "contribution": 0.3848586780520557
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-675b6c4a07fe6711",
+      "doc_id": "D-063",
+      "score": 0.37911760870304007,
+      "branches": {
+        "semantic": {
+          "rank": 25,
+          "original_score": 0.77791536,
+          "normalized_score": 0.18955880435152003,
+          "contribution": 0.37911760870304007
+        }
+      }
+    },
+    {
+      "chunk_id": "D-168-T-c4934ae3059e7356",
+      "doc_id": "D-168",
+      "score": 0.3736584441451438,
+      "branches": {
+        "keyword": {
+          "rank": 40,
+          "original_score": 20.15322,
+          "normalized_score": 0.03990817203550517,
+          "contribution": 0.03990817203550517
+        },
+        "semantic": {
+          "rank": 31,
+          "original_score": 0.7770213,
+          "normalized_score": 0.16687513605481932,
+          "contribution": 0.33375027210963865
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-f7b31ec0d30e1f08",
+      "doc_id": "D-063",
+      "score": 0.37121133315708393,
+      "branches": {
+        "semantic": {
+          "rank": 26,
+          "original_score": 0.77775955,
+          "normalized_score": 0.18560566657854197,
+          "contribution": 0.37121133315708393
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-ac0f573741807b0b",
+      "doc_id": "D-063",
+      "score": 0.3680678008416236,
+      "branches": {
+        "semantic": {
+          "rank": 27,
+          "original_score": 0.7776976,
+          "normalized_score": 0.1840339004208118,
+          "contribution": 0.3680678008416236
+        }
+      }
+    },
+    {
+      "chunk_id": "D-186-T-0cf21b0a08de61a4",
+      "doc_id": "D-186",
+      "score": 0.3669869737501089,
+      "branches": {
+        "semantic": {
+          "rank": 28,
+          "original_score": 0.7776763,
+          "normalized_score": 0.18349348687505446,
+          "contribution": 0.3669869737501089
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-8e5b35fb76e69f60",
+      "doc_id": "D-063",
+      "score": 0.3665384051356019,
+      "branches": {
+        "semantic": {
+          "rank": 29,
+          "original_score": 0.77766746,
+          "normalized_score": 0.18326920256780094,
+          "contribution": 0.3665384051356019
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-f18226e81432f833",
+      "doc_id": "D-063",
+      "score": 0.35470969136551334,
+      "branches": {
+        "semantic": {
+          "rank": 30,
+          "original_score": 0.77743435,
+          "normalized_score": 0.17735484568275667,
+          "contribution": 0.35470969136551334
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-67ac47e1a321cf3c",
+      "doc_id": "D-063",
+      "score": 0.3212644357651254,
+      "branches": {
+        "semantic": {
+          "rank": 32,
+          "original_score": 0.77677524,
+          "normalized_score": 0.1606322178825627,
+          "contribution": 0.3212644357651254
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-ce5eacd2de7d18e1",
+      "doc_id": "D-063",
+      "score": 0.30672452051618015,
+      "branches": {
+        "semantic": {
+          "rank": 33,
+          "original_score": 0.7764887,
+          "normalized_score": 0.15336226025809008,
+          "contribution": 0.30672452051618015
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-95a507b6c5ba4bdc",
+      "doc_id": "D-063",
+      "score": 0.2955077680007172,
+      "branches": {
+        "semantic": {
+          "rank": 34,
+          "original_score": 0.77626765,
+          "normalized_score": 0.1477538840003586,
+          "contribution": 0.2955077680007172
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-da051863ca7cc647",
+      "doc_id": "D-063",
+      "score": 0.27479698971895117,
+      "branches": {
+        "semantic": {
+          "rank": 35,
+          "original_score": 0.7758595,
+          "normalized_score": 0.13739849485947558,
+          "contribution": 0.27479698971895117
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-6d6d911c04377587",
+      "doc_id": "D-063",
+      "score": 0.2668775209784464,
+      "branches": {
+        "semantic": {
+          "rank": 36,
+          "original_score": 0.77570343,
+          "normalized_score": 0.1334387604892232,
+          "contribution": 0.2668775209784464
+        }
+      }
+    },
+    {
+      "chunk_id": "D-062-T-bd16551e0dcb7ac8",
+      "doc_id": "D-062",
+      "score": 0.2630410810920979,
+      "branches": {
+        "keyword": {
+          "rank": 33,
+          "original_score": 23.448038,
+          "normalized_score": 0.11352717419647071,
+          "contribution": 0.11352717419647071
+        },
+        "semantic": {
+          "rank": 41,
+          "original_score": 0.77339053,
+          "normalized_score": 0.07475695344781359,
+          "contribution": 0.14951390689562719
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-ef6f3e44294085ab",
+      "doc_id": "D-063",
+      "score": 0.25109490828953684,
+      "branches": {
+        "semantic": {
+          "rank": 37,
+          "original_score": 0.7753924,
+          "normalized_score": 0.12554745414476842,
+          "contribution": 0.25109490828953684
+        }
+      }
+    },
+    {
+      "chunk_id": "D-154-T-dadfd1c7693ed572",
+      "doc_id": "D-154",
+      "score": 0.23441797635505943,
+      "branches": {
+        "keyword": {
+          "rank": 39,
+          "original_score": 20.15322,
+          "normalized_score": 0.03990817203550517,
+          "contribution": 0.03990817203550517
+        },
+        "semantic": {
+          "rank": 40,
+          "original_score": 0.77427727,
+          "normalized_score": 0.09725490215977713,
+          "contribution": 0.19450980431955425
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-0eb5fc822f3973fb",
+      "doc_id": "D-063",
+      "score": 0.21896440526854904,
+      "branches": {
+        "semantic": {
+          "rank": 38,
+          "original_score": 0.7747592,
+          "normalized_score": 0.10948220263427452,
+          "contribution": 0.21896440526854904
+        }
+      }
+    },
+    {
+      "chunk_id": "D-054-T-b320dbb0458d97bd",
+      "doc_id": "D-054",
+      "score": 0.15537640556570853,
+      "branches": {
+        "keyword": {
+          "rank": 34,
+          "original_score": 21.711033,
+          "normalized_score": 0.07471575127459522,
+          "contribution": 0.07471575127459522
+        },
+        "semantic": {
+          "rank": 44,
+          "original_score": 0.77203363,
+          "normalized_score": 0.04033032714555666,
+          "contribution": 0.08066065429111333
+        }
+      }
+    },
+    {
+      "chunk_id": "D-063-T-25c6501c65633349",
+      "doc_id": "D-063",
+      "score": 0.14352470400307046,
+      "branches": {
+        "semantic": {
+          "rank": 42,
+          "original_score": 0.7732725,
+          "normalized_score": 0.07176235200153523,
+          "contribution": 0.14352470400307046
+        }
+      }
+    },
+    {
+      "chunk_id": "D-170-T-e530838ed093b042",
+      "doc_id": "D-170",
+      "score": 0.12838449840235683,
+      "branches": {
+        "semantic": {
+          "rank": 43,
+          "original_score": 0.77297413,
+          "normalized_score": 0.06419224920117841,
+          "contribution": 0.12838449840235683
+        }
+      }
+    },
+    {
+      "chunk_id": "D-170-T-2eca19c39b605412",
+      "doc_id": "D-170",
+      "score": 0.05790594571609227,
+      "branches": {
+        "semantic": {
+          "rank": 45,
+          "original_score": 0.7715852,
+          "normalized_score": 0.028952972858046135,
+          "contribution": 0.05790594571609227
+        }
+      }
+    },
+    {
+      "chunk_id": "D-190-T-d4027426d12a293d",
+      "doc_id": "D-190",
+      "score": 0.035949425411007145,
+      "branches": {
+        "semantic": {
+          "rank": 46,
+          "original_score": 0.7711525,
+          "normalized_score": 0.017974712705503573,
+          "contribution": 0.035949425411007145
+        }
+      }
+    },
+    {
+      "chunk_id": "D-171-T-812090576ce2e4c5",
+      "doc_id": "D-171",
+      "score": 0.03410745248039832,
+      "branches": {
+        "semantic": {
+          "rank": 47,
+          "original_score": 0.7711162,
+          "normalized_score": 0.01705372624019916,
+          "contribution": 0.03410745248039832
+        }
+      }
+    },
+    {
+      "chunk_id": "D-188-T-cb0d1ee982b53b6f",
+      "doc_id": "D-188",
+      "score": 0.03349041692017018,
+      "branches": {
+        "semantic": {
+          "rank": 48,
+          "original_score": 0.77110404,
+          "normalized_score": 0.01674520846008509,
+          "contribution": 0.03349041692017018
+        }
+      }
+    },
+    {
+      "chunk_id": "D-191-T-bae1138c118fbf95",
+      "doc_id": "D-191",
+      "score": 0.0,
+      "branches": {
+        "semantic": {
+          "rank": 50,
+          "original_score": 0.77044404,
+          "normalized_score": 0.0,
+          "contribution": 0.0
+        }
+      }
+    }
+  ],
+  "retrieval_and_fusion_seconds": 0.014925041701644659
+}
